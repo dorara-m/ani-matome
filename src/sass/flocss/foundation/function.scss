@@ -1,0 +1,29 @@
+//mq
+// breakpoint width
+$bpFull: 1366px;
+$bpPC: 1024px;
+$bpTB: 768px;
+$bpSP: 767px;
+
+// breakpoint {sp,tablet,pc,full}
+// @include mq(sp){}
+@mixin mq($point) {
+  @if $point == tablet {
+    @media print, screen and (min-width: $bpTB)  { @content ; }
+  }
+  @else if $point == pc {
+    @media print, screen and (min-width: $bpPC) { @content ; }
+  }
+  @else if $point == full {
+    @media print, screen and (min-width: $bpFull) { @content ; }
+  }
+  @else if $point == sp {
+    @media print, screen and (max-width: 767px)  { @content ; }
+  }
+	@else if $point == sp320 {//320のときのみのcss
+	    @media print, screen and (max-width: 374px)  { @content ; }
+	  }
+  @else {
+    @media print, screen and (min-width: $point) { @content ; }
+  }
+}

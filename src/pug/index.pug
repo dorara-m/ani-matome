@@ -1,0 +1,28 @@
+extend _layout/layout
+
+block vars
+  - 
+    var imgPath = "/assets/images/"
+    var hasHeader = false;
+    var meta = {
+      title: "top",
+      desc: "topのページ"
+    }
+
+block content
+  .p-top
+    .p-top_mv
+      .l-container
+        h1 アニマトメ
+    .p-top_items
+      .l-container
+        ul.u-flex
+          li
+            a(href="/bound/")
+              img(src=imgPath+"cat01.jpg", alt="")
+          li
+            a(href="/bound/")
+              img(src=imgPath+"bg01.jpg", alt="")
+          li
+            a(href="/bound/")
+              img(src=imgPath+"cat01.jpg", alt="")

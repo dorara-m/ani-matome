@@ -1,0 +1,23 @@
+.p-top {
+  padding: 40px 0;
+  font-family: $font-main;
+  h1 {
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    @include mq(tablet) {
+      font-size: 50px;
+    }
+  }
+
+  &_items {
+    ul {
+      margin: 0 -10px;
+      > li {
+        width: 33.3%;
+        padding: 10px;
+        max-height: 250px;
+      }
+    } 
+  }
+}
