@@ -17,12 +17,13 @@ block content
     .p-top_items
       .l-container
         ul.u-flex
-          li
-            a(href="/bound/")
-              img(src=imgPath+"cat01.jpg", alt="")
-          li
-            a(href="/bound/")
-              img(src=imgPath+"bg01.jpg", alt="")
-          li
-            a(href="/bound/")
-              img(src=imgPath+"cat01.jpg", alt="")
+          each val, key in items
+            li
+              if val.link
+                a(href=val.link)
+                  span=val.name
+                  img(src=imgPath+val.img, alt="")
+              else
+                div
+                  span=val.name
+                  img(src=imgPath+val.img, alt="")

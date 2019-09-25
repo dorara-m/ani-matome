@@ -1,4 +1,6 @@
 var gulp = require('gulp');
+var data = require('gulp-data');
+var fs = require('fs');
 var plumber = require('gulp-plumber');
 var notify = require('gulp-notify');
 var browserSync = require('browser-sync');
@@ -17,8 +19,10 @@ gulp.task('default', [ 'browser-sync', 'watch', 'pug', 'sass', 'babel', 'images'
 
 // pug
 gulp.task('pug', () => {
+  var jsonData = JSON.parse(fs.readFileSync('src/_data/index.json', 'utf8'));
   var option = {
-      pretty: true
+    data: jsonData,
+    pretty: true
   }
   gulp.src(['src/pug/**/*.pug', '!src/pug/_*/*.pug'])
       .pipe(plumber({
