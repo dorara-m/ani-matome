@@ -1,9 +1,31 @@
 {
-  "items": [
+  "loads": [
     {
       "name": "画面横切り",
       "link": "/across/",
       "img": "cat01.jpg"
+    },
+    {
+      "name": "サンプル",
+      "link": "/",
+      "img": "cat01.jpg"
+    },
+    {
+      "name": "サンプル",
+      "link": "/",
+      "img": "cat01.jpg"
+    },
+    {
+      "name": "サンプル",
+      "link": "/",
+      "img": "cat01.jpg"
+    }
+  ],
+  "decos": [
+    {
+      "name": "ピコピコ",
+      "link": "/picopico/",
+      "img": "bg01.jpg"
     }
   ]
 }

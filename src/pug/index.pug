@@ -12,14 +12,26 @@ block content
   .p-top
     .p-top_head
       .l-container
-        h1 アニマトメ
+        h1
+          |アニマトメ
+          span -animatome-
         p cssアニメーションをまとめたサイト。
 
-    .p-top_items
+    .p-top_body
       .l-container
-        ul.u-flex
-          each val, key in items
-            li
-              a(href=val.link)
-                h2=val.name
-                .img(style="background-image: url("+imgPath+val.img+");")
+        section#loads
+          h2 ローディング, 遷移系
+          ul.u-flex
+            each val, key in loads
+              li
+                a(href=val.link)
+                  .img(style="background-image: url("+imgPath+val.img+");")
+                  h3=val.name
+        section#decos
+          h2 装飾系
+          ul.u-flex
+            each val, key in decos
+              li
+                a(href=val.link)
+                  .img(style="background-image: url("+imgPath+val.img+");")
+                  h3=val.name
