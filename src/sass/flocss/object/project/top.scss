@@ -1,12 +1,16 @@
 .p-top {
   padding: 40px 0;
   font-family: $font-main;
-  h1 {
-    font-size: 40px;
-    font-weight: bold;
+  &_head {
     margin-bottom: 30px;
-    @include mq(tablet) {
-      font-size: 50px;
+    h1 {
+      font-size: 40px;
+      font-weight: bold;
+      letter-spacing: 0.03em;
+      margin-bottom: 20px;
+      @include mq(tablet) {
+        font-size: 50px;
+      }
     }
   }
 
@@ -16,7 +20,14 @@
       > li {
         width: 33.3%;
         padding: 10px;
-        max-height: 250px;
+        h2 {
+          margin-bottom: 10px;
+        }
+        .img {
+          height: 180px;
+          background-position: center;
+          background-size: cover;
+        }
       }
     } 
   }

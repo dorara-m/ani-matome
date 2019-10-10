@@ -5,25 +5,22 @@ block vars
     var imgPath = "/assets/images/"
     var hasHeader = false;
     var meta = {
-      title: "top",
-      desc: "topのページ"
+      title: "アニマトメ",
+      desc: "cssアニメーションをまとめたサイト。"
     }
 
 block content
   .p-top
-    .p-top_mv
+    .p-top_head
       .l-container
         h1 アニマトメ
+        p cssアニメーションをまとめたサイト。
+
     .p-top_items
       .l-container
         ul.u-flex
           each val, key in items
             li
-              if val.link
-                a(href=val.link)
-                  span=val.name
-                  img(src=imgPath+val.img, alt="")
-              else
-                div
-                  span=val.name
-                  img(src=imgPath+val.img, alt="")
+              a(href=val.link)
+                h2=val.name
+                .img(style="background-image: url("+imgPath+val.img+");")
