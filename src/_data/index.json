@@ -1,16 +1,8 @@
 {
   "items": [
     {
-      "name": "バウンド",
-      "link": "/bound/",
-      "img": "cat01.jpg"
-    },
-    {
-      "name": "ぽよ2",
-      "img": "bg01.jpg"
-    },
-    {
-      "name": "ぽよ3",
+      "name": "画面横切り",
+      "link": "/across/",
       "img": "cat01.jpg"
     }
   ]

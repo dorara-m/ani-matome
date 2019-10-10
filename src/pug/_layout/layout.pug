@@ -6,13 +6,14 @@ html
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
     meta(http-equiv="X-UA-Compatible", content="ie=edge")
     
-    link(rel="stylesheet", href="/assets/styles/main.css")
     title #{meta.title}
     meta(name="description" content=meta.desc)
-    
+    link(rel="stylesheet", href="/assets/styles/main.css")
+    - if (pages)
+      link(rel="stylesheet", href="/assets/styles/pages/"+meta.title+".css")      
   body
     .l-wrap
-      - if(hasHeader)
+      - if(pages)
         include ../_inc/header
       block content
 
