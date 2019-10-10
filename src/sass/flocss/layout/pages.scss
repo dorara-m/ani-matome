@@ -1,0 +1,35 @@
+.l-pages {
+  padding: 50px 0;
+  &_head {
+    h1 {
+      font-size: 35px;
+      letter-spacing: 0.02em;
+    }
+    margin-bottom: 50px;
+  }
+  &_content {
+    section {
+      margin-bottom: 30px;
+      h2 {
+        font-size: 20px;
+        margin-bottom: 15px;
+      }
+      p {
+        line-height: 1.7;
+      }
+    }
+  }
+  &_table {
+    width: 100%;
+    th,td {
+      border: 1px solid $color-black;
+      text-align: center;
+      vertical-align: middle;
+      border-collapse: collapse;
+      min-width: 107px;
+    }
+    tbody td {
+      height: 40px;
+    }
+  }
+}

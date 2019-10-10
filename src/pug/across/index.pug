@@ -9,6 +9,47 @@ block vars
     }
 
 block content
-  .pg-across
+  .pg-across.l-pages
+    .pg-across_load
     .l-container
-      h1 画面横切り
+      .l-pages_head
+        h1 画面横切り
+      .l-pages_content
+        section    
+          h2 アニメーション発火
+          p このページ読み込み時に発火します。リロードしてください。
+        section    
+          h2 動作環境
+          table.l-pages_table
+            thead
+              tr
+                td -
+                th(colspan="5") PC
+                th(colspan="2") SP
+              tr
+                td -
+                th Chrome
+                th Edge
+                th Firefox
+                th IE
+                th Safari
+                th Andoroid Chrome
+                th IOS safari
+            tbody
+              tr
+                th 対応
+                td ○
+                td ○
+                td ○
+                td △
+                td ○
+                td ○
+                td ○
+          
+        section
+          h2 説明
+          p 枠として空divを用意。position: fixed;で画面全体に固定する。
+          p 疑似要素で背景（白）と動く帯（紺）を作る。
+          p 両方とも疑似要素にして空div自体をアニメーションさせないのは、アニメーションによってdivが実体として消えてしまい、帯がその影響を受けるから。
+          p 背景と帯を、同じタイミング（.5秒遅れ）でアニメーション。translateで位置を画面外→画面外へ。
+          p アニメーションが終わったら外枠の空divも消す。cssアニメーションではdisplayは操作できないので、visibility: hidden;に。

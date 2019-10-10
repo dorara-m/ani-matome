@@ -3,22 +3,7 @@
     {
       "name": "画面横切り",
       "link": "/across/",
-      "img": "cat01.jpg"
-    },
-    {
-      "name": "サンプル",
-      "link": "/",
-      "img": "cat01.jpg"
-    },
-    {
-      "name": "サンプル",
-      "link": "/",
-      "img": "cat01.jpg"
-    },
-    {
-      "name": "サンプル",
-      "link": "/",
-      "img": "cat01.jpg"
+      "img": "across.gif"
     }
   ],
   "decos": [
