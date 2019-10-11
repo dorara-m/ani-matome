@@ -3,15 +3,12 @@
   &_head {
     margin-bottom: 50px;
     h1 {
-      font-size: 40px;
+      font-size: 50px;
       letter-spacing: 0.03em;
-      margin-bottom: 20px;
+      margin-bottom: 25px;
       span {
         margin-left: 10px;
         font-size: 30px;
-      }
-      @include mq(tablet) {
-        font-size: 50px;
       }
     }
   }
