@@ -1,0 +1,52 @@
+.pg-pico {
+  .c-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border: 1px solid #333;
+    &:hover {
+      &::after {
+        animation-play-state: paused;
+      }
+    }
+    &::after {
+      content: "→";
+      display: inline-block;
+      margin-left: 5px;
+      animation: moveR .8s infinite;
+      @keyframes moveR {
+        from {
+          transform: translateX(0);
+        }
+        50% {
+          transform: translateX(5px);
+        }
+        to {
+          transform: translateX(0);
+        }
+      }
+    }
+  }
+  .img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-image: url(../../images/cat01.jpg);
+    background-position: center;
+    background-size: cover;
+    animation: upDown .6s infinite;
+    &:hover {
+      animation-play-state: paused;
+    }
+    @keyframes upDown {
+      from {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(10px);
+      }
+      to {
+        transform: translateY(0);
+      }
+    }
+  }
+}
