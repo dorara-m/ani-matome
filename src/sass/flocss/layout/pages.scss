@@ -9,7 +9,7 @@
   }
   &_content {
     > section {
-      margin-bottom: 30px;
+      margin-bottom: 50px;
       h2 {
         font-size: 20px;
         margin-bottom: 15px;
@@ -39,6 +39,15 @@
     }
     tbody td {
       height: 40px;
+      &[data-status="○"] {
+        background-color: $color-green;
+      }
+      &[data-status="△"] {
+        background-color: $color-yellow;
+      }
+      &[data-status="☓"] {
+        background-color: $color-red;
+      }
     }
   }
 }
