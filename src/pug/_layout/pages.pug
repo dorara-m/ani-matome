@@ -1,0 +1,63 @@
+block vars
+doctype html
+html
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    
+    title #{meta.title}
+    meta(name="description" content=meta.desc)
+    link(rel="stylesheet", href="/assets/styles/main.css")
+    link(rel="stylesheet", href="/assets/styles/pages/"+meta.dir+".css")      
+  body
+    .l-wrap
+      include ../_inc/header
+      .l-pages(class="pg-"+meta.dir)
+        block wrapContent
+        .l-container
+          .l-pages_head
+            h1 #{meta.title}
+          .l-pages_content
+            section    
+              h2 サンプル
+              block sampleContent
+            section    
+              h2 動作環境
+              table.l-pages_table
+                thead
+                  tr
+                    td -
+                    th(colspan="5") PC
+                    th(colspan="2") SP
+                  tr
+                    td ブラウザ
+                    th Chrome
+                    th Edge
+                    th Firefox
+                    th IE
+                    th Safari
+                    th Andoroid Chrome
+                    th IOS safari
+                tbody
+                  tr
+                    th 対応
+                    each val,key in blowser
+                      case val
+                        when 0
+                          td(data-status="○") ○
+                        when 1
+                          td(data-status="△") △
+                        when 2
+                          td(data-status="☓") ☓
+                        when 3
+                          td(data-status="-") 確認中
+                        default
+                          td(data-status="-") invalid
+                      
+            section
+              h2 説明
+              block descContent
+
+
+  script(src="/assets/scripts/main.js")

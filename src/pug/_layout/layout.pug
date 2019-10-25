@@ -9,12 +9,12 @@ html
     title #{meta.title}
     meta(name="description" content=meta.desc)
     link(rel="stylesheet", href="/assets/styles/main.css")
-    - if (pages)
-      link(rel="stylesheet", href="/assets/styles/pages/"+meta.title+".css")      
+    //- - if (pages)
+    //-   link(rel="stylesheet", href="/assets/styles/pages/"+meta.title+".css")      
   body
     .l-wrap
-      - if(pages)
-        include ../_inc/header
+      //- - if(pages)
+      //-   include ../_inc/header
       block content
 
   script(src="/assets/scripts/main.js")

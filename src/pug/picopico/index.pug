@@ -1,59 +1,34 @@
-extend ../_layout/layout
+extend ../_layout/pages
 
 block vars
   - 
-    var pages = true;
     var meta = {
-      title: "picopico",
-      desc: "picopicoのページ"
+      title: "ピコピコ",
+      desc: "ピコピコのページ",
+      dir: "picopico"
+    }
+    // ○:0, △:1, ☓:2, 確認中:3
+    var blowser = {
+      chrome: 0,
+      edge: 3,
+      firefox: 3,
+      ie: 3,
+      safari: 3,
+      android: 3,
+      ios: 3
     }
 
-block content
-  .pg-pico.l-pages
-    .l-container
-      .l-pages_head
-        h1 ピコピコ
-      .l-pages_content
-        section    
-          h2 サンプル
-          section.l-pages_content_H3
-            h3 1. 矢印
-            a(href="#").c-btn 一覧を見る
-          section.l-pages_content_H3
-            h3 2. 画像
-            .img
-          p 常時発動します。ホバーで止まります。
-        section    
-          h2 動作環境
-          table.l-pages_table
-            thead
-              tr
-                td -
-                th(colspan="5") PC
-                th(colspan="2") SP
-              tr
-                td -
-                th Chrome
-                th Edge
-                th Firefox
-                th IE
-                th Safari
-                th Andoroid Chrome
-                th IOS safari
-            tbody
-              tr
-                th 対応
-                td(data-status="○") ○
-                td 確認中
-                td 確認中
-                td 確認中
-                td 確認中
-                td 確認中
-                td 確認中
-          
-        section
-          h2 説明
-          p cssアニメーションはblock要素（or inline-block）でないと効かない。
-          p cssアニメーションでtraslateを変化させている。静(0)→動(50)→静(100)のようにアニメーションを書く。
-          p infiniteを指定することで延々と動く。
-          p ホバーしたときanimation-play-state: paused;が効いて、止まる。
+block sampleContent
+  section.l-pages_content_H3
+    h3 1. 矢印
+    a(href="#").c-btn 一覧を見る
+  section.l-pages_content_H3
+    h3 2. 画像
+    .img
+  p 常時発動します。ホバーで止まります。
+
+block descContent
+  p cssアニメーションはblock要素（or inline-block）でないと効かない。
+  p cssアニメーションでtraslateを変化させている。静(0)→動(50)→静(100)のようにアニメーションを書く。
+  p infiniteを指定することで延々と動く。
+  p ホバーしたときanimation-play-state: paused;が効いて、止まる。

@@ -1,55 +1,32 @@
-extend ../_layout/layout
+extend ../_layout/pages
 
 block vars
   - 
-    var pages = true;
     var meta = {
-      title: "across",
-      desc: "acrossのページ"
+      title: "画面横切り",
+      desc: "画面横切りのページ",
+      dir: "across"
+    }
+    // ○:0, △:1, ☓:2, 確認中:3
+    var blowser = {
+      chrome: 0,
+      edge: 0,
+      firefox: 0,
+      ie: 1,
+      safari: 0,
+      android: 0,
+      ios: 0
     }
 
-block content
-  .pg-across.l-pages
-    .pg-across_load
-    .l-container
-      .l-pages_head
-        h1 画面横切り
-      .l-pages_content
-        section    
-          h2 サンプル
-          p このページ読み込み時に発火します。リロードしてください。
-        section    
-          h2 動作環境
-          table.l-pages_table
-            thead
-              tr
-                td -
-                th(colspan="5") PC
-                th(colspan="2") SP
-              tr
-                td -
-                th Chrome
-                th Edge
-                th Firefox
-                th IE
-                th Safari
-                th Andoroid Chrome
-                th IOS safari
-            tbody
-              tr
-                th 対応
-                td(data-status="○") ○
-                td(data-status="○") ○
-                td(data-status="○") ○
-                td(data-status="△") △
-                td(data-status="○") ○
-                td(data-status="○") ○
-                td(data-status="○") ○
-          
-        section
-          h2 説明
-          p 枠として空divを用意。position: fixed;で画面全体に固定する。
-          p 疑似要素で背景（白）と動く帯（紺）を作る。どちらもposition: absolute;で浮かし、背景はwidth100%, 帯は適当な幅(300px)に。
-          p 両方とも疑似要素にして空div自体をアニメーションさせないのは、アニメーションによってdivが実体として消えてしまい、帯がその影響を受けるから。
-          p 背景と帯を、同じタイミング（.5秒遅れ）でアニメーション。translateで位置を画面外→画面外へ。
-          p アニメーションが終わったら外枠の空divも消す。cssアニメーションではdisplayは操作できないので、visibility: hidden;に。
+block wrapContent
+  .pg-across_load
+
+block sampleContent
+  p このページ読み込み時に発火します。リロードしてください
+
+block descContent
+  p 枠として空divを用意。position: fixed;で画面全体に固定する。
+  p 疑似要素で背景（白）と動く帯（紺）を作る。どちらもposition: absolute;で浮かし、背景はwidth100%, 帯は適当な幅(300px)に。
+  p 両方とも疑似要素にして空div自体をアニメーションさせないのは、アニメーションによってdivが実体として消えてしまい、帯がその影響を受けるから。
+  p 背景と帯を、同じタイミング（.5秒遅れ）でアニメーション。translateで位置を画面外→画面外へ。
+  p アニメーションが終わったら外枠の空divも消す。cssアニメーションではdisplayは操作できないので、visibility: hidden;に。
