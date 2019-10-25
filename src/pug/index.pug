@@ -19,18 +19,18 @@ block content
 
     .p-top_body
       .l-container
-        section#loads
-          h2 ローディング, 遷移系
-          ul.u-flex
-            each val, key in loads
-              li
-                a(href=val.link)
-                  .img(style="background-image: url("+imgPath+val.img+");")
-                  h3=val.name
         section#decos
           h2 装飾系
           ul.u-flex
             each val, key in decos
+              li
+                a(href=val.link)
+                  .img(style="background-image: url("+imgPath+val.img+");")
+                  h3=val.name
+        section#loads
+          h2 ローディング, 遷移系
+          ul.u-flex
+            each val, key in loads
               li
                 a(href=val.link)
                   .img(style="background-image: url("+imgPath+val.img+");")
