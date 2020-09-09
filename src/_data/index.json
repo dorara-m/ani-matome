@@ -11,6 +11,11 @@
       "name": "ピコピコ",
       "link": "/picopico/",
       "img": "picopico.gif"
+    },
+    {
+      "name": "円が広がってアイテムがスライドイン",
+      "link": "/roundShow01/",
+      "img": "none.gif"
     }
   ]
 }
