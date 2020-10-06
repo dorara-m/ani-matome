@@ -26,3 +26,7 @@ root/
   ├── README.md
   └── yarn.lock
 ```
+
+## ページ追加
+1. pug/にページ名でディレクトリ追加してindex.pugを配置（html名は原則index
+2. 

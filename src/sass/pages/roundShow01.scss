@@ -5,6 +5,12 @@
   border: 1px solid #444;
   overflow: hidden;
   position: relative;
+
+  &.started {
+    .round {
+      animation-play-state: running;
+    }
+  }
 }
 .round {
   position: absolute;
@@ -44,6 +50,25 @@
     100% {
       width: 301px;
       height: 301px;
+    }
+  }
+}
+
+.item {
+  animation: anime03 ease 1s both .6s;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 200px;
+  @keyframes anime03 {
+    0% {
+      transform: translate(calc(-100px + -50%), -50%);
+      opacity: 0;
+    }
+    100% {
+      transform: translate(-50%, -50%);
+      opacity: 1;
     }
   }
 }
