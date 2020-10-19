@@ -1,0 +1,32 @@
+//- レイアウト読み込み
+extend ../_layout/pages
+
+//- 必要な変数を与える。meta情報と対応ブラウザ
+block vars
+  - 
+    var meta = {
+      title: "サンプル",
+      desc: "",
+      dir: "sample"
+      //- meta.dirが参照されるscssファイル名になる
+    }
+    // ○:0, △:1, ☓:2, 確認中:3
+    var blowser = {
+      chrome: 0,
+      edge: 3,
+      firefox: 3,
+      ie: 3,
+      safari: 3,
+      android: 3,
+      ios: 3
+    }
+
+//- ここが自由記述エリア。動作サンプルを実装する。
+block sampleContent
+  p 自由記述。
+  button#js-reload 画面のリロード
+
+//- 説明エリア。実装方法、参考サイトなどを書く。
+block descContent
+  p 説明です。
+  a(href="", target="_blank", rel="noopener noreferrer").c-btn 参考サイト1

@@ -1,12 +1,11 @@
 # アニマトメ
 
 ## 概要
-CSSアニメのまとめサイト
+CSSアニメのまとめサイト（仮
 
-## 起動（yarn
-yarnのインストール前提。なければnpmで代用可能です。
-1. `yarn` (= `npm install`
-2. `yarn start` (= `npm run start`
+## 起動
+1. `npm install`
+2. `npm run start`
 
 ## 環境
 ### 言語
@@ -23,10 +22,11 @@ root/
   ├── .gitignore
   ├── gulpfile.js
   ├── package.json
-  ├── README.md
-  └── yarn.lock
+  └── README.md
 ```
 
-## ページ追加
-1. pug/にページ名でディレクトリ追加してindex.pugを配置（html名は原則index
-2. 
+## ページ追加の手順
+1. pug/にページ名でディレクトリ追加してindex.pugを作成
+2. pug/sample/index.pugをコピペして適宜編集
+3. scssファイルはsass/pages/配下に作成
+4. 一覧表示用のindex.jsonにタイトルとディレクトリ名を記述

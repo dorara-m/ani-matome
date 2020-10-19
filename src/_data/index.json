@@ -2,20 +2,17 @@
   "loads": [
     {
       "name": "画面横切り",
-      "link": "/across/",
-      "img": "across.gif"
+      "dir": "across"
     }
   ],
   "decos": [
     {
       "name": "ピコピコ",
-      "link": "/picopico/",
-      "img": "picopico.gif"
+      "dir": "picopico"
     },
     {
       "name": "円が広がってアイテムがスライドイン",
-      "link": "/roundShow01/",
-      "img": "roundShow01.gif"
+      "dir": "roundShow01"
     }
   ]
 }

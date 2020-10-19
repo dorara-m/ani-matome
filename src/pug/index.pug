@@ -1,37 +1,42 @@
-extend _layout/layout
+doctype html
+html
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    title アニマトメ
+    meta(name="description" content="cssアニメーションをまとめたサイト。")
+    link(rel="stylesheet", href="/assets/styles/main.css")
+    - var imgPath = "/assets/images/"
+  body
+    .l-wrap
+      .p-top
+        .p-top_head
+          .l-container
+            h1
+              |アニマトメ
+              span -animatome-
+            p cssアニメーションをまとめたサイト。「オノマトペ」的な。
 
-block vars
-  - 
-    var imgPath = "/assets/images/"
-    var meta = {
-      title: "アニマトメ",
-      desc: "cssアニメーションをまとめたサイト。"
-    }
+        .p-top_body
+          .l-container
+            section#decos
+              h2 装飾系
+              ul.u-flex
+                each val, key in decos
+                  li
+                    a(href=val.dir+"/")
+                      .img(style="background-image: url("+imgPath+"gif/"+val.dir+".gif);")
+                      h3=val.name
+            section#loads
+              h2 ローディング, 遷移系
+              ul.u-flex
+                each val, key in loads
+                  li
+                    a(href=val.dir+"/")
+                      .img(style="background-image: url("+imgPath+"gif/"+val.dir+".gif);")
+                      h3=val.name
 
-block content
-  .p-top
-    .p-top_head
-      .l-container
-        h1
-          |アニマトメ
-          span -animatome-
-        p cssアニメーションをまとめたサイト。「オノマトペ」的な。
-
-    .p-top_body
-      .l-container
-        section#decos
-          h2 装飾系
-          ul.u-flex
-            each val, key in decos
-              li
-                a(href=val.link)
-                  .img(style="background-image: url("+imgPath+"gif/"+val.img+");")
-                  h3=val.name
-        section#loads
-          h2 ローディング, 遷移系
-          ul.u-flex
-            each val, key in loads
-              li
-                a(href=val.link)
-                  .img(style="background-image: url("+imgPath+"gif/"+val.img+");")
-                  h3=val.name
+  script(src='https://code.jquery.com/jquery-3.5.1.min.js')
+  script(src="/assets/scripts/main.js")
+  
