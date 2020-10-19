@@ -25,7 +25,7 @@ block content
             each val, key in decos
               li
                 a(href=val.link)
-                  .img(style="background-image: url("+imgPath+val.img+");")
+                  .img(style="background-image: url("+imgPath+"gif/"+val.img+");")
                   h3=val.name
         section#loads
           h2 ローディング, 遷移系
@@ -33,5 +33,5 @@ block content
             each val, key in loads
               li
                 a(href=val.link)
-                  .img(style="background-image: url("+imgPath+val.img+");")
+                  .img(style="background-image: url("+imgPath+"gif/"+val.img+");")
                   h3=val.name
