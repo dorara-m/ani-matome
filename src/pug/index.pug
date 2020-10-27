@@ -18,24 +18,35 @@ html
               span -animatome-
             p cssアニメーションをまとめたサイト。「オノマトペ」的な。
 
+        -
+          var list = items.map(
+            function(item) {
+              return item.category
+            }
+          );
+          var categoryList = list.filter(
+            function(x, i, self){
+              return self.indexOf(x) === i
+            }
+          );
+        
         .p-top_body
           .l-container
-            section#decos
-              h2 装飾系
-              ul.u-flex
-                each val, key in decos
-                  li
-                    a(href=val.dir+"/")
-                      .img(style="background-image: url("+imgPath+"gif/"+val.dir+".gif);")
-                      h3=val.name
-            section#loads
-              h2 ローディング, 遷移系
-              ul.u-flex
-                each val, key in loads
-                  li
-                    a(href=val.dir+"/")
-                      .img(style="background-image: url("+imgPath+"gif/"+val.dir+".gif);")
-                      h3=val.name
+            each category in categoryList
+              section(id=category)
+                h2=category
+                ul.u-flex
+                  -
+                    var targetItems = items.filter(
+                      function(item) {
+                        return item.category === category
+                      }
+                    )
+                  each val, key in targetItems
+                    li
+                      a(href=val.name_en+"/")
+                        .img(style="background-image: url("+imgPath+"gif/"+val.name_en+".gif);")
+                        h3=val.name_jp 
 
   script(src='https://code.jquery.com/jquery-3.5.1.min.js')
   script(src="/assets/scripts/main.js")

@@ -1,18 +1,19 @@
 {
-  "loads": [
+  "items": [
     {
-      "name": "画面横切り",
-      "dir": "across"
-    }
-  ],
-  "decos": [
-    {
-      "name": "ピコピコ",
-      "dir": "picopico"
+      "name_jp": "ピコピコ",
+      "name_en": "picopico",
+      "category": "decoration"
     },
     {
-      "name": "円が広がってアイテムがスライドイン",
-      "dir": "roundShow01"
+      "name_jp": "画面横切り",
+      "name_en": "across",
+      "category": "loading"
+    },
+    {
+      "name_jp": "円が広がってアイテムがスライドイン",
+      "name_en": "roundShow01",
+      "category": "decoration"
     }
   ]
 }
