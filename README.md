@@ -26,7 +26,7 @@ root/
 ```
 
 ## ページ追加の手順
-1. pug/にページ名でディレクトリ追加してindex.pugを作成
-2. pug/sample/index.pugをコピペして適宜編集
-3. scssファイルはsass/pages/配下に作成
-4. 一覧表示用のindex.jsonにタイトルとディレクトリ名を記述
+1. `index.json`に必要データを記載
+2. `pug/`にjsonのname_enと同名のディレクトリ追加
+3. `pug/sample/index.pug`をコピペして当該ディレクトリ配下に設置。適宜編集
+4. scssファイルはsass/pages/配下にjsonのname_enと同名.scssで作成

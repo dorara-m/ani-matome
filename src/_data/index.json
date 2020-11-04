@@ -3,17 +3,58 @@
     {
       "name_jp": "ピコピコ",
       "name_en": "picopico",
-      "category": "decoration"
+      "category": "decoration",
+      "blowser" : {
+        "chrome": 0,
+        "edge": 3,
+        "firefox": 3,
+        "ie": 3,
+        "safari": 3,
+        "android": 3,
+        "ios": 3
+      }
     },
     {
       "name_jp": "画面横切り",
       "name_en": "across",
-      "category": "loading"
+      "category": "loading",
+      "blowser" : {
+        "chrome": 0,
+        "edge": 0,
+        "firefox": 0,
+        "ie": 1,
+        "safari": 0,
+        "android": 0,
+        "ios": 0
+      }
     },
     {
       "name_jp": "円が広がってアイテムがスライドイン",
       "name_en": "roundShow01",
-      "category": "decoration"
+      "category": "decoration",
+      "blowser" : {
+        "chrome": 0,
+        "edge": 3,
+        "firefox": 3,
+        "ie": 3,
+        "safari": 3,
+        "android": 3,
+        "ios": 3
+      }
+    },
+    {
+      "name_jp": "cssだけのスライドショー,フェードver.",
+      "name_en": "cssOnlySlides01",
+      "category": "decoration",
+      "blowser" : {
+        "chrome": 0,
+        "edge": 3,
+        "firefox": 3,
+        "ie": 3,
+        "safari": 3,
+        "android": 3,
+        "ios": 3
+      }
     }
   ]
 }

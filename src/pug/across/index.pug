@@ -1,22 +1,7 @@
 extend ../_layout/pages
 
-block vars
-  - 
-    var meta = {
-      title: "画面横切り",
-      desc: "画面横切りのページ",
-      dir: "across"
-    }
-    // ○:0, △:1, ☓:2, 確認中:3
-    var blowser = {
-      chrome: 0,
-      edge: 0,
-      firefox: 0,
-      ie: 1,
-      safari: 0,
-      android: 0,
-      ios: 0
-    }
+block id
+  - var id = 2
 
 block wrapContent
   .pg-across_load
