@@ -20,6 +20,9 @@
     h2 {
       font-size: 22px;
       margin-bottom: 15px;
+      &::first-letter {
+        text-transform: uppercase;
+      }
     }
     ul {
       margin: 0 -10px;

@@ -16,6 +16,9 @@
       }
       p {
         line-height: 1.7;
+        + p {
+          margin-top: 16px;
+        }
       }
     }
     &_H3 {
