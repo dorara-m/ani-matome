@@ -1,0 +1,22 @@
+//- レイアウト読み込み
+extend ../_layout/pages
+
+//- ここでjsonと紐付ける。配列2個目なら、2
+block id
+  - var id = 5
+
+//- ここが自由記述エリア。動作サンプルを実装する。
+block sampleContent
+  p 1枚につき3秒 × 3枚
+  ul.slider
+    li
+      img(src="/assets/images/bg01.jpg", alt="")
+    li
+      img(src="/assets/images/bg02.jpg", alt="")
+    li
+      img(src="/assets/images/bg03.jpg", alt="")
+
+//- 説明エリア。実装方法、参考サイトなどを書く。
+block descContent
+  p 白ver.は33%内でフェードアウトまで完結するよう書いたが、今回はAがフェードアウトしながらBがフェードインして欲しいので、AのフェードアウトをBのフェードイン終わるタイミング(33% + 16%)まで伸ばす。
+  a(href="/cssOnlySlides01/").c-btn 基本は白ver.と同じ
