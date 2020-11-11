@@ -69,6 +69,20 @@
         "android": 3,
         "ios": 3
       }
+    },
+    {
+      "name_jp": "星空っぽいなにか",
+      "name_en": "starrySky",
+      "category": "background",
+      "blowser" : {
+        "chrome": 0,
+        "edge": 3,
+        "firefox": 3,
+        "ie": 3,
+        "safari": 3,
+        "android": 3,
+        "ios": 3
+      }
     }
   ]
 }

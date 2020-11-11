@@ -1,0 +1,46 @@
+//- レイアウト読み込み
+extend ../_layout/pages
+
+//- ここでjsonと紐付ける。配列2個目なら、2
+block id
+  - var id = 6
+
+//- ここが自由記述エリア。動作サンプルを実装する。
+block sampleContent
+  .bgArea
+    .star
+    .star
+    .star
+    .star
+    .star
+    .star
+    .star
+    .star
+    .star
+    .star
+    .star
+    .star
+    .star
+    .star
+    .star
+    .star
+    .star
+    .star
+    .star
+    .star
+    .star
+    .star
+    .star
+    .star
+    .star
+    .star
+    .star
+    .star
+    .star
+    .star
+
+//- 説明エリア。実装方法、参考サイトなどを書く。
+block descContent
+  p いっぱいdivが必要です。
+  p scssでfor文を回してランダムな大きさ、位置、アニメーションの長さ、開始タイミングを実現しています。（よって逆に言うとscssをリビルドしない限り位置は変わりません）
+  a(href="https://codepen.io/Mamboleoo/pen/WNxOvjo", target="_blank", rel="noopener noreferrer").c-btn 参考にしたcodepen
