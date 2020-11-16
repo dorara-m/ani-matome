@@ -1,0 +1,8 @@
+.wrap {}
+
+svg {
+  fill: none; //塗りつぶし
+	stroke: dodgerblue; //線の色
+  stroke-width: 10;//先の太さ,px計算
+  stroke-dasharray: calc(80 * 3.14 - 20);
+}
