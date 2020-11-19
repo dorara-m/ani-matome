@@ -26,7 +26,6 @@
             <section>   
               <h2>サンプル</h2>
               <div class="wrap"><svg width="100" height="100" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40"/></svg></div>
-              <button id="js-reload">画面のリロード</button>
             </section>
             <section>   
               <h2>動作環境</h2>
@@ -67,7 +66,8 @@
               <h2>説明</h2>
               <p>ローディングっぽいsvgを自作しちゃうのがポイント。視力検査みたいな一部欠けた円が目標物。</p>
               <p>svgはstroke-dasharrayというプロパティで破線を表現でき、その指定方法は、線・隙間・線・隙間というふうに交互に値を与える。</p>
-              <p>今回は欠けた分の長さの線、が指定できればいい。それを表現するには円周(直径*π)-20pxぐらい。<br>なので `stroke-dasharray: calc(80 * 3.14 - 20);` でおっけい！</p><a class="c-btn" href="https://lopan.jp/loading-circle/" target="_blank" rel="noopener noreferrer">参考サイト</a>
+              <p>今回は欠けた分の長さの線、が指定できればいい。それを表現するには円周(直径*π)-20pxぐらい。<br>なので `stroke-dasharray: calc(80 * 3.14 - 20);` でおっけい！</p>
+              <p>動きについては割愛。</p><a class="c-btn" href="https://lopan.jp/loading-circle/" target="_blank" rel="noopener noreferrer">参考サイト</a>
             </section>
           </div>
         </div>
