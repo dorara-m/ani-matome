@@ -32,21 +32,30 @@ html
         
         .p-top_body
           .l-container
-            each category in categoryList
-              section(id=category)
-                h2=category
-                ul.u-flex
-                  -
-                    var targetItems = items.filter(
-                      function(item) {
-                        return item.category === category
-                      }
-                    )
-                  each val, key in targetItems
-                    li
-                      a(href=val.name_en+"/")
-                        .img(style="background-image: url("+imgPath+"gif/"+val.name_en+".gif);")
-                        h3=val.name_jp 
+            ul.p-top_tab
+              li.active サンプル集
+              li リンク集
+            
+            .p-top_contents
+              section
+                h2 サンプル集
+                each category in categoryList
+                  section
+                    h3=category
+                    ul.u-flex
+                      -
+                        var targetItems = items.filter(
+                          function(item) {
+                            return item.category === category
+                          }
+                        )
+                      each val, key in targetItems
+                        li
+                          a(href=val.name_en+"/")
+                            .img(style="background-image: url("+imgPath+"gif/"+val.name_en+".gif);")
+                            h4=val.name_jp
+              section
+                h2 リンク集
 
   script(src='https://code.jquery.com/jquery-3.5.1.min.js')
   script(src="/assets/scripts/main.js")

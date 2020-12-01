@@ -1,7 +1,7 @@
 .p-top {
   padding: 40px 0;
   &_head {
-    margin-bottom: 50px;
+    margin-bottom: 40px;
     h1 {
       font-size: 50px;
       letter-spacing: 0.03em;
@@ -13,11 +13,28 @@
     }
   }
 
-  &_body {
+  &_tab {
+    display: flex;
+    font-weight: bold;
+    font-size: 20px;
+    li {
+      padding: 0 20px;
+      color: #999;
+      &.active {
+        color: #333;
+      }
+    }
+  }
+
+  &_contents {
+    padding-top: 30px;
+    h2 {
+      display: none;
+    }
     section + section {
       margin-top: 50px;
     }
-    h2 {
+    h3 {
       font-size: 24px;
       margin-bottom: 15px;
       &::first-letter {
@@ -29,8 +46,9 @@
       > li {
         width: 33.3%;
         padding: 10px;
-        h3 {
+        h4 {
           text-align: center;
+          font-weight: bold;
         }
         .img {
           border: 1px solid #ddd;
