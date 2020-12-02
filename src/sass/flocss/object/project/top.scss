@@ -1,7 +1,7 @@
 .p-top {
   padding: 40px 0;
   &_head {
-    margin-bottom: 40px;
+    margin-bottom: 50px;
     h1 {
       font-size: 50px;
       letter-spacing: 0.03em;
@@ -16,18 +16,35 @@
   &_tab {
     display: flex;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 16px;
     li {
-      padding: 0 20px;
-      color: #999;
+      padding: 10px 20px;
+      width: 200px;
+      border: 1px solid #444;
+      border-bottom: none;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      color: #fff;
+      background-color: #bbb;
+      + li {
+        border-left: none;
+      }
       &.active {
-        color: #333;
+        background-color: #444;
       }
     }
   }
 
+  &_body {
+    .l-container {
+      max-width: 900px;
+    }
+  }
+
   &_contents {
-    padding-top: 30px;
+    padding: 0 20px;
+    border: 1px solid #444;
+    padding-top: 40px;
     h2 {
       display: none;
     }
