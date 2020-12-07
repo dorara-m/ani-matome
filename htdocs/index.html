@@ -18,72 +18,81 @@
         </div>
         <div class="p-top_body">
           <div class="l-container">
-            <ul class="p-top_tab">
-              <li class="active">サンプル集</li>
-              <li>リンク集</li>
+            <ul class="p-top_tab" id="js-tab">
+              <li class="active">サンプル</li>
+              <li>リンク</li>
             </ul>
-            <div class="p-top_contents">
-              <section>
-                <h2>サンプル集</h2>
+            <ul class="p-top_contents" id="js-cnt">
+              <li class="active">
                 <section>
-                  <h3>decoration</h3>
-                  <ul class="u-flex">
-                    <li><a href="picopico/">
-                        <div class="img" style="background-image: url(/assets/images/gif/picopico.gif);"></div>
-                        <h4>ピコピコ</h4></a></li>
-                    <li><a href="roundShow01/">
-                        <div class="img" style="background-image: url(/assets/images/gif/roundShow01.gif);"></div>
-                        <h4>円が広がってアイテムがスライドイン</h4></a></li>
-                    <li><a href="cssOnlySlides01/">
-                        <div class="img" style="background-image: url(/assets/images/gif/cssOnlySlides01.gif);"></div>
-                        <h4>cssだけのスライドショー,白フェードver.</h4></a></li>
-                    <li><a href="cssOnlySlides02/">
-                        <div class="img" style="background-image: url(/assets/images/gif/cssOnlySlides02.gif);"></div>
-                        <h4>cssだけのスライドショー,クロスver.</h4></a></li>
-                  </ul>
+                  <h2>サンプル</h2>
+                  <section>
+                    <h3>装飾系</h3>
+                    <ul class="u-flex">
+                      <li><a href="picopico/">
+                          <div class="img" style="background-image: url(/assets/images/gif/picopico.gif);"></div>
+                          <h4>ピコピコ</h4></a></li>
+                      <li><a href="roundShow01/">
+                          <div class="img" style="background-image: url(/assets/images/gif/roundShow01.gif);"></div>
+                          <h4>円が広がってアイテムがスライドイン</h4></a></li>
+                      <li><a href="cssOnlySlides01/">
+                          <div class="img" style="background-image: url(/assets/images/gif/cssOnlySlides01.gif);"></div>
+                          <h4>cssだけのスライドショー,白フェードver.</h4></a></li>
+                      <li><a href="cssOnlySlides02/">
+                          <div class="img" style="background-image: url(/assets/images/gif/cssOnlySlides02.gif);"></div>
+                          <h4>cssだけのスライドショー,クロスver.</h4></a></li>
+                    </ul>
+                  </section>
+                  <section>
+                    <h3>ローディング系</h3>
+                    <ul class="u-flex">
+                      <li><a href="across/">
+                          <div class="img" style="background-image: url(/assets/images/gif/across.gif);"></div>
+                          <h4>画面横切り</h4></a></li>
+                      <li><a href="circle01/">
+                          <div class="img" style="background-image: url(/assets/images/gif/circle01.gif);"></div>
+                          <h4>くるくる</h4></a></li>
+                    </ul>
+                  </section>
+                  <section>
+                    <h3>背景</h3>
+                    <ul class="u-flex">
+                      <li><a href="starrySky/">
+                          <div class="img" style="background-image: url(/assets/images/gif/starrySky.gif);"></div>
+                          <h4>星空っぽいなにか</h4></a></li>
+                    </ul>
+                  </section>
                 </section>
+              </li>
+              <li>
                 <section>
-                  <h3>loading</h3>
-                  <ul class="u-flex">
-                    <li><a href="across/">
-                        <div class="img" style="background-image: url(/assets/images/gif/across.gif);"></div>
-                        <h4>画面横切り</h4></a></li>
-                    <li><a href="circle01/">
-                        <div class="img" style="background-image: url(/assets/images/gif/circle01.gif);"></div>
-                        <h4>くるくる</h4></a></li>
-                  </ul>
+                  <h2>リンク</h2>
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>サイト</th>
+                        <th>カテゴリー</th>
+                        <th>サンプル</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr id="1">
+                        <td><a href="https://www.nxworld.net/css-only-button-design-and-hover-effects.html" target="_blank" rel="noopener noreferrer">CSSのみで実装するボタンデザインやホバーエフェクト</a></td>
+                        <td>装飾系</td>
+                        <td> <span>-</span>
+                        </td>
+                      </tr>
+                      <tr id="2">
+                        <td><a href="https://www.nxworld.net/css-only-button-design-and-hover-effects.html" target="_blank" rel="noopener noreferrer">CSSのみで実装するボタンデザインやホバーエフェクト</a></td>
+                        <td>装飾系</td>
+                        <td> <a href="/circle01/">あり→</a>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
                 </section>
-                <section>
-                  <h3>background</h3>
-                  <ul class="u-flex">
-                    <li><a href="starrySky/">
-                        <div class="img" style="background-image: url(/assets/images/gif/starrySky.gif);"></div>
-                        <h4>星空っぽいなにか</h4></a></li>
-                  </ul>
-                </section>
-              </section>
-              <section>
-                <h2>リンク集</h2>
-                <table>
-                  <thead>
-                    <tr>
-                      <th>タイトル</th>
-                      <th>カテゴリー</th>
-                      <th>url</th>
-                      <th>サンプル</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>あにめ</td>
-                      <td>ホバー</td>
-                      <td><a href="https://lopan.jp/loading-circle/" target="_blank" rel="noopener noreferrer">https://lopan.jp/loading-circle/</a></td>
-                      <td><a href="/circle01/">ぼたん</a></td>
-                    </tr>
-                  </tbody>
-                </table>
-              </section>
-            </div>
+              </li>
+            </ul>
           </div>
         </div>
       </div>

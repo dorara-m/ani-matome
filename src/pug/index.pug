@@ -31,46 +31,50 @@ html
         
         .p-top_body
           .l-container
-            ul.p-top_tab
-              li.active サンプル集
-              li リンク集
+            ul.p-top_tab#js-tab
+              li.active サンプル
+              li リンク
             
-            .p-top_contents
-              section
-                h2 サンプル集
-                each category in categoryList
-                  section
-                    h3=category
-                    ul.u-flex
-                      -
-                        var targetItems = items.filter(
-                          function(item) {
-                            return item.category === category
-                          }
-                        )
-                      each val, key in targetItems
-                        li
-                          a(href=val.name_en+"/")
-                            .img(style="background-image: url("+imgPath+"gif/"+val.name_en+".gif);")
-                            h4=val.name_jp
-              
-              section
-                h2 リンク集
-                table
-                  thead
-                    tr
-                      th タイトル
-                      th カテゴリー
-                      th url
-                      th サンプル
-                  tbody
-                    tr
-                      td あにめ
-                      td ホバー
-                      td
-                        a(href="https://lopan.jp/loading-circle/", target="_blank", rel="noopener noreferrer") https://lopan.jp/loading-circle/
-                      td
-                        a(href="/circle01/") ぼたん
+            ul.p-top_contents#js-cnt
+              li.active
+                section
+                  h2 サンプル
+                  each category in categoryList
+                    section
+                      h3=category
+                      ul.u-flex
+                        -
+                          var targetItems = items.filter(
+                            function(item) {
+                              return item.category === category
+                            }
+                          )
+                        each val, key in targetItems
+                          li
+                            a(href=val.name_en+"/")
+                              .img(style="background-image: url("+imgPath+"gif/"+val.name_en+".gif);")
+                              h4=val.name_jp
+                
+              li
+                section
+                  h2 リンク
+                  table
+                    thead
+                      tr
+                        th サイト
+                        th カテゴリー
+                        th サンプル
+                    tbody
+                      each val in links
+                        tr(id=val.id)
+                          td
+                            a(href=val.link, target="_blank", rel="noopener noreferrer") #{val.name}
+                          td=val.category
+                          td 
+                            if val.sample
+                              a(href=val.sample) あり→
+                            else
+                              span -
 
   script(src='https://code.jquery.com/jquery-3.5.1.min.js')
   script(src="/assets/scripts/main.js")

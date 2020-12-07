@@ -24,13 +24,14 @@
       border-bottom: none;
       border-top-left-radius: 10px;
       border-top-right-radius: 10px;
-      color: #fff;
-      background-color: #bbb;
+      color: #444;
+      cursor: pointer;
       + li {
         border-left: none;
       }
       &.active {
         background-color: #444;
+        color: #fff;
       }
     }
   }
@@ -43,10 +44,16 @@
 
   &_contents {
     padding: 0 20px;
-    border: 1px solid #444;
+    border-top: 1px solid #444;
     padding-top: 40px;
     h2 {
       display: none;
+    }
+    > li {
+      display: none;
+      &.active {
+        display: block;
+      }
     }
     section + section {
       margin-top: 50px;
@@ -76,5 +83,20 @@
         }
       }
     } 
+  }
+
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    th, td {
+      border: 1px solid #444;
+    }
+    th {
+      padding: 7px;
+      background-color: #ddd;
+    }
+    td {
+      padding: 16px;
+    }
   }
 }
