@@ -91,12 +91,19 @@
     th, td {
       border: 1px solid #444;
     }
-    th {
+    thead th {
       padding: 7px;
       background-color: #ddd;
     }
-    td {
+    tbody th,td {
       padding: 16px;
+    }
+    a {
+      text-decoration: underline;
+      color: rgb(79, 171, 208);
+      &:hover {
+        color: steelblue;
+      }
     }
   }
 }

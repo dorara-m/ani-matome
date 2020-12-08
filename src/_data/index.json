@@ -4,13 +4,13 @@
       "id": 1,
       "name": "CSSのみで実装するボタンデザインやホバーエフェクト",
       "link": "https://www.nxworld.net/css-only-button-design-and-hover-effects.html",
-      "category": "装飾系"
+      "category": "装飾"
     },
     {
       "id": 2,
-      "name": "CSSのみで実装するボタンデザインやホバーエフェクト",
-      "link": "https://www.nxworld.net/css-only-button-design-and-hover-effects.html",
-      "category": "装飾系",
+      "name": "ローディングのくるくる",
+      "link": "https://lopan.jp/loading-circle/",
+      "category": "ローディング",
       "sample": "/circle01/"
     }
   ], 
@@ -19,7 +19,7 @@
       "id": 1,
       "name_jp": "ピコピコ",
       "name_en": "picopico",
-      "category": "装飾系",
+      "category": "装飾",
       "blowser" : {
         "chrome": 0,
         "edge": 3,
@@ -34,7 +34,7 @@
       "id": 2,
       "name_jp": "画面横切り",
       "name_en": "across",
-      "category": "ローディング系",
+      "category": "ローディング",
       "blowser" : {
         "chrome": 0,
         "edge": 0,
@@ -49,7 +49,7 @@
       "id": 3,
       "name_jp": "円が広がってアイテムがスライドイン",
       "name_en": "roundShow01",
-      "category": "装飾系",
+      "category": "装飾",
       "blowser" : {
         "chrome": 0,
         "edge": 3,
@@ -64,7 +64,7 @@
       "id": 4,
       "name_jp": "cssだけのスライドショー,白フェードver.",
       "name_en": "cssOnlySlides01",
-      "category": "装飾系",
+      "category": "装飾",
       "blowser" : {
         "chrome": 0,
         "edge": 3,
@@ -79,7 +79,7 @@
       "id": 5,
       "name_jp": "cssだけのスライドショー,クロスver.",
       "name_en": "cssOnlySlides02",
-      "category": "装飾系",
+      "category": "装飾",
       "blowser" : {
         "chrome": 0,
         "edge": 3,
@@ -109,7 +109,7 @@
       "id": 7,
       "name_jp": "くるくる",
       "name_en": "circle01",
-      "category": "ローディング系",
+      "category": "ローディング",
       "blowser" : {
         "chrome": 0,
         "edge": 3,
