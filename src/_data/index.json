@@ -2,16 +2,46 @@
   "links": [
     {
       "id": 1,
-      "name": "CSSのみで実装するボタンデザインやホバーエフェクト",
+      "name": "ボタンホバー いろいろ",
       "link": "https://www.nxworld.net/css-only-button-design-and-hover-effects.html",
       "category": "装飾"
     },
     {
       "id": 2,
+      "name": "ボタンホバー 背景系",
+      "link": "https://www.nxworld.net/10-css-hover-fill-animation.html",
+      "category": "装飾"
+    },
+    {
+      "id": 3,
+      "name": "矢印付きボタンホバー",
+      "link": "https://www.nxworld.net/css-button-arrow-hover-effect.html",
+      "category": "装飾"
+    },
+    {
+      "id": 4,
+      "name": "ゴーストボタンホバー",
+      "link": "https://www.nxworld.net/css-ghost-button-good-chemistry-hover-effect.html",
+      "category": "装飾"
+    },
+    {
+      "id": 5,
+      "name": "画像が複数枚あることを伝えるアニメ",
+      "link": "https://www.nxworld.net/css-hover-images-preview-animation.html",
+      "category": "装飾"
+    },
+    {
+      "id": 6,
       "name": "ローディングのくるくる",
       "link": "https://lopan.jp/loading-circle/",
       "category": "ローディング",
       "sample": "/circle01/"
+    },
+    {
+      "id": 7,
+      "name": "スクロールできることを伝えるラインアニメ",
+      "link": "https://www.nxworld.net/css-scroll-down-line.html",
+      "category": "スクロール"
     }
   ], 
   "items": [
