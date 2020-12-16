@@ -25,9 +25,12 @@ root/
   └── README.md
 ```
 
-## ページ追加の手順
+## リンク追加の手順
+* index.jsonを適宜編集
+
+## サンプル追加の手順
 1. `index.json`に必要データを記載
 2. `pug/`にjsonのname_enと同名のディレクトリ追加
 3. `pug/sample/index.pug`をコピペして当該ディレクトリ配下に設置。適宜編集
-4. scssファイルは`sass/pages/`配下にjsonのname_enと同名.scssで作成
+4. 個別scssファイルは`sass/pages/`配下にjsonのname_enと同名.scssで作成
 5. 一覧ページにはname_enと同名.gifが配置されるので、完成した動きをgif録画し、`images/gif/`配下に用意。
