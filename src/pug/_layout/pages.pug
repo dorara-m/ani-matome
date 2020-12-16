@@ -14,7 +14,8 @@ html
     
     link(rel="stylesheet", href="/assets/styles/main.css")
     //- 個別css読み込み
-    link(rel="stylesheet", href=`/assets/styles/pages/${thisItem.name_en}.css`)      
+    block addCss
+    link(rel="stylesheet", href=`/assets/styles/pages/${thisItem.name_en}.css`)  
   body
     .l-wrap
       include inc/header
@@ -58,7 +59,7 @@ html
                         when 2
                           td(data-status="☓") ☓
                         when 3
-                          td(data-status="-") 確認中
+                          td(data-status="-") 調査中
                         default
                           td(data-status="-") invalid
                       

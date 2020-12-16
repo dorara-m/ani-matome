@@ -1,0 +1,25 @@
+.dots-wrap {
+  padding: 20px 0;
+  display: flex;
+}
+
+.dots-item {
+  counter-increment: cnt;
+  position: relative;
+  width: 100px;
+  height: 100px;
+  box-shadow: 1px 1px 3px #999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &::before {
+    content: counter(cnt);
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 5px;
+  }
+  + .dots-item  {
+    margin-left: 20px;
+  }
+}
