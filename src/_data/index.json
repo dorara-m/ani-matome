@@ -32,15 +32,27 @@
     },
     {
       "id": 6,
+      "name": "動くリンク下線",
+      "link": "https://lopan.jp/link-underline/",
+      "category": "装飾"
+    },
+    {
+      "id": 7,
       "name": "ローディングのくるくる",
       "link": "https://lopan.jp/loading-circle/",
       "category": "ローディング",
       "sample": "/circle01/"
     },
     {
-      "id": 7,
+      "id": 8,
       "name": "スクロールできることを伝えるラインアニメ",
       "link": "https://www.nxworld.net/css-scroll-down-line.html",
+      "category": "スクロール"
+    },
+    {
+      "id": 9,
+      "name": "スクロールでパラパラ漫画",
+      "link": "https://lopan.jp/scroll-parapara-of-css-only/",
       "category": "スクロール"
     }
   ], 
