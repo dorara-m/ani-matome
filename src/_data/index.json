@@ -164,9 +164,24 @@
     },
     {
       "id": 8,
-      "name_jp": "3点リーダー",
+      "name_jp": "プラグインでつくる3点リーダー",
       "name_en": "3dots",
       "category": "ローディング",
+      "blowser" : {
+        "chrome": 0,
+        "edge": 3,
+        "firefox": 3,
+        "ie": 3,
+        "safari": 3,
+        "android": 3,
+        "ios": 3
+      }
+    },
+    {
+      "id": 9,
+      "name_jp": "ホバーまとめ テキスト系",
+      "name_en": "hover01",
+      "category": "装飾",
       "blowser" : {
         "chrome": 0,
         "edge": 3,

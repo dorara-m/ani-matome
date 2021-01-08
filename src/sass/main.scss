@@ -29,3 +29,25 @@
     opacity: .7;
   }
 }
+
+.c-list {
+  &_disc {
+    margin-bottom: 20px;
+  }
+  li {
+    margin-bottom: 10px;
+    border: 1px solid #444;
+    border-radius: 5px;
+    padding: 30px;
+    counter-increment: cnt;
+    dt {
+      &::before {
+        content: "0"counter(cnt);
+        margin-right: .5em;
+      }
+      font-weight: bold;
+      color: brown;
+      margin-bottom: 15px;
+    }
+  }
+}

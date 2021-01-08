@@ -1,0 +1,47 @@
+extend ../_layout/pages
+
+block id
+  - var id = 9
+
+block sampleContent
+  .c-list
+    p.c-list_disc テキスト系のホバーまとめです。
+    ul
+      li: dl
+        dt 左から右へ枠線が抜けていく
+        dd
+          .hover01_item.borderLeftRight Hover me
+      li: dl
+        dt 下から枠線がふわっと出てくる
+        dd
+          .hover01_item.borderFade Hover me
+      li: dl
+        dt 左から右へ箱が抜ける＆取り消し線
+        dd
+          .hover01_item.lineThrough Hover me
+      li: dl
+        dt ちょっと字下げ＆色変
+        dd
+          .hover01_item.textTransformX Hover me
+      li: dl
+        dt 水平にぐらぐら
+        dd
+          .hover01_item.swingHorizontal Hover me
+      li: dl
+        dt マーカー風の枠線が広がる
+        dd
+          .hover01_item.borderMarker Hover me
+      li: dl
+        dt ちょっと拡大＆色変 / クリックで縮小
+        dd
+          .hover01_item.magnifyText Hover & click me
+      li: dl
+        dt 複数アイテムのときのon/off
+        dd
+          .hover01_item.siblingFade
+            span item1
+            span item2
+
+
+block descContent
+  a(href="https://emilkowalski.github.io/css-effects-snippets/", target="_blank", rel="noopener noreferrer").c-btn 元ネタ
