@@ -1,53 +1,13 @@
-@import "flocss/foundation/reset.scss";
-@import "flocss/foundation/base.scss";
-@import "flocss/foundation/function.scss";
+@import "flocss/foundation/reset";
+@import "flocss/foundation/base";
+@import "flocss/foundation/function";
 
-@import "flocss/layout/wrap.scss";
-@import "flocss/layout/header.scss";
-@import "flocss/layout/pages.scss";
+@import "flocss/layout/wrap";
+@import "flocss/layout/header";
+@import "flocss/layout/pages";
 
-@import "flocss/object/project/top.scss";
+@import "flocss/object/project/top";
+@import "flocss/object/component/btn";
+@import "flocss/object/component/list";
 
-@import "flocss/object/utility/utility.scss";
-
-.c-btn {
-  margin-top: 30px;
-  display: inline-block;
-  height: 40px;
-  max-width: 200px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 13px 15px;
-  border: 2px solid #444;
-  border-radius: 10px;
-  &::after {
-    content: "→";
-    display: block;
-  }
-  &:hover {
-    opacity: .7;
-  }
-}
-
-.c-list {
-  &_disc {
-    margin-bottom: 20px;
-  }
-  li {
-    margin-bottom: 10px;
-    border: 1px solid #444;
-    border-radius: 5px;
-    padding: 30px;
-    counter-increment: cnt;
-    dt {
-      &::before {
-        content: "0"counter(cnt);
-        margin-right: .5em;
-      }
-      font-weight: bold;
-      color: brown;
-      margin-bottom: 15px;
-    }
-  }
-}
+@import "flocss/object/utility/utility";

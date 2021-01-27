@@ -1,0 +1,19 @@
+.c-btn {
+  margin-top: 30px;
+  display: inline-block;
+  height: 40px;
+  max-width: 200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 13px 15px;
+  border: 2px solid #444;
+  border-radius: 10px;
+  &::after {
+    content: "→";
+    display: block;
+  }
+  &:hover {
+    opacity: .7;
+  }
+}
