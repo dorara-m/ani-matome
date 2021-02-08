@@ -206,6 +206,21 @@
         "android": 3,
         "ios": 3
       }
+    },
+    {
+      "id": 11,
+      "name_jp": "ライブラリで動くsvg文字アニメ",
+      "name_en": "vivus",
+      "category": "装飾",
+      "blowser" : {
+        "chrome": 0,
+        "edge": 3,
+        "firefox": 3,
+        "ie": 3,
+        "safari": 3,
+        "android": 3,
+        "ios": 3
+      }
     }
   ]
 }
