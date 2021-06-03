@@ -26,7 +26,7 @@ root/
 ```
 
 ## リンク追加の手順
-* index.jsonを適宜編集
+* index.jsonにデータを追記するだけ
 
 ## サンプル追加の手順
 1. `index.json`に必要データを記載
@@ -35,11 +35,14 @@ root/
 4. 個別scssファイルは`sass/pages/`配下にjsonのname_enと同名.scssで作成
 5. 一覧ページにはname_enと同名.gifが配置されるので、完成した動きをgif録画し、`images/gif/`配下に用意。
 
-## done
+## Task
+### done
 * AFの基本を覚える
+* タブでafterEffectでつくった系のやついれる。
+* リンクタブに追加する方法をまとめる
 
-## todo
-### 構成編
+### todo
+#### 構成編
 * afで作ったものをyoutubeにあげるので、それを自動取得できるようにする。
 * cssを1ファイルにまとめる
 * cssのソースが見れるように。コピペ機能も必須。
@@ -49,13 +52,15 @@ root/
 * リスト機能をサンプルに対して作るテーブルとして、そこから参考サイト、コピペができるようにする
 * 各ページのogpに画像が自動吐き出ししたい。
   
-### コンテンツ編
+#### コンテンツ編
 * aftereffectで再現もすれば、動画活動とリンクできる。
-  * 簡単なものから再現（ex.ピコピコ @doing
+  * lotteで読み込み。（https://techblog.raccoon.ne.jp/archives/1575508778.html）
+  * 簡単なものから再現（ex.ピコピコ @doing]
 * コンテンツが順にふわふわと順番で出てくるアニメ
 * svgアニメを充実させたい
   * [UI改善にキラリと役立つ！ SVGアニメーションの作り方まとめ - ICS MEDIA](https://ics.media/entry/15970/)
   * [コピペで使える！ CSS Animationだけで実現するキャラクターアニメーション - ICS MEDIA](https://ics.media/entry/11336/)
   * [コピペで使える！ CSS Animationだけで実現するキャラクターアニメーション - ICS MEDIA](https://ics.media/entry/11336/)
+  * https://techblog.raccoon.ne.jp/archives/1569826832.html
 * サンプルを実際に自作できるようになりたい
   
