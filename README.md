@@ -40,6 +40,7 @@ root/
 * AFの基本を覚える
 * タブでafterEffectでつくった系のやついれる。
 * リンクタブに追加する方法をまとめる
+* gifがない場合はjsonにgif:trueを指定しない
 
 ### todo
 #### 構成編
@@ -54,8 +55,11 @@ root/
   
 #### コンテンツ編
 * aftereffectで再現もすれば、動画活動とリンクできる。
-  * lotteで読み込み。（https://techblog.raccoon.ne.jp/archives/1575508778.html）
-  * 簡単なものから再現（ex.ピコピコ @doing]
+  * lotteで読み込み。（https://techblog.raccoon.ne.jp/archives/1575508778.html
+    * -> bodymainで出力はできた。デモのhtmlはすごいけど後から触りにくそう。一旦デモのやつ置く
+      * https://b-risk.jp/blog/2020/05/lottie-animation/ @done
+    * jsonだけで入力をためす @doing
+  * 簡単なものから再現（ex.ピコピコ
 * コンテンツが順にふわふわと順番で出てくるアニメ
 * svgアニメを充実させたい
   * [UI改善にキラリと役立つ！ SVGアニメーションの作り方まとめ - ICS MEDIA](https://ics.media/entry/15970/)

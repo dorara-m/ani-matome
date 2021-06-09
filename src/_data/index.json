@@ -67,6 +67,7 @@
       "id": 1,
       "name_jp": "ピコピコ",
       "name_en": "picopico",
+      "gif": true,
       "category": "装飾",
       "blowser" : {
         "chrome": 0,
@@ -82,6 +83,7 @@
       "id": 2,
       "name_jp": "画面横切り",
       "name_en": "across",
+      "gif": true,
       "category": "ローディング",
       "blowser" : {
         "chrome": 0,
@@ -97,6 +99,7 @@
       "id": 3,
       "name_jp": "円が広がってアイテムがスライドイン",
       "name_en": "roundShow01",
+      "gif": true,
       "category": "装飾",
       "blowser" : {
         "chrome": 0,
@@ -112,6 +115,7 @@
       "id": 4,
       "name_jp": "cssだけのスライドショー,白フェードver.",
       "name_en": "cssOnlySlides01",
+      "gif": true,
       "category": "装飾",
       "blowser" : {
         "chrome": 0,
@@ -127,6 +131,7 @@
       "id": 5,
       "name_jp": "cssだけのスライドショー,クロスver.",
       "name_en": "cssOnlySlides02",
+      "gif": true,
       "category": "装飾",
       "blowser" : {
         "chrome": 0,
@@ -142,6 +147,7 @@
       "id": 6,
       "name_jp": "星空っぽいなにか",
       "name_en": "starrySky",
+      "gif": true,
       "category": "背景",
       "blowser" : {
         "chrome": 0,
@@ -157,6 +163,7 @@
       "id": 7,
       "name_jp": "くるくる",
       "name_en": "circle01",
+      "gif": true,
       "category": "ローディング",
       "blowser" : {
         "chrome": 0,
@@ -172,6 +179,7 @@
       "id": 8,
       "name_jp": "プラグインでつくる3点リーダー",
       "name_en": "3dots",
+      "gif": true,
       "category": "ローディング",
       "blowser" : {
         "chrome": 0,
@@ -187,6 +195,7 @@
       "id": 9,
       "name_jp": "ホバーまとめ テキスト系",
       "name_en": "hover01",
+      "gif": true,
       "category": "装飾",
       "blowser" : {
         "chrome": 0,
@@ -217,6 +226,21 @@
       "id": 11,
       "name_jp": "ライブラリで動くsvg文字アニメ",
       "name_en": "vivus",
+      "gif": true,
+      "category": "装飾",
+      "blowser" : {
+        "chrome": 0,
+        "edge": 3,
+        "firefox": 3,
+        "ie": 3,
+        "safari": 3,
+        "android": 3,
+        "ios": 3
+      }
+    },
+    {
+      "name_jp": "AF書き出しデモ",
+      "name_en": "afdemo01",
       "category": "装飾",
       "blowser" : {
         "chrome": 0,
