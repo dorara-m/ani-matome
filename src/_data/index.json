@@ -239,8 +239,24 @@
       }
     },
     {
-      "name_jp": "AF書き出しデモ",
+      "id": 12,
+      "name_jp": "【AF】書き出しデモ01",
       "name_en": "afdemo01",
+      "category": "装飾",
+      "blowser" : {
+        "chrome": 0,
+        "edge": 3,
+        "firefox": 3,
+        "ie": 3,
+        "safari": 3,
+        "android": 3,
+        "ios": 3
+      }
+    },
+    {
+      "id": 13,
+      "name_jp": "【AF】Lottieデモ01",
+      "name_en": "afdemo01-1",
       "category": "装飾",
       "blowser" : {
         "chrome": 0,
