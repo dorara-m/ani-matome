@@ -1,5 +1,6 @@
 .l-pages {
   padding: 50px 0;
+
   &_head {
     h1 {
       font-size: 35px;
@@ -7,6 +8,7 @@
     }
     margin-bottom: 50px;
   }
+
   &_content {
     > section {
       margin-bottom: 50px;
@@ -16,8 +18,15 @@
       }
       p {
         line-height: 1.7;
+        > a {
+          color: cornflowerblue;
+          display: inline;
+          &:hover {
+            text-decoration: underline;
+          }
+        }
         + p {
-          margin-top: 16px;
+          margin-top: 20px;
         }
       }
     }

@@ -240,9 +240,10 @@
     },
     {
       "id": 12,
-      "name_jp": "【AF】書き出しデモ01",
+      "name_jp": "【AF】HTMLに直書き出しデモ",
       "name_en": "afdemo01",
       "category": "装飾",
+      "gif": true,
       "blowser" : {
         "chrome": 0,
         "edge": 3,
@@ -258,6 +259,7 @@
       "name_jp": "【AF】Lottieデモ01",
       "name_en": "afdemo01-1",
       "category": "装飾",
+      "gif": true,
       "blowser" : {
         "chrome": 0,
         "edge": 3,
