@@ -1,77 +1,132 @@
-var gulp = require('gulp');
-var data = require('gulp-data');
-var fs = require('fs');
-var plumber = require('gulp-plumber');
-var notify = require('gulp-notify');
-var browserSync = require('browser-sync');
+// gulp系
+const { gulp, src, dest, watch, lastRun, parallel } = require('gulp')
+const plumber = require('gulp-plumber')
+const notify = require('gulp-notify')
+const browserSync = require('browser-sync')
 
-var pug = require('gulp-pug');
-var sass = require('gulp-sass');
-var autoprefixer = require('gulp-autoprefixer');
-var minifycss = require('gulp-clean-css');
-var babel = require('gulp-babel');
-var imagemin = require('gulp-imagemin');
+// pug系
+const fs = require('fs')
+const data  = require('gulp-data')
+const gulpPug = require('gulp-pug')
 
-var mozjpeg = require('imagemin-mozjpeg');
+// scss系
+const sassGlob = require("gulp-sass-glob")
+const gulpSass = require('gulp-sass')(require('sass'))
+const postcss = require("gulp-postcss")
+const autoprefixer = require('gulp-autoprefixer')
 
+// js系
+const babel = require('gulp-babel')
 
+// 画像系
+const imagemin = require('gulp-imagemin')
+const mozjpeg = require('imagemin-mozjpeg')
 
-// pug
-gulp.task('pug', function(){
-  var jsonData = JSON.parse(fs.readFileSync('src/_data/index.json', 'utf8'));
-  var option = {
-    data: jsonData,
-    pretty: true
+// パスまとめ
+const path = {
+  json: 'src/_data/index.json',
+  pug: {
+    src: 'src/pug/!(_)**/*.pug',
+    dist: 'htdocs/',
+    basedir: 'src/pug/'
+  },
+  scss: {
+    src: 'src/scss/**/*.scss',
+    dist: 'htdocs/assets/styles/',
+    pages: {
+      src: 'src/sass/pages/*scss',
+      dist: 'htdocs/assets/styles/pages/'
+    }
+  },
+  babel: {
+    src: 'src/js/**/*.js',
+    dist: 'htdocs/assets/scripts/'
+  },
+  images: {
+    src: 'src/images/**/*.{png,jpg,gif,svg}',
+    dist: 'htdocs/assets/images/'
   }
-  gulp.src(['src/pug/**/*.pug', '!src/pug/_*/*.pug'])
+}
+
+
+// pug -> html
+const pugFunc = () => {
+  const jsonData ={
+    site: JSON.parse(fs.readFileSync(path.json))
+  }
+  return src(path.pug.src)
+    .pipe(plumber({
+      errorHandler: notify.onError('Error: <%= error.message %>')
+    }))
+    .pipe(data(jsonData))
+    .pipe(
+      gulpPug({
+        // ルート相対パスでincludeが使えるようにする
+        basedir: path.pug.basedir,
+        // Pugファイルの整形
+        pretty: true,
+      })
+    )
+    .pipe(dest(path.pug.dist))
+    .pipe(browserSync.reload({ stream: true }))
+}
+
+
+// scss -> main.css
+const scssFunc = () => {
+  return src(path.scss.src, { sourcemaps: true })
   .pipe(plumber({
     errorHandler: notify.onError('Error: <%= error.message %>')
   }))
-  .pipe(pug(option))
-  .pipe(gulp.dest('htdocs/'))
-});
+  .pipe(sassGlob())
+  .pipe(gulpSass())
+  .pipe(
+    postcss([
+      autoprefixer({
+        cascade: false,
+        grid: true
+      })
+    ])
+  )
+  .pipe(dest(path.scss.dist, { sourcemaps: "./map" }))
+  .pipe(browserSync.reload({ stream: true }))
+}
 
-// sass
-gulp.task('sass', function(){
-  gulp.src('src/sass/*scss')
+// page独自のcssページ
+const scssPagesFunc = () => {
+  return src(path.scss.pages.src)
   .pipe(plumber({
     errorHandler: notify.onError('Error: <%= error.message %>')
   }))
-  .pipe(sass())
-  .pipe(autoprefixer({
-    cascade: false
-  }))
-  .pipe(minifycss())
-  .pipe(gulp.dest('htdocs/assets/styles/'))
-});
+  .pipe(gulpSass())
+  .pipe(
+    postcss([
+      autoprefixer({
+        cascade: false,
+        grid: true
+      })
+    ])
+  )
+  .pipe(dest(path.scss.pages.dist))
+  .pipe(browserSync.reload({ stream: true }))
+}
 
-//sass-pages
-gulp.task('sass-pages', function(){
-  gulp.src('src/sass/pages/*scss')
-  .pipe(plumber({
-    errorHandler: notify.onError('Error: <%= error.message %>')
-  }))
-  .pipe(sass())
-  .pipe(autoprefixer({
-    cascade: false
-  }))
-  .pipe(minifycss())
-  .pipe(gulp.dest('htdocs/assets/styles/pages/'))
-});
 
-// babel
-gulp.task('babel', function(){
-  gulp.src('src/js/*.js')
+// jsES6 -> jsES5
+const babelFunc = () => {
+  return src(path.babel.src)
   .pipe(plumber({
     errorHandler: notify.onError('Error: <%= error.message %>')
   }))
   .pipe(babel())
-  .pipe(gulp.dest('htdocs/assets/scripts/'))
-});
+  .pipe(dest(path.babel.dist))
+  .pipe(browserSync.reload({ stream: true }))
+}
 
-// images
-gulp.task('images', function(){
-  return gulp.src('src/images/**/*.{png,jpg,gif,svg}')
+
+// imagesMin
+const imagesFunc = () => {
+  return src(path.images.src)
   .pipe(imagemin([
     mozjpeg({
       quality: 85,
@@ -81,31 +136,27 @@ gulp.task('images', function(){
     imagemin.optipng(),
     imagemin.gifsicle()
   ]))
-  .pipe(gulp.dest('htdocs/assets/images/'))
-});
+  .pipe(dest(path.images.dist))
+}
 
-gulp.task('watch', function(){
-  gulp.watch('src/pug/**/*.pug', gulp.task('pug'));
-  gulp.watch('src/_data/index.json', gulp.task('pug'));
-  gulp.watch('src/sass/**/*.scss', gulp.series(gulp.parallel('sass', 'sass-pages')));
-  gulp.watch('src/js/**/*.js', gulp.task('babel'));
-  gulp.watch('src/images/**/*.{png,jpg,gif,svg}', gulp.task('images'));
-});
 
-gulp.task('browser-sync', function(){
+const watchFiles = () => {
+  watch(path.pug.src, pugFunc)
+  watch(path.json, pugFunc)
+  watch(path.scss.src, scssFunc)
+  watch(path.scss.pages.src, scssPagesFunc)
+  watch(path.babel.src, babelFunc);
+  watch(path.images.src, imagesFunc);
+}
+
+const browserSyncFunc = () => {
   browserSync({
     server: {
       baseDir: 'htdocs/'
-    }
-  });
-  gulp.watch('htdocs/*.html', gulp.task('reload'));
-  gulp.watch('htdocs/assets/styles/**/*.css', gulp.task('reload'));
-  gulp.watch('htdocs/assets/scripts/*.js', gulp.task('reload'));
-  gulp.watch('htdocs/assets/images/', gulp.task('reload'));
-});
+    },
+    reloadOnRestart: true
+  })
+}
 
-gulp.task('reload', function(){
-  browserSync.reload();
-});
-
-gulp.task('default', gulp.series(gulp.parallel('browser-sync', 'watch', 'pug', 'sass', 'sass-pages', 'babel', 'images')));
+exports.default = parallel(watchFiles, browserSyncFunc)
+exports.build = parallel(pugFunc, scssFunc, babelFunc, imagesFunc)

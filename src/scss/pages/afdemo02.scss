@@ -1,12 +1,12 @@
 .area {
-  background-color: #333;
+  background-color: #222;
   position: relative;
   height: 400px;
   p {
     color: #fff;
     padding-top: 30px;
     text-align: center;
-    animation: slide 1.5s both .5s;
+    animation: slide 1.5s both;
     @keyframes slide {
       0% {
         opacity: 1;

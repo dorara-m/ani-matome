@@ -18,7 +18,7 @@ html
               span -animatome-
 
         -
-          var list = items.map(
+          var list = site.items.map(
             function(item) {
               return item.category
             }
@@ -45,12 +45,12 @@ html
                       h3=category
                       ul.u-flex
                         -
-                          var targetItems = items.filter(
+                          var targetsite.items = site.items.filter(
                             function(item) {
                               return item.category === category
                             }
                           )
-                        each val, key in targetItems
+                        each val, key in targetsite.items
                           li
                             a(href=val.name_en+"/")
                               if val.gif
@@ -70,7 +70,7 @@ html
                         th カテゴリー
                         th サンプル
                     tbody
-                      each val in links
+                      each val in site.links
                         tr(id=val.id)
                           th
                             a(href=val.link, target="_blank", rel="noopener noreferrer") #{val.name}
@@ -89,7 +89,7 @@ html
                       tr
                         th AfterEffectsでつくったもの
                     tbody
-                      each val in af
+                      each val in site.af
                         tr
                           td
                             a(href=val.link, target="_blank", rel="noopener noreferrer") #{val.name}
