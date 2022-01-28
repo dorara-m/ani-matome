@@ -1,0 +1,104 @@
+.p-top {
+  padding: 40px 0;
+}
+.p-top_head {
+  margin-bottom: 50px;
+}
+.p-top_head h1 {
+  font-size: 50px;
+  letter-spacing: 0.03em;
+  margin-bottom: 25px;
+}
+.p-top_head h1 span {
+  margin-left: 10px;
+  font-size: 30px;
+}
+.p-top_tab {
+  display: flex;
+  font-weight: bold;
+  font-size: 16px;
+}
+.p-top_tab li {
+  padding: 10px 20px;
+  width: 200px;
+  border: 1px solid #444;
+  border-bottom: none;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  color: #444;
+  cursor: pointer;
+}
+.p-top_tab li + li {
+  border-left: none;
+}
+.p-top_tab li.active {
+  background-color: #444;
+  color: #fff;
+}
+.p-top_body .l-container {
+  max-width: 900px;
+}
+.p-top_contents {
+  padding: 0 20px;
+  border-top: 1px solid #444;
+  padding-top: 40px;
+}
+.p-top_contents h2 {
+  display: none;
+}
+.p-top_contents > li {
+  display: none;
+}
+.p-top_contents > li.active {
+  display: block;
+}
+.p-top_contents section + section {
+  margin-top: 50px;
+}
+.p-top_contents h3 {
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+.p-top_contents h3::first-letter {
+  text-transform: uppercase;
+}
+.p-top_contents ul {
+  margin: 0 -10px;
+}
+.p-top_contents ul > li {
+  width: 33.3%;
+  padding: 10px;
+}
+.p-top_contents ul > li h4 {
+  text-align: center;
+  font-weight: bold;
+}
+.p-top_contents ul > li .img {
+  border: 1px solid #ddd;
+  height: 180px;
+  margin-bottom: 10px;
+  background-position: center;
+  background-size: cover;
+}
+.p-top table {
+  border-collapse: collapse;
+  width: 100%;
+}
+.p-top table th, .p-top table td {
+  border: 1px solid #444;
+}
+.p-top table thead th {
+  padding: 7px;
+  background-color: #ddd;
+}
+.p-top table tbody th, .p-top table td {
+  padding: 16px;
+}
+.p-top table a {
+  text-decoration: underline;
+  color: #4fabd0;
+}
+.p-top table a:hover {
+  color: steelblue;
+}
+/*# sourceMappingURL=../../../map/flocss/object/project/top.css.map */

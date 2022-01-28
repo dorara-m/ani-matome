@@ -1,0 +1,32 @@
+extend /_include/_layoutPages
+
+block id
+  - var id = 4
+
+block sampleContent
+  p 1枚につき4秒 × 3枚
+  ul.slider
+    li
+      img(src="/assets/img/bg01.jpg", alt="")
+    li
+      img(src="/assets/img/bg02.jpg", alt="")
+    li
+      img(src="/assets/img/bg03.jpg", alt="")
+
+block descContent
+  p jsを使わずに実装できるのが利点ですが、画像の枚数によって記述を変える必要があるのが弱点。
+  p
+    |基本となる動きは、フェードイン＆アウトのCSSアニメーション。
+    br
+    |スライドにしたい画像は全て一定の枠内に、`position: absolute;`で重ねて配置します。画像のサイズは同じにトリミングされているのが望ましいです。
+    br
+    |そして表示順にアニメーションを付与、2枚目以降は`animation-delay`で数秒ずつ遅れて付与していきます。
+    br
+    |タイミングがうまくあえば、画像が一枚一枚フェードインしてくるスライドショーになります。
+  p
+    |まず1枚に4秒かけて3枚なら 4*3 =12。これがアニメーションの全体の秒数。
+    br
+    |キーフレームの%は枚数一枚分でアニメーションが完結するようにする。
+    br
+    |3枚なら100/3で33%でアニメーション一つが終わるように、0~16%(だいたい中間)でフェードインして16%~33%でフェードアウトしていくように書く。
+  a(href="https://codepen.io/dorara_css/pen/wvwYBVo", target="_blank", rel="noopener noreferrer").c-btn CodePen

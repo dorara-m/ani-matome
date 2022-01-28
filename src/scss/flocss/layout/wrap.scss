@@ -1,8 +1,0 @@
-.l-container {
-  width: calc(100% - 20px - 20px);
-  margin-right: auto;
-  margin-left: auto;
-  @include mq(tablet) {
-    max-width: 860px;
-  }
-}

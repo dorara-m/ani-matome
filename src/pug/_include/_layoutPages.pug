@@ -1,0 +1,70 @@
+block id
+- var thisItem = site.anime[id - 1]
+
+doctype html
+html
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible", content="ie=edge")
+
+    //- 個別タイトル, メタ情報
+    title=thisItem.name_jp
+    meta(name="description" content=`アニメーション「${thisItem.name_jp}」のページです。`)
+
+    include /_include/_css
+    if thisItem.css
+      link(rel="stylesheet", href=`/assets/css/pages/${thisItem.id}_${thisItem.name_en}.css`)
+    block addCss
+  body
+    .l-wrap
+      include /_include/_header
+      //- 個別クラスを付与
+      .l-pages(class="pg-"+thisItem.name_en)
+        block wrapContent
+        .l-container
+          .l-pages_head
+            h1=thisItem.name_jp
+          .l-pages_content
+            section
+              h2 サンプル
+              block sampleContent
+            section
+              h2 動作環境
+              p ○:動作する　△:動作するが意図せぬ挙動　☓:動作しない
+              table.l-pages_table
+                thead
+                  tr
+                    td -
+                    th(colspan="5") PC
+                    th(colspan="2") SP
+                  tr
+                    td ブラウザ
+                    th Chrome
+                    th Edge
+                    th Firefox
+                    th IE
+                    th Safari
+                    th Andoroid Chrome
+                    th IOS safari
+                tbody
+                  tr
+                    th 対応
+                    each val,key in thisItem.blowser
+                      case val
+                        when 0
+                          td(data-status="○") ○
+                        when 1
+                          td(data-status="△") △
+                        when 2
+                          td(data-status="☓") ☓
+                        when 3
+                          td(data-status="-") 調査中
+                        default
+                          td(data-status="-") invalid
+
+            section
+              h2 説明
+              block descContent
+
+  include /_include/_js

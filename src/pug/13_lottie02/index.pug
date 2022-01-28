@@ -1,0 +1,20 @@
+//- レイアウト読み込み
+extend /_include/_layoutPages
+
+block id
+  - var id = 13
+
+block addJs
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.5.9/lottie.min.js" type="text/javascript"></script>
+  script(src="/assets/js/pages/13_lottie02.js")
+
+
+//- ここが自由記述エリア。動作サンプルを実装する。
+block sampleContent
+  .area
+    #lottie
+    p Hello World!!
+
+//- 説明エリア。実装方法、参考サイトなどを書く。
+block descContent
+  p AFから書き出したLottie.jsのアニメーションと、cssアニメーションの同時使用を試しています。

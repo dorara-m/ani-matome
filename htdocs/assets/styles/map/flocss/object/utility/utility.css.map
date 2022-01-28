@@ -1,0 +1,1 @@
+{"version":3,"sourceRoot":"","sources":["flocss/object/utility/utility.scss"],"names":[],"mappings":"AAAA;EACE;EACA;EACA","file":"flocss/object/utility/utility.css","sourcesContent":[".u-flex {\n  display: flex;\n  align-items: flex-start;\n  flex-wrap: wrap;\n}"]}

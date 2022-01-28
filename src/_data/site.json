@@ -1,0 +1,309 @@
+{
+  "url": "https://example.com",
+  "name": "サイト名",
+  "viewport": "width=device-width",
+  "description": "サイトの概要",
+  "keywords": "",
+  "lang": "ja",
+  "locale": "ja_JP",
+  "siteImage": "/ogp.png",
+  "fbAppId": "",
+  "fbAdmins": "",
+  "twitterCard": "summary_large_image",
+  "twitterSite": "",
+  "/": {
+    "name": "トップページ",
+    "description": "トップページの概要",
+    "keywords": "",
+    "ogp": "",
+    "canonical": "",
+    "alternate": ""
+  },
+  "anime": [
+    {
+      "id": "01",
+      "name_jp": "ピコピコ",
+      "name_en": "picopico",
+      "gif": true,
+      "css": true,
+      "category": "装飾",
+      "blowser": {
+        "chrome": 0,
+        "edge": 3,
+        "firefox": 3,
+        "ie": 3,
+        "safari": 3,
+        "android": 3,
+        "ios": 3
+      }
+    },
+    {
+      "id": "02",
+      "name_jp": "画面横切り",
+      "name_en": "across",
+      "gif": true,
+      "css": true,
+      "category": "ローディング",
+      "blowser": {
+        "chrome": 0,
+        "edge": 0,
+        "firefox": 0,
+        "ie": 1,
+        "safari": 0,
+        "android": 0,
+        "ios": 0
+      }
+    },
+    {
+      "id": "03",
+      "name_jp": "円が広がってアイテムがスライドイン",
+      "name_en": "roundShow",
+      "gif": true,
+      "css": true,
+      "category": "装飾",
+      "blowser": {
+        "chrome": 0,
+        "edge": 3,
+        "firefox": 3,
+        "ie": 3,
+        "safari": 3,
+        "android": 3,
+        "ios": 3
+      }
+    },
+    {
+      "id": "04",
+      "name_jp": "cssだけのスライドショー,白フェードver.",
+      "name_en": "cssOnlySlides01",
+      "gif": true,
+      "css": true,
+      "category": "装飾",
+      "blowser": {
+        "chrome": 0,
+        "edge": 3,
+        "firefox": 3,
+        "ie": 3,
+        "safari": 3,
+        "android": 3,
+        "ios": 3
+      }
+    },
+    {
+      "id": "05",
+      "name_jp": "cssだけのスライドショー,クロスver.",
+      "name_en": "cssOnlySlides02",
+      "gif": true,
+      "css": true,
+      "category": "装飾",
+      "blowser": {
+        "chrome": 0,
+        "edge": 3,
+        "firefox": 3,
+        "ie": 3,
+        "safari": 3,
+        "android": 3,
+        "ios": 3
+      }
+    },
+    {
+      "id": "06",
+      "name_jp": "星空 by AmoungUs",
+      "name_en": "starrySky",
+      "gif": true,
+      "css": true,
+      "category": "背景",
+      "blowser": {
+        "chrome": 0,
+        "edge": 3,
+        "firefox": 3,
+        "ie": 3,
+        "safari": 3,
+        "android": 3,
+        "ios": 3
+      }
+    },
+    {
+      "id": "07",
+      "name_jp": "くるくる",
+      "name_en": "circle01",
+      "gif": true,
+      "css": true,
+      "category": "ローディング",
+      "blowser": {
+        "chrome": 0,
+        "edge": 3,
+        "firefox": 3,
+        "ie": 3,
+        "safari": 3,
+        "android": 3,
+        "ios": 3
+      }
+    },
+    {
+      "id": "08",
+      "name_jp": "プラグインでつくる3点リーダー",
+      "name_en": "3dots",
+      "gif": true,
+      "css": true,
+      "category": "ローディング",
+      "blowser": {
+        "chrome": 0,
+        "edge": 3,
+        "firefox": 3,
+        "ie": 3,
+        "safari": 3,
+        "android": 3,
+        "ios": 3
+      }
+    },
+    {
+      "id": "09",
+      "name_jp": "ホバーまとめ テキスト系",
+      "name_en": "hover01",
+      "gif": true,
+      "css": true,
+      "category": "装飾",
+      "blowser": {
+        "chrome": 0,
+        "edge": 3,
+        "firefox": 3,
+        "ie": 3,
+        "safari": 3,
+        "android": 3,
+        "ios": 3
+      }
+    },
+    {
+      "id": "10",
+      "name_jp": "ホバーまとめ ボタン系",
+      "name_en": "hover02",
+      "css": true,
+      "category": "装飾",
+      "blowser": {
+        "chrome": 0,
+        "edge": 3,
+        "firefox": 3,
+        "ie": 3,
+        "safari": 3,
+        "android": 3,
+        "ios": 3
+      }
+    },
+    {
+      "id": "11",
+      "name_jp": "ライブラリで動くsvg文字アニメ",
+      "name_en": "vivus",
+      "gif": true,
+      "category": "装飾",
+      "blowser": {
+        "chrome": 0,
+        "edge": 3,
+        "firefox": 3,
+        "ie": 3,
+        "safari": 3,
+        "android": 3,
+        "ios": 3
+      }
+    },
+    {
+      "id": "12",
+      "name_jp": "Lottie.jsデモ",
+      "name_en": "lottie01",
+      "category": "装飾",
+      "gif": true,
+      "css": true,
+      "blowser": {
+        "chrome": 0,
+        "edge": 3,
+        "firefox": 3,
+        "ie": 3,
+        "safari": 3,
+        "android": 3,
+        "ios": 3
+      }
+    },
+    {
+      "id": "13",
+      "name_jp": "Lottie × cssアニメーション",
+      "name_en": "lottie02",
+      "category": "装飾",
+      "css": true,
+      "blowser": {
+        "chrome": 0,
+        "edge": 0,
+        "firefox": 0,
+        "ie": 0,
+        "safari": 0,
+        "android": 0,
+        "ios": 0
+      }
+    }
+  ],
+  "links": [
+    {
+      "id": 1,
+      "name": "ボタンホバー いろいろ",
+      "link": "https://www.nxworld.net/css-only-button-design-and-hover-effects.html",
+      "category": "装飾"
+    },
+    {
+      "id": 2,
+      "name": "ボタンホバー 背景系",
+      "link": "https://www.nxworld.net/10-css-hover-fill-animation.html",
+      "category": "装飾"
+    },
+    {
+      "id": 3,
+      "name": "矢印付きボタンホバー",
+      "link": "https://www.nxworld.net/css-button-arrow-hover-effect.html",
+      "category": "装飾"
+    },
+    {
+      "id": 4,
+      "name": "ゴーストボタンホバー",
+      "link": "https://www.nxworld.net/css-ghost-button-good-chemistry-hover-effect.html",
+      "category": "装飾"
+    },
+    {
+      "id": 5,
+      "name": "画像が複数枚あることを伝えるアニメ",
+      "link": "https://www.nxworld.net/css-hover-images-preview-animation.html",
+      "category": "装飾"
+    },
+    {
+      "id": 6,
+      "name": "動くリンク下線",
+      "link": "https://lopan.jp/link-underline/",
+      "category": "装飾"
+    },
+    {
+      "id": 7,
+      "name": "ローディングのくるくる",
+      "link": "https://lopan.jp/loading-circle/",
+      "category": "ローディング",
+      "sample": "/circle01/"
+    },
+    {
+      "id": 8,
+      "name": "スクロールできることを伝えるラインアニメ",
+      "link": "https://www.nxworld.net/css-scroll-down-line.html",
+      "category": "スクロール"
+    },
+    {
+      "id": 9,
+      "name": "スクロールでパラパラ漫画",
+      "link": "https://lopan.jp/scroll-parapara-of-css-only/",
+      "category": "スクロール"
+    }
+  ],
+  "af": [
+    {
+      "name": "チュートリアル",
+      "link": "https://youtu.be/wTP4mp9vPtU"
+    },
+    {
+      "name": "くるくる",
+      "link": "https://youtu.be/RzqeRKYYUBk"
+    }
+  ]
+}

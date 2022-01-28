@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c:400,700&display=swap');
+$font-head: 'M PLUS Rounded 1c', sans-serif;
+$font-main: system-ui, sans-serif;
+$color-black: #333;
+$color-green: #aaff87;
+$color-yellow: #fdff87;
+$color-red: #ff8d87;
+$color-blue: #87d3ff;
+
+* {
+  box-sizing: border-box;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+  display: block;
+}
+img {
+  max-width: 100%;
+}
+li {
+  list-style: none;
+}
+
+body {
+  font-family: $font-main;
+  color: $color-black;
+}
+
+h1,h2,h3 {
+  font-family: $font-head;
+  font-weight: bold;
+}

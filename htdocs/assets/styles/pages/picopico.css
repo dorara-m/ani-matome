@@ -1,1 +1,50 @@
-@charset "UTF-8";.pg-picopico .c-btn{display:inline-block;padding:10px 20px;border:1px solid #333}.pg-picopico .c-btn:hover::after{-webkit-animation-play-state:paused;animation-play-state:paused}.pg-picopico .c-btn::after{content:"→";display:inline-block;margin-left:5px;-webkit-animation:moveR .8s infinite;animation:moveR .8s infinite}@-webkit-keyframes moveR{from{-webkit-transform:translateX(0);transform:translateX(0)}50%{-webkit-transform:translateX(5px);transform:translateX(5px)}to{-webkit-transform:translateX(0);transform:translateX(0)}}@keyframes moveR{from{-webkit-transform:translateX(0);transform:translateX(0)}50%{-webkit-transform:translateX(5px);transform:translateX(5px)}to{-webkit-transform:translateX(0);transform:translateX(0)}}.pg-picopico .img{width:100px;height:100px;border-radius:50%;background-image:url(../../images/cat01.jpg);background-position:center;background-size:cover;-webkit-animation:upDown .6s infinite;animation:upDown .6s infinite}.pg-picopico .img:hover{-webkit-animation-play-state:paused;animation-play-state:paused}@-webkit-keyframes upDown{from{-webkit-transform:translateY(0);transform:translateY(0)}50%{-webkit-transform:translateY(10px);transform:translateY(10px)}to{-webkit-transform:translateY(0);transform:translateY(0)}}@keyframes upDown{from{-webkit-transform:translateY(0);transform:translateY(0)}50%{-webkit-transform:translateY(10px);transform:translateY(10px)}to{-webkit-transform:translateY(0);transform:translateY(0)}}
+@charset "UTF-8";
+.pg-picopico .c-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  border: 1px solid #333;
+}
+.pg-picopico .c-btn:hover::after {
+  animation-play-state: paused;
+}
+.pg-picopico .c-btn::after {
+  content: "→";
+  display: inline-block;
+  margin-left: 5px;
+  animation: moveR 0.8s infinite;
+}
+@keyframes moveR {
+  from {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+.pg-picopico .img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-image: url(../../images/cat01.jpg);
+  background-position: center;
+  background-size: cover;
+  animation: upDown 0.6s infinite;
+}
+.pg-picopico .img:hover {
+  animation-play-state: paused;
+}
+@keyframes upDown {
+  from {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+/*# sourceMappingURL=../map/pages/picopico.css.map */

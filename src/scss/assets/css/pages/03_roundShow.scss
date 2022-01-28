@@ -1,0 +1,74 @@
+.roundWrap {
+  width: 350px;
+  height: 350px;
+  background-color: #fff;
+  border: 1px solid #444;
+  overflow: hidden;
+  position: relative;
+
+  &.started {
+    .round {
+      animation-play-state: running;
+    }
+  }
+}
+.round {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 300px;
+  height: 300px;
+  background-color: #444;
+  border-radius: 50%;
+}
+
+.round2 {
+  background-color: #777;
+  animation: anime01 ease 1s both;
+  @keyframes anime01 {
+    0% {
+      width: 0px;
+      height: 0px;
+    }
+    100% {
+      width: 300px;
+      height: 300px;
+    }
+  }
+}
+
+.round3 {
+  background-color: #fff;
+  animation: anime02 ease 1s both .2s;
+  @keyframes anime02 {
+    0% {
+      width: 0px;
+      height: 0px;
+    }
+    100% {
+      width: 301px;
+      height: 301px;
+    }
+  }
+}
+
+.item {
+  animation: anime03 ease 1s both .6s;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 200px;
+  @keyframes anime03 {
+    0% {
+      transform: translate(calc(-100px + -50%), -50%);
+      opacity: 0;
+    }
+    100% {
+      transform: translate(-50%, -50%);
+      opacity: 1;
+    }
+  }
+}

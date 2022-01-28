@@ -1,162 +1,282 @@
-// gulp系
-const { gulp, src, dest, watch, lastRun, parallel } = require('gulp')
+/** ===== var ===== **/
+// gulp
+const gulp = require('gulp')
+
+// Pug
+const gulpPug = require('gulp-pug')
+const fs = require('fs')
+
+// Sass
+const gulpSass = require('gulp-sass')(require('sass'))
+const sassGlob = require('gulp-sass-glob-use-forward')
+const postcss = require('gulp-postcss')
+const postcssSyntax = require('postcss-scss')
+const autoprefixer = require('autoprefixer')
+const cmq = require('postcss-combine-media-query')
+const stylelint = require('stylelint')
+
+// Image
+const imagemin = require('gulp-imagemin')
+const imageminMozjpeg = require('imagemin-mozjpeg')
+const imageminPngquant = require('imagemin-pngquant')
+
+// Local server
+const browserSync = require('browser-sync')
+const browserSyncSsi = require('browsersync-ssi')
+
+// webpack
+const webpackStream = require('webpack-stream')
+const webpack = require('webpack')
+const webpackConfig = require('./webpack.config') // webpackの設定ファイルの読み込み
+const named = require('vinyl-named')
+// Utility
 const plumber = require('gulp-plumber')
 const notify = require('gulp-notify')
-const browserSync = require('browser-sync')
+const changed = require('gulp-changed')
 
-// pug系
-const fs = require('fs')
-const data  = require('gulp-data')
-const gulpPug = require('gulp-pug')
+// 公開用ディレクトリ
+const dest = 'dist/'
 
-// scss系
-const sassGlob = require("gulp-sass-glob")
-const gulpSass = require('gulp-sass')(require('sass'))
-const postcss = require("gulp-postcss")
-const autoprefixer = require('gulp-autoprefixer')
-
-// js系
-const babel = require('gulp-babel')
-
-// 画像系
-const imagemin = require('gulp-imagemin')
-const mozjpeg = require('imagemin-mozjpeg')
-
-// パスまとめ
-const path = {
-  json: 'src/_data/index.json',
+// 開発用ディレクトリ
+const src = {
+  data: 'src/_data/site.json',
   pug: {
-    src: 'src/pug/!(_)**/*.pug',
-    dist: 'htdocs/',
-    basedir: 'src/pug/'
+    dir: 'src/pug/',
+    file: 'src/pug/**/!(_)*.pug',
+    watch: ['src/pug/**/(_)*.pug', 'src/_data/**/*.json'],
   },
-  scss: {
-    src: 'src/scss/**/*.scss',
-    dist: 'htdocs/assets/styles/',
-    pages: {
-      src: 'src/sass/pages/*scss',
-      dist: 'htdocs/assets/styles/pages/'
-    }
+  sass: {
+    dir: 'src/scss',
+    file: 'src/scss/**/!(_)*.scss',
+    watch: 'src/**/*.scss',
   },
-  babel: {
-    src: 'src/js/**/*.js',
-    dist: 'htdocs/assets/scripts/'
+  js: {
+    file: 'src/js/**/!(_)*.ts',
+    watch: 'src/**/*.ts',
   },
-  images: {
-    src: 'src/images/**/*.{png,jpg,gif,svg}',
-    dist: 'htdocs/assets/images/'
-  }
+  img: {
+    file: 'src/img/**/*.{png,jpg,gif,svg,ico}',
+    watch: 'src/img/**/*',
+  },
+  public: {
+    file: 'src/public/**/*',
+  },
 }
 
+/** ===== task ===== **/
+/**
+ * Reload
+ */
+const reload = (done) => {
+  browserSync.reload()
+  done()
+}
+exports.reload = reload
 
-// pug -> html
-const pugFunc = () => {
-  const jsonData ={
-    site: JSON.parse(fs.readFileSync(path.json))
+/**
+ * Pug
+ * .pug -> .html
+ */
+const pugFunc = (isAll) => {
+  // metaデータ等JSONファイルの読み込み。
+  const lastRun = isAll ? null : gulp.lastRun(pugFunc)
+  const data = {
+    site: JSON.parse(fs.readFileSync(src.data)),
   }
-  return src(path.pug.src)
-    .pipe(plumber({
-      errorHandler: notify.onError('Error: <%= error.message %>')
-    }))
-    .pipe(data(jsonData))
+  return (
+    gulp
+      .src(src.pug.file, { since: lastRun })
+      // .src(src.pug.file, { since: gulp.lastRun(pug) })
+      .pipe(plumber({ errorHandler: notify.onError('Error: <%= error %>') }))
+      .pipe(
+        gulpPug({
+          // dataを各Pugファイルで取得
+          data,
+          // ルート相対パスでincludeが使えるようにする
+          basedir: src.pug.dir,
+          // Pugファイルの整形
+          pretty: true,
+        })
+      )
+      .pipe(gulp.dest(dest))
+  )
+}
+
+// 差分build
+const pug = () => {
+  return pugFunc()
+}
+const html = gulp.series(pug, reload)
+
+// 全build
+const pugAll = () => {
+  console.log('Build all pug file...')
+  return pugFunc(true)
+}
+const htmlAll = gulp.series(pugAll, reload)
+
+/**
+ * Sass
+ * .scss -> .css
+ */
+function sass() {
+  const lintPlugins = [stylelint()]
+  return gulp
+    .src(src.sass.file)
+    .pipe(plumber({ errorHandler: notify.onError('Error: <%= error %>') }))
     .pipe(
-      gulpPug({
-        // ルート相対パスでincludeが使えるようにする
-        basedir: path.pug.basedir,
-        // Pugファイルの整形
-        pretty: true,
+      postcss(lintPlugins, {
+        syntax: postcssSyntax,
       })
     )
-    .pipe(dest(path.pug.dist))
+    .pipe(sassGlob())
+    .pipe(
+      gulpSass({
+        outputStyle: 'expanded', // expanded or compressed
+        includePaths: [src.sass.dir],
+      }).on('error', gulpSass.logError)
+    )
+    .pipe(postcss([cmq(), autoprefixer()]))
+    .pipe(gulp.dest(dest))
     .pipe(browserSync.reload({ stream: true }))
 }
+exports.sass = sass
 
-
-// scss -> main.css
-const scssFunc = () => {
-  return src(path.scss.src, { sourcemaps: true })
-  .pipe(plumber({
-    errorHandler: notify.onError('Error: <%= error.message %>')
-  }))
-  .pipe(sassGlob())
-  .pipe(gulpSass())
-  .pipe(
-    postcss([
-      autoprefixer({
-        cascade: false,
-        grid: true
+/**
+ * JS
+ * ES6をWebpackでbundle
+ * .ts → .js
+ */
+function js() {
+  return gulp
+    .src(src.js.file)
+    .pipe(plumber({ errorHandler: notify.onError('Error: <%= error %>') }))
+    .pipe(
+      named((file) => {
+        return file.relative.replace(/\.[^\.]+$/, '')
       })
-    ])
-  )
-  .pipe(dest(path.scss.dist, { sourcemaps: "./map" }))
-  .pipe(browserSync.reload({ stream: true }))
+    )
+    .pipe(webpackStream(webpackConfig, webpack))
+    .pipe(gulp.dest(dest))
+    .pipe(browserSync.reload({ stream: true }))
 }
+exports.js = js
 
-// page独自のcssページ
-const scssPagesFunc = () => {
-  return src(path.scss.pages.src)
-  .pipe(plumber({
-    errorHandler: notify.onError('Error: <%= error.message %>')
-  }))
-  .pipe(gulpSass())
-  .pipe(
-    postcss([
-      autoprefixer({
-        cascade: false,
-        grid: true
+/**
+ * Image Optimizer
+ */
+function image() {
+  return gulp
+    .src(src.img.file)
+    .pipe(changed(dest))
+    .pipe(
+      plumber({
+        errorHandler(err) {
+          // eslint-disable-next-line no-console
+          console.log(err.messageFormatted)
+          this.emit('end')
+        },
       })
-    ])
-  )
-  .pipe(dest(path.scss.pages.dist))
-  .pipe(browserSync.reload({ stream: true }))
+    )
+    .pipe(
+      imagemin([
+        imageminMozjpeg({
+          // 画質
+          quality: 70,
+        }),
+        imageminPngquant({
+          // 画質
+          quality: [0.7, 0.8],
+        }),
+        imagemin.svgo({
+          plugins: [
+            // viewBox属性が無いと表示崩れの原因になるので削除しない
+            { removeViewBox: false },
+            // metadataは意図的に入れる場合があるので削除しない
+            { removeMetadata: false },
+            // 追加した要素を削除しない
+            { removeUnknownsAndDefaults: false },
+            // 勝手に<path>へ変換しない
+            { convertShapeToPath: false },
+            // <g>タグを削除するとアニメーションが動作しない可能性があるので変換しない
+            { collapseGroups: false },
+            // id属性はJSに使う場合があるとなることがあるため削除しない。
+            { cleanupIDs: false },
+          ],
+        }),
+        imagemin.optipng(),
+        imagemin.gifsicle(),
+      ])
+    )
+    .pipe(gulp.dest(dest))
+    .pipe(browserSync.reload({ stream: true }))
 }
+exports.image = image
 
-
-// jsES6 -> jsES5
-const babelFunc = () => {
-  return src(path.babel.src)
-  .pipe(plumber({
-    errorHandler: notify.onError('Error: <%= error.message %>')
-  }))
-  .pipe(babel())
-  .pipe(dest(path.babel.dist))
-  .pipe(browserSync.reload({ stream: true }))
+/**
+ * Copy
+ * 変換不要でdistにコピーしたいもの
+ * src/public/ → dist/
+ */
+function copy() {
+  return gulp.src(src.public.file).pipe(gulp.dest(dest))
 }
+exports.copy = copy
 
-
-// imagesMin
-const imagesFunc = () => {
-  return src(path.images.src)
-  .pipe(imagemin([
-    mozjpeg({
-      quality: 85,
-      progressive: true
-    }),
-    imagemin.svgo(),
-    imagemin.optipng(),
-    imagemin.gifsicle()
-  ]))
-  .pipe(dest(path.images.dist))
-}
-
-
-const watchFiles = () => {
-  watch(path.pug.src, pugFunc)
-  watch(path.json, pugFunc)
-  watch(path.scss.src, scssFunc)
-  watch(path.scss.pages.src, scssPagesFunc)
-  watch(path.babel.src, babelFunc);
-  watch(path.images.src, imagesFunc);
-}
-
-const browserSyncFunc = () => {
+/**
+ * Local server
+ */
+function serve(done) {
+  // const httpsOption =
+  //   process.env.HTTPS_KEY !== undefined
+  //     ? { key: process.env.HTTPS_KEY, cert: process.env.HTTPS_CERT }
+  //     : false;
   browserSync({
     server: {
-      baseDir: 'htdocs/'
+      // SSIを使用
+      middleware: [
+        browserSyncSsi({
+          baseDir: dest,
+          ext: '.html',
+        }),
+      ],
+      baseDir: dest,
     },
-    reloadOnRestart: true
+    // ローカルでhttpsを有効にする場合はコメントアウトを解除、認証用の.envファイルを用意する
+    // https: httpsOption,
+    // 他の画面でクリックをミラーリングしない
+    ghostMode: false,
+    // ローカルIPアドレスで起動する
+    open: 'external',
+    // サーバー起動時に表示するページ
+    startPath: '/',
+    // サーバー起動時の通知は不要
+    notify: false,
   })
+  done()
 }
+exports.serve = serve
 
-exports.default = parallel(watchFiles, browserSyncFunc)
-exports.build = parallel(pugFunc, scssFunc, babelFunc, imagesFunc)
+/**
+ * Watch
+ */
+function watch() {
+  gulp.watch(src.pug.file, html)
+  gulp.watch(src.pug.watch, htmlAll)
+  gulp.watch(src.sass.watch, sass)
+  gulp.watch(src.js.watch, js)
+  gulp.watch(src.img.watch, image)
+  gulp.watch(src.public.file, copy)
+}
+exports.watch = watch
+
+/**
+ * default
+ */
+exports.default = gulp.series(
+  pug,
+  sass,
+  serve,
+  gulp.parallel(js, image, copy),
+  watch
+)
