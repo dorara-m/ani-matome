@@ -1,8 +1,8 @@
 {
-  "url": "https://example.com",
-  "name": "サイト名",
+  "url": "https://animatome.netlify.app/",
+  "name": "アニマトメ",
   "viewport": "width=device-width",
-  "description": "サイトの概要",
+  "description": "CSSアニメーションを始めとした、Web上のアニメーション表現をまとめているサイトです。",
   "keywords": "",
   "lang": "ja",
   "locale": "ja_JP",
@@ -12,8 +12,6 @@
   "twitterCard": "summary_large_image",
   "twitterSite": "",
   "/": {
-    "name": "トップページ",
-    "description": "トップページの概要",
     "keywords": "",
     "ogp": "",
     "canonical": "",
