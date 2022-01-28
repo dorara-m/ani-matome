@@ -188,4 +188,5 @@ FLOCSS を参考にディレクトリを分けています。運用ルールに�
 * https://ics.media/entry/15970/
 * https://ics.media/entry/11336/
 * https://ics.media/entry/11336/
-* https://github.com/dorara-m/ani-matome#:~:text=https%3A//techblog.raccoon.ne.jp/archives/1569826832.html
+* https://techblog.raccoon.ne.jp/archives/1569826832.html
+
