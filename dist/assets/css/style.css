@@ -207,10 +207,9 @@ h1, h2, h3 {
 }
 
 .c-btn {
-  margin-top: 30px;
   min-height: 40px;
-  width: 200px;
-  display: flex;
+  min-width: 200px;
+  display: inline-flex;
   justify-content: space-between;
   align-items: center;
   padding: 13px 15px;
@@ -226,6 +225,9 @@ h1, h2, h3 {
 .c-btn:hover {
   background-color: #444;
   color: #fff;
+}
+.c-btn + .c-btn {
+  margin-left: 15px;
 }
 
 .u-flex {
@@ -485,6 +487,11 @@ h1 {
 .p-top table a:hover {
   color: steelblue;
 }
+
+.u-mt30 {
+  margin-top: 30px;
+}
+
 @media screen and (min-width: 740px){
   .l-container {
     max-width: 860px;
