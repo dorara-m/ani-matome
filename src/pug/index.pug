@@ -93,3 +93,32 @@ block body
                         td
                           a(href=val.link, target="_blank", rel="noopener noreferrer") #{val.name}
 
+      .p-top_releaseNote
+        .p-top_releaseNote_ballon.hasNew#js-note-ballon
+          img(src=imgPath+"icon-ballon.svg", alt="")
+        .p-top_releaseNote_wrap#js-note-wrap
+          .p-top_releaseNote_wrap_overlay#js-note-overlay
+            .close
+              img(src=imgPath+"icon-close.svg", alt="閉じる")
+          .p-top_releaseNote_frame
+            .p-top_releaseNote_frame_head
+              p トレセン学園 (3)
+            .p-top_releaseNote_frame_body
+              ul
+                -
+                  var uma = {
+                    "oguri": "オグリキャップ",
+                    "tama": "タマモクロス"
+                  }
+                each note in site.releaseNote
+                  li
+                    .icon
+                      img(src=`${imgPath}${note.who}.jpg`, alt=`${uma[note.who]}`)
+                    .left
+                      .name=uma[note.who]
+                      if note.says
+                        .says!=note.says
+                      else
+                        .saysImage
+                          img(src=imgPath+note.image, alt="")
+                

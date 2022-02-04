@@ -487,6 +487,112 @@ h1 {
 .p-top table a:hover {
   color: steelblue;
 }
+.p-top_releaseNote_ballon {
+  cursor: pointer;
+  width: 70px;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+}
+.p-top_releaseNote_ballon.hasNew::after {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: crimson;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.p-top_releaseNote_wrap {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.p-top_releaseNote_wrap.none {
+  display: none;
+}
+.p-top_releaseNote_wrap_overlay {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  cursor: pointer;
+}
+.p-top_releaseNote_wrap_overlay .close {
+  position: absolute;
+  top: 50px;
+  right: 50px;
+  width: 40px;
+  z-index: 3;
+}
+.p-top_releaseNote_frame {
+  cursor: initial;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 450px;
+  height: 80vh;
+  overflow: auto;
+  padding: 20px 10px;
+  background: #7da4cd;
+}
+.p-top_releaseNote_frame_head {
+  color: #fff;
+  padding: 10px 0;
+}
+.p-top_releaseNote li {
+  width: 100%;
+  margin: 10px 0;
+  display: flex;
+  align-items: flex-start;
+}
+.p-top_releaseNote li .icon {
+  width: 60px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.p-top_releaseNote li .left {
+  margin-left: 13px;
+}
+.p-top_releaseNote li .left .name {
+  font-size: 11px;
+  font-weight: bold;
+  margin: 3px 0 5px;
+}
+.p-top_releaseNote li .left .says {
+  background: #edf1ee;
+  display: inline-block;
+  max-width: 250px;
+  padding: 6.5px 10px;
+  border-radius: 12px;
+  line-height: 1.5;
+  font-size: 15px;
+  position: relative;
+}
+.p-top_releaseNote li .left .says::after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 3px;
+  left: -19px;
+  border: 8px solid transparent;
+  border-right: 18px solid #edf1ee;
+  transform: rotate(35deg);
+}
+.p-top_releaseNote li .left .saysImage {
+  max-width: 250px;
+  border-radius: 12px;
+  overflow: hidden;
+}
 
 .u-mt30 {
   margin-top: 30px;

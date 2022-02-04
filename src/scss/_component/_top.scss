@@ -106,4 +106,118 @@
       }
     }
   }
+
+  &_releaseNote {
+    &_ballon {
+      cursor: pointer;
+      width: 70px;
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      &.hasNew::after {
+        content: "";
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: crimson;
+        position: absolute;
+        top: 0;
+        right: 0;
+      }
+    }
+
+    &_wrap {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+
+      &.none {
+        display: none;
+      }
+
+      &_overlay {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: rgba($color: #000000, $alpha: .7);
+        cursor: pointer;
+        .close {
+          position: absolute;
+          top: 50px;
+          right: 50px;
+          width: 40px;
+          z-index: 3;
+        }
+      }
+    }
+
+    &_frame {
+      cursor: initial;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 450px;
+      height: 80vh;
+      overflow: auto;
+      padding: 20px 10px;
+      background: #7da4cd;
+      &_head {
+        color: #fff;
+        padding: 10px 0;
+      }
+    }
+    li {
+      width: 100%;
+      margin: 10px 0;
+      display: flex;
+      align-items: flex-start;
+      .icon {
+        width: 60px;
+        border-radius: 50%;
+        overflow: hidden;
+      }
+      .left {
+        margin-left: 13px;
+        .name {
+          font-size: 11px;
+          font-weight: bold;
+          margin: 3px 0 5px;
+        }
+        .says {
+          background: #edf1ee;
+          display: inline-block;
+          max-width: 250px;
+          padding: 6.5px 10px;
+          border-radius: 12px;
+          line-height: 1.5;
+          font-size: 15px;
+          position: relative;
+          &::after {
+            content: "";
+            display: inline-block;
+            position: absolute;
+            top: 3px; 
+            left: -19px;
+            border: 8px solid transparent;
+            border-right: 18px solid #edf1ee;
+            -webkit-transform: rotate(35deg);
+            transform: rotate(35deg);
+          }
+        }
+        .saysImage {
+          max-width: 250px;
+          border-radius: 12px;
+          overflow: hidden;
+        }
+      }
+    }
+  }
 }
