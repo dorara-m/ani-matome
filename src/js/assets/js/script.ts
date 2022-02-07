@@ -11,13 +11,35 @@ tabs.on('click', function () {
   $('#js-cnt > li').eq(index).addClass('active')
 })
 
+//top - releaseNote
 const wrapDom = document.getElementById('js-note-wrap')
 const overlayDom = document.getElementById('js-note-overlay')
-overlayDom.addEventListener('click', function(){
-  wrapDom.classList.add('none')
-})
-document.getElementById('js-note-ballon').addEventListener('click', function(){
-  wrapDom.classList.remove('none')
+const ballonDom =  document.getElementById('js-note-ballon')
+if (overlayDom && wrapDom) {
+  overlayDom.addEventListener('click', function(){
+    wrapDom.classList.add('none')
+  })
+  if (ballonDom) {
+    ballonDom.addEventListener('click', function(){
+      wrapDom.classList.remove('none')
+    })
+  }
+}
+
+document.getElementsByClassName('js-note-item')[0].addEventListener('click', function(){
+  const listDom = document.getElementById('js-note-list')
+  const pageDom = document.getElementById('js-note-page')
+  const backDom = document.getElementById('js-note-back')
+  if (listDom && pageDom) {
+    listDom.classList.add('slideOut')
+    pageDom.classList.add('slideIn')
+    if (backDom) {
+      backDom.addEventListener('click', function(){
+        listDom.classList.remove('slideOut')
+        pageDom.classList.remove('slideIn')
+      })
+    }
+  }
 })
 
 //pages
