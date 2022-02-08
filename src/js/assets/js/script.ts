@@ -26,10 +26,10 @@ if (overlayDom && wrapDom) {
   }
 }
 
+const listDom = document.getElementById('js-note-list')
+const pageDom = document.getElementById('js-note-page')
+const backDom = document.getElementById('js-note-back')
 document.getElementsByClassName('js-note-item')[0].addEventListener('click', function(){
-  const listDom = document.getElementById('js-note-list')
-  const pageDom = document.getElementById('js-note-page')
-  const backDom = document.getElementById('js-note-back')
   if (listDom && pageDom) {
     listDom.classList.add('slideOut')
     pageDom.classList.add('slideIn')

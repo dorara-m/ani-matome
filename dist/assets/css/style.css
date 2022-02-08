@@ -549,30 +549,10 @@ h1 {
   background-color: #edf1ee;
   height: 100%;
   overflow: auto;
+  transition: 0.5s;
 }
 .p-top_releaseNote_frame_list.slideOut {
-  -webkit-animation-name: slideOut;
-          animation-name: slideOut;
-  -webkit-animation-duration: 0.5s;
-          animation-duration: 0.5s;
-  -webkit-animation-fill-mode: both;
-          animation-fill-mode: both;
-}
-@-webkit-keyframes slideOut {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
-}
-@keyframes slideOut {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
+  transform: translateX(-100%);
 }
 .p-top_releaseNote_frame_list li {
   height: 120px;
@@ -611,7 +591,6 @@ h1 {
   background-color: crimson;
 }
 .p-top_releaseNote_frame_page {
-  display: none;
   position: absolute;
   width: 100%;
   height: 100%;
@@ -619,29 +598,11 @@ h1 {
   z-index: 2;
   top: 0;
   left: 0;
+  transform: translateX(100%);
+  transition: 0.5s;
 }
 .p-top_releaseNote_frame_page.slideIn {
-  display: block;
-  -webkit-animation-name: slideIn;
-          animation-name: slideIn;
-  -webkit-animation-duration: 0.5s;
-          animation-duration: 0.5s;
-}
-@-webkit-keyframes slideIn {
-  0% {
-    transform: translateX(100%);
-  }
-  100% {
-    transform: translateX(0);
-  }
-}
-@keyframes slideIn {
-  0% {
-    transform: translateX(100%);
-  }
-  100% {
-    transform: translateX(0);
-  }
+  transform: translateX(0);
 }
 .p-top_releaseNote_frame_head {
   color: #fff;
