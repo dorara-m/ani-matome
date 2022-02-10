@@ -180,7 +180,6 @@ FLOCSS を参考にディレクトリを分けています。運用ルールに�
 * 個別のtsで外部ライブラリを読めないエラーがでる
 ### 構成改善
 * sp対応
-* フッター調整
 * pugのlayoutがトップページと個別ページで2つに分かれている問題。1つにまとめて効率的に管理したい。
 * そもそも静的に作りたくない→更新をmicroCMS上でできるようにする。
 * 共通cssファイルが細分化しすぎてる問題。common.scssとか1つにまとめたい。
@@ -210,4 +209,5 @@ FLOCSS を参考にディレクトリを分けています。運用ルールに�
 * https://ics.media/entry/11336/
 * https://ics.media/entry/11336/
 * https://techblog.raccoon.ne.jp/archives/1569826832.html
+
 
