@@ -1,6 +1,6 @@
 import { hello } from '../../_module/_hello'
 
-hello('Hello World')
+// hello('Hello World')
 
 //top
 let tabs = $('#js-tab li')
@@ -26,22 +26,49 @@ if (overlayDom && wrapDom) {
   }
 }
 
-const listDom = document.getElementById('js-note-list')
-const pageDom = document.getElementById('js-note-page')
-const backDom = document.getElementById('js-note-back')
-document.getElementsByClassName('js-note-item')[0].addEventListener('click', function(){
-  if (listDom && pageDom) {
+const listDom = document.getElementById('js-note-list') || null
+const pageDom = document.getElementById('js-note-page') || null
+const backDom = document.getElementById('js-note-back') || null
+const listItemsDom = document.getElementsByClassName('js-note-item')
+for(let i = 0; i < listItemsDom.length; i++) {
+  listItemsDom[i].addEventListener('click', function(){
     listDom.classList.add('slideOut')
     pageDom.classList.add('slideIn')
-    if (backDom) {
-      backDom.addEventListener('click', function(){
-        listDom.classList.remove('slideOut')
-        pageDom.classList.remove('slideIn')
-      })
-    }
-  }
+    returnChat(i)
+  })
+}
+
+backDom.addEventListener('click', function(){
+  listDom.classList.remove('slideOut')
+  pageDom.classList.remove('slideIn')
 })
 
+const returnChat = (listNum:any) => {
+  const uma = {
+    "oguri": "オグリキャップ",
+    "tama": "タマモクロス"
+  }
+  const json = require('./releaseNote.json')
+  const notes = json.releaseNote[listNum]
+
+  let html = ''
+  notes.forEach((note:any) => {
+    html += '<li>'
+    html += '<div class="icon">'
+    html += `<img src="/assets/img/${note.who}.jpg", alt="${uma[note.who]}">`
+    html += '</div>'
+    html += '<div class="left">'
+    html += `<div class="name">${uma[note.who]}</div>`
+    if (note.says) {
+      html += `<div class="says">${note.says}</div>`
+    } else {
+      html += `<div class="saysImage"><img src="/assets/img/${note.image}", alt=""></div>`
+    }
+    html += '</div>'
+    html += '</li>'
+  });
+  document.getElementById("js-note-chat").innerHTML = html
+}
 //pages
 $('#js-reload').on('click', function () {
   location.reload()

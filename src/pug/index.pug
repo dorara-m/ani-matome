@@ -108,7 +108,7 @@ block body
                     .head 2022.2.4
                     p なんでやねん！朝食の量としておかしい…
                   .count.unread 14
-                li
+                li.js-note-item
                   .icon
                     img(src="https://placehold.jp/150x150.png", alt="")
                   .text
@@ -120,21 +120,5 @@ block body
                 button#js-note-back
                 p トレセン学園 (3)
               .p-top_releaseNote_frame_body
-                ul
-                  -
-                    var uma = {
-                      "oguri": "オグリキャップ",
-                      "tama": "タマモクロス"
-                    }
-                  each note in site.releaseNote
-                    li
-                      .icon
-                        img(src=`${imgPath}${note.who}.jpg`, alt=`${uma[note.who]}`)
-                      .left
-                        .name=uma[note.who]
-                        if note.says
-                          .says!=note.says
-                        else
-                          .saysImage
-                            img(src=imgPath+note.image, alt="")
+                ul#js-note-chat
                   

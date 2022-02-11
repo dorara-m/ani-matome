@@ -10,23 +10,23 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./src/js/_module/_hello.ts":
-/*!**********************************!*\
-  !*** ./src/js/_module/_hello.ts ***!
-  \**********************************/
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"hello\": function() { return /* binding */ hello; }\n/* harmony export */ });\nfunction hello(message) {\n    console.log(message);\n}\n\n\n//# sourceURL=webpack://animatome/./src/js/_module/_hello.ts?");
-
-/***/ }),
-
 /***/ "./src/js/assets/js/script.ts":
 /*!************************************!*\
   !*** ./src/js/assets/js/script.ts ***!
   \************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _module_hello__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../_module/_hello */ \"./src/js/_module/_hello.ts\");\n\n(0,_module_hello__WEBPACK_IMPORTED_MODULE_0__.hello)('Hello World');\n//top\nlet tabs = $('#js-tab li');\ntabs.on('click', function () {\n    $('.active').removeClass('active');\n    $(this).addClass('active');\n    const index = tabs.index(this);\n    $('#js-cnt > li').eq(index).addClass('active');\n});\n//top - releaseNote\nconst wrapDom = document.getElementById('js-note-wrap');\nconst overlayDom = document.getElementById('js-note-overlay');\nconst ballonDom = document.getElementById('js-note-ballon');\nif (overlayDom && wrapDom) {\n    overlayDom.addEventListener('click', function () {\n        wrapDom.classList.add('none');\n    });\n    if (ballonDom) {\n        ballonDom.addEventListener('click', function () {\n            wrapDom.classList.remove('none');\n        });\n    }\n}\nconst listDom = document.getElementById('js-note-list');\nconst pageDom = document.getElementById('js-note-page');\nconst backDom = document.getElementById('js-note-back');\ndocument.getElementsByClassName('js-note-item')[0].addEventListener('click', function () {\n    if (listDom && pageDom) {\n        listDom.classList.add('slideOut');\n        pageDom.classList.add('slideIn');\n        if (backDom) {\n            backDom.addEventListener('click', function () {\n                listDom.classList.remove('slideOut');\n                pageDom.classList.remove('slideIn');\n            });\n        }\n    }\n});\n//pages\n$('#js-reload').on('click', function () {\n    location.reload();\n});\n\n\n//# sourceURL=webpack://animatome/./src/js/assets/js/script.ts?");
+eval("__webpack_require__.r(__webpack_exports__);\n// hello('Hello World')\n//top\nlet tabs = $('#js-tab li');\ntabs.on('click', function () {\n    $('.active').removeClass('active');\n    $(this).addClass('active');\n    const index = tabs.index(this);\n    $('#js-cnt > li').eq(index).addClass('active');\n});\n//top - releaseNote\nconst wrapDom = document.getElementById('js-note-wrap');\nconst overlayDom = document.getElementById('js-note-overlay');\nconst ballonDom = document.getElementById('js-note-ballon');\nif (overlayDom && wrapDom) {\n    overlayDom.addEventListener('click', function () {\n        wrapDom.classList.add('none');\n    });\n    if (ballonDom) {\n        ballonDom.addEventListener('click', function () {\n            wrapDom.classList.remove('none');\n        });\n    }\n}\nconst listDom = document.getElementById('js-note-list') || null;\nconst pageDom = document.getElementById('js-note-page') || null;\nconst backDom = document.getElementById('js-note-back') || null;\nconst listItemsDom = document.getElementsByClassName('js-note-item');\nfor (let i = 0; i < listItemsDom.length; i++) {\n    listItemsDom[i].addEventListener('click', function () {\n        listDom.classList.add('slideOut');\n        pageDom.classList.add('slideIn');\n        returnChat(i);\n    });\n}\nbackDom.addEventListener('click', function () {\n    listDom.classList.remove('slideOut');\n    pageDom.classList.remove('slideIn');\n});\nconst returnChat = (listNum) => {\n    const uma = {\n        \"oguri\": \"オグリキャップ\",\n        \"tama\": \"タマモクロス\"\n    };\n    const json = __webpack_require__(/*! ./releaseNote.json */ \"./src/js/assets/js/releaseNote.json\");\n    const notes = json.releaseNote[listNum];\n    let html = '';\n    notes.forEach((note) => {\n        html += '<li>';\n        html += '<div class=\"icon\">';\n        html += `<img src=\"/assets/img/${note.who}.jpg\", alt=\"${uma[note.who]}\">`;\n        html += '</div>';\n        html += '<div class=\"left\">';\n        html += `<div class=\"name\">${uma[note.who]}</div>`;\n        if (note.says) {\n            html += `<div class=\"says\">${note.says}</div>`;\n        }\n        else {\n            html += `<div class=\"saysImage\"><img src=\"/assets/img/${note.image}\", alt=\"\"></div>`;\n        }\n        html += '</div>';\n        html += '</li>';\n    });\n    document.getElementById(\"js-note-chat\").innerHTML = html;\n};\n//pages\n$('#js-reload').on('click', function () {\n    location.reload();\n});\n\n\n\n//# sourceURL=webpack://animatome/./src/js/assets/js/script.ts?");
+
+/***/ }),
+
+/***/ "./src/js/assets/js/releaseNote.json":
+/*!*******************************************!*\
+  !*** ./src/js/assets/js/releaseNote.json ***!
+  \*******************************************/
+/***/ (function(module) {
+
+eval("module.exports = JSON.parse('{\"releaseNote\":[[{\"who\":\"oguri\",\"says\":\"やぁタマ。今回は何が更新されたんだ？\"},{\"who\":\"tama\",\"says\":\"よぉ聞いてくれたなぁ、オグリ。\"},{\"who\":\"tama\",\"says\":\"今回はなんと、Twitterのいいね♡のアニメーションが追加されたんや！\"},{\"who\":\"tama\",\"image\":\"iine.gif\"},{\"who\":\"oguri\",\"says\":\"おぉ。なんだか可愛いな！\"},{\"who\":\"tama\",\"says\":\"せやろ。<br>なんやトレーナーもえらいテンション高く組んだみたいで、自信作いうとったわ！\"},{\"who\":\"oguri\",\"says\":\"………（ジュル\"},{\"who\":\"tama\",\"says\":\"ん？オグリ？\"},{\"who\":\"oguri\",\"says\":\"いや、なんだかこのアニメ見ていたらお腹が空いてきたんだ。<br>食べ物じゃないのに、不思議だ。\"},{\"who\":\"tama\",\"says\":\"あぁ！確かに赤色は食欲をそそる色いうもんな。\"},{\"who\":\"tama\",\"says\":\"居酒屋の提灯とか赤いんはそれを意識してるって話、聞いたことあるわ。\"},{\"who\":\"oguri\",\"says\":\"よし…！今から食堂に行こう、タマ。\"},{\"who\":\"oguri\",\"says\":\"まずはご飯、10杯だ！\"},{\"who\":\"tama\",\"says\":\"なんでやねん！<br>朝食の量としておかしいわ！！朝からどんだけ食うねん！\"}],[{\"who\":\"oguri\",\"says\":\"試しに喋ってみるぞ\"},{\"who\":\"oguri\",\"says\":\"あーーーーーー<Br>いーーーー\"}]]}');\n\n//# sourceURL=webpack://animatome/./src/js/assets/js/releaseNote.json?");
 
 /***/ })
 
@@ -57,23 +57,6 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _mod
 /******/ 	}
 /******/ 	
 /************************************************************************/
-/******/ 	/* webpack/runtime/define property getters */
-/******/ 	!function() {
-/******/ 		// define getter functions for harmony exports
-/******/ 		__webpack_require__.d = function(exports, definition) {
-/******/ 			for(var key in definition) {
-/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
-/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
-/******/ 				}
-/******/ 			}
-/******/ 		};
-/******/ 	}();
-/******/ 	
-/******/ 	/* webpack/runtime/hasOwnProperty shorthand */
-/******/ 	!function() {
-/******/ 		__webpack_require__.o = function(obj, prop) { return Object.prototype.hasOwnProperty.call(obj, prop); }
-/******/ 	}();
-/******/ 	
 /******/ 	/* webpack/runtime/make namespace object */
 /******/ 	!function() {
 /******/ 		// define __esModule on exports
