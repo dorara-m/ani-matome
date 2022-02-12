@@ -10,88 +10,54 @@ block body
     .p-top
       .p-top_head
         .l-container
-          h1
-            |アニマトメ
-            span -animatome-
-
-
-      -
-        var list = site.anime.map(
-          function(item) {
-            return item.category
-          }
-        );
-        var categoryList = list.filter(
-          function(x, i, self){
-            return self.indexOf(x) === i
-          }
-        );
+          .title
+            h1 アニマトメ#[span -animatome-]
 
       .p-top_body
         .l-container
-          ul.p-top_tab#js-tab
-            li.active サンプル
-            li リンク
-            li AfterEffects
+          section
+            h2 サンプル
+            ul
+              each val in site.anime
+                li
+                  a(href=val.id+"_"+val.name_en+"/")
+                    if val.gif
+                      .img(style="background-image: url("+imgPath+val.name_en+".gif);")
+                    else
+                      .img(style="background-image: url(https://placehold.jp/dedede/5e5e5e/270x180.png?text=Animation);")
+                    h4=val.name_jp
 
-          ul.p-top_contents#js-cnt
-            li.active
-              section
-                h2 サンプル
-                each category in categoryList
-                  section
-                    h3=category
-                    ul.u-flex
-                      -
-                        var items = site.anime.filter(
-                          function(item) {
-                            return item.category === category;
-                          }
-                        );
+          section
+            h2 リンク
+            table
+              thead
+                tr
+                  th サイト
+                  th カテゴリー
+                  th サンプル
+              tbody
+                each val in site.links
+                  tr(id=val.id)
+                    th
+                      a(href=val.link, target="_blank", rel="noopener noreferrer") #{val.name}
+                    td=val.category
+                    td
+                      if val.sample
+                        a(href=val.sample) あり→
+                      else
+                        span -
 
-                      each val, key in items
-                        li
-                          a(href=val.id+"_"+val.name_en+"/")
-                            if val.gif
-                              .img(style="background-image: url("+imgPath+val.name_en+".gif);")
-                            else
-                              .img(style="background-image: url(https://placehold.jp/dedede/5e5e5e/270x180.png?text=Animation);")
-
-                            h4=val.name_jp
-
-            li
-              section
-                h2 リンク
-                table
-                  thead
-                    tr
-                      th サイト
-                      th カテゴリー
-                      th サンプル
-                  tbody
-                    each val in site.links
-                      tr(id=val.id)
-                        th
-                          a(href=val.link, target="_blank", rel="noopener noreferrer") #{val.name}
-                        td=val.category
-                        td
-                          if val.sample
-                            a(href=val.sample) あり→
-                          else
-                            span -
-
-            li
-              section
-                h2 AfterEffects
-                table
-                  thead
-                    tr
-                      th AfterEffectsでつくったもの
-                  tbody
-                    each val in site.af
-                      tr
-                        td
-                          a(href=val.link, target="_blank", rel="noopener noreferrer") #{val.name}
+          section
+            h2 AfterEffects
+            table
+              thead
+                tr
+                  th AfterEffectsでつくったもの
+              tbody
+                each val in site.af
+                  tr
+                    td
+                      a(href=val.link, target="_blank", rel="noopener noreferrer") #{val.name}
 
       .p-top_releaseNote
         .p-top_releaseNote_ballon.hasNew#js-note-ballon

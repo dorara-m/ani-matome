@@ -2,14 +2,6 @@ import { hello } from '../../_module/_hello'
 
 // hello('Hello World')
 
-//top
-let tabs = $('#js-tab li')
-tabs.on('click', function () {
-  $('.active').removeClass('active')
-  $(this).addClass('active')
-  const index = tabs.index(this)
-  $('#js-cnt > li').eq(index).addClass('active')
-})
 
 //top - releaseNote
 // チャット画面モーダルのon/off
@@ -18,13 +10,13 @@ const overlayDom = document.getElementById('js-note-overlay')
 const ballonDom =  document.getElementById('js-note-ballon')
 if (overlayDom && wrapDom) {
   overlayDom.addEventListener('click', function(){
-    wrapDom.classList.add('none')
+    wrapDom.classList.remove('-js-active')
   })
-  if (ballonDom) {
-    ballonDom.addEventListener('click', function(){
-      wrapDom.classList.remove('none')
-    })
-  }
+}
+if (ballonDom) {
+  ballonDom.addEventListener('click', function(){
+    wrapDom.classList.add('-js-active')
+  })
 }
 
 // チャット一覧の内容描画
@@ -55,7 +47,7 @@ function makeListHTML() {
     </div>
     <div class="text">
     <div class="head">${item.date}</div>
-    <p>${trimString(removeBr(item.chats[item.chats.length - 1].says), 18)}</p>
+    <p>${trimString(removeBr(item.chats[item.chats.length - 1].says), 13)}</p>
     </div>
     <div class="count unread">${item.chats.length}</div>
     </li>`
