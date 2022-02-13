@@ -236,6 +236,24 @@ h1, h2, h3 {
   color: #fff;
 }
 
+.c-btn-simple {
+  border: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  min-height: 45px;
+  min-width: 130px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 7px 10px;
+  background: transparent;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  font-weight: bold;
+  color: #444;
+}
+
 .l-header {
   position: absolute;
   top: 0;
@@ -580,6 +598,13 @@ h1 {
 }
 .p-top_releaseNote_frame_list li .count.unread {
   background-color: crimson;
+}
+.p-top_releaseNote_frame_list > button {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  cursor: pointer;
 }
 .p-top_releaseNote_frame_page {
   position: absolute;

@@ -6,13 +6,14 @@ import { hello } from '../../_module/_hello'
 //top - releaseNote
 // チャット画面モーダルのon/off
 const wrapDom = document.getElementById('js-note-wrap')
-const overlayDom = document.getElementById('js-note-overlay')
 const ballonDom =  document.getElementById('js-note-ballon')
-if (overlayDom && wrapDom) {
-  overlayDom.addEventListener('click', function(){
+const closeNoteDoms = document.getElementsByClassName('js-note-close')
+for (let i=0; i<closeNoteDoms.length; i++) {
+  closeNoteDoms[i].addEventListener('click', function(){
     wrapDom.classList.remove('-js-active')
   })
 }
+
 if (ballonDom) {
   ballonDom.addEventListener('click', function(){
     wrapDom.classList.add('-js-active')
@@ -20,7 +21,7 @@ if (ballonDom) {
 }
 
 // チャット一覧の内容描画
-const listDom = document.getElementById('js-note-list') || null
+const listContentDom = document.getElementById('js-note-listContent') || null
 
 const removeBr = (str: string) => {
   if (str.indexOf('<br>') == -1) {
@@ -53,12 +54,13 @@ function makeListHTML() {
     </li>`
   })
   html += '</ul>'
-  listDom.innerHTML = html
+  listContentDom.innerHTML = html
 }
 makeListHTML()
 
 
 // チャット一覧-詳細の移動
+const listDom = document.getElementById('js-note-list') || null
 const pageDom = document.getElementById('js-note-page') || null
 const backDom = document.getElementById('js-note-back') || null
 const listItemsDom = document.getElementsByClassName('js-note-item')
@@ -66,7 +68,7 @@ for(let i = 0; i < listItemsDom.length; i++) {
   listItemsDom[i].addEventListener('click', function(){
     listDom.classList.add('slideOut')
     pageDom.classList.add('slideIn')
-    returnChat(i)
+    makeBallons(i)
   })
 }
 
@@ -75,29 +77,31 @@ backDom.addEventListener('click', function(){
   pageDom.classList.remove('slideIn')
 })
 
-const returnChat = (listNum:any) => {
+const makeBallons = (listNum:any) => {
   const uma = {
     "oguri": "オグリキャップ",
     "tama": "タマモクロス"
   }
   const json = require('./releaseNote.json')
+  const numberOfUma = json.releaseNote[listNum].person
+  document.getElementById("js-note-number").innerHTML = numberOfUma
+
   const notes = json.releaseNote[listNum].chats
 
   let html = ''
   notes.forEach((note:any) => {
-    html += '<li>'
-    html += '<div class="icon">'
-    html += `<img src="/assets/img/${note.who}.jpg", alt="${uma[note.who]}">`
-    html += '</div>'
-    html += '<div class="left">'
-    html += `<div class="name">${uma[note.who]}</div>`
+    html += `<li>
+    <div class="icon">
+    <img src="/assets/img/${note.who}.jpg", alt="${uma[note.who]}">
+    </div>
+    <div class="left">
+    <div class="name">${uma[note.who]}</div>`
     if (note.says) {
       html += `<div class="says">${note.says}</div>`
     } else {
       html += `<div class="saysImage"><img src="/assets/img/${note.image}", alt=""></div>`
     }
-    html += '</div>'
-    html += '</li>'
+    html += `</div></li>`
   });
   document.getElementById("js-note-chat").innerHTML = html
 }

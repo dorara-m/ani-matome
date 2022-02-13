@@ -52,7 +52,7 @@ const src = {
   },
   js: {
     file: 'src/js/**/!(_)*.ts',
-    watch: 'src/**/*.ts',
+    watch: ['src/**/*.ts', 'src/js/**/*.json'],
   },
   img: {
     file: 'src/img/**/*.{png,jpg,gif,svg,ico}',
