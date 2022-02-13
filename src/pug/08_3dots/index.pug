@@ -11,20 +11,26 @@ block addCss
 //- ここが自由記述エリア。動作サンプルを実装する。
 block sampleContent
   .dots-wrap
-    .dots-item
-      .dot-elastic
-    .dots-item
-      .dot-pulse
-    .dots-item
-      .dot-flashing
-    .dots-item
-      .dot-falling
-    .dots-item
-      .dot-fire
+    li
+      .dots-item
+        .dot-elastic
+    li
+      .dots-item
+        .dot-pulse
+    li
+      .dots-item
+        .dot-flashing
+    li
+      .dots-item
+        .dot-falling
+    li
+      .dots-item
+        .dot-fire
 
 //- 説明エリア。実装方法、参考サイトなどを書く。
 block descContent
   p ひとつの要素に特定のclassを付与することで、3つのドットを用いたローディングアイコンを実装できるスタイルシート「Three Dots」を利用しています。
   p ※CDNが見つけられなかったので、公式githubからローカルに落としてきて参照しています。
-  a(href="https://github.com/nzbin/three-dots", target="_blank", rel="noopener noreferrer").c-btn 公式Github
-  a(href="https://nzbin.github.io/three-dots/", target="_blank", rel="noopener noreferrer").c-btn 公式サンプル
+  .c-btnWrap 
+    a(href="https://github.com/nzbin/three-dots", target="_blank", rel="noopener noreferrer").c-btn 公式Github
+    a(href="https://nzbin.github.io/three-dots/", target="_blank", rel="noopener noreferrer").c-btn 公式サンプル

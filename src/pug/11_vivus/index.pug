@@ -16,11 +16,9 @@ block sampleContent
 
 //- 説明エリア。実装方法、参考サイトなどを書く。
 block descContent
-  p Illustratorで文字を作ってアウトライン化、それをsvgに書き出してソース内に直接書いています。<br>ライブラリを以下のように読み込んで、
-  p script(src="//cdn.jsdelivr.net/npm/vivus@latest/dist/vivus.min.js")
-  p 手元のjs記述で
+  p Illustratorで文字を作ってアウトライン化、それをsvgに書き出してソース内に直接書いています。#[br]ライブラリを読み込んで手元のjs記述で
   p new Vivus("sample-svg", { duration: 300 })
   p でおk
-  .u-mt30
+  .c-btnWrap 
     a(href="https://ics.media/entry/15970/", target="_blank", rel="noopener noreferrer").c-btn ライブラリを知ったサイト
     a(href="https://www.electric-fruits.com/creator-blog/vivus-js-sample-01/", target="_blank", rel="noopener noreferrer").c-btn イラレの書き出し参照

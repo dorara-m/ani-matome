@@ -29,35 +29,37 @@ block body
 
           section
             h2 リンク
-            table
-              thead
-                tr
-                  th サイト
-                  th カテゴリー
-                  th サンプル
-              tbody
-                each val in site.links
-                  tr(id=val.id)
-                    th
-                      a(href=val.link, target="_blank", rel="noopener noreferrer") #{val.name}
-                    td=val.category
-                    td
-                      if val.sample
-                        a(href=val.sample) あり→
-                      else
-                        span -
+            .tableWrap
+              table
+                thead
+                  tr
+                    th サイト
+                    th カテゴリー
+                    th サンプル
+                tbody
+                  each val in site.links
+                    tr(id=val.id)
+                      th
+                        a(href=val.link, target="_blank", rel="noopener noreferrer") #{val.name}
+                      td=val.category
+                      td
+                        if val.sample
+                          a(href=val.sample) あり→
+                        else
+                          span -
 
           section
             h2 AfterEffects
-            table
-              thead
-                tr
-                  th AfterEffectsでつくったもの
-              tbody
-                each val in site.af
+            .tableWrap
+              table
+                thead
                   tr
-                    td
-                      a(href=val.link, target="_blank", rel="noopener noreferrer") #{val.name}
+                    th AfterEffectsでつくったもの
+                tbody
+                  each val in site.af
+                    tr
+                      td
+                        a(href=val.link, target="_blank", rel="noopener noreferrer") #{val.name}
 
       .p-top_releaseNote
         .p-top_releaseNote_ballon.hasNew#js-note-ballon

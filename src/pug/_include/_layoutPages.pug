@@ -31,37 +31,41 @@ html
               block sampleContent
             section
               h2 動作環境
-              p ○:動作する　△:動作するが意図せぬ挙動　☓:動作しない
-              table.l-pages_table
-                thead
-                  tr
-                    td -
-                    th(colspan="5") PC
-                    th(colspan="2") SP
-                  tr
-                    td ブラウザ
-                    th Chrome
-                    th Edge
-                    th Firefox
-                    th IE
-                    th Safari
-                    th Andoroid Chrome
-                    th IOS safari
-                tbody
-                  tr
-                    th 対応
-                    each val,key in thisItem.blowser
-                      case val
-                        when 0
-                          td(data-status="○") ○
-                        when 1
-                          td(data-status="△") △
-                        when 2
-                          td(data-status="☓") ☓
-                        when 3
-                          td(data-status="-") 調査中
-                        default
-                          td(data-status="-") invalid
+              ul.l-pages_content_caption
+                li ○:動作する
+                li △:動作するが意図せぬ挙動
+                li ☓:動作しない
+              .l-pages_table
+                table
+                  thead
+                    tr
+                      td -
+                      th(colspan="5") PC
+                      th(colspan="2") SP
+                    tr
+                      td ブラウザ
+                      th Chrome
+                      th Edge
+                      th Firefox
+                      th IE
+                      th Safari
+                      th Andoroid Chrome
+                      th IOS safari
+                  tbody
+                    tr
+                      th 対応
+                      each val,key in thisItem.blowser
+                        case val
+                          when 0
+                            td(data-status="○") ○
+                          when 1
+                            td(data-status="△") △
+                          when 2
+                            td(data-status="☓") ☓
+                          when 3
+                            td(data-status="-") 調査中
+                          default
+                            td(data-status="-") invalid
 
             section
               h2 説明
