@@ -68,6 +68,8 @@ for(let i = 0; i < listItemsDom.length; i++) {
   listItemsDom[i].addEventListener('click', function(){
     listDom.classList.add('slideOut')
     pageDom.classList.add('slideIn')
+    // ここでスクロールリセット
+    pageDom.scrollTo(0, 0)
     makeBallons(i)
   })
 }
