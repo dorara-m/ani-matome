@@ -1,0 +1,30 @@
+.box {
+  width: 40px;
+  height: 40px;
+  background-color: #f08;
+
+  &.linear {
+    animation: moveToLeft 2s linear both infinite;
+  }
+  &.ease {
+    animation: moveToLeft 2s ease both infinite;
+  }
+  &.ease-in {
+    animation: moveToLeft 2s ease-in both infinite;
+  }
+  &.ease-out {
+    animation: moveToLeft 2s ease-out both infinite;
+  }
+  &.ease-in-out {
+    animation: moveToLeft 2s ease-in-out both infinite;
+  }
+
+  @keyframes moveToLeft {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(180px);
+    }
+  }
+}

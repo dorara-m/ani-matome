@@ -67,8 +67,9 @@ html
                           default
                             td(data-status="-") invalid
 
-            section
-              h2 説明
-              block descContent
+            if !thisItem.noDesc
+              section
+                h2 説明
+                block descContent
 
   include /_include/_js
