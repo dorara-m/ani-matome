@@ -71,5 +71,21 @@ html
               section
                 h2 説明
                 block descContent
+    
+    .c-releaseNote
+        .c-releaseNote_ballon.hasNew#js-note-ballon
+          img(src="/assets/img/icon-ballon.svg", alt="")
+        .c-releaseNote_wrap#js-note-wrap
+          .c-releaseNote_wrap_overlay.js-note-close
+          .c-releaseNote_frame
+            .c-releaseNote_frame_list#js-note-list
+              #js-note-listContent
+              button.c-btn-simple.js-note-close 閉じる
+            .c-releaseNote_frame_page#js-note-page
+              .c-releaseNote_frame_head
+                button#js-note-back
+                p トレセン学園 (#[span#js-note-number])
+              .c-releaseNote_frame_body
+                ul#js-note-chat
 
   include /_include/_js
