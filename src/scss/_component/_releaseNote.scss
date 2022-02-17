@@ -7,7 +7,7 @@
     bottom: 30px;
     right: 30px;
     background-color: #fff;
-    &.hasNew::after {
+    &.unRead::after {
       content: "";
       display: inline-block;
       width: 20px;
@@ -112,7 +112,7 @@
           border-radius: 20px;
           background-color: #bbb;
           color: #fff;
-          &.unread {
+          &.unRead {
             background-color: crimson;
           }
         }

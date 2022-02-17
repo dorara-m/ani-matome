@@ -419,7 +419,7 @@ h1, h2, h3 {
   right: 30px;
   background-color: #fff;
 }
-.c-releaseNote_ballon.hasNew::after {
+.c-releaseNote_ballon.unRead::after {
   content: "";
   display: inline-block;
   width: 20px;
@@ -519,7 +519,7 @@ h1, h2, h3 {
   background-color: #bbb;
   color: #fff;
 }
-.c-releaseNote_frame_list li .count.unread {
+.c-releaseNote_frame_list li .count.unRead {
   background-color: crimson;
 }
 .c-releaseNote_frame_list > button {

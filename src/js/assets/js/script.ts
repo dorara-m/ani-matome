@@ -3,7 +3,44 @@ import { hello } from '../../_module/_hello'
 // hello('Hello World')
 
 
-//top - releaseNote
+//共通要素 - releaseNote
+// 未読フラグ機能
+// 未読フラグデータが入ってくる用の配列
+let releaseNoteFlags
+// まず未読フラグがストレージにないかチェック
+const checkLocalStorage = async () => {
+  const readFlag = localStorage.getItem('readFlag')
+  if (!readFlag) {
+    // なしなら全部未読をストレージに追加する
+    // チャット総数を取得
+    const json = require('./releaseNote.json')
+    const releaseNoteLength = json.releaseNote.length
+    let flags = [], i = 0
+    while (i < releaseNoteLength) {
+      flags.push(false)
+      i++
+    }
+    localStorage.setItem('readFlag', JSON.stringify(flags))
+    console.log(flags)
+  } else {
+    // ありならそのデータをパースして変数に格納、あとで使う。
+    releaseNoteFlags = JSON.parse(readFlag)
+  }
+}
+// 未読フラグを画面下バルーンに反映
+const ballonIsRead = () => {
+  const ballonDom =  document.getElementById('js-note-ballon')
+  if (releaseNoteFlags.indexOf(false) !== -1) {
+    ballonDom.classList.add('unRead')
+  } else {
+    ballonDom.classList.remove('unRead')
+  }
+}
+checkLocalStorage().then(
+  ballonIsRead()
+)
+
+
 // チャット画面モーダルのon/off
 const wrapDom = document.getElementById('js-note-wrap')
 const ballonDom =  document.getElementById('js-note-ballon')
@@ -41,18 +78,18 @@ function makeListHTML() {
   const json = require('./releaseNote.json')
   const list = json.releaseNote
   let html = '<ul>'
-  list.forEach((item:any) => {
+  for(let i=0; i<list.length; i++) {
     html += `<li class="js-note-item">
     <div class="icon">
-    <img src="/assets/img/${item.chats[item.chats.length - 1].who}.jpg" alt="" />
+    <img src="/assets/img/${list[i].chats[list[i].chats.length - 1].who}.jpg" alt="" />
     </div>
     <div class="text">
-    <div class="head">${item.date}</div>
-    <p>${trimString(removeBr(item.chats[item.chats.length - 1].says), 13)}</p>
+    <div class="head">${list[i].date}</div>
+    <p>${trimString(removeBr(list[i].chats[list[i].chats.length - 1].says), 13)}</p>
     </div>
-    <div class="count unread">${item.chats.length}</div>
+    <div class="count js-count ${releaseNoteFlags[i] ? '' : 'unRead'}">${list[i].chats.length}</div>
     </li>`
-  })
+  }
   html += '</ul>'
   listContentDom.innerHTML = html
 }
@@ -71,6 +108,23 @@ for(let i = 0; i < listItemsDom.length; i++) {
     // ここでスクロールリセット
     pageDom.scrollTo(0, 0)
     makeBallons(i)
+
+    // ここでフラグを切り替える
+    if (!releaseNoteFlags[i]) {
+      releaseNoteFlags[i] = true
+      // フラグの切り替えを生成済みのhtmlに反映する
+      // バルーン
+      ballonIsRead()
+      // リスト
+      const countDoms = document.getElementsByClassName('js-count')
+      for (let i=0; i<countDoms.length; i++) {
+        if (releaseNoteFlags[i]) {
+          countDoms[i].classList.remove('unRead')
+        }
+      }
+      // localStrageにも反映しとく
+      localStorage.setItem('readFlag', JSON.stringify(releaseNoteFlags))
+    }
   })
 }
 
