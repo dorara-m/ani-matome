@@ -8,7 +8,7 @@ import { hello } from '../../_module/_hello'
 // 未読フラグデータが入ってくる用の配列
 let releaseNoteFlags
 // まず未読フラグがストレージにないかチェック
-const checkLocalStorage = async () => {
+const checkLocalStorage = () => {
   const readFlag = localStorage.getItem('readFlag')
   if (!readFlag) {
     // なしなら全部未読をストレージに追加する
@@ -36,9 +36,9 @@ const ballonIsRead = () => {
     ballonDom.classList.remove('unRead')
   }
 }
-checkLocalStorage().then(
-  ballonIsRead()
-)
+
+checkLocalStorage()
+ballonIsRead()
 
 
 // チャット画面モーダルのon/off
