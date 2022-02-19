@@ -38,22 +38,22 @@ const ballonIsRead = () => {
 }
 
 checkLocalStorage()
-ballonIsRead()
+// ballonIsRead()
 
 
-// チャット画面モーダルのon/off
+// チャット画面のtoggle
 const wrapDom = document.getElementById('js-note-wrap')
-const ballonDom =  document.getElementById('js-note-ballon')
+const toggleNoteDom = document.getElementById('js-note-toggle')
 const closeNoteDoms = document.getElementsByClassName('js-note-close')
+// toggle
+toggleNoteDom.addEventListener('click', ()=> {
+  console.log('toggled')
+  wrapDom.classList.toggle('-js-active')
+})
+// off
 for (let i=0; i<closeNoteDoms.length; i++) {
   closeNoteDoms[i].addEventListener('click', function(){
     wrapDom.classList.remove('-js-active')
-  })
-}
-
-if (ballonDom) {
-  ballonDom.addEventListener('click', function(){
-    wrapDom.classList.add('-js-active')
   })
 }
 
@@ -114,7 +114,7 @@ for(let i = 0; i < listItemsDom.length; i++) {
       releaseNoteFlags[i] = true
       // フラグの切り替えを生成済みのhtmlに反映する
       // バルーン
-      ballonIsRead()
+      // ballonIsRead()
       // リスト
       const countDoms = document.getElementsByClassName('js-count')
       for (let i=0; i<countDoms.length; i++) {

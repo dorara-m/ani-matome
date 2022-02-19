@@ -411,6 +411,15 @@ h1, h2, h3 {
   background-color: #ff8d87;
 }
 
+.c-releaseNote {
+  position: fixed;
+  top: 30px;
+  left: 0;
+  width: 100%;
+  height: calc(100% - 30px);
+  transition: transform 0.5s ease-in-out;
+  transform: translateY(calc(100% - 40px));
+}
 .c-releaseNote_ballon {
   cursor: pointer;
   width: 70px;
@@ -430,45 +439,30 @@ h1, h2, h3 {
   top: 0;
   right: 0;
 }
-.c-releaseNote_wrap {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: none;
+.c-releaseNote.-js-active {
+  transform: translateY(0);
 }
-.c-releaseNote_wrap.-js-active {
-  display: block;
+.c-releaseNote.-js-active .c-releaseNote_head .icon {
+  transform: rotate(180deg);
 }
-.c-releaseNote_wrap_overlay {
-  content: "";
-  display: block;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  background-color: rgba(0, 0, 0, 0.7);
+.c-releaseNote_head {
   cursor: pointer;
-}
-.c-releaseNote_wrap_overlay .close {
-  position: absolute;
-  top: 50px;
-  right: 50px;
-  width: 40px;
-  z-index: 3;
+  background-color: #edf1ee;
+  width: 100%;
+  height: 40px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 30px;
+  font-weight: bold;
 }
 .c-releaseNote_frame {
   cursor: initial;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 95%;
-  max-width: 450px;
-  height: 80vh;
-  border-radius: 20px;
+  width: 100%;
+  height: 100%;
   overflow: hidden;
   background-color: #7da4cd;
 }
@@ -531,11 +525,11 @@ h1, h2, h3 {
 }
 .c-releaseNote_frame_page {
   position: absolute;
+  top: 40px;
   width: 100%;
-  height: 100%;
+  height: calc(100% - 40px);
   overflow: auto;
   z-index: 2;
-  top: 0;
   left: 0;
   transform: translateX(100%);
   transition: 0.5s;
