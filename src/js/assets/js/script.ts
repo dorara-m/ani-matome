@@ -136,7 +136,8 @@ backDom.addEventListener('click', function(){
 const makeBallons = (listNum:any) => {
   const uma = {
     "oguri": "オグリキャップ",
-    "tama": "タマモクロス"
+    "tama": "タマモクロス",
+    "chiyo": "サクラチヨノオー"
   }
   const json = require('./releaseNote.json')
   const numberOfUma = json.releaseNote[listNum].person

@@ -1,3 +1,5 @@
+@use '../_foundation/_mixin' as *;
+
 .c-releaseNote {
   
   &_ballon {
@@ -24,9 +26,20 @@
   top: 30px;
   left: 0;
   width: 100%;
-  height: calc(100% - 30px);
+  height: calc(100vh - 30px);
   transition: transform .5s ease-in-out;
   transform: translateY(calc(100% - 40px));
+  box-shadow: 0 0 5px rgba($color: #000, $alpha: .4);
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  overflow: hidden;
+  @include mq() {
+    top: 30vh;
+    left: auto;
+    right: 0;
+    width: 450px;
+    height: 70vh;
+  }
   
   &.-js-active {
     transform: translateY(0);
@@ -41,9 +54,6 @@
     background-color: #edf1ee;
     width: 100%;
     height: 40px;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-    box-shadow: 0 0 5px rgba($color: #000, $alpha: .4);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -61,6 +71,7 @@
     &_list {
       background-color: #edf1ee;
       height: 100%;
+      padding-bottom: 30px;
       overflow: auto;
       transition: .5s;
       &.slideOut {
@@ -190,7 +201,7 @@
           .says {
             background: #edf1ee;
             display: inline-block;
-            max-width: 250px;
+            max-width: 270px;
             padding: 6.5px 10px;
             border-radius: 12px;
             line-height: 1.5;
