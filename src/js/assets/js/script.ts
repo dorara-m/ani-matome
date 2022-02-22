@@ -4,6 +4,8 @@ import { hello } from '../../_module/_hello'
 
 
 //共通要素 - releaseNote
+// 最初にjsonを読みにいく。
+const json = require('./releaseNote.json')
 // 未読フラグ機能
 // 未読フラグデータが入ってくる用の配列
 let releaseNoteFlags
@@ -11,20 +13,28 @@ let releaseNoteFlags
 const checkLocalStorage = () => {
   const readFlag = localStorage.getItem('readFlag')
   if (!readFlag) {
-    // なしなら全部未読をストレージに追加する
-    // チャット総数を取得
-    const json = require('./releaseNote.json')
-    const releaseNoteLength = json.releaseNote.length
+    // なし(初回)なら全部未読の配列を作成
     let flags = [], i = 0
-    while (i < releaseNoteLength) {
+    while (i < json.releaseNote.length) {
       flags.push(false)
       i++
     }
+    // ストレージにセット
     localStorage.setItem('readFlag', JSON.stringify(flags))
-    console.log(flags)
   } else {
-    // ありならそのデータをパースして変数に格納、あとで使う。
-    releaseNoteFlags = JSON.parse(readFlag)
+    // ありならそのデータをパースして変数に格納。
+    // 一時変数
+    const tmpFlags = JSON.parse(readFlag)
+    // もしこのフラグがjsonデータと一致しない場合…（つまりチャット数が増えていた場合
+    if (tmpFlags.length < json.releaseNote.length) {
+      // その差分だけ配列頭にfalseを足す
+      for (let i=0; i < json.releaseNote.length - tmpFlags.length; i++) {
+        tmpFlags.unshift(false)
+      }
+      console.log(tmpFlags)
+    }
+    // 最終的な変数に突っ込む
+    releaseNoteFlags = tmpFlags
   }
 }
 // 未読フラグを画面下バルーンに反映
@@ -75,7 +85,6 @@ const trimString = (str: string, max_length: number) => {
   return trimedStr
 }
 function makeListHTML() {
-  const json = require('./releaseNote.json')
   const list = json.releaseNote
   let html = '<ul>'
   for(let i=0; i<list.length; i++) {
@@ -139,7 +148,6 @@ const makeBallons = (listNum:any) => {
     "tama": "タマモクロス",
     "chiyo": "サクラチヨノオー"
   }
-  const json = require('./releaseNote.json')
   const numberOfUma = json.releaseNote[listNum].person
   document.getElementById("js-note-number").innerHTML = numberOfUma
 
