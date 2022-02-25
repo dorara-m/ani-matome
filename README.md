@@ -51,7 +51,9 @@ npm start
 
 ### サンプル追加の手順
 
-1. `site.json`のanime内にオブジェクトを追加してくだい。（トップページのgifサムネイルを設定したい場合はgifをtrue, 個別にcssファイルを使用する場合はcssをtrue。
+1. `site.json`のanime内にオブジェクトを追加してくだい。
+  * トップページのgifサムネイルを設定したい場合はgifをtrue
+  * 個別にcssファイルを使用する場合はcssをtrue。
 2. `src/pug/`に[id_jsonのname_enと同名のディレクトリ]/index.pugを追加してください。（`sample/index.pug`参考
 3. 個別cssファイルは`scss/assets/css/pages/`配下にpug時と同名.scssで作成してください。
 ※gifサムネイルは、完成した動きをgif録画し`src/img/assets/img/`配下に配置する。gif録画にはLICEcap`https://www.cockos.com/licecap/`を用いている

@@ -270,6 +270,24 @@
         "ios": 3
       },
       "noDesc": true
+    },
+    {
+      "id": "16",
+      "name_jp": "波紋",
+      "name_en": "hamon",
+      "category": "装飾",
+      "css": true,
+      "gif": true,
+      "blowser": {
+        "chrome": 0,
+        "edge": 3,
+        "firefox": 3,
+        "ie": 3,
+        "safari": 3,
+        "android": 3,
+        "ios": 3
+      },
+      "noDesc": true
     }
   ],
   "links": [
