@@ -26,13 +26,13 @@
       "css": true,
       "category": "装飾",
       "blowser": {
-        "chrome": 0,
-        "edge": 3,
-        "firefox": 3,
-        "ie": 3,
-        "safari": 3,
-        "android": 3,
-        "ios": 3
+        "chrome": "○",
+        "edge": "-",
+        "firefox": "-",
+        "ie": "-",
+        "safari": "-",
+        "android": "-",
+        "ios": "-"
       }
     },
     {
@@ -43,13 +43,13 @@
       "css": true,
       "category": "ローディング",
       "blowser": {
-        "chrome": 0,
-        "edge": 0,
-        "firefox": 0,
-        "ie": 1,
-        "safari": 0,
-        "android": 0,
-        "ios": 0
+        "chrome": "○",
+        "edge": "○",
+        "firefox": "○",
+        "ie": "△",
+        "safari": "○",
+        "android": "○",
+        "ios": "○"
       }
     },
     {
@@ -60,13 +60,13 @@
       "css": true,
       "category": "装飾",
       "blowser": {
-        "chrome": 0,
-        "edge": 3,
-        "firefox": 3,
-        "ie": 3,
-        "safari": 3,
-        "android": 3,
-        "ios": 3
+        "chrome": "○",
+        "edge": "-",
+        "firefox": "-",
+        "ie": "-",
+        "safari": "-",
+        "android": "-",
+        "ios": "-"
       }
     },
     {
@@ -77,13 +77,13 @@
       "css": true,
       "category": "装飾",
       "blowser": {
-        "chrome": 0,
-        "edge": 3,
-        "firefox": 3,
-        "ie": 3,
-        "safari": 3,
-        "android": 3,
-        "ios": 3
+        "chrome": "○",
+        "edge": "-",
+        "firefox": "-",
+        "ie": "-",
+        "safari": "-",
+        "android": "-",
+        "ios": "-"
       }
     },
     {
@@ -94,13 +94,13 @@
       "css": true,
       "category": "装飾",
       "blowser": {
-        "chrome": 0,
-        "edge": 3,
-        "firefox": 3,
-        "ie": 3,
-        "safari": 3,
-        "android": 3,
-        "ios": 3
+        "chrome": "○",
+        "edge": "-",
+        "firefox": "-",
+        "ie": "-",
+        "safari": "-",
+        "android": "-",
+        "ios": "-"
       }
     },
     {
@@ -111,13 +111,13 @@
       "css": true,
       "category": "背景",
       "blowser": {
-        "chrome": 0,
-        "edge": 3,
-        "firefox": 3,
-        "ie": 3,
-        "safari": 3,
-        "android": 3,
-        "ios": 3
+        "chrome": "○",
+        "edge": "-",
+        "firefox": "-",
+        "ie": "-",
+        "safari": "-",
+        "android": "-",
+        "ios": "-"
       }
     },
     {
@@ -128,13 +128,13 @@
       "css": true,
       "category": "ローディング",
       "blowser": {
-        "chrome": 0,
-        "edge": 3,
-        "firefox": 3,
-        "ie": 3,
-        "safari": 3,
-        "android": 3,
-        "ios": 3
+        "chrome": "○",
+        "edge": "-",
+        "firefox": "-",
+        "ie": "-",
+        "safari": "-",
+        "android": "-",
+        "ios": "-"
       }
     },
     {
@@ -145,13 +145,13 @@
       "css": true,
       "category": "ローディング",
       "blowser": {
-        "chrome": 0,
-        "edge": 3,
-        "firefox": 3,
-        "ie": 3,
-        "safari": 3,
-        "android": 3,
-        "ios": 3
+        "chrome": "○",
+        "edge": "-",
+        "firefox": "-",
+        "ie": "-",
+        "safari": "-",
+        "android": "-",
+        "ios": "-"
       }
     },
     {
@@ -162,13 +162,13 @@
       "css": true,
       "category": "装飾",
       "blowser": {
-        "chrome": 0,
-        "edge": 3,
-        "firefox": 3,
-        "ie": 3,
-        "safari": 3,
-        "android": 3,
-        "ios": 3
+        "chrome": "○",
+        "edge": "-",
+        "firefox": "-",
+        "ie": "-",
+        "safari": "-",
+        "android": "-",
+        "ios": "-"
       }
     },
     {
@@ -178,13 +178,13 @@
       "css": true,
       "category": "装飾",
       "blowser": {
-        "chrome": 0,
-        "edge": 3,
-        "firefox": 3,
-        "ie": 3,
-        "safari": 3,
-        "android": 3,
-        "ios": 3
+        "chrome": "○",
+        "edge": "-",
+        "firefox": "-",
+        "ie": "-",
+        "safari": "-",
+        "android": "-",
+        "ios": "-"
       }
     },
     {
@@ -194,13 +194,13 @@
       "gif": true,
       "category": "装飾",
       "blowser": {
-        "chrome": 0,
-        "edge": 3,
-        "firefox": 3,
-        "ie": 3,
-        "safari": 3,
-        "android": 3,
-        "ios": 3
+        "chrome": "○",
+        "edge": "-",
+        "firefox": "-",
+        "ie": "-",
+        "safari": "-",
+        "android": "-",
+        "ios": "-"
       }
     },
     {
@@ -211,13 +211,13 @@
       "gif": true,
       "css": true,
       "blowser": {
-        "chrome": 0,
-        "edge": 3,
-        "firefox": 3,
-        "ie": 3,
-        "safari": 3,
-        "android": 3,
-        "ios": 3
+        "chrome": "○",
+        "edge": "-",
+        "firefox": "-",
+        "ie": "-",
+        "safari": "-",
+        "android": "-",
+        "ios": "-"
       }
     },
     {
@@ -227,13 +227,13 @@
       "category": "装飾",
       "css": true,
       "blowser": {
-        "chrome": 0,
-        "edge": 0,
-        "firefox": 0,
-        "ie": 0,
-        "safari": 0,
-        "android": 0,
-        "ios": 0
+        "chrome": "○",
+        "edge": "○",
+        "firefox": "○",
+        "ie": "○",
+        "safari": "○",
+        "android": "○",
+        "ios": "○"
       }
     },
     {
@@ -244,13 +244,13 @@
       "css": true,
       "gif": true,
       "blowser": {
-        "chrome": 0,
-        "edge": 3,
-        "firefox": 3,
-        "ie": 3,
-        "safari": 3,
-        "android": 3,
-        "ios": 3
+        "chrome": "○",
+        "edge": "-",
+        "firefox": "-",
+        "ie": "-",
+        "safari": "-",
+        "android": "-",
+        "ios": "-"
       }
     },
     {
@@ -261,13 +261,13 @@
       "css": true,
       "gif": true,
       "blowser": {
-        "chrome": 0,
-        "edge": 3,
-        "firefox": 3,
-        "ie": 3,
-        "safari": 3,
-        "android": 3,
-        "ios": 3
+        "chrome": "○",
+        "edge": "-",
+        "firefox": "-",
+        "ie": "-",
+        "safari": "-",
+        "android": "-",
+        "ios": "-"
       },
       "noDesc": true
     },
@@ -279,13 +279,13 @@
       "css": true,
       "gif": true,
       "blowser": {
-        "chrome": 0,
-        "edge": 3,
-        "firefox": 3,
-        "ie": 3,
-        "safari": 3,
-        "android": 3,
-        "ios": 3
+        "chrome": "○",
+        "edge": "-",
+        "firefox": "-",
+        "ie": "-",
+        "safari": "-",
+        "android": "-",
+        "ios": "-"
       },
       "noDesc": true
     }

@@ -55,17 +55,7 @@ html
                     tr
                       th 対応
                       each val,key in thisItem.blowser
-                        case val
-                          when 0
-                            td(data-status="○") ○
-                          when 1
-                            td(data-status="△") △
-                          when 2
-                            td(data-status="☓") ☓
-                          when 3
-                            td(data-status="-") 調査中
-                          default
-                            td(data-status="-") invalid
+                        td(data-status=val)=val
 
             if !thisItem.noDesc
               section
