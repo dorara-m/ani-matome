@@ -229,6 +229,7 @@ FLOCSS を参考にディレクトリを分けています。運用ルールに�
 * https://ics.media/entry/11336/
 * https://ics.media/entry/11336/
 * https://techblog.raccoon.ne.jp/archives/1569826832.html
+* https://postfake.com/
 ### 「ウマ娘のショートストーリーがついでに更新される。チャットで会話してる風。」
 ------保留-----
 * 先にストーリーは執筆できるように、公開状態のフラグをもたせる。onにしたら表に出るように。
