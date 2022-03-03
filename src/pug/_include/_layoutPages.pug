@@ -27,7 +27,6 @@ html
             h1=thisItem.name_jp
           .l-pages_content
             section
-              h2 サンプル
               block sampleContent
             section
               h2 動作環境
@@ -57,10 +56,6 @@ html
                       each val,key in thisItem.blowser
                         td(data-status=val)=val
 
-            if !thisItem.noDesc
-              section
-                h2 説明
-                block descContent
     
     include /_include/_releaseNote
 

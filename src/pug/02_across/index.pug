@@ -9,8 +9,6 @@ block wrapContent
 block sampleContent
   p 画面の読み込み時に発動します。
   button#js-reload もう1回
-
-block descContent
   p 枠として空divを用意。position: fixed;で画面全体に固定する。
   p 疑似要素で背景（白）と動く帯（紺）を作る。どちらもposition: absolute;で浮かし、背景はwidth100%, 帯は適当な幅(300px)に。
   p 両方とも疑似要素にして空div自体をアニメーションさせないのは、アニメーションによってdivが実体として消えてしまい、帯がその影響を受けるから。

@@ -1,12 +1,6 @@
-.hover01_item {
-  font-size: 20px;
-  font-weight: bold;
-  display: inline-block;
-  cursor: pointer;
-}
-
 // 01
 .borderLeftRight {
+  cursor: pointer;
   display: inline-block;
   position: relative;
   color: hsl(222, 25%, 14%);
@@ -16,7 +10,7 @@
   position: absolute;
   width: 100%;
   transform: scaleX(0);
-  height: 2px;
+  height: 3px;
   bottom: 0;
   left: 0;
   background-color: hsl(243, 80%, 62%);
@@ -28,156 +22,3 @@
   transform-origin: bottom left;
 }
 
-// 02
-.borderFade {
-  padding-bottom: 1px;
-  color: hsl(222, 25%, 14%);
-  position: relative;
-}
-.borderFade::after {
-  content: '';
-  position: absolute;
-  height: 2px;
-  width: 100%;
-  left: 0;
-  bottom: 0;
-  opacity: 0;
-  transform: translateY(3px);
-  background: hsl(243, 80%, 62%);
-  transition: opacity 0.2s ease, transform 0.2s ease;
-}
-.borderFade:hover::after {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-// 03
-.lineThrough {
-  color: hsl(222, 25%, 14%);
-  text-decoration: none;
-  position: relative;
-  overflow: hidden;
-}
-.lineThrough::before {
-   content: '';
-   position: absolute;
-   top: 50%;
-   background: hsl(243, 80%, 62%);
-   height: 2px;
-   left: 0;
-   width: 100%;
-   transform: translate3d(-101%, 0, 0);
-   transition: transform 0.7s ease-in-out;
-}
-.lineThrough::after {
-   content: '';
-   position: absolute;
-   top: 0;
-   left: 0;
-   width: 100%;
-   height: 100%;
-   background: hsl(243, 80%, 62%);;
-   transform: translate3d(-100%, 0, 0) translate3d(-1px, 0, 0);
-   transition: transform 0.7s ease-in-out;
-}
-.lineThrough:hover::after {
-   transform: translate3d(100%, 0, 0) translate3d(1px, 0, 0);
-}
-.lineThrough:hover::before {
-  transform: translate3d(0, 0, 0);
-}
-
-// 04
-.textTransformX {
-  color: hsl(222, 25%, 14%);
-  transition: transform 0.2s ease, color 0.2s ease;
-}
-.textTransformX:hover {
-  transform: translateX(4px);
-  color: hsl(243, 80%, 62%);
-}
-
-// 05
-.swingHorizontal{
-  color:hsl(222, 25%, 14%);
-}
-.swingHorizontal:hover
-{
-  animation: swingHorizontal 1s ease;
-  animation-iteration-count: 1;
-}
-@keyframes swingHorizontal
-{
-  15%
-  {
-      transform: translateX(5px);
-  }
-  30%
-  {
-      transform: translateX(-5px);
-  }
-  50%
-  {
-      transform: translateX(3px);
-  }
-  65%
-  {
-      transform: translateX(-3px);
-  }
-  80%
-  {
-      transform: translateX(2px);
-  }
-  100%
-  {
-      transform: translateX(0);
-  }
-}
-
-// 06
-.borderMarker {
-  position: relative;
-}
-.borderMarker span {
-    z-index: 1;
-    position: relative;
-}
-.borderMarker::after {
-  content: "";
-  position: absolute;
-  left: -0.1px;
-  right: -0.1px;
-  bottom: 0;
-  height: 100%;
-  transform: scaleY(.3);
-  transition: transform .1s ease-in-out;
-  transform-origin: bottom;
-  background-color: hsl(222, 100%, 93%);
-  // 追記
-  z-index: -1;
-}
-.borderMarker:hover::after {
-  transform: scaleY(1);
-}
-
-// 07
-.magnifyText {
-  color: hsl(222, 25%, 14%);
-  transition: color 0.25s ease-in-out, transform 0.25s ease-in-out;
-}
-.magnifyText:hover {
-  transform: scale(1.05);
-  color: hsl(243, 80%, 62%);
-}
-.magnifyText:active {
-  transform: scale(.9);
-}
-
-// 08
-.siblingFade span {
-  padding: 0 1rem;
-  transition: opacity 0.2s;
-}
-.siblingFade:hover span:not(:hover) {
-  opacity: 0.5;
-}

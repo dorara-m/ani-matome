@@ -25,9 +25,13 @@
           </div>
           <div class="l-pages_content">
             <section>
-              <h2>サンプル</h2>
               <p>画面の読み込み時に発動します。</p>
               <button id="js-reload">もう1回</button>
+              <p>枠として空divを用意。position: fixed;で画面全体に固定する。</p>
+              <p>疑似要素で背景（白）と動く帯（紺）を作る。どちらもposition: absolute;で浮かし、背景はwidth100%, 帯は適当な幅(300px)に。</p>
+              <p>両方とも疑似要素にして空div自体をアニメーションさせないのは、アニメーションによってdivが実体として消えてしまい、帯がその影響を受けるから。</p>
+              <p>背景と帯を、同じタイミング（.5秒遅れ）でアニメーション。translateで位置を画面外→画面外へ。</p>
+              <p>アニメーションが終わったら外枠の空divも消す。cssアニメーションではdisplayは操作できないので、visibility: hidden;に。</p>
             </section>
             <section>
               <h2>動作環境</h2>
@@ -69,14 +73,6 @@
                   </tbody>
                 </table>
               </div>
-            </section>
-            <section>
-              <h2>説明</h2>
-              <p>枠として空divを用意。position: fixed;で画面全体に固定する。</p>
-              <p>疑似要素で背景（白）と動く帯（紺）を作る。どちらもposition: absolute;で浮かし、背景はwidth100%, 帯は適当な幅(300px)に。</p>
-              <p>両方とも疑似要素にして空div自体をアニメーションさせないのは、アニメーションによってdivが実体として消えてしまい、帯がその影響を受けるから。</p>
-              <p>背景と帯を、同じタイミング（.5秒遅れ）でアニメーション。translateで位置を画面外→画面外へ。</p>
-              <p>アニメーションが終わったら外枠の空divも消す。cssアニメーションではdisplayは操作できないので、visibility: hidden;に。</p>
             </section>
           </div>
         </div>

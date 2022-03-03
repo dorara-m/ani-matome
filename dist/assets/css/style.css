@@ -289,6 +289,195 @@ h1, h2, h3 {
   margin-left: 7px;
 }
 
+.hover_text_item {
+  width: 200px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.borderFade {
+  cursor: pointer;
+  padding-bottom: 1px;
+  color: #1b202d;
+  position: relative;
+}
+
+.borderFade::after {
+  content: "";
+  position: absolute;
+  height: 3px;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  opacity: 0;
+  transform: translateY(3px);
+  background: #5851ec;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.borderFade:hover::after {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.lineThrough {
+  cursor: pointer;
+  color: #1b202d;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.lineThrough::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  background: #5851ec;
+  height: 2px;
+  left: 0;
+  width: 100%;
+  transform: translate3d(-101%, 0, 0);
+  transition: transform 0.7s ease-in-out;
+}
+
+.lineThrough::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #5851ec;
+  transform: translate3d(-100%, 0, 0) translate3d(-1px, 0, 0);
+  transition: transform 0.7s ease-in-out;
+}
+
+.lineThrough:hover::after {
+  transform: translate3d(100%, 0, 0) translate3d(1px, 0, 0);
+}
+
+.lineThrough:hover::before {
+  transform: translate3d(0, 0, 0);
+}
+
+.textTransformX {
+  cursor: pointer;
+  color: #1b202d;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.textTransformX:hover {
+  transform: translateX(4px);
+  color: #5851ec;
+}
+
+.swingHorizontal {
+  cursor: pointer;
+  color: #1b202d;
+}
+
+.swingHorizontal:hover {
+  -webkit-animation: swingHorizontal 1s ease;
+          animation: swingHorizontal 1s ease;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+}
+
+@-webkit-keyframes swingHorizontal {
+  15% {
+    transform: translateX(5px);
+  }
+  30% {
+    transform: translateX(-5px);
+  }
+  50% {
+    transform: translateX(3px);
+  }
+  65% {
+    transform: translateX(-3px);
+  }
+  80% {
+    transform: translateX(2px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes swingHorizontal {
+  15% {
+    transform: translateX(5px);
+  }
+  30% {
+    transform: translateX(-5px);
+  }
+  50% {
+    transform: translateX(3px);
+  }
+  65% {
+    transform: translateX(-3px);
+  }
+  80% {
+    transform: translateX(2px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+.borderMarker {
+  position: relative;
+}
+
+.borderMarker span {
+  z-index: 1;
+  position: relative;
+}
+
+.borderMarker::after {
+  content: "";
+  position: absolute;
+  left: -0.1px;
+  right: -0.1px;
+  bottom: 0;
+  height: 100%;
+  transform: scaleY(0.3);
+  transition: transform 0.1s ease-in-out;
+  transform-origin: bottom;
+  background-color: #dbe6ff;
+  z-index: -1;
+}
+
+.borderMarker:hover::after {
+  transform: scaleY(1);
+}
+
+.magnifyText {
+  color: #1b202d;
+  transition: color 0.25s ease-in-out, transform 0.25s ease-in-out;
+}
+
+.magnifyText:hover {
+  transform: scale(1.05);
+  color: #5851ec;
+}
+
+.magnifyText:active {
+  transform: scale(0.9);
+}
+
+.siblingFade span {
+  padding: 0 1rem;
+  transition: opacity 0.2s;
+}
+
+.siblingFade:hover span:not(:hover) {
+  opacity: 0.5;
+}
+
 .c-list_disc {
   margin-bottom: 20px;
 }

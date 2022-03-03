@@ -268,8 +268,7 @@
         "safari": "-",
         "android": "-",
         "ios": "-"
-      },
-      "noDesc": true
+      }
     },
     {
       "id": "16",
@@ -286,8 +285,67 @@
         "safari": "-",
         "android": "-",
         "ios": "-"
-      },
-      "noDesc": true
+      }
+    },
+    {
+      "id": "17",
+      "name_jp": "ホバーアニメ02",
+      "name_en": "hover02",
+      "category": "装飾",
+      "blowser": {
+        "chrome": "○",
+        "edge": "-",
+        "firefox": "○",
+        "ie": "-",
+        "safari": "-",
+        "android": "-",
+        "ios": "-"
+      }
+    },
+    {
+      "id": "18",
+      "name_jp": "ホバーアニメ03",
+      "name_en": "hover03",
+      "category": "装飾",
+      "blowser": {
+        "chrome": "○",
+        "edge": "-",
+        "firefox": "○",
+        "ie": "-",
+        "safari": "-",
+        "android": "-",
+        "ios": "-"
+      }
+    },
+    {
+      "id": "19",
+      "name_jp": "ホバーアニメ04",
+      "name_en": "hover04",
+      "category": "装飾",
+      "blowser": {
+        "chrome": "○",
+        "edge": "-",
+        "firefox": "○",
+        "ie": "-",
+        "safari": "-",
+        "android": "-",
+        "ios": "-"
+      }
+    },
+    {
+      "id": "20",
+      "name_jp": "ホバーアニメ05",
+      "name_en": "hover05",
+      "category": "装飾",
+      "blowser": {
+        "chrome": "○",
+        "edge": "-",
+        "firefox": "○",
+        "ie": "-",
+        "safari": "-",
+        "android": "-",
+        "ios": "-"
+      }
     }
   ],
   "links": [
