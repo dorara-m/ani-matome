@@ -118,9 +118,10 @@
   }
 }
 
-// 06
+// 21
 .borderMarker {
   position: relative;
+  cursor: pointer;
 }
 .borderMarker span {
     z-index: 1;
@@ -144,8 +145,9 @@
   transform: scaleY(1);
 }
 
-// 07
+// 22
 .magnifyText {
+  cursor: pointer;
   color: hsl(222, 25%, 14%);
   transition: color 0.25s ease-in-out, transform 0.25s ease-in-out;
 }
@@ -157,9 +159,11 @@
   transform: scale(.9);
 }
 
-// 08
+// 23
 .siblingFade span {
-  padding: 0 1rem;
+  display: block;
+  cursor: pointer;
+  padding: 1rem 0;
   transition: opacity 0.2s;
 }
 .siblingFade:hover span:not(:hover) {

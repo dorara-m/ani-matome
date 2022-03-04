@@ -156,7 +156,7 @@
     },
     {
       "id": "09",
-      "name_jp": "ホバーアニメ01",
+      "name_jp": "ホバーアニメ01「枠線が抜ける」",
       "name_en": "hover01",
       "gif": true,
       "css": true,
@@ -289,9 +289,10 @@
     },
     {
       "id": "17",
-      "name_jp": "ホバーアニメ02",
+      "name_jp": "ホバーアニメ02「枠線ふわっと」",
       "name_en": "hover02",
       "category": "装飾",
+      "gif":true,
       "blowser": {
         "chrome": "○",
         "edge": "-",
@@ -304,9 +305,10 @@
     },
     {
       "id": "18",
-      "name_jp": "ホバーアニメ03",
+      "name_jp": "ホバーアニメ03「箱が抜けて取り消し線」",
       "name_en": "hover03",
       "category": "装飾",
+      "gif": true,
       "blowser": {
         "chrome": "○",
         "edge": "-",
@@ -319,9 +321,10 @@
     },
     {
       "id": "19",
-      "name_jp": "ホバーアニメ04",
+      "name_jp": "ホバーアニメ04「字下げ」",
       "name_en": "hover04",
       "category": "装飾",
+      "gif": true,
       "blowser": {
         "chrome": "○",
         "edge": "-",
@@ -334,9 +337,58 @@
     },
     {
       "id": "20",
-      "name_jp": "ホバーアニメ05",
+      "name_jp": "ホバーアニメ05「ゆれる」",
       "name_en": "hover05",
+      "gif": true,
       "category": "装飾",
+      "blowser": {
+        "chrome": "○",
+        "edge": "-",
+        "firefox": "○",
+        "ie": "-",
+        "safari": "-",
+        "android": "-",
+        "ios": "-"
+      }
+    },
+    {
+      "id": "21",
+      "name_jp": "ホバーアニメ06「マーカー」",
+      "name_en": "hover06",
+      "category": "装飾",
+      "gif": true,
+      "blowser": {
+        "chrome": "○",
+        "edge": "-",
+        "firefox": "○",
+        "ie": "-",
+        "safari": "-",
+        "android": "-",
+        "ios": "-"
+      }
+    },
+    {
+      "id": "22",
+      "name_jp": "ホバーアニメ07「拡大/クリックで一瞬縮む」",
+      "name_en": "hover07",
+      "gif": true,
+      "category": "装飾",
+      "blowser": {
+        "chrome": "○",
+        "edge": "-",
+        "firefox": "○",
+        "ie": "-",
+        "safari": "-",
+        "android": "-",
+        "ios": "-"
+      }
+    },
+    {
+      "id": "23",
+      "name_jp": "ホバーアニメ08「自分以外」",
+      "name_en": "hover08",
+      "category": "装飾",
+      "gif": true,
       "blowser": {
         "chrome": "○",
         "edge": "-",

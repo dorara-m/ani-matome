@@ -430,6 +430,7 @@ h1, h2, h3 {
 }
 .borderMarker {
   position: relative;
+  cursor: pointer;
 }
 
 .borderMarker span {
@@ -456,6 +457,7 @@ h1, h2, h3 {
 }
 
 .magnifyText {
+  cursor: pointer;
   color: #1b202d;
   transition: color 0.25s ease-in-out, transform 0.25s ease-in-out;
 }
@@ -470,7 +472,9 @@ h1, h2, h3 {
 }
 
 .siblingFade span {
-  padding: 0 1rem;
+  display: block;
+  cursor: pointer;
+  padding: 1rem 0;
   transition: opacity 0.2s;
 }
 

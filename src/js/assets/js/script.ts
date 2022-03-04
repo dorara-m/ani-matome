@@ -57,7 +57,6 @@ const toggleNoteDom = document.getElementById('js-note-toggle')
 const closeNoteDoms = document.getElementsByClassName('js-note-close')
 // toggle
 toggleNoteDom.addEventListener('click', ()=> {
-  console.log('toggled')
   wrapDom.classList.toggle('-js-active')
 })
 // off
@@ -90,11 +89,11 @@ function makeListHTML() {
   for(let i=0; i<list.length; i++) {
     html += `<li class="js-note-item">
     <div class="icon">
-    <img src="/assets/img/${list[i].chats[list[i].chats.length - 1].who}.jpg" alt="" />
+    <img src="/assets/img/${list[i].chats[0].who}.jpg" alt="" />
     </div>
     <div class="text">
     <div class="head">${list[i].date}</div>
-    <p>${trimString(removeBr(list[i].chats[list[i].chats.length - 1].says), 13)}</p>
+    <p>${trimString(removeBr(list[i].chats[0].says), 13)}</p>
     </div>
     <div class="count js-count ${releaseNoteFlags[i] ? '' : 'unRead'}">${list[i].chats.length}</div>
     </li>`
