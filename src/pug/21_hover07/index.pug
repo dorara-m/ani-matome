@@ -1,0 +1,11 @@
+extend /_include/_layoutPages
+
+block id
+  - var id = 21
+
+block sampleContent
+  p ちょっと拡大＆色変 / クリックで縮小#[br]クリックした時のアクションはdiv:activeで指定できる
+  .hover_item_wrap
+    .magnifyText Hover me
+  a.u-mt30(href="https://ui-snippets.dev/", target="_blank", rel="noopener noreferrer").c-btn 元ネタ
+

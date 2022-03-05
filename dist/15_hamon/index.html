@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>ホバーアニメ01「枠線が抜ける」</title>
-    <meta name="description" content="アニメーション「ホバーアニメ01「枠線が抜ける」」のページです。">
+    <title>波紋</title>
+    <meta name="description" content="アニメーション「波紋」のページです。">
     <link href="/assets/css/style.css" rel="stylesheet">
-    <link rel="stylesheet" href="/assets/css/pages/09_hover01.css">
+    <link rel="stylesheet" href="/assets/css/pages/15_hamon.css">
   </head>
   <body>
     <div class="l-wrap">
@@ -17,17 +17,28 @@
         </div>
       </header>
       <div class="l-headerSpace"></div>
-      <div class="l-pages pg-hover01">
+      <div class="l-pages pg-hamon">
         <div class="l-container">
           <div class="l-pages_head">
-            <h1>ホバーアニメ01「枠線が抜ける」</h1>
+            <h1>波紋</h1>
           </div>
           <div class="l-pages_content">
             <section>
-              <p>左から右へ枠線が抜けていくパターン。</p>
-              <div class="hover_item_wrap">
-                <div class="borderLeftRight">Hover me</div>
-              </div><a class="u-mt30 c-btn" href="https://ui-snippets.dev/" target="_blank" rel="noopener noreferrer">元ネタ</a>
+              <div class="wrap">
+                <div class="item"></div>
+              </div>
+              <p>動かす円はこちら。<br>cssでborderの色を白の半透明にしてbox-shadowで水色のぼかしを表現しているのがポイント</p>
+              <h3 class="u-mt30">1つだけ</h3>
+              <div class="wrap">
+                <div class="item anime"></div>
+              </div>
+              <p>css:transformでscaleを操作している。0→0.8→1.5。<br>途中で止まるような動きが気になったのでイージングは「linear」（一定速度）でやってみた。</p>
+              <h3 class="u-mt30">2つ</h3>
+              <div class="wrap">
+                <div class="item anime"></div>
+                <div class="item anime delay"></div>
+              </div>
+              <p>.3sおくらせて同じ要素をアニメさせる。</p><a class="u-mt30 c-btn" href="https://chinen-octtn.github.io/modal-modeless-test/" target="_blank" rel="noopener noreferrer">Inspiration by This page</a>
             </section>
             <section>
               <h2>動作環境</h2>
@@ -60,7 +71,7 @@
                       <th>対応</th>
                       <td data-status="○">○</td>
                       <td data-status="-">-</td>
-                      <td data-status="-">-</td>
+                      <td data-status="○">○</td>
                       <td data-status="-">-</td>
                       <td data-status="-">-</td>
                       <td data-status="-">-</td>

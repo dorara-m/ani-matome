@@ -1,0 +1,20 @@
+//- レイアウト読み込み
+extend /_include/_layoutPages
+
+block id
+  - var id = 11
+
+block addJs
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.5.9/lottie.min.js" type="text/javascript"></script>
+  script(src="/assets/js/pages/lottie01.js") 
+
+
+//- ここが自由記述エリア。動作サンプルを実装する。
+block sampleContent
+  #lottie
+  button#js-reload もう一度
+
+  p AFのアニメーションをjsonで書き出し、それを任意のdivに対してlottie.jsで描画しています。
+  p divにcssで全画面に固定表示、背景色黒を指定しています。アニメーションのビュー範囲が1920*1080で作ってしまっているのでブラウザ幅を広げても縮尺は維持されます。
+  p アニメーションが終了するとイベントを受け取って要素が消えるようjs制御しています。
+  a(href="https://github.com/airbnb/lottie-web", target="_blank", rel="noopener noreferrer").c-btn.u-mt30 公式github

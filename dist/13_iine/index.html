@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>ホバーアニメ01「枠線が抜ける」</title>
-    <meta name="description" content="アニメーション「ホバーアニメ01「枠線が抜ける」」のページです。">
+    <title>いいね♡ボタン</title>
+    <meta name="description" content="アニメーション「いいね♡ボタン」のページです。">
     <link href="/assets/css/style.css" rel="stylesheet">
-    <link rel="stylesheet" href="/assets/css/pages/09_hover01.css">
+    <link rel="stylesheet" href="/assets/css/pages/13_iine.css">
   </head>
   <body>
     <div class="l-wrap">
@@ -17,17 +17,36 @@
         </div>
       </header>
       <div class="l-headerSpace"></div>
-      <div class="l-pages pg-hover01">
+      <div class="l-pages pg-iine">
         <div class="l-container">
           <div class="l-pages_head">
-            <h1>ホバーアニメ01「枠線が抜ける」</h1>
+            <h1>いいね♡ボタン</h1>
           </div>
           <div class="l-pages_content">
-            <section>
-              <p>左から右へ枠線が抜けていくパターン。</p>
-              <div class="hover_item_wrap">
-                <div class="borderLeftRight">Hover me</div>
-              </div><a class="u-mt30 c-btn" href="https://ui-snippets.dev/" target="_blank" rel="noopener noreferrer">元ネタ</a>
+            <section><svg id="js-like" class="likeButton" width="150px" height="150px" viewBox="0 0 500 500">
+<circle class="explosion" r="150" cx="250" cy="250"></circle>
+<g class="particleLayer">
+<circle fill="#8CE8C3" cx="130" cy="126.5" r="12.5"></circle>
+<circle fill="#8CE8C3" cx="411" cy="313.5" r="12.5"></circle>
+<circle fill="#91D2FA" cx="279" cy="86.5" r="12.5"></circle>
+<circle fill="#91D2FA" cx="155" cy="390.5" r="12.5"></circle>
+<circle fill="#CC8EF5" cx="89" cy="292.5" r="10.5"></circle>
+<circle fill="#9BDFBA" cx="414" cy="282.5" r="10.5"></circle>
+<circle fill="#9BDFBA" cx="115" cy="149.5" r="10.5"></circle>
+<circle fill="#9FC7FA" cx="250" cy="80.5" r="10.5"></circle>
+<circle fill="#9FC7FA" cx="78" cy="261.5" r="10.5"></circle>
+<circle fill="#96D8E9" cx="182" cy="402.5" r="10.5"></circle>
+<circle fill="#CC8EF5" cx="401.5" cy="166" r="13"></circle>
+<circle fill="#DB92D0" cx="379" cy="141.5" r="10.5"></circle>
+<circle fill="#DB92D0" cx="327" cy="397.5" r="10.5"></circle>
+<circle fill="#DD99B8" cx="296" cy="392.5" r="10.5"></circle>
+</g>
+<path class="heart" d="M250,187.4c-31.8-47.8-95.5-19.8-95.5,32.2c0,35.2,31.8,60.3,55.7,79.2c24.9,19.7,31.8,23.9,39.8,31.8 c7.9-7.9,14.6-12.6,39.8-31.8c24.3-18.5,55.7-44.4,55.7-79.6C345.5,167.6,281.8,139.7,250,187.4z"></path>
+</svg>
+              <p>Twitterのいいね風アニメ。<br>参考サイトのコードをまるぱくりしてます。</p>
+              <div class="c-btnWrap"><a class="c-btn" href="https://ics.media/entry/15970/" target="_blank" rel="noopener noreferrer">参考サイト</a><a class="c-btn" href="https://ics-creative.github.io/svg_lesson/demo2_transition.html" target="_blank" rel="noopener noreferrer">参考サイトのサンプル</a></div>
+              <p class="u-mt30">作り込んだsvgファイルの各パーツをcssで細かく動かして実現しています。</p>
+              <p>かなり複雑なアニメ処理のため、微妙なカスタマイズはオススメしません。これはこういうもの、としてコピペして使うのが良いと思います。</p>
             </section>
             <section>
               <h2>動作環境</h2>
@@ -60,7 +79,7 @@
                       <th>対応</th>
                       <td data-status="○">○</td>
                       <td data-status="-">-</td>
-                      <td data-status="-">-</td>
+                      <td data-status="○">○</td>
                       <td data-status="-">-</td>
                       <td data-status="-">-</td>
                       <td data-status="-">-</td>
@@ -97,4 +116,11 @@
   </body>
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
   <script src="/assets/js/script.js" defer></script>
+  <script>
+    var dom = document.getElementById('js-like')
+    dom.addEventListener('click', function() {
+      dom.classList.toggle('clicked');
+    })
+    
+  </script>
 </html>

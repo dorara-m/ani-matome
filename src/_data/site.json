@@ -173,22 +173,6 @@
     },
     {
       "id": "10",
-      "name_jp": "ホバーまとめ ボタン系",
-      "name_en": "hover02",
-      "css": true,
-      "category": "装飾",
-      "blowser": {
-        "chrome": "○",
-        "edge": "-",
-        "firefox": "-",
-        "ie": "-",
-        "safari": "-",
-        "android": "-",
-        "ios": "-"
-      }
-    },
-    {
-      "id": "11",
       "name_jp": "ライブラリで動くsvg文字アニメ",
       "name_en": "vivus",
       "gif": true,
@@ -204,7 +188,7 @@
       }
     },
     {
-      "id": "12",
+      "id": "11",
       "name_jp": "Lottie.jsデモ",
       "name_en": "lottie01",
       "category": "装飾",
@@ -221,7 +205,7 @@
       }
     },
     {
-      "id": "13",
+      "id": "12",
       "name_jp": "Lottie × cssアニメーション",
       "name_en": "lottie02",
       "category": "装飾",
@@ -237,7 +221,7 @@
       }
     },
     {
-      "id": "14",
+      "id": "13",
       "name_jp": "いいね♡ボタン",
       "name_en": "iine",
       "category": "装飾",
@@ -254,7 +238,7 @@
       }
     },
     {
-      "id": "15",
+      "id": "14",
       "name_jp": "イージングサンプル",
       "name_en": "easing",
       "category": "装飾",
@@ -271,7 +255,7 @@
       }
     },
     {
-      "id": "16",
+      "id": "15",
       "name_jp": "波紋",
       "name_en": "hamon",
       "category": "装飾",
@@ -288,7 +272,7 @@
       }
     },
     {
-      "id": "17",
+      "id": "16",
       "name_jp": "ホバーアニメ02「枠線ふわっと」",
       "name_en": "hover02",
       "category": "装飾",
@@ -304,7 +288,7 @@
       }
     },
     {
-      "id": "18",
+      "id": "17",
       "name_jp": "ホバーアニメ03「箱が抜けて取り消し線」",
       "name_en": "hover03",
       "category": "装飾",
@@ -320,7 +304,7 @@
       }
     },
     {
-      "id": "19",
+      "id": "18",
       "name_jp": "ホバーアニメ04「字下げ」",
       "name_en": "hover04",
       "category": "装飾",
@@ -336,7 +320,7 @@
       }
     },
     {
-      "id": "20",
+      "id": "19",
       "name_jp": "ホバーアニメ05「ゆれる」",
       "name_en": "hover05",
       "gif": true,
@@ -352,7 +336,7 @@
       }
     },
     {
-      "id": "21",
+      "id": "20",
       "name_jp": "ホバーアニメ06「マーカー」",
       "name_en": "hover06",
       "category": "装飾",
@@ -368,7 +352,7 @@
       }
     },
     {
-      "id": "22",
+      "id": "21",
       "name_jp": "ホバーアニメ07「拡大/クリックで一瞬縮む」",
       "name_en": "hover07",
       "gif": true,
@@ -384,7 +368,7 @@
       }
     },
     {
-      "id": "23",
+      "id": "22",
       "name_jp": "ホバーアニメ08「自分以外」",
       "name_en": "hover08",
       "category": "装飾",
@@ -393,6 +377,23 @@
         "chrome": "○",
         "edge": "-",
         "firefox": "○",
+        "ie": "-",
+        "safari": "-",
+        "android": "-",
+        "ios": "-"
+      }
+    },
+    {
+      "id": "23",
+      "name_jp": "ホバーアニメ09「押し込む」",
+      "name_en": "hover09",
+      "css": true,
+      "gif": true,
+      "category": "装飾",
+      "blowser": {
+        "chrome": "○",
+        "edge": "-",
+        "firefox": "-",
         "ie": "-",
         "safari": "-",
         "android": "-",

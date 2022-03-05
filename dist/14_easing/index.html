@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>ホバーアニメ01「枠線が抜ける」</title>
-    <meta name="description" content="アニメーション「ホバーアニメ01「枠線が抜ける」」のページです。">
+    <title>イージングサンプル</title>
+    <meta name="description" content="アニメーション「イージングサンプル」のページです。">
     <link href="/assets/css/style.css" rel="stylesheet">
-    <link rel="stylesheet" href="/assets/css/pages/09_hover01.css">
+    <link rel="stylesheet" href="/assets/css/pages/14_easing.css">
   </head>
   <body>
     <div class="l-wrap">
@@ -17,17 +17,29 @@
         </div>
       </header>
       <div class="l-headerSpace"></div>
-      <div class="l-pages pg-hover01">
+      <div class="l-pages pg-easing">
         <div class="l-container">
           <div class="l-pages_head">
-            <h1>ホバーアニメ01「枠線が抜ける」</h1>
+            <h1>イージングサンプル</h1>
           </div>
           <div class="l-pages_content">
             <section>
-              <p>左から右へ枠線が抜けていくパターン。</p>
-              <div class="hover_item_wrap">
-                <div class="borderLeftRight">Hover me</div>
-              </div><a class="u-mt30 c-btn" href="https://ui-snippets.dev/" target="_blank" rel="noopener noreferrer">元ネタ</a>
+              <p>easing（イージング）とは、アニメーションの変化のタイミングを指定する関数です。<br>デフォルトで用意されたlinear, ease, ease-in, ease-out, ease-in-outの5つの値を指定できる他、より詳細な変化タイミングをcubic-bezier()で指定できます。</p>
+              <p>5つのサンプルの動作をご紹介します。すべて左に2秒かけて180px移動</p>
+              <p class="u-mt30">linear（リニア）（最初から最後まで一定の速度</p>
+              <div class="box linear"></div>
+              <p class="u-mt30">ease（cssアニメーションのデフォルト値はこの子）（ゆっくり始まり、急に速度を上げて、ゆっくり終わる。</p>
+              <div class="box ease"></div>
+              <p class="u-mt30">ease-in（ゆっくり始まり、徐々に加速</p>
+              <div class="box ease-in"></div>
+              <p class="u-mt30">ease-out（速い速度で始まり、徐々に減速</p>
+              <div class="box ease-out"></div>
+              <p class="u-mt30">ease-in-out（ゆっくり始まり、徐々に加速して、アニメーション終了手前で減速</p>
+              <div class="box ease-in-out"></div>
+              <div class="u-mt30">
+                <p>cubic-bezier()関数については下記サイトで指定,動作確認がおすすめ</p>
+              </div><a class="c-btn u-mt30" href="https://cubic-bezier.com/" target="_blank" rel="noopener noreferrer">cubic-bezier.com</a>
+              <div class="u-mt30"><a class="c-btn" href="https://www.ipentec.com/document/css-easing-animation" target="_blank" rel="noopener noreferrer">今回のサンプルのアイデア元</a></div>
             </section>
             <section>
               <h2>動作環境</h2>
@@ -60,7 +72,7 @@
                       <th>対応</th>
                       <td data-status="○">○</td>
                       <td data-status="-">-</td>
-                      <td data-status="-">-</td>
+                      <td data-status="○">○</td>
                       <td data-status="-">-</td>
                       <td data-status="-">-</td>
                       <td data-status="-">-</td>

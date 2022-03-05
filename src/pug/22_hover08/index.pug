@@ -1,0 +1,15 @@
+extend /_include/_layoutPages
+
+block id
+  - var id = 22
+
+block sampleContent
+  p ホバーしたそれ以外の色を薄くする
+  p 各アイテムをspanとしたときdivで囲いdiv:hover span:not(:hover)と指定する
+  .hover_item_wrap
+    .siblingFade
+      span TextA
+      span TextB
+      span TextC
+  a.u-mt30(href="https://ui-snippets.dev/", target="_blank", rel="noopener noreferrer").c-btn 元ネタ
+

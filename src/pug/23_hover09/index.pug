@@ -1,0 +1,69 @@
+//- レイアウト読み込み
+extend /_include/_layoutPages
+
+//- ここでjsonと紐付ける。jsonのidの値
+block id
+  - var id = 23
+
+//- ここが自由記述エリア。動作サンプルを実装する。
+block sampleContent
+  p border-bottomで少し濃い色を指定して影ぽく見える。#[br]hoverしたらborder-width:0にする。
+  .hover_item_wrap
+    .hover_btn_item.pressDownButton Hover me
+      //- li: dl
+      //-   dt テキストが→にいって矢印も出る
+      //-   dd.hover02ItemWrap
+      //-     .hover02Item.arrowFromLeft
+      //-       <svg xmlns="http://www.w3.org/2000/svg" width="5.002" height="8.576" viewBox="0 0 5.002 8.576"><path d="M1.06,8.428a.5.5,0,0,1-.71,0l-.2-.2A.49.49,0,0,1,0,7.868V.708A.49.49,0,0,1,.15.348l.2-.2a.5.5,0,0,1,.71,0l3.79,3.79a.48.48,0,0,1,0,.7Z"></path></svg>
+      //-       span Hover me
+      //- li: dl
+      //-   dt オーバーレイが左から入って戻る
+      //-   dd.hover02ItemWrap
+      //-     .hover02Item.overlayLeftBtn
+      //-       span Hover me
+      //- li: dl
+      //-   dt 下から要素がぽよっと
+      //-   dd.hover02ItemWrap
+      //-     .hover02Item.slideUpBtn
+      //-       span Hover me
+      //- li: dl
+      //-   dt 真ん中から円が広がるように
+      //-   dd.hover02ItemWrap
+      //-     .hover02Item.circleScaleBtn
+      //-       span Hover me
+      //- li: dl
+      //-   dt ちょっと浮かんでシャドウ入る
+      //-   dd.hover02ItemWrap
+      //-     .hover02Item.pushUpBtn
+      //-       span Hover me
+      //- li: dl
+      //-   dt オーバーレイが左から入って要素押し出す
+      //-   dd.hover02ItemWrap
+      //-     .hover02Item.snapLeftBtn
+      //-       span Hover me
+      //- li: dl
+      //-   dt ちょっと拡大, クリックアクション付き
+      //-   dd.hover02ItemWrap
+      //-     .hover02Item.magnifyBtn
+      //-       span Hover & click me
+      //- li: dl
+      //-   dt 枠が太くなる
+      //-   dd.hover02ItemWrap
+      //-     .hover02Item.magnifyBorder
+      //-       span Hover me
+      //- li: dl
+      //-   dt 二重の枠がズレる
+      //-   dd.hover02ItemWrap
+      //-     .hover02Item.buttonOverlay
+      //-       span Hover me
+      //- li: dl
+      //-   dt 左から右に薄い背景が抜けていく
+      //-   dd.hover02ItemWrap
+      //-     .hover02Item.horizontalOverlay
+      //-       span Hover me
+      //- li: dl
+      //-   dt (番外編) 常に押せそうなオーラを出す
+      //-   dd.hover02ItemWrap
+      //-     .hover02Item.pulseBtn push
+  a.u-mt30(href="https://ui-snippets.dev/", target="_blank", rel="noopener noreferrer").c-btn 元ネタ
+

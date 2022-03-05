@@ -4,10 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>ホバーアニメ01「枠線が抜ける」</title>
-    <meta name="description" content="アニメーション「ホバーアニメ01「枠線が抜ける」」のページです。">
+    <title>ホバーアニメ08「自分以外」</title>
+    <meta name="description" content="アニメーション「ホバーアニメ08「自分以外」」のページです。">
     <link href="/assets/css/style.css" rel="stylesheet">
-    <link rel="stylesheet" href="/assets/css/pages/09_hover01.css">
   </head>
   <body>
     <div class="l-wrap">
@@ -17,16 +16,17 @@
         </div>
       </header>
       <div class="l-headerSpace"></div>
-      <div class="l-pages pg-hover01">
+      <div class="l-pages pg-hover08">
         <div class="l-container">
           <div class="l-pages_head">
-            <h1>ホバーアニメ01「枠線が抜ける」</h1>
+            <h1>ホバーアニメ08「自分以外」</h1>
           </div>
           <div class="l-pages_content">
             <section>
-              <p>左から右へ枠線が抜けていくパターン。</p>
+              <p>ホバーしたそれ以外の色を薄くする</p>
+              <p>各アイテムをspanとしたときdivで囲いdiv:hover span:not(:hover)と指定する</p>
               <div class="hover_item_wrap">
-                <div class="borderLeftRight">Hover me</div>
+                <div class="siblingFade"><span>TextA</span><span>TextB</span><span>TextC</span></div>
               </div><a class="u-mt30 c-btn" href="https://ui-snippets.dev/" target="_blank" rel="noopener noreferrer">元ネタ</a>
             </section>
             <section>
@@ -60,7 +60,7 @@
                       <th>対応</th>
                       <td data-status="○">○</td>
                       <td data-status="-">-</td>
-                      <td data-status="-">-</td>
+                      <td data-status="○">○</td>
                       <td data-status="-">-</td>
                       <td data-status="-">-</td>
                       <td data-status="-">-</td>

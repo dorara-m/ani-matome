@@ -1,0 +1,44 @@
+.area {
+  background-color: #222;
+  position: relative;
+  height: 400px;
+}
+.area p {
+  color: #fff;
+  padding-top: 30px;
+  text-align: center;
+  -webkit-animation: slide 1.5s both;
+          animation: slide 1.5s both;
+}
+@-webkit-keyframes slide {
+  0% {
+    opacity: 1;
+    transform: translateX(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes slide {
+  0% {
+    opacity: 1;
+    transform: translateX(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+#lottie {
+  width: 300px;
+  display: block;
+  overflow: hidden;
+  transform: translate3d(0, 0, 0);
+  margin: 0 auto;
+  opacity: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
