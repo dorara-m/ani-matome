@@ -1,6 +1,5 @@
-import { hello } from '../../_module/_hello'
+// microCMS接続処理
 
-// hello('Hello World')
 
 
 //共通要素 - releaseNote
@@ -31,7 +30,7 @@ const checkLocalStorage = () => {
       for (let i=0; i < json.releaseNote.length - tmpFlags.length; i++) {
         tmpFlags.unshift(false)
       }
-      console.log(tmpFlags)
+      // console.log(tmpFlags)
     }
     // 最終的な変数に突っ込む
     releaseNoteFlags = tmpFlags

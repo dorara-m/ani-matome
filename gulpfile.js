@@ -34,6 +34,9 @@ const plumber = require('gulp-plumber')
 const notify = require('gulp-notify')
 const changed = require('gulp-changed')
 
+const fetch = require("node-fetch")
+const axios = require('axios')
+
 // 公開用ディレクトリ
 const dest = 'dist/'
 
@@ -73,6 +76,29 @@ const reload = (done) => {
 }
 exports.reload = reload
 
+const cms = () => {
+  // return fetch(
+  //   "https://rqfoifxr3x.microcms.io/api/v1/api-links",
+  //   {
+  //     headers: {
+  //       "X-API-KEY": "309375b1533b47f4b56d85202171276bf164"
+  //     }
+  //   })
+  // .then(res => {
+  //   console.log(res)
+  // })
+  // .then(data => {
+  //   for (const item of data.contents) {
+  //     console.log(item)
+  //   }
+  // })
+  return axios.get(
+    'https://rqfoifxr3x.microcms.io/api/v1/api-links',
+    { headers: { 'X-MICROCMS-API-KEY': "309375b1533b47f4b56d85202171276bf164" }}
+  );
+}
+exports.cms = cms
+
 /**
  * Pug
  * .pug -> .html
@@ -81,7 +107,7 @@ const pugFunc = (isAll) => {
   // metaデータ等JSONファイルの読み込み。
   const lastRun = isAll ? null : gulp.lastRun(pugFunc)
   const data = {
-    site: JSON.parse(fs.readFileSync(src.data)),
+    site: JSON.parse(fs.readFileSync(src.data))
   }
   return (
     gulp
