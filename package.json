@@ -47,8 +47,6 @@
     "webpack-stream": "^7.0.0"
   },
   "dependencies": {
-    "axios": "^0.26.0",
-    "microcms-js-sdk": "^2.0.0",
     "node-fetch": "^2.6.7"
   }
 }

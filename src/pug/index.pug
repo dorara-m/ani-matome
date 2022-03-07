@@ -34,19 +34,17 @@ block body
                 thead
                   tr
                     th サイト
-                    th カテゴリー
                     th サンプル
-                tbody
-                  each val in site.links
-                    tr(id=val.id)
-                      th
-                        a(href=val.link, target="_blank", rel="noopener noreferrer") #{val.name}
-                      td=val.category
-                      td
-                        if val.sample
-                          a(href=val.sample) あり→
-                        else
-                          span -
+                tbody#js-links-table
+                  //- each val in site.links
+                  //-   tr(id=val.id)
+                  //-     th
+                  //-       a(href=val.link, target="_blank", rel="noopener noreferrer") #{val.name}
+                  //-     td
+                  //-       if val.sample
+                  //-         a(href=val.sample) あり→
+                  //-       else
+                  //-         span -
 
           section
             h2 AfterEffects

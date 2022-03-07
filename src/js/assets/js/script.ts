@@ -1,5 +1,35 @@
 // microCMS接続処理
+let cmsDataArray
 
+const fetchCMS = () => {
+  fetch(
+    "https://rqfoifxr3x.microcms.io/api/v1/ani-links",
+    {
+      headers: {
+        "X-MICROCMS-API-KEY": "309375b1533b47f4b56d85202171276bf164"
+      }
+    })
+  .then(res => res.json())
+  .then(json => {
+    console.log(json)
+    cmsDataArray = json.contents
+    makeLinksTable()
+  })
+}
+fetchCMS()
+
+const makeLinksTable = () => {
+  const tableDom = document.getElementById("js-links-table")
+  if (!tableDom) return
+  let html = ''
+  cmsDataArray.forEach(item => {
+    html += `<tr>
+    <th><a href="${item.link}">${item.title}</a></th>
+    <td>${item.hasSample ? 'あり' : '-'}</td>
+    </tr>`
+  })
+  tableDom.innerHTML = html
+}
 
 
 //共通要素 - releaseNote
