@@ -24,9 +24,13 @@ const makeLinksTable = () => {
   let html = ''
   cmsDataArray.forEach(item => {
     html += `<tr>
-    <th><a href="${item.link}">${item.title}</a></th>
-    <td>${item.hasSample ? 'あり' : '-'}</td>
-    </tr>`
+    <th><a href="${item.link}">${item.title}</a></th>`
+    if (item.sample) {
+      html += `<td><a href="${item.sample}">あり</a></td>`
+    } else {
+      html += '<td>-</td>'
+    }
+    html += `</tr>`
   })
   tableDom.innerHTML = html
 }
