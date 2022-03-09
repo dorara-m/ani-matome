@@ -1,6 +1,4 @@
 // microCMS接続処理
-let cmsDataArray
-
 const fetchCMS = () => {
   fetch(
     "https://rqfoifxr3x.microcms.io/api/v1/ani-links",
@@ -11,18 +9,17 @@ const fetchCMS = () => {
     })
   .then(res => res.json())
   .then(json => {
-    console.log(json)
-    cmsDataArray = json.contents
-    makeLinksTable()
+    const cmsDataArray = json.contents
+    makeLinksTable(cmsDataArray)
   })
 }
-fetchCMS()
+// fetchCMS()
 
-const makeLinksTable = () => {
+const makeLinksTable = (array) => {
   const tableDom = document.getElementById("js-links-table")
   if (!tableDom) return
   let html = ''
-  cmsDataArray.forEach(item => {
+  array.forEach(item => {
     html += `<tr>
     <th><a href="${item.link}">${item.title}</a></th>`
     if (item.sample) {

@@ -75,7 +75,7 @@ const reload = (done) => {
 }
 exports.reload = reload
 
-const cms = () => {
+const cms = (data) => {
   return fetch(
     "https://rqfoifxr3x.microcms.io/api/v1/ani-links",
     {
@@ -86,6 +86,7 @@ const cms = () => {
   .then(res => res.json())
   .then(json => {
     console.log(json)
+    data.cms = json.contents
   })
 }
 exports.cms = cms
@@ -94,12 +95,13 @@ exports.cms = cms
  * Pug
  * .pug -> .html
  */
-const pugFunc = (isAll) => {
+const pugFunc = async(isAll) => {
   // metaデータ等JSONファイルの読み込み。
   const lastRun = isAll ? null : gulp.lastRun(pugFunc)
   const data = {
     site: JSON.parse(fs.readFileSync(src.data))
   }
+  await this.cms(data)
   return (
     gulp
       .src(src.pug.file, { since: lastRun })

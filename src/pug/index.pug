@@ -35,16 +35,16 @@ block body
                   tr
                     th サイト
                     th サンプル
-                tbody#js-links-table
-                  //- each val in site.links
-                  //-   tr(id=val.id)
-                  //-     th
-                  //-       a(href=val.link, target="_blank", rel="noopener noreferrer") #{val.name}
-                  //-     td
-                  //-       if val.sample
-                  //-         a(href=val.sample) あり→
-                  //-       else
-                  //-         span -
+                tbody
+                  each item in cms
+                    tr
+                      th
+                        a(href=item.link, target="_blank", rel="noopener noreferrer") #{item.title}
+                      td
+                        if item.sample
+                          a(href=item.sample) あり→
+                        else
+                          span -
 
           section
             h2 AfterEffects
