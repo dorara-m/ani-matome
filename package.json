@@ -4,7 +4,8 @@
   "description": "アニメーション集約サイト「あにまとめ」の静的マークアップ環境です。",
   "main": "script.js",
   "scripts": {
-    "start": "gulp"
+    "start": "gulp",
+    "build": "gulp build"
   },
   "browserslist": [
     "defaults"
