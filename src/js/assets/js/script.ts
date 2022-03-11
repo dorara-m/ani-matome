@@ -192,8 +192,10 @@ const makeBallons = (listNum:any) => {
     <div class="name">${uma[note.who]}</div>`
     if (note.says) {
       html += `<div class="says">${note.says}</div>`
+    } else if (note.links) {
+      html += `<a class="says" href="${note.link}">${note.link}</a>`
     } else {
-      html += `<div class="saysImage"><img src="/assets/img/${note.image}", alt=""></div>`
+      html += `<a href="/assets/img/${note.image}" class="saysImage"><img src="/assets/img/${note.image}", alt=""></a>`
     }
     html += `</div></li>`
   });

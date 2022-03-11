@@ -207,7 +207,9 @@
             max-width: 250px;
             border-radius: 12px;
             overflow: hidden;
-            // box-shadow: rgba($color: #000000, $alpha: .5) 1px 1px 4px;
+            &:hover {
+              box-shadow: rgba($color: #000000, $alpha: .3) 1px 1px 4px;
+            }
           }
         }
       }
