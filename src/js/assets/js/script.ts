@@ -54,14 +54,16 @@ const trimString = (str: string, max_length: number) => {
   if (str.length <= max_length) {
     return str
   }
-  let trimedStr = str.substr(0, max_length) + '…'
+  let trimedStr = str.substring(0, max_length) + '…'
   return trimedStr
 }
 
 const formatDate = (date: string) => {
-  // 仮で頭10文字とるだけに
-  // @todo ちゃんと日付判定して表記を3030.03.01にする
-  return date.substr(0, 10)
+  const dt = new Date(date)
+  const year = dt.getFullYear()
+  const month = dt.getMonth() + 1
+  const day = dt.getDate()
+  return `${year}-${month}-${day}`
 }
 
 const makeListHTML = (data: any) => {
