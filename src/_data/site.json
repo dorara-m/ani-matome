@@ -27,7 +27,7 @@
       "category": "装飾",
       "blowser": {
         "chrome": "○",
-        "edge": "-",
+        "edge": "○",
         "firefox": "○",
         "ie": "-",
         "safari": "○",
@@ -61,7 +61,7 @@
       "category": "装飾",
       "blowser": {
         "chrome": "○",
-        "edge": "-",
+        "edge": "○",
         "firefox": "△",
         "ie": "-",
         "safari": "○",
@@ -78,7 +78,7 @@
       "category": "装飾",
       "blowser": {
         "chrome": "○",
-        "edge": "-",
+        "edge": "○",
         "firefox": "○",
         "ie": "-",
         "safari": "○",
@@ -95,7 +95,7 @@
       "category": "装飾",
       "blowser": {
         "chrome": "○",
-        "edge": "-",
+        "edge": "○",
         "firefox": "○",
         "ie": "-",
         "safari": "○",
@@ -112,7 +112,7 @@
       "category": "背景",
       "blowser": {
         "chrome": "○",
-        "edge": "-",
+        "edge": "○",
         "firefox": "○",
         "ie": "-",
         "safari": "○",
@@ -129,7 +129,7 @@
       "category": "ローディング",
       "blowser": {
         "chrome": "○",
-        "edge": "-",
+        "edge": "○",
         "firefox": "○",
         "ie": "-",
         "safari": "△",
@@ -146,7 +146,7 @@
       "category": "ローディング",
       "blowser": {
         "chrome": "○",
-        "edge": "-",
+        "edge": "○",
         "firefox": "○",
         "ie": "-",
         "safari": "○",
@@ -163,7 +163,7 @@
       "category": "装飾",
       "blowser": {
         "chrome": "○",
-        "edge": "-",
+        "edge": "○",
         "firefox": "-",
         "ie": "-",
         "safari": "○",
@@ -179,7 +179,7 @@
       "category": "装飾",
       "blowser": {
         "chrome": "○",
-        "edge": "-",
+        "edge": "○",
         "firefox": "○",
         "ie": "-",
         "safari": "○",
@@ -196,7 +196,7 @@
       "css": true,
       "blowser": {
         "chrome": "○",
-        "edge": "-",
+        "edge": "○",
         "firefox": "○",
         "ie": "-",
         "safari": "○",
@@ -229,7 +229,7 @@
       "gif": true,
       "blowser": {
         "chrome": "○",
-        "edge": "-",
+        "edge": "○",
         "firefox": "○",
         "ie": "-",
         "safari": "○",
@@ -246,7 +246,7 @@
       "gif": true,
       "blowser": {
         "chrome": "○",
-        "edge": "-",
+        "edge": "○",
         "firefox": "○",
         "ie": "-",
         "safari": "○",
@@ -263,7 +263,7 @@
       "gif": true,
       "blowser": {
         "chrome": "○",
-        "edge": "-",
+        "edge": "○",
         "firefox": "○",
         "ie": "-",
         "safari": "○",
@@ -279,7 +279,7 @@
       "gif":true,
       "blowser": {
         "chrome": "○",
-        "edge": "-",
+        "edge": "○",
         "firefox": "○",
         "ie": "-",
         "safari": "○",
@@ -295,7 +295,7 @@
       "gif": true,
       "blowser": {
         "chrome": "○",
-        "edge": "-",
+        "edge": "○",
         "firefox": "○",
         "ie": "-",
         "safari": "○",
@@ -311,7 +311,7 @@
       "gif": true,
       "blowser": {
         "chrome": "○",
-        "edge": "-",
+        "edge": "○",
         "firefox": "○",
         "ie": "-",
         "safari": "-",
@@ -327,7 +327,7 @@
       "category": "装飾",
       "blowser": {
         "chrome": "○",
-        "edge": "-",
+        "edge": "○",
         "firefox": "○",
         "ie": "-",
         "safari": "○",
@@ -343,7 +343,7 @@
       "gif": true,
       "blowser": {
         "chrome": "○",
-        "edge": "-",
+        "edge": "○",
         "firefox": "○",
         "ie": "-",
         "safari": "○",
@@ -359,7 +359,7 @@
       "category": "装飾",
       "blowser": {
         "chrome": "○",
-        "edge": "-",
+        "edge": "○",
         "firefox": "○",
         "ie": "-",
         "safari": "△",
@@ -375,7 +375,7 @@
       "gif": true,
       "blowser": {
         "chrome": "○",
-        "edge": "-",
+        "edge": "○",
         "firefox": "○",
         "ie": "-",
         "safari": "○",
@@ -392,7 +392,7 @@
       "category": "装飾",
       "blowser": {
         "chrome": "○",
-        "edge": "-",
+        "edge": "○",
         "firefox": "○",
         "ie": "-",
         "safari": "○",

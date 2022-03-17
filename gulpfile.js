@@ -75,7 +75,7 @@ const reload = (done) => {
 }
 exports.reload = reload
 
-const cms = (data) => {
+const cmsLinks = (data) => {
   return fetch(
     "https://rqfoifxr3x.microcms.io/api/v1/ani-links",
     {
@@ -86,10 +86,26 @@ const cms = (data) => {
   .then(res => res.json())
   .then(json => {
     // console.log(json)
-    data.cms = json.contents
+    data.cmsLinks = json.contents
   })
 }
-exports.cms = cms
+exports.cmsLinks = cmsLinks
+
+// const cmsAnime = (data) => {
+//   return fetch(
+//     "https://rqfoifxr3x.microcms.io/api/v1/ani-links",
+//     {
+//       headers: {
+//         "X-MICROCMS-API-KEY": "309375b1533b47f4b56d85202171276bf164"
+//       }
+//     })
+//   .then(res => res.json())
+//   .then(json => {
+//     // console.log(json)
+//     data.cmsAnime = json.contents
+//   })
+// }
+// exports.cmsAnime = cmsAnime
 
 /**
  * Pug
@@ -101,7 +117,8 @@ const pugFunc = async(isAll) => {
   const data = {
     site: JSON.parse(fs.readFileSync(src.data))
   }
-  await this.cms(data)
+  await this.cmsLinks(data)
+  // await this.cmsAnime(data)
   return (
     gulp
       .src(src.pug.file, { since: lastRun })
