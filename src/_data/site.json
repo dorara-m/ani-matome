@@ -29,7 +29,7 @@
         "chrome": "○",
         "edge": "○",
         "firefox": "○",
-        "ie": "-",
+        "ie": "○",
         "safari": "○",
         "android": "-",
         "ios": "○"
@@ -63,7 +63,7 @@
         "chrome": "○",
         "edge": "○",
         "firefox": "△",
-        "ie": "-",
+        "ie": "△",
         "safari": "○",
         "android": "-",
         "ios": "○"
@@ -80,7 +80,7 @@
         "chrome": "○",
         "edge": "○",
         "firefox": "○",
-        "ie": "-",
+        "ie": "△",
         "safari": "○",
         "android": "-",
         "ios": "○"
@@ -97,7 +97,7 @@
         "chrome": "○",
         "edge": "○",
         "firefox": "○",
-        "ie": "-",
+        "ie": "△",
         "safari": "○",
         "android": "-",
         "ios": "○"
@@ -114,7 +114,7 @@
         "chrome": "○",
         "edge": "○",
         "firefox": "○",
-        "ie": "-",
+        "ie": "○",
         "safari": "○",
         "android": "-",
         "ios": "○"

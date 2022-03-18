@@ -64,7 +64,8 @@
   }
 
   &_table {
-    overflow: scroll;
+    overflow-x: auto;
+    
     table {
       width: 100%;
     }

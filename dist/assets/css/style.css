@@ -598,7 +598,7 @@ h1, h2, h3 {
   margin-right: 15px;
 }
 .l-pages_table {
-  overflow: scroll;
+  overflow-x: auto;
 }
 .l-pages_table table {
   width: 100%;

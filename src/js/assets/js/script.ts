@@ -75,7 +75,7 @@ const makeListHTML = (data: any) => {
   for(let i=0; i<list.length; i++) {
     html += `<li class="js-note-item">
     <div class="icon">
-    <img src="/assets/img/${list[i].chats[0].who}.jpg" alt="" />
+    <img src="${list[i].chats[0].who.icon.url}" alt="" />
     </div>
     <div class="text">
     <div class="head">${formatDate(list[i].date)}</div>
@@ -89,11 +89,6 @@ const makeListHTML = (data: any) => {
 }
 
 const makeBallons = (listNum: any, data: any) => {
-  const uma = {
-    "oguri": "オグリキャップ",
-    "tama": "タマモクロス",
-    "chiyo": "サクラチヨノオー"
-  }
   const numberOfUma = data[listNum].person
   document.getElementById("js-note-number").innerHTML = numberOfUma
 
@@ -103,16 +98,26 @@ const makeBallons = (listNum: any, data: any) => {
   notes.forEach((note:any) => {
     html += `<li>
     <div class="icon">
-    <img src="/assets/img/${note.who}.jpg", alt="${uma[note.who]}">
+      <img src="${note.who.icon.url}", alt="${note.who.nameJp}">
     </div>
     <div class="left">
-    <div class="name">${uma[note.who]}</div>`
-    if (note.says) {
-      html += `<div class="says">${note.says}</div>`
-    } else {
-      html += `<a href="${note.image.url}" class="saysImage"><img src="${note.image.url}", alt=""></a>`
+      <div class="name">${note.who.nameJp}</div>
+      <div class="says">${note.says}</div>
+    </div>
+    </li>`
+    if (note.image) {
+      html += `<li>
+      <div class="icon">
+      <img src="${note.who.icon.url}", alt="${note.who.nameJp}">
+      </div>
+      <div class="left">
+        <div class="name">${note.who.nameJp}</div>
+        <a href="${note.image.url}" class="saysImage">
+          <img src="${note.image.url}", alt="">
+        </a>
+      </div>
+      </li>`
     }
-    html += `</div></li>`
   });
   document.getElementById("js-note-chat").innerHTML = html
 }
@@ -164,10 +169,10 @@ const moveListToDetail = (data: any) => {
 
 async function init() {
   const res = await fetch(
-  "https://rqfoifxr3x.microcms.io/api/v1/release-note",
+  "https://uma-chat.microcms.io/api/v1/chat",
   {
     headers: {
-      "X-MICROCMS-API-KEY": "309375b1533b47f4b56d85202171276bf164"
+      "X-MICROCMS-API-KEY": "eb94b33042b64da7badbbba4642b22db81a3"
     }
   })
   const json = await res.json()
