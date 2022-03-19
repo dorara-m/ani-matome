@@ -43,10 +43,10 @@ const toggleChat = () => {
 }
 
 const removeBr = (str: string) => {
-  if (str.indexOf('<br>') == -1) {
+  if (str.indexOf('\n') == -1) {
     return str
   }
-  const replaced = str.replace('<br>', '')
+  const replaced = str.replace('\n', '')
   return replaced
 }
 
@@ -64,6 +64,10 @@ const formatDate = (date: string) => {
   const month = dt.getMonth() + 1
   const day = dt.getDate()
   return `${year}-${month}-${day}`
+}
+
+const insertBr = (str: string) => {
+  return str.replace('\n', '<br>')
 }
 
 const makeListHTML = (data: any) => {
@@ -102,7 +106,7 @@ const makeBallons = (listNum: any, data: any) => {
     </div>
     <div class="left">
       <div class="name">${note.who.nameJp}</div>
-      <div class="says">${note.says}</div>
+      <div class="says">${insertBr(note.says)}</div>
     </div>
     </li>`
     if (note.image) {
