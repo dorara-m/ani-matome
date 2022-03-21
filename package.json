@@ -14,7 +14,6 @@
   "author": "numecha",
   "license": "Apache-2.0",
   "devDependencies": {
-    "@types/jquery": "^3.5.13",
     "autoprefixer": "^10.4.0",
     "browser-sync": "^2.27.7",
     "browsersync-ssi": "^0.2.4",

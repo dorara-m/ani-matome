@@ -199,6 +199,11 @@ init()
 
 
 //pages
-$('#js-reload').on('click', function () {
-  location.reload()
-})
+const reloadFunc  = () => {
+  const reloadBtn = document.getElementById('js-reload')
+  if (!reloadBtn) return 
+  reloadBtn.addEventListener('click', ()=>{
+    location.reload()
+  })
+}
+reloadFunc()
