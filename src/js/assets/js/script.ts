@@ -94,7 +94,10 @@ const makeListHTML = (data: any) => {
 
 const makeBallons = (listNum: any, data: any) => {
   const numberOfUma = data[listNum].person
-  document.getElementById("js-note-number").innerHTML = numberOfUma
+  const place = data[listNum].place
+  const hedaDom = document.getElementById('js-note-head')
+  if (!hedaDom) return
+  hedaDom.innerHTML = `${place} (${numberOfUma})`
 
   const notes = data[listNum].chats
 
