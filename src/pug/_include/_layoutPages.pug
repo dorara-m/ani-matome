@@ -1,5 +1,6 @@
 block id
-- var thisItem = site.anime[id - 1]
+- var thisItem = cmsAnime.find(item => item.number === id)
+- var formatedNumber = String(thisItem.number).padStart(2, '0');
 
 doctype html
 html
@@ -14,7 +15,7 @@ html
 
     include /_include/_css
     if thisItem.css
-      link(rel="stylesheet", href=`/assets/css/pages/${thisItem.id}_${thisItem.name_en}.css`)
+      link(rel="stylesheet", href=`/assets/css/pages/${formatedNumber}_${thisItem.name_en}.css`)
     block addCss
   body
     .l-wrap
@@ -39,22 +40,32 @@ html
                   thead
                     tr
                       td -
-                      th(colspan="5") PC
+                      th(colspan="3") Mac
+                      th(colspan="4") Windows11
                       th(colspan="2") SP
                     tr
                       td ブラウザ
                       th Chrome
-                      th Edge
                       th Firefox
-                      th IE
                       th Safari
-                      th Chrome for Android
+                      th Chrome
+                      th Firefox
+                      th Edge
+                      th IE
                       th Safari on iOS
+                      th Chrome for Android
                   tbody
                     tr
                       th 対応
-                      each val,key in thisItem.blowser
-                        td(data-status=val)=val
+                      td(data-status=thisItem.browser.chrome_mac[0])=thisItem.browser.chrome_mac[0]
+                      td(data-status=thisItem.browser.firefox_mac[0])=thisItem.browser.firefox_mac[0]
+                      td(data-status=thisItem.browser.safari[0])=thisItem.browser.safari[0]
+                      td(data-status=thisItem.browser.chrome_win[0])=thisItem.browser.chrome_win[0]
+                      td(data-status=thisItem.browser.firefox_win[0])=thisItem.browser.firefox_win[0]
+                      td(data-status=thisItem.browser.edge[0])=thisItem.browser.edge[0]
+                      td(data-status=thisItem.browser.ie[0])=thisItem.browser.ie[0]
+                      td(data-status=thisItem.browser.safari_ios[0])=thisItem.browser.safari_ios[0]
+                      td(data-status=thisItem.browser.chrome_android[0])=thisItem.browser.chrome_android[0]
               block browserContent
     
     include /_include/_releaseNote

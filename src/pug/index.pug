@@ -18,11 +18,12 @@ block body
           section
             h2 サンプル
             ul
-              each val in site.anime
+              each val in cmsAnime
+                - var formatedNumber = String(val.number).padStart(2, '0');
                 li
-                  a(href=val.id+"_"+val.name_en+"/")
+                  a(href=formatedNumber+"_"+val.name_en+"/")
                     if val.gif
-                      .img(style="background-image: url("+imgPath+val.name_en+".gif);")
+                      .img(style=`background-image: url(${val.gif.url});`)
                     else
                       .img(style="background-image: url(https://placehold.jp/dedede/5e5e5e/270x180.png?text=Animation);")
                     h4=val.name_jp

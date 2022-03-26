@@ -5,6 +5,7 @@ const gulp = require('gulp')
 // Pug
 const gulpPug = require('gulp-pug')
 const fs = require('fs')
+const rename = require("gulp-rename")
 
 // Sass
 const gulpSass = require('gulp-sass')(require('sass'))
@@ -91,21 +92,21 @@ const cmsLinks = (data) => {
 }
 exports.cmsLinks = cmsLinks
 
-// const cmsAnime = (data) => {
-//   return fetch(
-//     "https://rqfoifxr3x.microcms.io/api/v1/ani-links",
-//     {
-//       headers: {
-//         "X-MICROCMS-API-KEY": "309375b1533b47f4b56d85202171276bf164"
-//       }
-//     })
-//   .then(res => res.json())
-//   .then(json => {
-//     // console.log(json)
-//     data.cmsAnime = json.contents
-//   })
-// }
-// exports.cmsAnime = cmsAnime
+const cmsAnime = (data) => {
+  return fetch(
+    "https://rqfoifxr3x.microcms.io/api/v1/anime?limit=30",
+    {
+      headers: {
+        "X-MICROCMS-API-KEY": "309375b1533b47f4b56d85202171276bf164"
+      }
+    })
+  .then(res => res.json())
+  .then(json => {
+    // console.log(json)
+    data.cmsAnime = json.contents
+  })
+}
+exports.cmsAnime = cmsAnime
 
 /**
  * Pug
@@ -118,7 +119,7 @@ const pugFunc = async(isAll) => {
     site: JSON.parse(fs.readFileSync(src.data))
   }
   await this.cmsLinks(data)
-  // await this.cmsAnime(data)
+  await this.cmsAnime(data)
   return (
     gulp
       .src(src.pug.file, { since: lastRun })
@@ -137,6 +138,30 @@ const pugFunc = async(isAll) => {
       .pipe(gulp.dest(dest))
   )
 }
+
+// 個別ページ生成
+const pugPagesFunc = async() => {
+  const data = {}
+  await this.cmsAnime(data)
+  for (const thisItem of data.cmsAnime) {
+    gulp
+      .src(["src/pug/**/__*.pug"])
+      .pipe(plumber({ errorHandler: notify.onError('Error: <%= error %>') }))
+      .pipe(
+        gulpPug({
+          // データを各Pugファイルで取得
+          thisItem,
+          // ルート相対パスでincludeが使えるようにする
+          basedir: src.pug.dir,
+          // Pugファイルの整形
+          pretty: true,
+        })
+      )
+      .pipe(rename({ basename: `${thisItem.id}/index`, extname: ".html" }))
+      .pipe(gulp.dest(dest))
+  }
+}
+exports.pugPagesFunc = pugPagesFunc
 
 // 差分build
 const pug = () => {
