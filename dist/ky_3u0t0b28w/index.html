@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>あ</title>
-    <meta name="description" content="アニメーション「undefined」のページです。">
+    <title>画面横切り | アニマトメ</title>
+    <meta name="description" content="アニメーション「画面横切り」のページです。">
     <link href="/assets/css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/pages/across.css">
   </head>
   <body>
     <div class="l-wrap">
@@ -16,14 +17,15 @@
         </div>
       </header>
       <div class="l-headerSpace"></div>
-      <div class="l-pages pg-undefined">
+      <div class="l-pages pg-across">
         <div class="l-container">
           <div class="l-pages_head">
-            <h1></h1>
+            <h1>画面横切り</h1>
           </div>
           <div class="l-pages_content">
-            <section>
-            </section>
+            <section class="sample"><div class="pg-across_load"></div>
+<button id="js-reload">もう1回</button></section>
+            <section class="desc"><p>画面の読み込み時に発動します。<br>枠として空divを用意。position: fixed;で画面全体に固定する。<br>疑似要素で背景（白）と動く帯（紺）を作る。どちらもposition: absolute;で浮かし、背景はwidth100%, 帯は適当な幅(300px)に。<br>両方とも疑似要素にして空div自体をアニメーションさせないのは、アニメーションによってdivが実体として消えてしまい、帯がその影響を受けるから。<br>背景と帯を、同じタイミング（.5秒遅れ）でアニメーション。translateで位置を画面外→画面外へ。<br>アニメーションが終わったら外枠の空divも消す。cssアニメーションではdisplayは操作できないので、visibility: hidden;に。</p></section>
             <section>
               <h2>動作環境</h2>
               <ul class="l-pages_content_caption">
@@ -31,6 +33,44 @@
                 <li>△:動作するが意図せぬ挙動</li>
                 <li>☓:動作しない</li>
               </ul>
+              <div class="l-pages_table">
+                <table>
+                  <thead>
+                    <tr>
+                      <td>-</td>
+                      <th colspan="3">Mac</th>
+                      <th colspan="4">Windows11</th>
+                      <th colspan="2">SP</th>
+                    </tr>
+                    <tr>
+                      <td>ブラウザ</td>
+                      <th>Chrome</th>
+                      <th>Firefox</th>
+                      <th>Safari</th>
+                      <th>Chrome</th>
+                      <th>Firefox</th>
+                      <th>Edge</th>
+                      <th>IE</th>
+                      <th>Safari on iOS</th>
+                      <th>Chrome for Android</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th>対応</th>
+                      <td data-status="○">○</td>
+                      <td data-status="○">○</td>
+                      <td data-status="○">○</td>
+                      <td></td>
+                      <td></td>
+                      <td data-status="○">○</td>
+                      <td data-status="△">△</td>
+                      <td data-status="○">○</td>
+                      <td data-status="○">○</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
             </section>
           </div>
         </div>
@@ -57,6 +97,5 @@
       </div>
     </div>
   </body>
-  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
   <script src="/assets/js/script.js" defer></script>
 </html>

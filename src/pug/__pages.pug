@@ -6,32 +6,30 @@ html
     meta(http-equiv="X-UA-Compatible", content="ie=edge")
 
     //- 個別タイトル, メタ情報
-    title #{data}あ
+    title #{name_jp} | アニマトメ
     meta(name="description" content=`アニメーション「${name_jp}」のページです。`)
 
     include /_include/_css
-    //- if css
-      link(rel="stylesheet", href=`/assets/css/pages/${formatedNumber}_${name_en}.css`)
-    block addCss
+    if css
+      link(rel="stylesheet", href=`/assets/css/pages/${name_en}.css`)
   body
     .l-wrap
       include /_include/_header
-      //- 個別クラスを付与
       .l-pages(class="pg-"+name_en)
         block wrapContent
         .l-container
           .l-pages_head
             h1=name_jp
           .l-pages_content
-            section
-              block sampleContent
+            section.sample!=html
+            section.desc!=content
             section
               h2 動作環境
               ul.l-pages_content_caption
                 li ○:動作する
                 li △:動作するが意図せぬ挙動
                 li ☓:動作しない
-              //- .l-pages_table
+              .l-pages_table
                 table
                   thead
                     tr
@@ -53,17 +51,18 @@ html
                   tbody
                     tr
                       th 対応
-                      td=browser.chrome_mac[0]
-                      td=browser.firefox_mac[0]
-                      td=browser.safari[0]
-                      td=browser.chrome_win[0]
-                      td=browser.firefox_win[0]
-                      td=browser.edge[0]
-                      td=browser.ie[0]
-                      td=browser.safari_ios[0]
-                      td=browser.chrome_android[0]
-              block browserContent
+                      td(data-status=browser.chrome_mac[0])=browser.chrome_mac[0]
+                      td(data-status=browser.firefox_mac[0])=browser.firefox_mac[0]
+                      td(data-status=browser.safari[0])=browser.safari[0]
+                      td(data-status=browser.chrome_win[0])=browser.chrome_win[0]
+                      td(data-status=browser.firefox_win[0])=browser.firefox_win[0]
+                      td(data-status=browser.edge[0])=browser.edge[0]
+                      td(data-status=browser.ie[0])=browser.ie[0]
+                      td(data-status=browser.safari_ios[0])=browser.safari_ios[0]
+                      td(data-status=browser.chrome_android[0])=browser.chrome_android[0]
     
     include /_include/_releaseNote
 
   include /_include/_js
+  if js
+    != js

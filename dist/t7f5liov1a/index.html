@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>あ</title>
-    <meta name="description" content="アニメーション「undefined」のページです。">
+    <title>cssだけのスライドショー,クロスフェードver | アニマトメ</title>
+    <meta name="description" content="アニメーション「cssだけのスライドショー,クロスフェードver」のページです。">
     <link href="/assets/css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/pages/cssOnlySlides02.css">
   </head>
   <body>
     <div class="l-wrap">
@@ -16,14 +17,18 @@
         </div>
       </header>
       <div class="l-headerSpace"></div>
-      <div class="l-pages pg-undefined">
+      <div class="l-pages pg-cssOnlySlides02">
         <div class="l-container">
           <div class="l-pages_head">
-            <h1></h1>
+            <h1>cssだけのスライドショー,クロスフェードver</h1>
           </div>
           <div class="l-pages_content">
-            <section>
-            </section>
+            <section class="sample"><ul class="slider">
+                <li><img src="/assets/img/bg01.jpg" alt=""></li>
+                <li><img src="/assets/img/bg02.jpg" alt=""></li>
+                <li><img src="/assets/img/bg03.jpg" alt=""></li>
+              </ul></section>
+            <section class="desc"><p>白ver.は33%内でフェードアウトまで完結するよう書いたが、今回はAがフェードアウトしながらBがフェードインして欲しいので、AのフェードアウトをBのフェードイン終わるタイミング(33% + 16%)まで伸ばす。<br>基本は白ver.と同じ</p></section>
             <section>
               <h2>動作環境</h2>
               <ul class="l-pages_content_caption">
@@ -31,6 +36,44 @@
                 <li>△:動作するが意図せぬ挙動</li>
                 <li>☓:動作しない</li>
               </ul>
+              <div class="l-pages_table">
+                <table>
+                  <thead>
+                    <tr>
+                      <td>-</td>
+                      <th colspan="3">Mac</th>
+                      <th colspan="4">Windows11</th>
+                      <th colspan="2">SP</th>
+                    </tr>
+                    <tr>
+                      <td>ブラウザ</td>
+                      <th>Chrome</th>
+                      <th>Firefox</th>
+                      <th>Safari</th>
+                      <th>Chrome</th>
+                      <th>Firefox</th>
+                      <th>Edge</th>
+                      <th>IE</th>
+                      <th>Safari on iOS</th>
+                      <th>Chrome for Android</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th>対応</th>
+                      <td data-status="○">○</td>
+                      <td data-status="○">○</td>
+                      <td data-status="○">○</td>
+                      <td></td>
+                      <td></td>
+                      <td data-status="○">○</td>
+                      <td data-status="△">△</td>
+                      <td data-status="○">○</td>
+                      <td></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
             </section>
           </div>
         </div>
@@ -57,6 +100,5 @@
       </div>
     </div>
   </body>
-  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
   <script src="/assets/js/script.js" defer></script>
 </html>

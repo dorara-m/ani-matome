@@ -123,15 +123,11 @@ const pugFunc = async(isAll) => {
   return (
     gulp
       .src(src.pug.file, { since: lastRun })
-      // .src(src.pug.file, { since: gulp.lastRun(pug) })
       .pipe(plumber({ errorHandler: notify.onError('Error: <%= error %>') }))
       .pipe(
         gulpPug({
-          // dataを各Pugファイルで取得
           data,
-          // ルート相対パスでincludeが使えるようにする
           basedir: src.pug.dir,
-          // Pugファイルの整形
           pretty: true,
         })
       )
@@ -141,23 +137,23 @@ const pugFunc = async(isAll) => {
 
 // 個別ページ生成
 const pugPagesFunc = async() => {
-  const data = {}
-  await this.cmsAnime(data)
-  for (const thisItem of data.cmsAnime) {
+  const obj = {}
+  await this.cmsAnime(obj)
+  for (const data of obj.cmsAnime) {
     gulp
       .src(["src/pug/**/__*.pug"])
       .pipe(plumber({ errorHandler: notify.onError('Error: <%= error %>') }))
       .pipe(
         gulpPug({
           // データを各Pugファイルで取得
-          thisItem,
+          data,
           // ルート相対パスでincludeが使えるようにする
           basedir: src.pug.dir,
           // Pugファイルの整形
           pretty: true,
         })
       )
-      .pipe(rename({ basename: `${thisItem.id}/index`, extname: ".html" }))
+      .pipe(rename({ basename: `${data.id}/index`, extname: ".html" }))
       .pipe(gulp.dest(dest))
   }
 }
@@ -324,6 +320,7 @@ exports.serve = serve
 function watch() {
   gulp.watch(src.pug.file, html)
   gulp.watch(src.pug.watch, htmlAll)
+  gulp.watch('src/pug/**/__*.pug', pugPagesFunc)
   gulp.watch(src.sass.watch, sass)
   gulp.watch(src.js.watch, js)
   gulp.watch(src.img.watch, image)
@@ -336,6 +333,7 @@ exports.watch = watch
  */
 exports.default = gulp.series(
   pug,
+  pugPagesFunc,
   sass,
   serve,
   gulp.parallel(js, image, copy),
@@ -344,6 +342,7 @@ exports.default = gulp.series(
 
 exports.build = gulp.series(
   pug,
+  pugPagesFunc,
   sass,
   gulp.parallel(js, image, copy),
 )

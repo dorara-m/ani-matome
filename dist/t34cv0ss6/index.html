@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>あ</title>
-    <meta name="description" content="アニメーション「undefined」のページです。">
+    <title>イージングサンプル | アニマトメ</title>
+    <meta name="description" content="アニメーション「イージングサンプル」のページです。">
     <link href="/assets/css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/pages/easing.css">
   </head>
   <body>
     <div class="l-wrap">
@@ -16,14 +17,23 @@
         </div>
       </header>
       <div class="l-headerSpace"></div>
-      <div class="l-pages pg-undefined">
+      <div class="l-pages pg-easing">
         <div class="l-container">
           <div class="l-pages_head">
-            <h1></h1>
+            <h1>イージングサンプル</h1>
           </div>
           <div class="l-pages_content">
-            <section>
-            </section>
+            <section class="sample"><p>linear（リニア）（最初から最後まで一定の速度</p>
+              <div class="box linear"></div>
+              <p class="u-mt30">ease（cssアニメーションのデフォルト値はこの子）（ゆっくり始まり、急に速度を上げて、ゆっくり終わる。</p>
+              <div class="box ease"></div>
+              <p class="u-mt30">ease-in（ゆっくり始まり、徐々に加速</p>
+              <div class="box ease-in"></div>
+              <p class="u-mt30">ease-out（速い速度で始まり、徐々に減速</p>
+              <div class="box ease-out"></div>
+              <p class="u-mt30">ease-in-out（ゆっくり始まり、徐々に加速して、アニメーション終了手前で減速</p>
+              <div class="box ease-in-out"></div></section>
+            <section class="desc"><p>easing（イージング）とは、アニメーションの変化のタイミングを指定する関数です。<br>デフォルトで用意されたlinear, ease, ease-in, ease-out, ease-in-outの5つの値を指定できる他、より詳細な変化タイミングをcubic-bezier()で指定できます。<br>5つのサンプルの動作をご紹介します。すべて左に2秒かけて180px移動<br>cubic-bezier()関数については下記サイトで指定,動作確認がおすすめ<br><a style="color:#ce9178" href="https://cubic-bezier.com/" target="_blank" rel="noopener noreferrer">https://cubic-bezier.com/</a><br><a href="https://www.ipentec.com/document/css-easing-animation" target="_blank" rel="noopener noreferrer">今回のサンプルのアイデア元</a></p></section>
             <section>
               <h2>動作環境</h2>
               <ul class="l-pages_content_caption">
@@ -31,6 +41,44 @@
                 <li>△:動作するが意図せぬ挙動</li>
                 <li>☓:動作しない</li>
               </ul>
+              <div class="l-pages_table">
+                <table>
+                  <thead>
+                    <tr>
+                      <td>-</td>
+                      <th colspan="3">Mac</th>
+                      <th colspan="4">Windows11</th>
+                      <th colspan="2">SP</th>
+                    </tr>
+                    <tr>
+                      <td>ブラウザ</td>
+                      <th>Chrome</th>
+                      <th>Firefox</th>
+                      <th>Safari</th>
+                      <th>Chrome</th>
+                      <th>Firefox</th>
+                      <th>Edge</th>
+                      <th>IE</th>
+                      <th>Safari on iOS</th>
+                      <th>Chrome for Android</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th>対応</th>
+                      <td data-status="○">○</td>
+                      <td data-status="○">○</td>
+                      <td data-status="○">○</td>
+                      <td></td>
+                      <td></td>
+                      <td data-status="○">○</td>
+                      <td></td>
+                      <td data-status="○">○</td>
+                      <td></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
             </section>
           </div>
         </div>
@@ -57,6 +105,5 @@
       </div>
     </div>
   </body>
-  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
   <script src="/assets/js/script.js" defer></script>
 </html>
