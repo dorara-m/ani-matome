@@ -1,9 +1,11 @@
+
 @use '../../../_foundation/mixin' as *;
 
 .dots-wrap {
   display: flex;
   flex-wrap: wrap;
   margin: -10px;
+
   li {
     counter-increment: cnt;
     width: 50%;
@@ -12,6 +14,7 @@
       width: 120px;
     }
   }
+
   .dots-item {
     width: 100%;
     height: 100px;
@@ -20,6 +23,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    
     &::before {
       content: counter(cnt);
       position: absolute;
