@@ -44,19 +44,17 @@ npm start
 
 ## データの追加手順
 
-### リンク(AF動画)追加の手順
+### AF動画追加の手順
 
 1. `site.json`のlinks(af)内にオブジェクトを追加してくだい。
 2. ローカル環境を起動、トップページに反映されるのを確認してください。
 
 ### サンプル追加の手順
 
-1. `site.json`のanime内にオブジェクトを追加してくだい。
-  * トップページのgifサムネイルを設定したい場合はgifをtrue
-  * 個別にcssファイルを使用する場合はcssをtrue。
-2. `src/pug/`に[id_jsonのname_enと同名のディレクトリ]/index.pugを追加してください。（`sample/index.pug`参考
-3. 個別cssファイルは`scss/assets/css/pages/`配下にpug時と同名.scssで作成してください。
-※gifサムネイルは、完成した動きをgif録画し`src/img/assets/img/`配下に配置する。gif録画にはLICEcap`https://www.cockos.com/licecap/`を用いている
+1. micro CMSでデータ追加を基本とする。cssとjsについてはローカルで記述するものとする。
+2. 【css】CMS上で個別cssをonで登録した上で、ローカルで英語名と同じ名前のscssファイルを`scss/assets/css/pages/`に追加。
+3. 【js】使う場合、ライブラリなどの記述も必要とする場合もあるため入力欄はテキストフィールドになっている。ローカルでjsファイルを`js/assets/js/pages/`などに追加し、それを読み込む記述`<script>`タグを適宜書く。
+※gif録画にはLICEcap`https://www.cockos.com/licecap/`を用いている
 
 
 ## ディレクトリ構成詳細
@@ -204,6 +202,7 @@ FLOCSS を参考にディレクトリを分けています。運用ルールに�
 * [!!] 共通cssファイルが細分化しすぎてる問題。common.scssとか1つにまとめたい。
 * [!!] afで作ったものをyoutubeにあげるので、それを自動取得したい。youtubeのAPIつかえそう。
 * [!!!] 各サンプルのソースを表に出す。コピペ機能もつけたい。
+  →だとしたらcmsで更新できたほうがよい？
 * [!!!] サイトから更新通知を出す。プッシュ？RSS？まだイメージついてない。
 ### アニメ単体の改修
 * [!] lottie.jsのでも,全画面じゃないパターンにする。
