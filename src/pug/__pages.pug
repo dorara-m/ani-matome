@@ -60,7 +60,13 @@ html
                       td(data-status=browser.ie[0])=browser.ie[0]
                       td(data-status=browser.safari_ios[0])=browser.safari_ios[0]
                       td(data-status=browser.chrome_android[0])=browser.chrome_android[0]
-    
+            if relations.length > 0
+              section.l-pages_relations
+                h2 関連項目
+                ul
+                  each item in relations
+                    li: a(href=`/${item.id}/`)=item.name_jp
+
     include /_include/_releaseNote
 
   include /_include/_js
