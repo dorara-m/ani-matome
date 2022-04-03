@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>波紋 | アニマトメ</title>
-    <meta name="description" content="アニメーション「波紋」のページです。">
+    <title>Intersection Observerを使ったスクロールによるグラデーションの変化 | アニマトメ</title>
+    <meta name="description" content="アニメーション「Intersection Observerを使ったスクロールによるグラデーションの変化」のページです。">
     <link href="/assets/css/style.css" rel="stylesheet">
-    <link rel="stylesheet" href="/assets/css/pages/hamon.css">
+    <link rel="stylesheet" href="/assets/css/pages/scrollGradient.css">
   </head>
   <body>
     <div class="l-wrap">
@@ -17,27 +17,27 @@
         </div>
       </header>
       <div class="l-headerSpace"></div>
-      <div class="l-pages pg-hamon">
+      <div class="l-pages pg-scrollGradient">
         <div class="l-container">
           <div class="l-pages_head">
-            <h1>波紋</h1>
+            <h1>Intersection Observerを使ったスクロールによるグラデーションの変化</h1>
           </div>
           <div class="l-pages_content">
             <section class="sample"><div class="wrap">
-                <div class="item"></div>
-              </div>
-              <p>動かす円はこちら。<br>cssでborderの色を白の半透明にしてbox-shadowで水色のぼかしを表現しているのがポイント</p>
-              <h3 class="u-mt30">1つだけ</h3>
-              <div class="wrap">
-                <div class="item anime"></div>
-              </div>
-<h3 class="u-mt30">2つ</h3>
-              <div class="wrap">
-                <div class="item anime"></div>
-                <div class="item anime delay"></div>
-              </div>
+<div class="caption">↓スクロール↓</div>
+<div class="heading" id="heading">グラデーション変化</div>
+<div id="ratio"></div>
+<p class="target" id="paragraph">このテキスト部分を処理のトリガーとします。Intersection Observerは検知対象と変化対象をわける必要あり。かつ、このテキストブロックとの交差具合でグラデーションを変化させるため、このテキストに一定の高さが必要です。cssで高さを付与しています。</p>
+</div>
             </section>
-            <section class="desc"><p>css:transformでscaleを操作している。0→0.8→1.5。<br>途中で止まるような動きが気になったのでイージングは「linear」（一定速度）でやってみた。<br>2つverは0.3sおくらせて同じ要素をアニメさせる。</p>
+            <section class="desc"><ul><li>Intersection Observerは特定の要素が指定領域内に入ったかどうかを検知するAPI</li><li>Intersection Observerのオプション「threshold」を使ってスクロール量による変化を起こしている。ターゲットがどのくらいの割合で見えているかを示す値。ターゲットとなる要素が見え始めた瞬間と見え終わりの瞬間が 0、半分通過したときは 0.5、すべて見えている状態が 1</li><li>上記「ターゲットがどのくらいの割合で見えているか」をもとに変化を出すため、ターゲットとなる要素にある程度の高さが必要。</li><li><code>linear-gradient</code>は要素の背景にグラデーションをつけるプロパティなので、テキスト本体のみにあてるには工夫が必要。<code>background-clip: text;</code>はテキストの型で背景をくり抜く記述。</li></ul><pre><code>background-image: linear-gradient(45deg,
+      rgb(37, 47, 255) 0%,
+      rgb(124, 192, 226) 100%,
+      rgb(37, 47, 255) 200%);
+  -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;</code></pre><p><br></p>
             </section>
             <section>
               <h2>動作環境</h2>
@@ -76,10 +76,10 @@
                       <td data-status="○">○</td>
                       <td></td>
                       <td></td>
-                      <td data-status="○">○</td>
                       <td></td>
                       <td></td>
-                      <td data-status="○">○</td>
+                      <td></td>
+                      <td></td>
                     </tr>
                   </tbody>
                 </table>
@@ -110,5 +110,5 @@
       </div>
     </div>
   </body>
-  <script src="/assets/js/script.js" defer></script>
+  <script src="/assets/js/script.js" defer></script><script src="/assets/js/pages/scrollGradient.js"></script>
 </html>

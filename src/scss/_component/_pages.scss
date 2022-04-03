@@ -107,6 +107,39 @@
     }
   }
 
+  // ↓整理済み
+  .desc {
+    line-height: 1.6;
+
+    code {
+      background: #f6f6f6;
+      border-radius: 5px;
+      border: 1px solid #ddd;
+      padding: 3px;
+      color: crimson;
+    }
+
+    pre {
+      margin-top: 10px;
+      padding: 10px;
+      background-color: #333;
+      color: #fff;
+
+      code {
+        background-color: inherit;
+        color: inherit;
+        border: none;
+        padding: 0;
+      }
+    }
+
+    ul {
+      li {
+        list-style: disc;
+      }
+    }
+  }
+
   &_relations {
     a {
       color: skyblue;

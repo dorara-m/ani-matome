@@ -679,6 +679,31 @@ h1, h2, h3 {
 .l-pages_table tbody td[data-status=☓] {
   background-color: #ff8d87;
 }
+.l-pages .desc {
+  line-height: 1.6;
+}
+.l-pages .desc code {
+  background: #f6f6f6;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  padding: 3px;
+  color: crimson;
+}
+.l-pages .desc pre {
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #333;
+  color: #fff;
+}
+.l-pages .desc pre code {
+  background-color: inherit;
+  color: inherit;
+  border: none;
+  padding: 0;
+}
+.l-pages .desc ul li {
+  list-style: disc;
+}
 .l-pages_relations a {
   color: skyblue;
 }
