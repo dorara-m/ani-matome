@@ -1,33 +1,9 @@
-// 未読フラグデータが入ってくる用の配列
-let releaseNoteFlags
-
-// まず未読フラグがストレージにないかチェック
-const checkLocalStorage = (data: any) => {
-  const readFlag = localStorage.getItem('readFlag')
-  if (!readFlag) {
-    // なし(初回)なら全部未読の配列を作成
-    let flags = [], i = 0
-    while (i < data.length) {
-      flags.push(false)
-      i++
-    }
-    // ストレージにセット
-    localStorage.setItem('readFlag', JSON.stringify(flags))
-  } else {
-    // ありならそのデータをパースして変数に格納。
-    // 一時変数
-    const tmpFlags = JSON.parse(readFlag)
-    // もしこのフラグがjsonデータと一致しない場合…（つまりチャット数が増えていた場合
-    if (tmpFlags.length < data.length) {
-      // その差分だけ配列頭にfalseを足す
-      for (let i=0; i < data.length - tmpFlags.length; i++) {
-        tmpFlags.unshift(false)
-      }
-      // console.log(tmpFlags)
-    }
-    // 最終的な変数に突っ込む
-    releaseNoteFlags = tmpFlags
-  }
+// ローカルストレージのreadIdsを取得する関数
+// readIdsは読んだチャットのidが配列に入るもの、これによりチャットの順序などが移動しても正確に「そのチャット」を特定できる
+// 既読が存在しない場合は空配列が返るように
+const getReadIds = (): string[] => {
+  const readIds = localStorage.getItem('readIds')
+  return readIds ? JSON.parse(readIds) : []
 }
 
 const toggleChat = () => {
@@ -37,7 +13,7 @@ const toggleChat = () => {
   if (!toggleNoteDom || !wrapDom) {
     return
   }
-  toggleNoteDom.addEventListener('click', ()=> {
+  toggleNoteDom.addEventListener('click', () => {
     wrapDom.classList.toggle('-js-active')
   })
 }
@@ -46,16 +22,14 @@ const removeBr = (str: string) => {
   if (str.indexOf('\n') == -1) {
     return str
   }
-  const replaced = str.replace('\n', '')
-  return replaced
+  return str.replace('\n', '')
 }
 
 const trimString = (str: string, max_length: number) => {
   if (str.length <= max_length) {
     return str
   }
-  let trimedStr = str.substring(0, max_length) + '…'
-  return trimedStr
+  return str.substring(0, max_length) + '…'
 }
 
 const formatDate = (date: string) => {
@@ -71,12 +45,13 @@ const insertBr = (str: string) => {
 }
 
 const makeListHTML = (data: any) => {
+  const readIds = getReadIds()
   const listContentDom = document.getElementById('js-note-listContent')
   if (!listContentDom) return
 
   const list = data
   let html = '<ul>'
-  for(let i=0; i<list.length; i++) {
+  for (let i = 0; i < list.length; i++) {
     html += `<li class="js-note-item">
     <div class="icon">
     <img src="${list[i].chats[0].who.icon.url}" alt="" />
@@ -85,24 +60,27 @@ const makeListHTML = (data: any) => {
     <div class="head">${formatDate(list[i].date)}</div>
     <p>${trimString(removeBr(list[i].chats[0].says), 13)}</p>
     </div>
-    <div class="count js-count ${releaseNoteFlags[i] ? '' : 'unRead'}">${list[i].chats.length}</div>
+    <div class="count js-count ${
+      readIds.includes(list[i].id) ? '' : 'unRead'
+    }">${list[i].chats.length}</div>
     </li>`
   }
   html += '</ul>'
   listContentDom.innerHTML = html
 }
 
-const makeBallons = (listNum: any, data: any) => {
-  const numberOfUma = data[listNum].person
-  const place = data[listNum].place
+const makeBallons = (data: any) => {
+  const numberOfUma = data.person
+  const place = data.place
   const hedaDom = document.getElementById('js-note-head')
-  if (!hedaDom) return
+  const chatDom = document.getElementById('js-note-chat')
+  if (!hedaDom || !chatDom) return
   hedaDom.innerHTML = `${place} (${numberOfUma})`
 
-  const notes = data[listNum].chats
+  const notes = data.chats
 
   let html = ''
-  notes.forEach((note:any) => {
+  notes.forEach((note: any) => {
     html += `<li>
     <div class="icon">
       <img src="${note.who.icon.url}", alt="${note.who.nameJp}">
@@ -125,87 +103,86 @@ const makeBallons = (listNum: any, data: any) => {
       </div>
       </li>`
     }
-  });
-  document.getElementById("js-note-chat").innerHTML = html
+  })
+  chatDom.innerHTML = html
 }
 
-const moveListToDetail = (data: any) => {
+const setListToDetail = (data: any) => {
   const listDom = document.getElementById('js-note-list')
   const pageDom = document.getElementById('js-note-page')
   const backDom = document.getElementById('js-note-back')
   const listItemsDom = document.getElementsByClassName('js-note-item')
 
   if (!listDom || !pageDom || !backDom) {
-    return false
+    return
   }
-  
+
   // 一覧アイテムを押したとき詳細へ
-  for(let i = 0; i < listItemsDom.length; i++) {
-    listItemsDom[i].addEventListener('click', function(){
+  for (let i = 0; i < listItemsDom.length; i++) {
+    listItemsDom[i].addEventListener('click', () => {
+      const readIds = getReadIds()
       listDom.classList.add('slideOut')
       pageDom.classList.add('slideIn')
       // ここでスクロールリセット
       pageDom.scrollTo(0, 0)
-      makeBallons(i, data)
-  
+      makeBallons(data[i])
+
       // ここでフラグを切り替える
-      if (!releaseNoteFlags[i]) {
-        releaseNoteFlags[i] = true
-        // フラグの切り替えを生成済みのhtmlに反映する
-        // バルーン
-        // ballonIsRead()
-        // リスト
+
+      if (!readIds.includes(data[i].id)) {
+        readIds.push(data[i].id)
         const countDoms = document.getElementsByClassName('js-count')
-        for (let i=0; i<countDoms.length; i++) {
-          if (releaseNoteFlags[i]) {
-            countDoms[i].classList.remove('unRead')
-          }
-        }
-        // localStrageにも反映しとく
-        localStorage.setItem('readFlag', JSON.stringify(releaseNoteFlags))
+        countDoms[i].classList.remove('unRead')
+        // localStrageに既読を反映
+        localStorage.setItem('readIds', JSON.stringify(readIds))
       }
     })
   }
   // 詳細から一覧へ
-  backDom.addEventListener('click', function(){
+  backDom.addEventListener('click', function () {
     listDom.classList.remove('slideOut')
     pageDom.classList.remove('slideIn')
   })
 }
 
+const init = async () => {
+  try {
+    const cmsData = await fetch('https://uma-chat.microcms.io/api/v1/chat', {
+      headers: {
+        'X-MICROCMS-API-KEY': 'eb94b33042b64da7badbbba4642b22db81a3',
+      },
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error('Network response was not OK')
+        }
+        return response.json()
+      })
+      .then((data) => data.contents)
+      .catch((error) => {
+        throw new Error(error)
+      })
+    console.log(cmsData)
 
-async function init() {
-  const res = await fetch(
-  "https://uma-chat.microcms.io/api/v1/chat",
-  {
-    headers: {
-      "X-MICROCMS-API-KEY": "eb94b33042b64da7badbbba4642b22db81a3"
-    }
-  })
-  const json = await res.json()
-  const cmsData = await json.contents
-  console.log(cmsData)
+    // チャット画面のtoggle
+    toggleChat()
 
-  checkLocalStorage(cmsData)
-  
-  // チャット画面のtoggle
-  toggleChat()
+    // チャット一覧の内容描画
+    makeListHTML(cmsData)
 
-  // チャット一覧の内容描画
-  makeListHTML(cmsData)
-  
-  // チャット一覧-詳細の移動
-  moveListToDetail(cmsData)
+    // チャット一覧-詳細の移動
+    setListToDetail(cmsData)
+  } catch (error) {
+    console.error(error)
+  }
 }
 init()
 
-
-
 //pages
-const reloadFunc  = () => {
+const reloadFunc = () => {
   const reloadBtn = document.getElementById('js-reload')
-  if (!reloadBtn) return 
-  reloadBtn.addEventListener('click', ()=>{
+  if (!reloadBtn) return
+  reloadBtn.addEventListener('click', () => {
     location.reload()
   })
 }
