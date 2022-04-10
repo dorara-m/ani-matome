@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>音無し動画（videoタグ）と連携してる風のアニメーション | アニマトメ</title>
+    <meta name="description" content="アニメーション「音無し動画（videoタグ）と連携してる風のアニメーション」のページです。">
+    <link href="/assets/css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/pages/videoTiming.css">
+  </head>
+  <body>
+    <div class="l-wrap">
+      <header class="l-header">
+        <div class="p-header">
+          <div class="l-container p-header__inner"><a href="/">アニマトメ</a></div>
+        </div>
+      </header>
+      <div class="l-headerSpace"></div>
+      <div class="l-pages pg-videoTiming">
+        <div class="l-container">
+          <div class="l-pages_head">
+            <h1>音無し動画（videoタグ）と連携してる風のアニメーション</h1>
+          </div>
+          <div class="l-pages_content">
+            <section class="sample">ここにサンプル書く
+            </section>
+            <section class="desc"><p>動画が再生開始するタイミングを受け取り、そこからjsでsetTimeoutで秒数を数えながら動画内容に連携してる風（←重要）にアニメーションする。<br>ほんとは厳密に動画の秒数を受け取りながらアニメーションするのがベストだが、そこまで優先度高くないので一旦「連携してる風」<br>デバイスによって動画の読み込みに時間がかかるのが予想されるため、動画の開始だけはちゃんと受け取る。</p>
+            </section>
+            <section>
+              <h2>動作環境</h2>
+              <ul class="l-pages_content_caption">
+                <li>○:動作する</li>
+                <li>△:動作するが意図せぬ挙動</li>
+                <li>☓:動作しない</li>
+              </ul>
+              <div class="l-pages_table">
+                <table>
+                  <thead>
+                    <tr>
+                      <td>-</td>
+                      <th colspan="3">Mac</th>
+                      <th colspan="4">Windows11</th>
+                      <th colspan="2">SP</th>
+                    </tr>
+                    <tr>
+                      <td>ブラウザ</td>
+                      <th>Chrome</th>
+                      <th>Firefox</th>
+                      <th>Safari</th>
+                      <th>Chrome</th>
+                      <th>Firefox</th>
+                      <th>Edge</th>
+                      <th>IE</th>
+                      <th>Safari on iOS</th>
+                      <th>Chrome for Android</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th>対応</th>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="c-releaseNote" id="js-note-wrap">
+      <div class="c-releaseNote_head" id="js-note-toggle">
+        <p>メッセージ</p>
+        <div class="icon">↑</div>
+      </div>
+      <div class="c-releaseNote_frame">
+        <div class="c-releaseNote_frame_list" id="js-note-list">
+          <div id="js-note-listContent"></div>
+        </div>
+        <div class="c-releaseNote_frame_page" id="js-note-page">
+          <div class="c-releaseNote_frame_head">
+            <button id="js-note-back"></button>
+            <p id="js-note-head">トレセン学園</p>
+          </div>
+          <div class="c-releaseNote_frame_body">
+            <ul id="js-note-chat"></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="/assets/js/script.js" defer></script>
+</html>
