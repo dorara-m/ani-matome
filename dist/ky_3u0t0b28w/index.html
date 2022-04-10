@@ -26,7 +26,8 @@
             <section class="sample"><div class="pg-across_load"></div>
 <button id="js-reload">もう1回</button>
             </section>
-            <section class="desc"><p>画面の読み込み時に発動します。<br>枠として空divを用意。position: fixed;で画面全体に固定する。<br>疑似要素で背景（白）と動く帯（紺）を作る。どちらもposition: absolute;で浮かし、背景はwidth100%, 帯は適当な幅(300px)に。<br>両方とも疑似要素にして空div自体をアニメーションさせないのは、アニメーションによってdivが実体として消えてしまい、帯がその影響を受けるから。<br>背景と帯を、同じタイミング（.5秒遅れ）でアニメーション。translateで位置を画面外→画面外へ。<br>アニメーションが終わったら外枠の空divも消す。cssアニメーションではdisplayは操作できないので、visibility: hidden;に。</p>
+            <section class="desc">
+              <h2>実装手順など解説</h2><p>画面の読み込み時に発動します。<br>枠として空divを用意。position: fixed;で画面全体に固定する。<br>疑似要素で背景（白）と動く帯（紺）を作る。どちらもposition: absolute;で浮かし、背景はwidth100%, 帯は適当な幅(300px)に。<br>両方とも疑似要素にして空div自体をアニメーションさせないのは、アニメーションによってdivが実体として消えてしまい、帯がその影響を受けるから。<br>背景と帯を、同じタイミング（.5秒遅れ）でアニメーション。translateで位置を画面外→画面外へ。<br>アニメーションが終わったら外枠の空divも消す。cssアニメーションではdisplayは操作できないので、visibility: hidden;に。</p>
             </section>
             <section>
               <h2>動作環境</h2>

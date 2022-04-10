@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>音無し動画（videoタグ）と連携してる風のアニメーション | アニマトメ</title>
-    <meta name="description" content="アニメーション「音無し動画（videoタグ）と連携してる風のアニメーション」のページです。">
+    <title>[wip] 音無し動画と連携してる風のアニメーション | アニマトメ</title>
+    <meta name="description" content="アニメーション「[wip] 音無し動画と連携してる風のアニメーション」のページです。">
     <link href="/assets/css/style.css" rel="stylesheet">
     <link rel="stylesheet" href="/assets/css/pages/videoTiming.css">
   </head>
@@ -20,12 +20,19 @@
       <div class="l-pages pg-videoTiming">
         <div class="l-container">
           <div class="l-pages_head">
-            <h1>音無し動画（videoタグ）と連携してる風のアニメーション</h1>
+            <h1>[wip] 音無し動画と連携してる風のアニメーション</h1>
           </div>
           <div class="l-pages_content">
-            <section class="sample">ここにサンプル書く
+            <section class="sample"><section class="video">
+<h2>videoタグver.</h2>
+<div class="videoWrap">
+<video src="/assets/movie/sample.mp4" autoplay muted playsinline loop controls></video>
+</div>
+<div class="anime" id="anime">0:00</div>
+</section>
             </section>
-            <section class="desc"><p>動画が再生開始するタイミングを受け取り、そこからjsでsetTimeoutで秒数を数えながら動画内容に連携してる風（←重要）にアニメーションする。<br>ほんとは厳密に動画の秒数を受け取りながらアニメーションするのがベストだが、そこまで優先度高くないので一旦「連携してる風」<br>デバイスによって動画の読み込みに時間がかかるのが予想されるため、動画の開始だけはちゃんと受け取る。</p>
+            <section class="desc">
+              <h2>実装手順など解説</h2><p>動画が再生開始するタイミングを受け取り、そこからjsでsetTimeoutで秒数を数えながら動画内容に連携してる風（←重要）にアニメーションする。<br>ほんとは厳密に動画の秒数を受け取りながらアニメーションするのがベストだが、そこまで優先度高くないので一旦「連携してる風」<br>デバイスによって動画の読み込みに時間がかかるのが予想されるため、動画の開始だけはちゃんと受け取る。</p>
             </section>
             <section>
               <h2>動作環境</h2>
@@ -98,5 +105,5 @@
       </div>
     </div>
   </body>
-  <script src="/assets/js/script.js" defer></script>
+  <script src="/assets/js/script.js" defer></script><script src="/assets/js/pages/videoTiming.js"></script>
 </html>

@@ -30,7 +30,8 @@
 <p class="target" id="paragraph">このテキスト部分を処理のトリガーとします。Intersection Observerは検知対象と変化対象をわける必要あり。かつ、このテキストブロックとの交差具合でグラデーションを変化させるため、このテキストに一定の高さが必要です。cssで高さを付与しています。</p>
 </div>
             </section>
-            <section class="desc"><ul><li>Intersection Observerは特定の要素が指定領域内に入ったかどうかを検知するAPI</li><li>Intersection Observerのオプション「threshold」を使ってスクロール量による変化を起こしている。ターゲットがどのくらいの割合で見えているかを示す値。ターゲットとなる要素が見え始めた瞬間と見え終わりの瞬間が 0、半分通過したときは 0.5、すべて見えている状態が 1</li><li>上記「ターゲットがどのくらいの割合で見えているか」をもとに変化を出すため、ターゲットとなる要素にある程度の高さが必要。</li><li><code>linear-gradient</code>は要素の背景にグラデーションをつけるプロパティなので、テキスト本体のみにあてるには工夫が必要。<code>background-clip: text;</code>はテキストの型で背景をくり抜く記述。</li></ul><pre><code>background-image: linear-gradient(45deg,
+            <section class="desc">
+              <h2>実装手順など解説</h2><ul><li>Intersection Observerは特定の要素が指定領域内に入ったかどうかを検知するAPI</li><li>Intersection Observerのオプション「threshold」を使ってスクロール量による変化を起こしている。ターゲットがどのくらいの割合で見えているかを示す値。ターゲットとなる要素が見え始めた瞬間と見え終わりの瞬間が 0、半分通過したときは 0.5、すべて見えている状態が 1</li><li>上記「ターゲットがどのくらいの割合で見えているか」をもとに変化を出すため、ターゲットとなる要素にある程度の高さが必要。</li><li><code>linear-gradient</code>は要素の背景にグラデーションをつけるプロパティなので、テキスト本体のみにあてるには工夫が必要。<code>background-clip: text;</code>はテキストの型で背景をくり抜く記述。</li></ul><pre><code>background-image: linear-gradient(45deg,
       rgb(37, 47, 255) 0%,
       rgb(124, 192, 226) 100%,
       rgb(37, 47, 255) 200%);

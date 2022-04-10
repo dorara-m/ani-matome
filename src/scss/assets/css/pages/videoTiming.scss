@@ -1,0 +1,22 @@
+.video {
+  position: relative;
+
+  .anime {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 150px;
+    height: 150px;
+    background-color: red;
+    color: #fff;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color .5s;
+
+    &.active {
+      background-color: blue;
+    }
+  }
+}
