@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>[wip] 音無し動画と連携してる風のアニメーション | アニマトメ</title>
-    <meta name="description" content="アニメーション「[wip] 音無し動画と連携してる風のアニメーション」のページです。">
+    <title>自動ループ再生の動画と連携するアニメーション | アニマトメ</title>
+    <meta name="description" content="アニメーション「自動ループ再生の動画と連携するアニメーション」のページです。">
     <link href="/assets/css/style.css" rel="stylesheet">
     <link rel="stylesheet" href="/assets/css/pages/videoTiming.css">
   </head>
@@ -20,19 +20,56 @@
       <div class="l-pages pg-videoTiming">
         <div class="l-container">
           <div class="l-pages_head">
-            <h1>[wip] 音無し動画と連携してる風のアニメーション</h1>
+            <h1>自動ループ再生の動画と連携するアニメーション</h1>
           </div>
           <div class="l-pages_content">
             <section class="sample"><section class="video">
-<h2>videoタグver.</h2>
+<h2>サンプル（videoタグ）</h2>
+<p>動画で「あーい！」と叫ばれる毎に右下の四角が青くなります。確認用に動画のミュートを解除するの推奨</p>
 <div class="videoWrap">
-<video src="/assets/movie/sample.mp4" autoplay muted playsinline loop controls></video>
+<video  id="video" src="/assets/movie/sample.mp4" autoplay muted playsinline loop controls></video>
+<div class="videoTime"></div>
 </div>
-<div class="anime" id="anime">0:00</div>
+<div class="anime" id="anime"></div>
 </section>
             </section>
             <section class="desc">
-              <h2>実装手順など解説</h2><p>動画が再生開始するタイミングを受け取り、そこからjsでsetTimeoutで秒数を数えながら動画内容に連携してる風（←重要）にアニメーションする。<br>ほんとは厳密に動画の秒数を受け取りながらアニメーションするのがベストだが、そこまで優先度高くないので一旦「連携してる風」<br>デバイスによって動画の読み込みに時間がかかるのが予想されるため、動画の開始だけはちゃんと受け取る。</p>
+              <h2>実装手順など解説</h2><p>想定用途：「mvの背景などで自動ループ再生（音無しが必須のためデフォルト音無し）している動画の一定の秒数で静的なhtml要素をアニメーションさせたい。」<br><br>当初、動画が再生開始するタイミングを受け取り、そこからjsで<code>setInterval</code>で秒数を数えながら動画内容に連携してる風（←重要）にアニメーションする。を実装していたがjs側での秒数カウントがループを重ねるごとにずれていくことが判明。<strong>断念。</strong><br><br><code>videoDom.addEventListener('timeupdate',…</code><br>で動画の秒数を常時？受け取るようにし、配列で指定していた特定の秒数のときのみアニメーションを起動（サンプルではaddClass）している。console.logで確認していると1秒に4回ほど処理が走っているため<strong>パフォーマンスには良くない</strong>と思われ。改善点模索中…<br><br>実際の処理はこれ。</p><pre><code>const script = () =&gt; {
+  const videoTimeDom = document.querySelectorAll(".videoTime")[0]
+
+
+  // 起動したいタイミング指定
+  // @todo 数字で指定できると楽。
+  const array = ['0:04', '0:08', '0:13', '0:17', '0:22', '0:26']
+
+
+  videoDom.addEventListener('timeupdate', () =&gt; {
+    // @todo 現状だと処理が動きすぎる感もあり…どこかで絞りたい
+    if (videoDom.currentTime !== 0) {
+      console.log(videoDom.currentTime)
+
+
+      videoTimeDom.innerHTML = timeConvert(videoDom.currentTime)
+
+
+      // 特定の秒数のときアニメ起動。
+      if (array.includes(timeConvert(videoDom.currentTime))) {
+        animeDom?.classList.add('active')
+      } else {
+        animeDom?.classList.remove('active')
+      }
+    } else {
+      videoTimeDom.innerHTML = '0:00'
+      // console.log('0:00')
+    }
+  })
+}
+//数値型から”00：00”表記への変換（秒、ミリ秒の場合）
+const timeConvert = (time: number) =&gt; {
+  // 小数点切り上げ
+  // 0:をくっつける(仮)
+  return '0:' + String(Math.ceil(time)).padStart(2, '0')
+}</code></pre><p><br>（余力あればvideoタグ以外、youtubeやvimeo埋め込みなどでも動作確認したい。</p>
             </section>
             <section>
               <h2>動作環境</h2>
@@ -66,9 +103,9 @@
                   <tbody>
                     <tr>
                       <th>対応</th>
-                      <td></td>
-                      <td></td>
-                      <td></td>
+                      <td data-status="○">○</td>
+                      <td data-status="○">○</td>
+                      <td data-status="○">○</td>
                       <td></td>
                       <td></td>
                       <td></td>

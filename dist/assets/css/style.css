@@ -694,6 +694,7 @@ h1, h2, h3 {
   padding: 10px;
   background-color: #333;
   color: #fff;
+  overflow-x: auto;
 }
 .l-pages .desc pre code {
   background-color: inherit;

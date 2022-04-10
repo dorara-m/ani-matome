@@ -1,6 +1,30 @@
 .video {
   position: relative;
 
+  .videoWrap {
+    overflow: hidden;
+    position: relative;
+
+    .videoTime {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      font-size: 20px;
+      padding: 25px 30px 20px;
+      background: #222;
+      color: #fff;
+
+      &::before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        font-size: 12px;
+        content: "動画の秒数";
+        line-height: 1.6;
+      }
+    }
+  }
+
   .anime {
     position: absolute;
     bottom: 0;
@@ -13,7 +37,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: background-color .5s;
+    transition: background-color .2s;
 
     &.active {
       background-color: blue;

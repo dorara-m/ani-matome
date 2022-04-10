@@ -1,41 +1,41 @@
-const animeDom = document.getElementById("anime")
 
-// 仮処理
-// 3秒後に青くする
-// @todo 動画の再生をキャッチしてから起動する。
-const tmp = () => {
-  setTimeout(()=>{
-    animeDom.classList.add('active')
-  }, 3000)
+// 処理
+const script = () => {
+  const animeDom = document.getElementById("anime")
+  const videoDom = document.getElementById("video")
+
+  if (!animeDom || !videoDom) return
+
+  const videoTimeDom = document.querySelectorAll(".videoTime")[0]
+
+  // 起動したいタイミング指定
+  // @todo 数字で指定できると楽。
+  const array = ['0:04', '0:08', '0:13', '0:17', '0:22', '0:26']
+
+  videoDom.addEventListener('timeupdate', () => {
+    // @todo 現状だと処理が動きすぎる感もあり…どこかで絞りたい
+    if (videoDom.currentTime !== 0) {
+      console.log(videoDom.currentTime)
+
+      videoTimeDom.innerHTML = timeConvert(videoDom.currentTime)
+
+      // 特定の秒数のときアニメ起動。
+      if (array.includes(timeConvert(videoDom.currentTime))) {
+        animeDom?.classList.add('active')
+      } else {
+        animeDom?.classList.remove('active')
+      }
+    } else {
+      videoTimeDom.innerHTML = '0:00'
+      // console.log('0:00')
+    }
+  })
 }
-// どうが再生スタートしたら
-tmp()
-
-
-// ↓現在の秒数を表示するための関数。
-let sec = 0
-let intervalID: any
-
-const fire = () => {
-  sec += 1000
-  animeDom.innerHTML = formatSec(sec)
-  console.log(sec)
+//数値型から”00：00”表記への変換（秒、ミリ秒の場合）
+const timeConvert = (time: number) => {
+  // 小数点切り上げ
+  // 0:をくっつける(仮)
+  return '0:' + String(Math.ceil(time)).padStart(2, '0')
 }
 
-const formatSec = (sec: number) => {
-  const thousand = sec / 1000
-  return '0:' + String(thousand).padStart(2, '0');
-}
-
-// 毎秒の処理
-// ここでも動画再生してからカウントはじめる。
-if (!intervalID) {
-  intervalID = setInterval(fire, 1000)
-}
-
-// 無限に動き続けるため、30秒で止まるように書いておく。
-// 止めるためにintervalIDを設定しておく必要あり。
-setTimeout(()=>{
-  clearInterval(intervalID)
-  intervalID = null
-}, 30000)
+script()
