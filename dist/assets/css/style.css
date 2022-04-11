@@ -898,6 +898,10 @@ h1, h2, h3 {
   border-right: 18px solid #edf1ee;
   transform: rotate(35deg);
 }
+.c-releaseNote_frame_body li .left .says.-link {
+  color: cornflowerblue;
+  text-decoration: underline;
+}
 .c-releaseNote_frame_body li .left .saysImage {
   max-width: 250px;
   border-radius: 12px;

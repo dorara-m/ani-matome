@@ -97,9 +97,20 @@ const makeBallons = (data: any) => {
       </div>
       <div class="left">
         <div class="name">${note.who.nameJp}</div>
-        <a href="${note.image.url}" class="saysImage">
+        <a href="${note.image.url}" target="_blank" class="saysImage">
           <img src="${note.image.url}", alt="">
         </a>
+      </div>
+      </li>`
+    }
+    if (note.link) {
+      html += `<li>
+      <div class="icon">
+      <img src="${note.who.icon.url}", alt="${note.who.nameJp}">
+      </div>
+      <div class="left">
+        <div class="name">${note.who.nameJp}</div>
+        <a href="${note.link}" target="_blank" class="says -link">${note.link}</a>
       </div>
       </li>`
     }
