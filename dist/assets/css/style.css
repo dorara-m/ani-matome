@@ -705,6 +705,14 @@ h1, h2, h3 {
 .l-pages .desc ul li {
   list-style: disc;
 }
+.l-pages_links ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+.l-pages_links ul li {
+  flex-basis: 25%;
+  padding: 10px 5px;
+}
 .l-pages_relations a {
   color: skyblue;
 }

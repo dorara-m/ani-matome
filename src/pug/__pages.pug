@@ -26,6 +26,12 @@ html
             section.desc
               h2 実装手順など解説
               !=content
+            if links
+              section.l-pages_links
+                h2 参考サイト・元ネタなど
+                ul
+                  each item in links
+                    li: a(href=item.url).c-btn=item.title
             if browser
               section
                 h2 動作環境

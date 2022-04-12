@@ -141,6 +141,18 @@
     }
   }
 
+  &_links {
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+
+      li {
+        flex-basis: 25%;
+        padding: 10px 5px;
+      }
+    }
+  }
+
   &_relations {
     a {
       color: skyblue;
