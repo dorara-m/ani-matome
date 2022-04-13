@@ -173,7 +173,7 @@ const init = async () => {
       .catch((error) => {
         throw new Error(error)
       })
-    console.log(cmsData)
+    // console.log(cmsData)
 
     // チャット画面のtoggle
     toggleChat()

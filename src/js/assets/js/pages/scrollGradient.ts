@@ -1,15 +1,3 @@
-const p = document.getElementById("paragraph");
-
-const options = {
-  threshold: buildThresholdList(),
-};
-
-// 実行するよ
-const observer = new IntersectionObserver(showElements, options)
-
-// p に到達したら発動
-observer.observe(p)
-
 // threshold の設定
 function buildThresholdList() {
   let thresholds = []
@@ -19,19 +7,20 @@ function buildThresholdList() {
     let ratio = i / numSteps
     thresholds.push(ratio)
   }
-  console.log(thresholds)
   return thresholds
 }
 
 // 要素が表示されたら実行する動作
-function showElements(entries) {
-  entries.forEach((entry) => {
+function showElements(entries: any) {
+  entries.forEach((entry :any) => {
     if (entry.isIntersecting) {
       let ratio = Math.round(entry.intersectionRatio * 100)
       const ratioDom = document.getElementById("ratio")
+      if (!ratioDom) return
       ratioDom.innerHTML = `※グラデーション変化量: ${ratio}`
-
+      
       const heading = document.getElementById("heading")
+      if (!heading) return
       heading.style.backgroundImage = `
         linear-gradient(
         45deg,
@@ -42,3 +31,20 @@ function showElements(entries) {
     }
   });
 }
+
+{/* @ts-ignore */}
+const script = () => {
+  const p = document.getElementById("paragraph")
+  if (!p) return
+
+  const options = {
+    threshold: buildThresholdList(),
+  };
+  // 実行するよ
+  const observer = new IntersectionObserver(showElements, options)
+  
+  // p に到達したら発動
+  observer.observe(p)
+}
+script()
+
