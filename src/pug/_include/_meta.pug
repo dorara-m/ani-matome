@@ -37,7 +37,10 @@ meta(property='og:type', content=type)
 meta(property='og:image', content=site.url + ogp)
 meta(property='og:url', content=site.url + directory)
 meta(property='og:title', content=site.name)
-title #{site.name}
+if title
+  title #{title} | #{site.name}
+else
+  title #{site.name}
 link(rel='shortcut icon', href='/favicon.ico')
 link(rel='apple-touch-icon', href='/apple-touch-icon.png')
 

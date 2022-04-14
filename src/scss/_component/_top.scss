@@ -2,6 +2,7 @@
 
 .p-top {
   padding: 40px 0;
+  position: relative;
 
   &_head {
     margin-bottom: 50px;
@@ -26,6 +27,25 @@
           }
         }
       }
+    }
+  }
+
+  &_about {
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    width: 50px;
+    height: 50px;
+    border: 1px solid #444;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    transition: .2s;
+
+    &:hover {
+      background: #444;
+      color: #fff;
     }
   }
 
