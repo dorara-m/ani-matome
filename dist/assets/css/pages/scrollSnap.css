@@ -20,6 +20,8 @@
   height: 100vh;
   color: #fff;
   padding: 50px;
+}
+.wrap section.second {
   overflow-y: auto;
 }
 .wrap section h2 {
@@ -36,4 +38,8 @@
 }
 .wrap section:nth-child(odd) {
   background-color: #0bd;
+}
+.wrap section .text {
+  overflow-y: scroll;
+  height: 80%;
 }

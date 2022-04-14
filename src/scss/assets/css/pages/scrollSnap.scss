@@ -22,7 +22,10 @@
     height: 100vh;
     color: #fff;
     padding: 50px;
-    overflow-y: auto;
+
+    &.second {
+      overflow-y: auto;
+    }
 
     h2 {
       font-size: 30px;
@@ -41,6 +44,11 @@
 
     &:nth-child(odd) {
       background-color: #0bd;
+    }
+
+    .text {
+      overflow-y: scroll;
+      height: 80%;
     }
   }
 }
