@@ -1,0 +1,46 @@
+.space {
+  height: 100px;
+}
+
+
+.wrap {
+  overflow: auto;
+  scroll-snap-type: y mandatory;
+  height: 100vh;
+
+  .fix {
+    position: fixed;
+    bottom: 50px;
+    left: 50px;
+    border: 1px solid #444;
+    padding: 20px;
+  }
+
+
+  section {
+    scroll-snap-align: start;
+    height: 100vh;
+    color: #fff;
+    padding: 50px;
+    overflow-y: auto;
+
+    h2 {
+      font-size: 30px;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    p {
+      line-height: 1.6;
+      font-size: 16px;
+    }
+
+    &:nth-child(even) {
+      background-color: #0db;
+    }
+
+    &:nth-child(odd) {
+      background-color: #0bd;
+    }
+  }
+}

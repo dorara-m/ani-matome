@@ -1,0 +1,39 @@
+.space {
+  height: 100px;
+}
+
+.wrap {
+  overflow: auto;
+  -ms-scroll-snap-type: y mandatory;
+      scroll-snap-type: y mandatory;
+  height: 100vh;
+}
+.wrap .fix {
+  position: fixed;
+  bottom: 50px;
+  left: 50px;
+  border: 1px solid #444;
+  padding: 20px;
+}
+.wrap section {
+  scroll-snap-align: start;
+  height: 100vh;
+  color: #fff;
+  padding: 50px;
+  overflow-y: auto;
+}
+.wrap section h2 {
+  font-size: 30px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+.wrap section p {
+  line-height: 1.6;
+  font-size: 16px;
+}
+.wrap section:nth-child(even) {
+  background-color: #0db;
+}
+.wrap section:nth-child(odd) {
+  background-color: #0bd;
+}

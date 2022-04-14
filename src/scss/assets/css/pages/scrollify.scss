@@ -1,0 +1,19 @@
+.js-section {
+  height: 100vh;
+  color: #fff;
+  padding: 50px;
+
+  p {
+    font-size: 20px;
+    line-height: 1.6;
+  }
+
+  &:nth-child(even) {
+    background-color: #0db;
+  }
+
+  &:nth-child(odd) {
+    background-color: #0bd;
+  }
+
+}
