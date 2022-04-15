@@ -2,7 +2,6 @@
   height: 100px;
 }
 
-
 .wrap {
   overflow: auto;
   scroll-snap-type: y mandatory;
@@ -16,15 +15,27 @@
     padding: 20px;
   }
 
-
   section {
     scroll-snap-align: start;
     height: 100vh;
     color: #fff;
-    padding: 50px;
+    padding: 50px 0;
+
+    .inner {
+      padding: 0 50px;
+      height: 100%;
+    }
 
     &.second {
       overflow-y: auto;
+    }
+    &.forth {
+      padding-right: 50px;
+      padding-left: 50px;
+    }
+    .scroll {
+      overflow-y: auto;
+      height: 80%;
     }
 
     h2 {
@@ -44,11 +55,6 @@
 
     &:nth-child(odd) {
       background-color: #0bd;
-    }
-
-    .text {
-      overflow-y: auto;
-      height: 80%;
     }
   }
 }

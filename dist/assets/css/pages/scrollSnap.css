@@ -19,10 +19,22 @@
   scroll-snap-align: start;
   height: 100vh;
   color: #fff;
-  padding: 50px;
+  padding: 50px 0;
+}
+.wrap section .inner {
+  padding: 0 50px;
+  height: 100%;
 }
 .wrap section.second {
   overflow-y: auto;
+}
+.wrap section.forth {
+  padding-right: 50px;
+  padding-left: 50px;
+}
+.wrap section .scroll {
+  overflow-y: auto;
+  height: 80%;
 }
 .wrap section h2 {
   font-size: 30px;
@@ -38,8 +50,4 @@
 }
 .wrap section:nth-child(odd) {
   background-color: #0bd;
-}
-.wrap section .text {
-  overflow-y: scroll;
-  height: 80%;
 }
