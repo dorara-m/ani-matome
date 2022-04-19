@@ -26,10 +26,11 @@ html
             .l-pages_content
               section.sample
                 !=html
-              section.desc
-                h2 実装手順など解説
-                !=content
-              if links
+              if content
+                section.desc
+                  h2 実装手順など解説
+                  !=content
+              if links && links.length > 0
                 section.l-pages_links
                   h2 参考サイト・元ネタなど
                   ul

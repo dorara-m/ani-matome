@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>ボタンホバー「背景が左から入る→左に戻る」 | アニマトメ</title>
-    <meta name="description" content="アニメーション「ボタンホバー「背景が左から入る→左に戻る」」のページです。">
+    <title>ボタンホバー「下からスライドアップしてくる」 | アニマトメ</title>
+    <meta name="description" content="アニメーション「ボタンホバー「下からスライドアップしてくる」」のページです。">
     <link href="/assets/css/style.css" rel="stylesheet">
   </head>
   <body>
@@ -16,20 +16,84 @@
         </div>
       </header>
       <div class="l-headerSpace"></div>
-      <div class="l-pages pg-hover10">
+      <div class="l-pages pg-hover11">
         <div class="l-container">
           <div class="l-pages_head">
-            <h1>ボタンホバー「背景が左から入る→左に戻る」</h1>
+            <h1>ボタンホバー「下からスライドアップしてくる」</h1>
           </div>
           <div class="l-pages_content">
             <section class="sample"><div class="hover_item_wrap">
-  <div class="hover_btn_item overlayLeftBtn">
+  <div class="hover_btn_item slideUpBtn">
     <span>Hover me</span>
   </div>
 </div>
             </section>
             <section class="desc">
-              <h2>実装手順など解説</h2><p>safariで左から入ってくるとき、角丸がとれてる瞬間あり。overflowがアニメーション中に効かない…？</p>
+              <h2>実装手順など解説</h2><p>ボタンの枠となるdiv内にspanを定義、spanを文字部分として文字部分だけhoverすると上にずれる。<br>before, afterでスライドしてくる背景と文字を作っている。</p><pre><code>.slideUpBtn {
+  padding: 12px 24px;
+  background-color: transparent;
+  border: 2px solid hsl(243, 80%, 62%);
+  border-radius: 6px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.5s cubic-bezier(1, .15, .34, .92)
+}
+
+
+.slideUpBtn span {
+  display: inline-block;
+  transition: inherit;
+  color: hsl(243, 80%, 62%);
+}
+
+
+.slideUpBtn:hover span {
+  opacity: 0;
+  transform: translateY(-100%)
+}
+
+
+.slideUpBtn::before {
+  content: "";
+  background-color: hsl(243, 80%, 62%);
+  ;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  transform: translateY(100%);
+  transition: inherit;
+  width: 100%;
+  transition: transform 0.5s cubic-bezier(1, .15, .34, .92)
+}
+
+
+.slideUpBtn::after {
+  content: 'Hover me';
+  align-items: center;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  left: 0;
+  position: absolute;
+  top: 0;
+  transition: inherit;
+  transform: translateY(100%);
+  width: 100%;
+}
+
+
+.slideUpBtn:hover::before {
+  transform: translateY(0) scale(3);
+  transition-delay: .025s;
+}
+
+
+.slideUpBtn:hover::after {
+  opacity: 1;
+  color: hsl(222, 100%, 95%);
+  transform: translateY(0);
+}</code></pre>
             </section>
             <section>
               <h2>動作環境</h2>
@@ -64,25 +128,18 @@
                     <tr>
                       <th>対応</th>
                       <td data-status="○">○</td>
-                      <td data-status="○">○</td>
-                      <td data-status="△">△</td>
-                      <td data-status="○">○</td>
-                      <td data-status="○">○</td>
-                      <td data-status="○">○</td>
-                      <td data-status="○">○</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
                       <td></td>
                       <td></td>
                     </tr>
                   </tbody>
                 </table>
               </div>
-            </section>
-            <section class="l-pages_relations">
-              <h2>関連項目</h2>
-              <ul>
-                <li><a href="/uwc277u6i/">ホバーアニメ09「押し込む」</a></li>
-                <li><a href="/rb-cob6-e/">ホバーアニメ07「拡大/クリックで一瞬縮む」</a></li>
-              </ul>
             </section>
           </div>
         </div>
