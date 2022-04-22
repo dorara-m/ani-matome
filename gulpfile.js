@@ -78,7 +78,7 @@ exports.reload = reload
 
 const cmsLinks = (data) => {
   return fetch(
-    "https://rqfoifxr3x.microcms.io/api/v1/ani-links",
+    "https://rqfoifxr3x.microcms.io/api/v1/ani-links?limit=50",
     {
       headers: {
         "X-MICROCMS-API-KEY": "309375b1533b47f4b56d85202171276bf164"

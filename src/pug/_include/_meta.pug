@@ -3,6 +3,11 @@ if site[directory].ogp
 else
   - var ogp= site.siteImage;
 
+if title
+  - var ogpTitle = `${title} | ${site.name}`
+else
+  - var ogpTitle = site.name
+
 meta(charset='UTF-8')
 meta(http-equiv='X-UA-Compatible' content='IE=edge')
 meta(name='viewport', content=site.viewport)
@@ -23,7 +28,7 @@ meta(name='twitter:card', content=site.twitterCard)
 meta(name='twitter:image', content=site.url + ogp)
 meta(name='twitter:url', content=site.url + directory)
 meta(name='twitter:description', content=site.description)
-meta(name='twitter:title', content=site.name)
+meta(name='twitter:title', content=ogpTitle)
 
 if site.fbAppId
   meta(property="fb:app_id" content=site.fbAppId)
@@ -36,11 +41,8 @@ meta(property='og:locale', content=site.locale)
 meta(property='og:type', content=type)
 meta(property='og:image', content=site.url + ogp)
 meta(property='og:url', content=site.url + directory)
-meta(property='og:title', content=site.name)
-if title
-  title #{title} | #{site.name}
-else
-  title #{site.name}
+meta(property='og:title', content=ogpTitle)
+title=ogpTitle
 link(rel='shortcut icon', href='/favicon.ico')
 link(rel='apple-touch-icon', href='/apple-touch-icon.png')
 

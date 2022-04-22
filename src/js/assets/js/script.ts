@@ -198,3 +198,15 @@ const reloadFunc = () => {
   })
 }
 reloadFunc()
+
+const rect = () => {
+  const rectBtn = document.querySelector('.rectBtn')
+  if (!rectBtn) return
+  rectBtn.addEventListener('click', ()=> {
+    console.log('click rect')
+    const rect = document.querySelector('.rect')
+    rect?.classList.toggle('active')
+  })
+}
+// 動作しないので保留
+// rect()

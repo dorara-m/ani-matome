@@ -1,0 +1,28 @@
+extends /_include/_layout
+append variables
+  - var title ='ネタまとめ'
+  - var directory ='/neta/'
+  - var imgPath = '/assets/img/'
+block css
+block js
+
+block body
+  main.p-neta 
+    .l-container
+      h1 ネタまとめ
+      .tableWrap
+        table
+          thead
+            tr
+              th サイト
+              th サンプル
+          tbody
+            each item in cmsLinks
+              tr
+                th
+                  a(href=item.link, target="_blank", rel="noopener noreferrer") #{item.title}
+                td
+                  if item.sample
+                    a(href=item.sample) あり→
+                  else
+                    span -

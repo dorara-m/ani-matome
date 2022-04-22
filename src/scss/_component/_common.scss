@@ -1,0 +1,11 @@
+.rect {
+  background: #000;
+  width: 100px;
+  height: 100px;
+  transition: .3s;
+  clip-path: inset(0);
+  &.active {
+    background: pink;
+    clip-path: polygon(0 0, 0% 100%, 100% 50%);
+  }
+}

@@ -13,13 +13,15 @@ block body
           .title
             h1 アニマトメ#[span -animatome-]
       
-      a(href="/about/").p-top_about ？
+      //- a(href="/about/").p-top_about ？
 
       .p-top_body
         .l-container
           section
             h2 サンプル
             ul
+              //- 取り急ぎのサンプルはここに書く。
+              
               //- li: a(href="/scrollify/")
               //-   .img(style="background-image: url(https://placehold.jp/dedede/5e5e5e/270x180.png?text=Animation);")
               //-   h4 scrollify
@@ -34,22 +36,7 @@ block body
 
           section
             h2 参考になる（したい）サイト
-            .tableWrap
-              table
-                thead
-                  tr
-                    th サイト
-                    th サンプル
-                tbody
-                  each item in cmsLinks
-                    tr
-                      th
-                        a(href=item.link, target="_blank", rel="noopener noreferrer") #{item.title}
-                      td
-                        if item.sample
-                          a(href=item.sample) あり→
-                        else
-                          span -
+            a(href="/neta/").c-btn 移設しました。 
 
           section
             h2 AfterEffects
@@ -63,5 +50,3 @@ block body
                     tr
                       td
                         a(href=val.link, target="_blank", rel="noopener noreferrer") #{val.name}
-
-    include /_include/_releaseNote
