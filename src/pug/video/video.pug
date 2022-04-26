@@ -1,0 +1,13 @@
+extends /_include/_layout
+append variables
+  - var title ='動画サンプル01'
+  - var directory ='/video/'
+block css
+  link(rel="stylesheet", href="/assets/css/pages/video.css")
+block js
+
+block body
+  main
+    .mv
+      video(src="/assets/movie/sample.mp4" autoplay muted loop).video
+      h1 キービジュアル

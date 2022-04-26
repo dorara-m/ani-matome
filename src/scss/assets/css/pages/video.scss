@@ -1,0 +1,25 @@
+.mv {
+  width: 100vw;
+  height: 500px;
+  overflow: hidden;
+  position: relative;
+
+  .video {
+    aspect-ratio: 16 / 9;
+    min-height: 100%;
+    min-width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 25px;
+    color: #fff;
+  }
+}
