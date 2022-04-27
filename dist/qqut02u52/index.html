@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>ボタンホバー「中央から円が広がる」 | アニマトメ</title>
-    <meta name="description" content="アニメーション「ボタンホバー「中央から円が広がる」」のページです。">
+    <title>キャラクターが画面端に追従してきて案内してくれる | アニマトメ</title>
+    <meta name="description" content="アニメーション「キャラクターが画面端に追従してきて案内してくれる」のページです。">
     <link href="/assets/css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/pages/charaIntro.css">
   </head>
   <body>
     <div class="l-wrap">
@@ -16,61 +17,57 @@
         </div>
       </header>
       <div class="l-headerSpace"></div>
-      <div class="l-pages pg-hover12">
+      <div class="l-pages pg-charaIntro">
         <div class="l-container">
           <div class="l-pages_head">
-            <h1>ボタンホバー「中央から円が広がる」</h1>
+            <h1>キャラクターが画面端に追従してきて案内してくれる</h1>
           </div>
           <div class="l-pages_content">
-            <section class="sample"><div class="hover_item_wrap">
-  <div class="hover_btn_item circleScaleBtn">
-    <span>Hover me</span>
-  </div>
+            <section class="sample"><div class="fixedAnime">
+  <div class="ballon" id="chara-ballon">あああ</div>
+  <img src="/assets/img/kita.png" alt="">
 </div>
+<section class="pageSection" section-box data-ballon="1つめのセクションです♪">
+  <h3>1つめのセクション</h3>
+</section>
+<section class="pageSection" section-box data-ballon="2つめのセクションです!">
+  <h3>2つめのセクション</h3>
+</section>
+<section class="pageSection" section-box data-ballon="3つめのセクションですよ">
+  <h3>3つめのセクション</h3>
+</section>
             </section>
             <section class="desc">
-              <h2>実装手順など解説</h2><p>※よく見ると広がる円がボタン端までギリギリ届いてないので改良の余地あるかも…？<br></p><pre><code>.circleScaleBtn {
-  padding: 12px 24px;
-  background-color: hsl(222, 100%, 95%);
-  color: hsl(243, 80%, 62%);
-  position: relative;
-  border-radius: 6px;
-  overflow: hidden;
-  z-index: 1;
+              <h2>実装手順など解説</h2><p>IntersectionObserverを使用して実装。<br>各セクションが画面中央に来るタイミングでキャラの吹き出し内容を切り替える。<br></p><pre><code>const charaIntro = () =&gt; {
+  // 発火する処理（先に書いておかないと読めない場合あり
+  const doWhenIntersect = (entries :any) =&gt; {
+    entries.forEach((entry :any) =&gt; {
+      if (entry.isIntersecting) {
+        // ここでセリフをセクションごとに対応したものに変えれば良い。
+        // 書くセクションにセットしておいたセリフを呼び出し
+        // console.log(entry.target.getAttribute("data-ballon"))
+        const ballonDom = document.getElementById("chara-ballon")
+        if (!ballonDom) return
+        ballonDom.innerHTML = entry.target.getAttribute("data-ballon")
+      }
+    })
+  }
+
+
+  // observerオブジェクトを新規。第一引数にインタラクトしたときに実行したい関数をおく
+  const observer = new IntersectionObserver(doWhenIntersect, {rootMargin: '-50% 0px'})
+  // トリガーになるdomを指定
+  // ここで複数指定する
+  const sections = document.querySelectorAll('[section-box]')
+  // トリガーdomが画面内に入るごとに発火する
+  // 複数なのでforEachでそれぞれオブジェクト作成
+  sections.forEach((section) =&gt; {
+    observer.observe(section)
+  })
 }
 
 
-.circleScaleBtn span {
-  z-index: 1;
-  position: relative;
-}
-
-
-.circleScaleBtn::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 140px;
-  height: 140px;
-  border-radius: 50%;
-  transform: translate3d(-50%, -50%, 0) scale3d(0, 0, 0);
-  transition: opacity .4s cubic-bezier(.19, 1, .22, 1), transform .75s cubic-bezier(.19, 1, .22, 1);
-  background-color: hsl(243, 80%, 62%);
-  opacity: 0;
-}
-
-
-.circleScaleBtn:hover span {
-  color: hsl(222, 100%, 95%);
-}
-
-
-.circleScaleBtn:hover::before {
-  opacity: 1;
-  transition-duration: .85s;
-  transform: translate3d(-50%, -50%, 0) scale3d(1, 1, 1)
-}</code></pre>
+charaIntro()</code></pre>
             </section>
             <section>
               <h2>動作環境</h2>
@@ -105,8 +102,8 @@
                     <tr>
                       <th>対応</th>
                       <td data-status="○">○</td>
-                      <td data-status="○">○</td>
-                      <td data-status="○">○</td>
+                      <td></td>
+                      <td></td>
                       <td></td>
                       <td></td>
                       <td></td>
@@ -143,5 +140,6 @@
       </div>
     </div>
   </body>
-  <script src="/assets/js/script.js" defer></script>
+  <script src="/assets/js/script.js" defer></script><script src="/assets/js/pages/charaIntro.js"></script>
+
 </html>

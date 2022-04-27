@@ -1,0 +1,21 @@
+.fixedAnime {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 400px;
+}
+.fixedAnime .ballon {
+  position: absolute;
+  right: -50px;
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid #444;
+}
+
+.pageSection {
+  height: 100vh;
+  background-color: azure;
+}
+.pageSection:nth-child(odd) {
+  background-color: #ddd;
+}
