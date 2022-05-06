@@ -36,6 +36,7 @@
 <section class="pageSection" section-box data-ballon="3つめのセクションですよ">
   <h3>3つめのセクション</h3>
 </section>
+<div class="tmp" section-box data-ballon="end">セリフ区間を終えるための仮要素。ここに入ったらキャラが隠れます。</div>
             </section>
             <section class="desc">
               <h2>実装手順など解説</h2><p>IntersectionObserverを使用して実装。<br>各セクションが画面中央に来るタイミングでキャラの吹き出し内容を切り替える。<br></p><pre><code>const charaIntro = () =&gt; {
@@ -46,9 +47,19 @@
         // ここでセリフをセクションごとに対応したものに変えれば良い。
         // 書くセクションにセットしておいたセリフを呼び出し
         // console.log(entry.target.getAttribute("data-ballon"))
+        const animeDom = document.querySelector('.fixedAnime')
         const ballonDom = document.getElementById("chara-ballon")
-        if (!ballonDom) return
-        ballonDom.innerHTML = entry.target.getAttribute("data-ballon")
+        if (!ballonDom || !animeDom) return
+
+
+        const text = entry.target.getAttribute("data-ballon")
+        // セリフ区間を終えるための要素をトリガー対象に含めておき、その要素に入ったら要素を隠すように
+        if (text === 'end') {
+          animeDom.classList.add('-hide')
+        } else {
+          animeDom.classList.remove('-hide')
+          ballonDom.innerHTML = text
+        }
       }
     })
   }
@@ -102,13 +113,13 @@ charaIntro()</code></pre>
                     <tr>
                       <th>対応</th>
                       <td data-status="○">○</td>
+                      <td data-status="○">○</td>
+                      <td data-status="○">○</td>
                       <td></td>
                       <td></td>
                       <td></td>
                       <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
+                      <td data-status="○">○</td>
                       <td></td>
                     </tr>
                   </tbody>

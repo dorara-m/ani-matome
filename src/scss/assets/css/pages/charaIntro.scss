@@ -1,14 +1,31 @@
+@use '../../../_foundation/mixin' as *;
+
 .fixedAnime {
   position: fixed;
   left: 0;
   bottom: 0;
-  width: 400px;
+  width: 200px;
+  transition: transform .4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  @include mq() {
+    width: 400px;
+  }
+
+  &.-hide {
+    transform: translateX(-150%);
+  }
+
   .ballon {
+    font-size: 12px;
+    padding: 15px;
     position: absolute;
     right: -50px;
-    padding: 20px;
     border-radius: 10px;
     border: 1px solid #444;
+    background-color: #fff;
+    @include mq() {
+      font-size: 16px;
+      padding: 20px;
+    }
   }
 }
 
@@ -18,4 +35,8 @@
   &:nth-child(odd) {
     background-color: #ddd;
   }
+}
+
+.tmp {
+  height: 100px;
 }
