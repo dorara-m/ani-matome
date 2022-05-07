@@ -12,44 +12,27 @@ block body
         .l-container
           .title
             h1 アニマトメ#[span -animatome-]
+          
+          include /_include/_menu
+          +PcMenu(0)
       
-      //- a(href="/about/").p-top_about ？
-
       .p-top_body
         .l-container
-          section
-            h2 サンプル
-            ul
-              //- 取り急ぎのサンプルはここに書く。
-              
-              //- li: a(href="/video/video.html")
-              //-   .img(style="background-image: url(https://placehold.jp/dedede/5e5e5e/270x180.png?text=Animation);")
-              //-   h4 video
-              //- li: a(href="/scrollify/")
-              //-   .img(style="background-image: url(https://placehold.jp/dedede/5e5e5e/270x180.png?text=Animation);")
-              //-   h4 scrollify
-              each val in cmsAnime
-                li
-                  a(href=val.id+"/")
-                    if val.gif
-                      .img(style=`background-image: url(${val.gif.url});`)
-                    else
-                      .img(style="background-image: url(https://placehold.jp/dedede/5e5e5e/270x180.png?text=Animation);")
-                    h4=val.name_jp
+          ul
+            //- 取り急ぎのサンプルはここに書く。
+            
+            //- li: a(href="/video/video.html")
+            //-   .img(style="background-image: url(https://placehold.jp/dedede/5e5e5e/270x180.png?text=Animation);")
+            //-   h4 video
+            //- li: a(href="/scrollify/")
+            //-   .img(style="background-image: url(https://placehold.jp/dedede/5e5e5e/270x180.png?text=Animation);")
+            //-   h4 scrollify
+            each val in cmsAnime
+              li
+                a(href=val.id+"/")
+                  if val.gif
+                    .img(style=`background-image: url(${val.gif.url});`)
+                  else
+                    .img(style="background-image: url(https://placehold.jp/dedede/5e5e5e/270x180.png?text=Animation);")
+                  h2=val.name_jp
 
-          section
-            h2 参考になる（したい）サイト
-            a(href="/neta/").c-btn 移設しました。 
-
-          section
-            h2 AfterEffects
-            .tableWrap
-              table
-                thead
-                  tr
-                    th AfterEffectsでつくったもの
-                tbody
-                  each val in site.af
-                    tr
-                      td
-                        a(href=val.link, target="_blank", rel="noopener noreferrer") #{val.name}

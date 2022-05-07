@@ -1,0 +1,29 @@
+@use '../_foundation/_mixin'as *;
+
+.pcMenu {
+  display: flex;
+  margin-bottom: 60px;
+  @include mq-down() {
+    display: none;
+  }
+
+  li {
+    flex-basis: 25%;
+  }
+  li > span,a {
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f7f7f7;
+    font-weight: bold;
+    font-size: 15px;
+  }
+  li > span {
+    background-color: #ddd;
+    border-bottom: 2px solid #444;
+  }
+  li > a:hover {
+    background-color: #eee;
+  }
+}

@@ -1,0 +1,26 @@
+mixin PcMenu(current=0)
+  -
+    const items = [
+      {
+        name: 'サンプル',
+        url: '/'
+      },
+      {
+        name: 'ネタ',
+        url: '/neta'
+      },
+      {
+        name: 'AfterEffects',
+        url: '/af'
+      },
+      {
+        name: 'アニマトメとは？',
+        url: '/about'
+      },
+    ]
+  
+  ul.pcMenu
+    each item,index in items
+      - const hasLink = current !== index
+      li
+        #{hasLink ? 'a' : 'span'}(href=hasLink ? item.url : undefined)=item.name

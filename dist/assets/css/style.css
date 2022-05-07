@@ -709,6 +709,30 @@ h1, h2, h3 {
   margin-top: 15px;
 }
 
+.pcMenu {
+  display: flex;
+  margin-bottom: 60px;
+}
+.pcMenu li {
+  flex-basis: 25%;
+}
+.pcMenu li > span, .pcMenu a {
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f7f7f7;
+  font-weight: bold;
+  font-size: 15px;
+}
+.pcMenu li > span {
+  background-color: #ddd;
+  border-bottom: 2px solid #444;
+}
+.pcMenu li > a:hover {
+  background-color: #eee;
+}
+
 .c-releaseNote {
   position: fixed;
   top: 30px;
@@ -946,14 +970,6 @@ h1 {
   margin-top: 30px;
 }
 
-.p-neta {
-  padding: 50px 0;
-}
-.p-neta h1 {
-  font-size: 32px;
-  margin-bottom: 40px;
-}
-
 .l-container {
   width: calc(100% - 20px - 20px);
   margin-right: auto;
@@ -1081,11 +1097,8 @@ h1 {
   padding: 40px 0;
   position: relative;
 }
-.p-top_head {
-  margin-bottom: 50px;
-}
 .p-top_head .title {
-  margin-bottom: 25px;
+  margin-bottom: 50px;
 }
 .p-top_head .title h1 {
   font-size: 40px;
@@ -1115,13 +1128,6 @@ h1 {
 .p-top_body section + section {
   margin-top: 80px;
 }
-.p-top_body h2 {
-  font-size: 22px;
-  margin-bottom: 25px;
-}
-.p-top_body h2::first-letter {
-  text-transform: uppercase;
-}
 .p-top_body ul {
   display: flex;
   flex-direction: column;
@@ -1130,7 +1136,7 @@ h1 {
 .p-top_body ul > li {
   padding: 20px 10px;
 }
-.p-top_body ul > li h4 {
+.p-top_body ul > li h2 {
   text-align: center;
   font-weight: bold;
   line-height: 1.6;
@@ -1141,6 +1147,25 @@ h1 {
   margin-bottom: 10px;
   background-position: center;
   background-size: cover;
+}
+
+.p-under {
+  padding: 50px 0;
+}
+.p-under h1 {
+  font-size: 32px;
+  margin-bottom: 40px;
+}
+.p-under p {
+  line-height: 2;
+}
+.p-under p + p {
+  margin-top: 16px;
+}
+.p-under p a {
+  display: inline;
+  color: #415dcd;
+  text-decoration: underline;
 }
 @media screen and (min-width: 740px){
   .c-btnWrap .c-btn + .c-btn {
@@ -1169,14 +1194,14 @@ h1 {
   .l-container {
     max-width: 860px;
   }
+  .p-top_head .title {
+    margin-bottom: 40px;
+  }
   .p-top_head .title h1 {
     font-size: 50px;
   }
   .p-top_head .title h1 span {
     font-size: 30px;
-  }
-  .p-top_body h2 {
-    font-size: 28px;
   }
   .p-top_body ul {
     flex-direction: row;
@@ -1185,5 +1210,10 @@ h1 {
   }
   .p-top_body ul > li {
     width: 33.3%;
+  }
+}
+@media screen and (max-width: 739px){
+  .pcMenu {
+    display: none;
   }
 }

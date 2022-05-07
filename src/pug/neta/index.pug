@@ -7,9 +7,13 @@ block css
 block js
 
 block body
-  main.p-neta 
+  main.p-under 
     .l-container
       h1 ネタまとめ
+
+      include /_include/_menu
+      +PcMenu(1)
+
       .tableWrap
         table
           thead

@@ -1,0 +1,24 @@
+extends /_include/_layout
+append variables
+  - var title ='afまとめ'
+  - var directory ='/neta/'
+  - var imgPath = '/assets/img/'
+block css
+block js
+
+block body
+  main.p-under 
+    .l-container
+      h1 afterEffectsまとめ
+
+      include /_include/_menu
+      +PcMenu(2)
+
+      .tableWrap
+        table
+          thead
+            tr: th AfterEffectsでつくったもの
+          tbody
+            each val in site.af
+              tr: td
+                a(href=val.link, target="_blank", rel="noopener noreferrer") #{val.name}

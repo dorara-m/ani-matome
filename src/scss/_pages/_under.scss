@@ -1,0 +1,23 @@
+@use '../_foundation/_mixin'as *;
+
+// 下層共通スタイルにしてもいいかも
+.p-under {
+  padding: 50px 0;
+
+  h1 {
+    font-size: 32px;
+    margin-bottom: 40px;
+  }
+
+  p {
+    line-height: 2;
+    + p {
+      margin-top: 16px;
+    }
+    a {
+      display: inline;
+      color: rgb(65, 93, 205);
+      text-decoration: underline;
+    }
+  }
+}

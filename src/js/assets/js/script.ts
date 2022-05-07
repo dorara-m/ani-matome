@@ -69,13 +69,13 @@ const makeListHTML = (data: any) => {
   listContentDom.innerHTML = html
 }
 
-const makeBallons = (data: any) => {
+const makeBalloons = (data: any) => {
   const numberOfUma = data.person
   const place = data.place
-  const hedaDom = document.getElementById('js-note-head')
+  const headDom = document.getElementById('js-note-head')
   const chatDom = document.getElementById('js-note-chat')
-  if (!hedaDom || !chatDom) return
-  hedaDom.innerHTML = `${place} (${numberOfUma})`
+  if (!headDom || !chatDom) return
+  headDom.innerHTML = `${place} (${numberOfUma})`
 
   const notes = data.chats
 
@@ -136,7 +136,7 @@ const setListToDetail = (data: any) => {
       pageDom.classList.add('slideIn')
       // ここでスクロールリセット
       pageDom.scrollTo(0, 0)
-      makeBallons(data[i])
+      makeBalloons(data[i])
 
       // ここでフラグを切り替える
 
@@ -144,7 +144,7 @@ const setListToDetail = (data: any) => {
         readIds.push(data[i].id)
         const countDoms = document.getElementsByClassName('js-count')
         countDoms[i].classList.remove('unRead')
-        // localStrageに既読を反映
+        // localStorageに既読を反映
         localStorage.setItem('readIds', JSON.stringify(readIds))
       }
     })
