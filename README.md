@@ -6,7 +6,7 @@ CSS アニメーションを始めとした、Web 上のアニメーション表
 
 - pug → HTML
 - Sass（scss）→ CSS
-  - Stylelint
+  - StyleLint
 - TypeScript → Javascript
   - ESLint
   - Webpack bundle
@@ -187,7 +187,7 @@ FLOCSS を参考にディレクトリを分けています。運用ルールに�
 
 ### バグ
 
-- [!!] stylelint でめちゃめちゃエラー出てる
+- [!!] styleLint でめちゃめちゃエラー出てる
 - [!!!] 個別の ts で外部ライブラリを読めないエラーがでる
 
 ### 共通の構成改善
