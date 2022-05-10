@@ -57,38 +57,5 @@
       margin-top: 80px;
     }
 
-    ul {
-      display: flex;
-      flex-direction: column;
-      margin: -20px -10px;
-
-      @include mq() {
-        flex-direction: row;
-        align-items: flex-start;
-        flex-wrap: wrap;
-      }
-
-      >li {
-        padding: 20px 10px;
-
-        @include mq() {
-          width: 33.3%;
-        }
-
-        h2 {
-          text-align: center;
-          font-weight: bold;
-          line-height: 1.6;
-        }
-
-        .img {
-          border: 1px solid #ddd;
-          height: 180px;
-          margin-bottom: 10px;
-          background-position: center;
-          background-size: cover;
-        }
-      }
-    }
   }
 }

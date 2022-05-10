@@ -254,6 +254,34 @@ h1, h2, h3 {
   color: #444;
 }
 
+.cards {
+  display: flex;
+  flex-direction: column;
+  margin: -20px -10px;
+}
+.cards > li {
+  padding: 20px 10px;
+}
+.cards > li h2 {
+  text-align: center;
+  font-weight: bold;
+  line-height: 1.6;
+}
+.cards > li .img {
+  border: 1px solid #ddd;
+  height: 180px;
+  margin-bottom: 10px;
+  background-position: center;
+  background-size: cover;
+}
+.cards.-s .img {
+  height: 133px;
+}
+.cards.-s .head {
+  font-weight: bold;
+  line-height: 1.3;
+}
+
 .rect {
   background: #000;
   width: 100px;
@@ -1086,12 +1114,6 @@ h1 {
   flex-basis: 25%;
   padding: 10px 5px;
 }
-.l-pages_relations a {
-  color: skyblue;
-}
-.l-pages_relations a:hover {
-  text-decoration: underline;
-}
 
 .p-top {
   padding: 40px 0;
@@ -1128,26 +1150,6 @@ h1 {
 .p-top_body section + section {
   margin-top: 80px;
 }
-.p-top_body ul {
-  display: flex;
-  flex-direction: column;
-  margin: -20px -10px;
-}
-.p-top_body ul > li {
-  padding: 20px 10px;
-}
-.p-top_body ul > li h2 {
-  text-align: center;
-  font-weight: bold;
-  line-height: 1.6;
-}
-.p-top_body ul > li .img {
-  border: 1px solid #ddd;
-  height: 180px;
-  margin-bottom: 10px;
-  background-position: center;
-  background-size: cover;
-}
 
 .p-under {
   padding: 50px 0;
@@ -1171,6 +1173,17 @@ h1 {
   .c-btnWrap .c-btn + .c-btn {
     margin-top: 0;
     margin-left: 15px;
+  }
+  .cards {
+    flex-direction: row;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+  .cards > li {
+    width: 33.3%;
+  }
+  .cards.-s > li {
+    flex-basis: 25%;
   }
   .c-releaseNote {
     top: 30vh;
@@ -1202,14 +1215,6 @@ h1 {
   }
   .p-top_head .title h1 span {
     font-size: 30px;
-  }
-  .p-top_body ul {
-    flex-direction: row;
-    align-items: flex-start;
-    flex-wrap: wrap;
-  }
-  .p-top_body ul > li {
-    width: 33.3%;
   }
 }
 @media screen and (max-width: 739px){

@@ -65,21 +65,17 @@ html
                       tbody
                         tr
                           th 対応
-                          td(data-status=browser.chrome_mac[0])=browser.chrome_mac[0]
-                          td(data-status=browser.firefox_mac[0])=browser.firefox_mac[0]
-                          td(data-status=browser.safari[0])=browser.safari[0]
-                          td(data-status=browser.chrome_win[0])=browser.chrome_win[0]
-                          td(data-status=browser.firefox_win[0])=browser.firefox_win[0]
-                          td(data-status=browser.edge[0])=browser.edge[0]
-                          td(data-status=browser.ie[0])=browser.ie[0]
-                          td(data-status=browser.safari_ios[0])=browser.safari_ios[0]
-                          td(data-status=browser.chrome_android[0])=browser.chrome_android[0]
+                          each browserItem,key in browser
+                            if key !== 'fieldId'
+                              td(data-status=browserItem[0])=browserItem[0]
               if relations.length > 0
                 section.l-pages_relations
                   h2 関連項目
-                  ul
+                  ul.cards.-s
                     each item in relations
-                      li: a(href=`/${item.id}/`)=item.name_jp
+                      li: a(href=`/${item.id}/`)
+                        .img(style=`background-image: url(${item.gif ? item.gif.url : 'https://placehold.jp/dedede/5e5e5e/270x180.png?text=Animation'});`)
+                        .head=item.name_jp
 
     if !fullScreen
       include /_include/_releaseNote
