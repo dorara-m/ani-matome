@@ -1,0 +1,80 @@
+@use '../../../_foundation/mixin' as *;
+
+.mv {
+  height: 500px;
+  background-color: #999;
+  position: relative;
+  overflow: hidden;
+
+  &_fixed {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 200px;
+    transition: transform .4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+    @include mq() {
+      width: 300px;
+    }
+
+    .ballon {
+      right: 0;
+    }
+
+    &.-hide {
+      transform: translateY(100%);
+    }
+  }
+}
+
+.ballon {
+  font-size: 12px;
+  padding: 15px;
+  position: absolute;
+  right: -50px;
+  border-radius: 10px;
+  border: 1px solid #444;
+  background-color: #fff;
+  @include mq() {
+    font-size: 16px;
+    padding: 20px;
+  }
+}
+
+.fixedAnime {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 200px;
+  transition: transform .4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  @include mq() {
+    width: 400px;
+  }
+
+  &.-hide {
+    transform: translateX(-150%);
+  }
+}
+
+.pageSection {
+  height: 2000px;
+  background-color: azure;
+  &:nth-child(odd) {
+    background-color: #ddd;
+  }
+}
+
+.wrap {
+  position: relative;
+}
+.switchPoint {
+  position: absolute;
+  top: 1000px;
+  left: 0;
+  width: 100%;
+  height: calc(100% - 1000px);
+}
+
+.tmp {
+  height: 500px;
+}
