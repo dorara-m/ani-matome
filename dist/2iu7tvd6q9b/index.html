@@ -4,10 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>星空 by AmoungUs | アニマトメ</title>
-    <meta name="description" content="アニメーション「星空 by AmoungUs」のページです。">
+    <title>ボタンホバー「左から右に背景と名前がスライドイン」 | アニマトメ</title>
+    <meta name="description" content="アニメーション「ボタンホバー「左から右に背景と名前がスライドイン」」のページです。">
     <link href="/assets/css/style.css" rel="stylesheet">
-    <link rel="stylesheet" href="/assets/css/pages/starrySky.css">
   </head>
   <body>
     <div class="l-wrap">
@@ -17,47 +16,75 @@
         </div>
       </header>
       <div class="l-headerSpace"></div>
-      <div class="l-pages pg-starrySky">
+      <div class="l-pages pg-snapLeftBtn">
         <div class="l-container">
           <div class="l-pages_head">
-            <h1>星空 by AmoungUs</h1>
+            <h1>ボタンホバー「左から右に背景と名前がスライドイン」</h1>
           </div>
           <div class="l-pages_content">
-            <section class="sample"><div class="bgArea">
-                <div class="star"></div>
-                <div class="star"></div>
-                <div class="star"></div>
-                <div class="star"></div>
-                <div class="star"></div>
-                <div class="star"></div>
-                <div class="star"></div>
-                <div class="star"></div>
-                <div class="star"></div>
-                <div class="star"></div>
-                <div class="star"></div>
-                <div class="star"></div>
-                <div class="star"></div>
-                <div class="star"></div>
-                <div class="star"></div>
-                <div class="star"></div>
-                <div class="star"></div>
-                <div class="star"></div>
-                <div class="star"></div>
-                <div class="star"></div>
-                <div class="star"></div>
-                <div class="star"></div>
-                <div class="star"></div>
-                <div class="star"></div>
-                <div class="star"></div>
-                <div class="star"></div>
-                <div class="star"></div>
-                <div class="star"></div>
-                <div class="star"></div>
-                <div class="star"></div>
-              </div>
+            <section class="sample"><div class="hover_item_wrap">
+  <div class="hover_btn_item snapLeftBtn">
+    <span>Hover me</span>
+  </div>
+</div>
             </section>
             <section class="desc">
-              <h2>実装手順など解説</h2><p>いっぱいdivが必要です。<br>scssでfor文を回してランダムな大きさ、位置、アニメーションの長さ、開始タイミングを実現しています。（よって逆に言うとscssをリビルドしない限り位置は変わりません）<br><a href="https://codepen.io/Mamboleoo/pen/WNxOvjo" target="_blank" rel="noopener noreferrer">Codepen</a></p>
+              <h2>実装手順など解説</h2><p>左から入ってくる青い背景は疑似要素before<br>文字部分はspanで囲う<br>どちらもhover時にtransform: translateXをアニメーションさせているが、spanについてはタイミングを背景と合わせるためkeyframeで細かい設定をしている。<br><br><span style="color:#c7243a">firefoxだと文字が少しちらつく。</span><br><span style="color:#c7243a">safariだと青い背景がスライドしてくる瞬間は角丸が解除されてしまう。</span><br></p><pre><code>.snapLeftBtn {
+  text-align: center;
+  padding: 12px 24px;
+  background-color: hsl(222, 100%, 95%);
+  position: relative;
+  border-radius: 6px;
+  color: hsl(243, 80%, 62%);
+  overflow: hidden;
+}
+.snapLeftBtn::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 6px;
+  transform: translateX(-101%);
+  background: hsl(243, 80%, 62%);
+  transition: transform .25s ease-in;
+}
+.snapLeftBtn:hover::before {
+  transform: translateX(0);
+}
+.snapLeftBtn span {
+  position: relative;
+  z-index: 1;
+  display: block;
+  transition: color 0.1s .15s ease-in;
+}
+.snapLeftBtn:hover span {
+  color: hsl(222, 100%, 95%);
+  animation: animButtonSpan 0.4s;
+}
+@keyframes animButtonSpan {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+
+  35% {
+    transform: translateX(20px);
+    opacity: 0;
+  }
+
+
+  50.001% {
+    transform: translateX(-20px);
+  }
+
+
+  60% {
+    transform: translateX(0px);
+  }
+}</code></pre>
             </section>
             <section>
               <h2>動作環境</h2>
@@ -92,18 +119,26 @@
                     <tr>
                       <th>対応</th>
                       <td data-status="○">○</td>
-                      <td data-status="○">○</td>
-                      <td data-status="○">○</td>
+                      <td data-status="△">△</td>
+                      <td data-status="△">△</td>
                       <td></td>
                       <td></td>
-                      <td data-status="○">○</td>
-                      <td data-status="○">○</td>
-                      <td data-status="○">○</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
                       <td></td>
                     </tr>
                   </tbody>
                 </table>
               </div>
+            </section>
+            <section class="l-pages_relations">
+              <h2>関連項目</h2>
+              <ul class="cards -s">
+                <li><a href="/31vbgycpk1/">
+                    <div class="img" style="background-image: url(https://images.microcms-assets.io/assets/fc5a67cf51fb4ac3a0eb5f358bf160d6/9b05487b02d44af494350521b697f55b/sample.gif);"></div>
+                    <div class="head">ボタンホバー「背景が左から入る→左に戻る」</div></a></li>
+              </ul>
             </section>
           </div>
         </div>

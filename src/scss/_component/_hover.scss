@@ -9,7 +9,6 @@
   font-weight: bold;
 }
 
-// 01
 .borderLeftRight {
   cursor: pointer;
   display: inline-block;
@@ -35,7 +34,6 @@
   transform-origin: bottom left;
 }
 
-// 17
 .borderFade {
   cursor: pointer;
   padding-bottom: 1px;
@@ -59,7 +57,6 @@
   transform: translateY(0);
 }
 
-// 18
 .lineThrough {
   cursor: pointer;
   color: hsl(222, 25%, 14%);
@@ -96,7 +93,6 @@
   transform: translate3d(0, 0, 0);
 }
 
-// 19
 .textTransformX {
   cursor: pointer;
   color: hsl(222, 25%, 14%);
@@ -107,7 +103,6 @@
   color: hsl(243, 80%, 62%);
 }
 
-// 20
 .swingHorizontal {
   cursor: pointer;
   color:hsl(222, 25%, 14%);
@@ -145,7 +140,6 @@
   }
 }
 
-// 21
 .borderMarker {
   position: relative;
   cursor: pointer;
@@ -186,7 +180,7 @@
   transform: scale(.9);
 }
 
-// 23
+
 .siblingFade span {
   display: block;
   cursor: pointer;
@@ -198,7 +192,7 @@
 }
 
 
-// ボタン系
+// ↓ボタン系↓
 .hover_btn_item {
   display: inline-block;
   padding: 15px 30px;
@@ -211,7 +205,6 @@
   position: relative;
 }
 
-// 09
 .pressDownButton {
   border-bottom: 4px solid hsl(221, 89%, 85%);
   transition: all 0.1s ease-in-out;
@@ -221,7 +214,6 @@
   margin-top: 3px;
 }
 
-// 10
 .overlayLeftBtn span {
   color: hsl(243, 80%, 62%);
   position: relative;
@@ -247,7 +239,6 @@
   transform: translate(0, -50%);
 }
 
-// 11
 .slideUpBtn {
   padding: 12px 24px;
   background-color: transparent;
@@ -308,7 +299,6 @@
   transform: translateY(0);
 }
 
-// 12
 .circleScaleBtn {
   padding: 12px 24px;
   background-color: hsl(222, 100%, 95%);
@@ -346,4 +336,58 @@
   opacity: 1;
   transition-duration: .85s;
   transform: translate3d(-50%, -50%, 0) scale3d(1, 1, 1)
+}
+
+.snapLeftBtn {
+  text-align: center;
+  padding: 12px 24px;
+  background-color: hsl(222, 100%, 95%);
+  position: relative;
+  border-radius: 6px;
+  color: hsl(243, 80%, 62%);
+  overflow: hidden;
+}
+.snapLeftBtn::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 6px;
+  transform: translateX(-101%);
+  background: hsl(243, 80%, 62%);
+  transition: transform .25s ease-in;
+}
+.snapLeftBtn:hover::before {
+  transform: translateX(0);
+}
+.snapLeftBtn span {
+  position: relative;
+  z-index: 1;
+  display: block;
+  transition: color 0.1s .15s ease-in;
+}
+.snapLeftBtn:hover span {
+  color: hsl(222, 100%, 95%);
+  animation: animButtonSpan 0.4s;
+}
+@keyframes animButtonSpan {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  35% {
+    transform: translateX(20px);
+    opacity: 0;
+  }
+
+  50.001% {
+    transform: translateX(-20px);
+  }
+
+  60% {
+    transform: translateX(0px);
+  }
 }
