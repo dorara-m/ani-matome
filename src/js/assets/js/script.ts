@@ -70,32 +70,32 @@ const makeListHTML = (data: any) => {
 }
 
 const makeBalloons = (data: any) => {
-  const numberOfUma = data.person
   const place = data.place
   const headDom = document.getElementById('js-note-head')
   const chatDom = document.getElementById('js-note-chat')
   if (!headDom || !chatDom) return
-  headDom.innerHTML = `${place} (${numberOfUma})`
 
   const notes = data.chats
 
   let html = ''
+  let numArray = []
   notes.forEach((note: any) => {
+    numArray.push(note.who.id)
     html += `<li>
     <div class="icon">
-      <img src="${note.who.icon.url}", alt="${note.who.nameJp}">
+    <img src="${note.who.icon.url}", alt="${note.who.nameJp}">
     </div>
     <div class="left">
       <div class="name">${note.who.nameJp}</div>
       <div class="says">${insertBr(note.says)}</div>
-    </div>
-    </li>`
+      </div>
+      </li>`
     if (note.image) {
       html += `<li>
-      <div class="icon">
-      <img src="${note.who.icon.url}", alt="${note.who.nameJp}">
-      </div>
-      <div class="left">
+        <div class="icon">
+        <img src="${note.who.icon.url}", alt="${note.who.nameJp}">
+        </div>
+        <div class="left">
         <div class="name">${note.who.nameJp}</div>
         <a href="${note.image.url}" target="_blank" class="saysImage">
           <img src="${note.image.url}", alt="">
@@ -109,12 +109,15 @@ const makeBalloons = (data: any) => {
       <img src="${note.who.icon.url}", alt="${note.who.nameJp}">
       </div>
       <div class="left">
-        <div class="name">${note.who.nameJp}</div>
-        <a href="${note.link}" target="_blank" class="says -link">${note.link}</a>
+      <div class="name">${note.who.nameJp}</div>
+      <a href="${note.link}" target="_blank" class="says -link">${note.link}</a>
       </div>
       </li>`
     }
   })
+
+  const numNewArray = numArray.filter((x, i, self) => self.indexOf(x) === i)
+  headDom.innerHTML = `${place} (${numNewArray.length + 1})`
   chatDom.innerHTML = html
 }
 
@@ -202,7 +205,7 @@ reloadFunc()
 const rect = () => {
   const rectBtn = document.querySelector('.rectBtn')
   if (!rectBtn) return
-  rectBtn.addEventListener('click', ()=> {
+  rectBtn.addEventListener('click', () => {
     console.log('click rect')
     const rect = document.querySelector('.rect')
     rect?.classList.toggle('active')
