@@ -180,9 +180,6 @@ FLOCSS を参考にディレクトリを分けています。運用ルールに�
 - 動画の読み込み速度比較, youtube,video タグ,vimeo
 
 * ブラウザ指定で調査中にしてるやつ、一気に埋める。[wip]
-  - win での chrome
-  - win での firefox
-  - ie
   - アンドロイド
 
 ## ToDo
