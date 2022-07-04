@@ -560,6 +560,10 @@ h1, h2, h3 {
   overflow: hidden;
   position: relative;
 }
+.hover_btn_item span {
+  position: relative;
+  z-index: 1;
+}
 
 .pressDownButton {
   border-bottom: 4px solid #b7ccfb;

@@ -1,0 +1,46 @@
+.btn::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  padding-top: 100%;
+  border-radius: 50%;
+  z-index: 0;
+  background-color: #5851ec;
+  transform: translate(-50%, -50%) scale(0);
+  transition: all 0.3s ease-in;
+}
+.btn:hover span, .btn:focus span {
+  color: #fff;
+}
+.btn:hover::before {
+  transform: translate(-50%, -50%) scale(1);
+}
+.btn:focus::before {
+  -webkit-animation: anime 1.2s infinite;
+          animation: anime 1.2s infinite;
+}
+@-webkit-keyframes anime {
+  0% {
+    transform: translate(-50%, -50%) scale(0);
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(0.8);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(0);
+  }
+}
+@keyframes anime {
+  0% {
+    transform: translate(-50%, -50%) scale(0);
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(0.8);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(0);
+  }
+}
