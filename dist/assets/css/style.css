@@ -296,6 +296,61 @@ h1, h2, h3 {
           clip-path: polygon(0 0, 0% 100%, 100% 50%);
 }
 
+.l-floatArea {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  -webkit-animation: show-in-top 0.3s both 3s;
+          animation: show-in-top 0.3s both 3s;
+}
+@-webkit-keyframes show-in-top {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes show-in-top {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.l-floatArea_btn {
+  border: 1px solid #fff;
+  padding: 7px 12px;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.3s;
+  background-color: transparent;
+}
+.l-floatArea_btn:hover {
+  background-color: #fff;
+  color: #333;
+}
+.l-floatArea_body {
+  display: none;
+  position: absolute;
+  z-index: 99;
+  right: 0;
+  margin-top: 20px;
+  width: 450px;
+  background-color: #333;
+  padding: 6px;
+  color: #fff;
+  line-height: 1.5;
+}
+.l-floatArea_body.active {
+  display: block;
+}
+
 .l-header {
   position: absolute;
   top: 0;

@@ -1,0 +1,46 @@
+.l-floatArea {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  animation: show-in-top .3s both 3s;
+  @keyframes show-in-top  {
+    0% {
+      opacity: 0;
+      transform: translateY(-100%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  &_btn {
+    border: 1px solid #fff;
+    padding: 7px 12px;
+    color: #fff;
+    cursor: pointer;
+    transition: .3s;
+    background-color: transparent;
+    &:hover {
+      background-color: #fff;
+      color: #333;
+    }
+
+  }
+  &_body {
+    display: none;
+    position: absolute;
+    z-index: 99;
+    right: 0;
+    margin-top: 20px;
+    width: 450px;
+    background-color: #333;
+    padding: 6px;
+    color: #fff;
+    line-height: 1.5;
+    &.active {
+      display: block;
+      // ここでぬるっとしたアニメほしい
+    }
+  }
+}

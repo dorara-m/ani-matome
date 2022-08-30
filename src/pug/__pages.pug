@@ -15,7 +15,8 @@ html
   body
     .l-wrap
       if fullScreen
-        !=html
+        .contents!=html
+        include /_include/_fullPageLayout
       else 
         include /_include/_header
         .l-pages(class="pg-"+name_en)

@@ -1,0 +1,133 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@600&display=swap");
+.mv {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+.mv::before, .mv::after {
+  content: "";
+  display: block;
+  position: absolute;
+  z-index: 2;
+  width: 100%;
+  height: 50%;
+  background-color: #000;
+  -webkit-animation: cinemaBefore 1.5s both 1.5s;
+          animation: cinemaBefore 1.5s both 1.5s;
+}
+@-webkit-keyframes cinemaBefore {
+  0% {
+    transform: translateY(0);
+  }
+  60% {
+    transform: translateY(-85%);
+  }
+  90% {
+    transform: translateY(-85%);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}
+@keyframes cinemaBefore {
+  0% {
+    transform: translateY(0);
+  }
+  60% {
+    transform: translateY(-85%);
+  }
+  90% {
+    transform: translateY(-85%);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}
+.mv::after {
+  bottom: 0;
+  -webkit-animation: cinemaAfter 1.5s both 1.5s;
+          animation: cinemaAfter 1.5s both 1.5s;
+}
+@-webkit-keyframes cinemaAfter {
+  0% {
+    transform: translateY(0);
+  }
+  60% {
+    transform: translateY(85%);
+  }
+  90% {
+    transform: translateY(85%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+@keyframes cinemaAfter {
+  0% {
+    transform: translateY(0);
+  }
+  60% {
+    transform: translateY(85%);
+  }
+  90% {
+    transform: translateY(85%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+.mv .textLayer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+.mv .textLayer h1 {
+  font-size: 80px;
+  font-family: "Oswald", sans-serif;
+  z-index: 3;
+  -webkit-animation: slide-in-left 0.5s both;
+          animation: slide-in-left 0.5s both;
+}
+@-webkit-keyframes slide-in-left {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes slide-in-left {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+.mv .textLayer p {
+  margin-top: 30px;
+  line-height: 1.5;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.mv img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}

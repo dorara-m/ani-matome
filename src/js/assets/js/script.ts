@@ -204,3 +204,17 @@ const reloadFunc = () => {
   })
 }
 reloadFunc()
+
+// fullPage
+const toggleContents = () => {
+  const dom = document.getElementById('js-floatBtn')
+  if (!dom) return
+
+  const BtnDom = document.getElementsByClassName('l-floatArea_btn')[0]
+  const BodyDom = document.getElementsByClassName('l-floatArea_body')[0]
+  BtnDom.addEventListener('click', () => {
+    // ここでテキストほんとは変えたい
+    BodyDom.classList.toggle('active')
+  })
+}
+toggleContents()
