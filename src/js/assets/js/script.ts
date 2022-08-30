@@ -161,11 +161,14 @@ const setListToDetail = (data: any) => {
 
 const init = async () => {
   try {
-    const cmsData = await fetch('https://uma-chat.microcms.io/api/v1/chat', {
-      headers: {
-        'X-MICROCMS-API-KEY': 'eb94b33042b64da7badbbba4642b22db81a3',
-      },
-    })
+    const cmsData = await fetch(
+      'https://uma-chat.microcms.io/api/v1/chat?limit=99',
+      {
+        headers: {
+          'X-MICROCMS-API-KEY': 'eb94b33042b64da7badbbba4642b22db81a3',
+        },
+      }
+    )
       .then((response) => {
         if (!response.ok) {
           throw new Error('Network response was not OK')
@@ -201,15 +204,3 @@ const reloadFunc = () => {
   })
 }
 reloadFunc()
-
-const rect = () => {
-  const rectBtn = document.querySelector('.rectBtn')
-  if (!rectBtn) return
-  rectBtn.addEventListener('click', () => {
-    console.log('click rect')
-    const rect = document.querySelector('.rect')
-    rect?.classList.toggle('active')
-  })
-}
-// 動作しないので保留
-// rect()

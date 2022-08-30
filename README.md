@@ -53,8 +53,8 @@ npm start
 1. micro CMS でデータ追加を基本とする。css と js についてはローカルで記述するものとする。
 2. 【css】CMS 上で個別 css を on で登録した上で、ローカルで英語名と同じ名前の scss ファイルを`scss/assets/css/pages/`に追加。
 3. 【js】使う場合、ライブラリなどの記述も必要とする場合もあるため入力欄はテキストフィールドになっている。ローカルで js ファイルを`js/assets/js/pages/`などに追加し、それを読み込む記述`<script>`タグを適宜書く。
-   ※gif 録画には LICEcap`https://www.cockos.com/licecap/`を用いている
-   ※作業中の場合、タイトルに`[wip]`を付与してください。
+4. gif録画には LICEcap`https://www.cockos.com/licecap/`を用いている
+5. 作業途中のデータの場合、記事タイトルに`[wip]`を付与してください。
 
 ## ディレクトリ構成詳細
 

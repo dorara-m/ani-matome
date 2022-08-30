@@ -963,7 +963,7 @@ h1, h2, h3 {
 .c-releaseNote_frame_list {
   background-color: #fff;
   height: 100%;
-  padding-bottom: 30px;
+  padding-bottom: 80px;
   overflow: auto;
   transition: 0.5s;
 }
@@ -1348,11 +1348,11 @@ h1 {
     flex-basis: 25%;
   }
   .c-releaseNote {
-    top: 30vh;
+    top: 40vh;
     left: auto;
     right: 0;
     width: 450px;
-    height: 70vh;
+    height: 60vh;
   }
   .c-releaseNote_frame_list li {
     transition: background-color 0.2s;
