@@ -1153,6 +1153,7 @@ h1, h2, h3 {
   line-height: 1.5;
   font-size: 15px;
   position: relative;
+  overflow-wrap: break-word;
 }
 .c-releaseNote_frame_body li .left .says::after {
   content: "";
