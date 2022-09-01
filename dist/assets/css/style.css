@@ -298,6 +298,7 @@ h1, h2, h3 {
 
 .l-floatArea {
   position: absolute;
+  z-index: 98;
   right: 20px;
   top: 20px;
   -webkit-animation: show-in-top 0.3s both 3s;
@@ -323,9 +324,10 @@ h1, h2, h3 {
     transform: translateY(0);
   }
 }
+
 .l-floatArea_btn {
   border: 1px solid #fff;
-  padding: 7px 12px;
+  padding: 7px 10px;
   color: #fff;
   cursor: pointer;
   transition: 0.3s;
@@ -335,20 +337,58 @@ h1, h2, h3 {
   background-color: #fff;
   color: #333;
 }
+
 .l-floatArea_body {
-  display: none;
-  position: absolute;
-  z-index: 99;
-  right: 0;
-  margin-top: 20px;
-  width: 450px;
-  background-color: #333;
-  padding: 6px;
-  color: #fff;
+  position: fixed;
+  z-index: 100;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  color: #333;
   line-height: 1.5;
+  transform: translateX(100%);
+  transition: transform 0.3s;
+  overflow: scroll;
 }
 .l-floatArea_body.active {
+  transform: translateX(0);
+}
+.l-floatArea_body .head {
+  height: 50px;
+  border-bottom: 1px solid #ddd;
+  display: grid;
+}
+.l-floatArea_body .head_inner {
+  display: flex;
+  align-items: center;
+}
+.l-floatArea_body .head button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  width: 40px;
+  height: 100%;
+  margin-right: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.l-floatArea_body .head button::before {
+  content: "";
   display: block;
+  width: 7px;
+  height: 7px;
+  border-top: 2px solid #999;
+  border-left: 2px solid #999;
+  transform: rotate(-45deg);
+}
+.l-floatArea_body .head p {
+  font-weight: bold;
+}
+.l-floatArea_body .body {
+  padding-top: 10px;
 }
 
 .l-header {
@@ -980,6 +1020,7 @@ h1, h2, h3 {
 
 .c-releaseNote {
   position: fixed;
+  z-index: 99;
   top: 30px;
   left: 0;
   width: 100%;
@@ -990,6 +1031,28 @@ h1, h2, h3 {
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
   overflow: hidden;
+  -webkit-animation: show-in 0.3s backwards 3.5s;
+          animation: show-in 0.3s backwards 3.5s;
+}
+@-webkit-keyframes show-in {
+  from {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(calc(100% - 50px));
+  }
+}
+@keyframes show-in {
+  from {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(calc(100% - 50px));
+  }
 }
 .c-releaseNote.-js-active {
   transform: translateY(0);
@@ -1214,6 +1277,10 @@ h1 {
 
 .u-mt30 {
   margin-top: 30px;
+}
+
+.u-hidden {
+  display: none;
 }
 
 .l-container {

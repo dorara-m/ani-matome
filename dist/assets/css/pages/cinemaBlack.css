@@ -91,8 +91,8 @@
   justify-content: center;
   color: #fff;
 }
-.mv .textLayer h1 {
-  font-size: 130px;
+.mv .textLayer .head {
+  font-size: 65px;
   font-family: "Oswald", sans-serif;
   z-index: 3;
   -webkit-animation: slide-in-left 0.5s both;
@@ -130,4 +130,10 @@
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+@media screen and (min-width: 740px){
+  .mv .textLayer .head {
+    font-size: 130px;
+  }
 }

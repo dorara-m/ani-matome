@@ -15,7 +15,6 @@ html
   body
     .l-wrap
       if fullScreen
-        .contents!=html
         include /_include/_fullPageLayout
       else 
         include /_include/_header
@@ -78,7 +77,6 @@ html
                         .img(style=`background-image: url(${item.gif ? item.gif.url : 'https://placehold.jp/dedede/5e5e5e/270x180.png?text=Animation'});`)
                         .head=item.name_jp
 
-    if !fullScreen
       include /_include/_releaseNote
 
   include /_include/_js

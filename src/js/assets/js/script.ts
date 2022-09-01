@@ -205,16 +205,18 @@ const reloadFunc = () => {
 }
 reloadFunc()
 
-// fullPage
-const toggleContents = () => {
-  const dom = document.getElementById('js-floatBtn')
-  if (!dom) return
-
-  const BtnDom = document.getElementsByClassName('l-floatArea_btn')[0]
-  const BodyDom = document.getElementsByClassName('l-floatArea_body')[0]
+// fullPage > floatBtn
+const toggleModal = () => {
+  const BtnDom = document.getElementById('js-modal-on')
+  const BodyDom = document.getElementById('js-modal-body')
+  if (!BtnDom || !BodyDom) return
   BtnDom.addEventListener('click', () => {
-    // ここでテキストほんとは変えたい
-    BodyDom.classList.toggle('active')
+    BodyDom.classList.add('active')
+  })
+
+  const closeDom = document.getElementById('js-modal-off')
+  closeDom?.addEventListener('click', () => {
+    BodyDom.classList.remove('active')
   })
 }
-toggleContents()
+toggleModal()

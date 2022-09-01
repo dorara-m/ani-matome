@@ -1,5 +1,15 @@
-.l-floatArea#js-floatBtn
-  button.l-floatArea_btn 解説を表示する
-  .l-floatArea_body
-    !=content
+.l-floatArea
+  button.l-floatArea_btn#js-modal-on このアニメーションの詳細を表示する
+
+.l-floatArea_body#js-modal-body
+  .head
+    .l-container.head_inner
+      button#js-modal-off
+      p アニマトメ
+  .body
+  include /_include/_pageContent
   
+h1.u-hidden=name_jp
+.contents!=html
+
+//- ぬめtech
