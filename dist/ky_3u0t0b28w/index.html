@@ -22,60 +22,66 @@
           <div class="l-pages_head">
             <h1>画面横切り</h1>
           </div>
-          <div class="l-pages_content">
-            <section class="sample"><div class="pg-across_load"></div>
+                    <div class="l-pages_content">
+                      <section class="sample">
+                        <div class="l-container"><div class="pg-across_load"></div>
 <button id="js-reload">もう1回</button>
-            </section>
-            <section class="desc">
-              <h2>実装手順など解説</h2><p>画面の読み込み時に発動します。<br>枠として空divを用意。position: fixed;で画面全体に固定する。<br>疑似要素で背景（白）と動く帯（紺）を作る。どちらもposition: absolute;で浮かし、背景はwidth100%, 帯は適当な幅(300px)に。<br>両方とも疑似要素にして空div自体をアニメーションさせないのは、アニメーションによってdivが実体として消えてしまい、帯がその影響を受けるから。<br>背景と帯を、同じタイミング（.5秒遅れ）でアニメーション。translateで位置を画面外→画面外へ。<br>アニメーションが終わったら外枠の空divも消す。cssアニメーションではdisplayは操作できないので、visibility: hidden;に。</p>
-            </section>
-            <section>
-              <h2>動作環境</h2>
-              <ul class="l-pages_content_caption">
-                <li>○:動作する</li>
-                <li>△:動作するが意図せぬ挙動</li>
-                <li>☓:動作しない</li>
-              </ul>
-              <div class="l-pages_table">
-                <table>
-                  <thead>
-                    <tr>
-                      <td>-</td>
-                      <th colspan="3">Mac</th>
-                      <th colspan="4">Windows11</th>
-                      <th colspan="2">SP</th>
-                    </tr>
-                    <tr>
-                      <td>ブラウザ</td>
-                      <th>Chrome</th>
-                      <th>Firefox</th>
-                      <th>Safari</th>
-                      <th>Chrome</th>
-                      <th>Firefox</th>
-                      <th>Edge</th>
-                      <th>IE</th>
-                      <th>Safari on iOS</th>
-                      <th>Chrome for Android</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <th>対応</th>
-                      <td data-status="○">○</td>
-                      <td data-status="○">○</td>
-                      <td data-status="○">○</td>
-                      <td></td>
-                      <td></td>
-                      <td data-status="○">○</td>
-                      <td data-status="△">△</td>
-                      <td data-status="○">○</td>
-                      <td data-status="○">○</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </section>
-          </div>
+                        </div>
+                      </section>
+                      <section class="desc">
+                        <div class="l-container">
+                          <h2>実装手順など解説</h2><p>画面の読み込み時に発動します。<br>枠として空divを用意。position: fixed;で画面全体に固定する。<br>疑似要素で背景（白）と動く帯（紺）を作る。どちらもposition: absolute;で浮かし、背景はwidth100%, 帯は適当な幅(300px)に。<br>両方とも疑似要素にして空div自体をアニメーションさせないのは、アニメーションによってdivが実体として消えてしまい、帯がその影響を受けるから。<br>背景と帯を、同じタイミング（.5秒遅れ）でアニメーション。translateで位置を画面外→画面外へ。<br>アニメーションが終わったら外枠の空divも消す。cssアニメーションではdisplayは操作できないので、visibility: hidden;に。</p>
+                        </div>
+                      </section>
+                      <section>
+                        <div class="l-container">
+                          <h2>動作環境</h2>
+                          <ul class="l-pages_content_caption">
+                            <li>○:動作する</li>
+                            <li>△:動作するが意図せぬ挙動</li>
+                            <li>☓:動作しない</li>
+                          </ul>
+                          <div class="l-pages_table">
+                            <table>
+                              <thead>
+                                <tr>
+                                  <td>-</td>
+                                  <th colspan="3">Mac</th>
+                                  <th colspan="4">Windows11</th>
+                                  <th colspan="2">SP</th>
+                                </tr>
+                                <tr>
+                                  <td>ブラウザ</td>
+                                  <th>Chrome</th>
+                                  <th>Firefox</th>
+                                  <th>Safari</th>
+                                  <th>Chrome</th>
+                                  <th>Firefox</th>
+                                  <th>Edge</th>
+                                  <th>IE</th>
+                                  <th>Safari on iOS</th>
+                                  <th>Chrome for Android</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <th>対応</th>
+                                  <td data-status="○">○</td>
+                                  <td data-status="○">○</td>
+                                  <td data-status="○">○</td>
+                                  <td></td>
+                                  <td></td>
+                                  <td data-status="○">○</td>
+                                  <td data-status="△">△</td>
+                                  <td data-status="○">○</td>
+                                  <td data-status="○">○</td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+                      </section>
+                    </div>
         </div>
       </div>
       <div class="c-releaseNote" id="js-note-wrap">
@@ -87,14 +93,13 @@
           <div class="c-releaseNote_frame_list" id="js-note-list">
             <div id="js-note-listContent"></div>
           </div>
-          <div class="c-releaseNote_frame_page" id="js-note-page">
-            <div class="c-releaseNote_frame_head">
-              <button id="js-note-back"></button>
-              <p id="js-note-head">トレセン学園</p>
-            </div>
-            <div class="c-releaseNote_frame_body">
-              <ul id="js-note-chat"></ul>
-            </div>
+          <div class="c-releaseNote_frame_page" id="js-note-page"></div>
+          <div class="c-releaseNote_frame_head">
+            <button id="js-note-back"></button>
+            <p id="js-note-head">トレセン学園</p>
+          </div>
+          <div class="c-releaseNote_frame_body">
+            <ul id="js-note-chat"></ul>
           </div>
         </div>
       </div>

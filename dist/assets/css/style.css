@@ -1050,6 +1050,8 @@ h1, h2, h3 {
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
   overflow: hidden;
+}
+.c-releaseNote.-delay {
   -webkit-animation: show-in 0.3s backwards 3.5s;
           animation: show-in 0.3s backwards 3.5s;
 }

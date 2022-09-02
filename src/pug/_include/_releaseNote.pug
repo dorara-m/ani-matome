@@ -1,11 +1,26 @@
-.c-releaseNote#js-note-wrap
-  .c-releaseNote_head#js-note-toggle
-    p メッセージ
-    .icon ↑
-  .c-releaseNote_frame
-    .c-releaseNote_frame_list#js-note-list
-      #js-note-listContent
-    .c-releaseNote_frame_page#js-note-page
+if animationDelay
+  .c-releaseNote#js-note-wrap.-delay
+    .c-releaseNote_head#js-note-toggle
+      p メッセージ
+      .icon ↑
+    .c-releaseNote_frame
+      .c-releaseNote_frame_list#js-note-list
+        #js-note-listContent
+      .c-releaseNote_frame_page#js-note-page
+      .c-releaseNote_frame_head
+        button#js-note-back
+        p#js-note-head トレセン学園
+      .c-releaseNote_frame_body
+        ul#js-note-chat
+else
+  .c-releaseNote#js-note-wrap
+    .c-releaseNote_head#js-note-toggle
+      p メッセージ
+      .icon ↑
+    .c-releaseNote_frame
+      .c-releaseNote_frame_list#js-note-list
+        #js-note-listContent
+      .c-releaseNote_frame_page#js-note-page
       .c-releaseNote_frame_head
         button#js-note-back
         p#js-note-head トレセン学園

@@ -15,15 +15,17 @@
   overflow: hidden;
 
   // 遅れて表示
-  animation: show-in .3s backwards 3.5s;
-  @keyframes show-in {
-    from {
-      opacity: 0;
-      transform: translateY(100%);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(calc(100% - 50px));
+  &.-delay {
+    animation: show-in .3s backwards 3.5s;
+    @keyframes show-in {
+      from {
+        opacity: 0;
+        transform: translateY(100%);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(calc(100% - 50px));
+      }
     }
   }
 

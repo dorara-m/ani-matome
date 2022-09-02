@@ -22,59 +22,65 @@
           <div class="l-pages_head">
             <h1>くるくる</h1>
           </div>
-          <div class="l-pages_content">
-            <section class="sample"><div class="wrap"><svg width="100" height="100" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40"/></svg></div>
-            </section>
-            <section class="desc">
-              <h2>実装手順など解説</h2><p>ローディングっぽいsvgを自作しちゃうのがポイント。視力検査みたいな一部欠けた円が目標物。<br>svgはstroke-dasharrayというプロパティで破線を表現でき、その指定方法は、線・隙間・線・隙間というふうに交互に値を与える。<br>今回は欠けた分の長さの線、が指定できればいい。それを表現するには円周(直径*π)-20pxぐらい。<br>なので<code>stroke-dasharray: calc(80 * 3.14 - 20);</code>でおっけい。<br>動きについては割愛。<br><a href="https://lopan.jp/loading-circle/" target="_blank" rel="noopener noreferrer">参考サイト</a></p>
-            </section>
-            <section>
-              <h2>動作環境</h2>
-              <ul class="l-pages_content_caption">
-                <li>○:動作する</li>
-                <li>△:動作するが意図せぬ挙動</li>
-                <li>☓:動作しない</li>
-              </ul>
-              <div class="l-pages_table">
-                <table>
-                  <thead>
-                    <tr>
-                      <td>-</td>
-                      <th colspan="3">Mac</th>
-                      <th colspan="4">Windows11</th>
-                      <th colspan="2">SP</th>
-                    </tr>
-                    <tr>
-                      <td>ブラウザ</td>
-                      <th>Chrome</th>
-                      <th>Firefox</th>
-                      <th>Safari</th>
-                      <th>Chrome</th>
-                      <th>Firefox</th>
-                      <th>Edge</th>
-                      <th>IE</th>
-                      <th>Safari on iOS</th>
-                      <th>Chrome for Android</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <th>対応</th>
-                      <td data-status="○">○</td>
-                      <td data-status="○">○</td>
-                      <td data-status="△">△</td>
-                      <td></td>
-                      <td></td>
-                      <td data-status="○">○</td>
-                      <td></td>
-                      <td data-status="△">△</td>
-                      <td></td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </section>
-          </div>
+                    <div class="l-pages_content">
+                      <section class="sample">
+                        <div class="l-container"><div class="wrap"><svg width="100" height="100" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40"/></svg></div>
+                        </div>
+                      </section>
+                      <section class="desc">
+                        <div class="l-container">
+                          <h2>実装手順など解説</h2><p>ローディングっぽいsvgを自作しちゃうのがポイント。視力検査みたいな一部欠けた円が目標物。<br>svgはstroke-dasharrayというプロパティで破線を表現でき、その指定方法は、線・隙間・線・隙間というふうに交互に値を与える。<br>今回は欠けた分の長さの線、が指定できればいい。それを表現するには円周(直径*π)-20pxぐらい。<br>なので<code>stroke-dasharray: calc(80 * 3.14 - 20);</code>でおっけい。<br>動きについては割愛。<br><a href="https://lopan.jp/loading-circle/" target="_blank" rel="noopener noreferrer">参考サイト</a></p>
+                        </div>
+                      </section>
+                      <section>
+                        <div class="l-container">
+                          <h2>動作環境</h2>
+                          <ul class="l-pages_content_caption">
+                            <li>○:動作する</li>
+                            <li>△:動作するが意図せぬ挙動</li>
+                            <li>☓:動作しない</li>
+                          </ul>
+                          <div class="l-pages_table">
+                            <table>
+                              <thead>
+                                <tr>
+                                  <td>-</td>
+                                  <th colspan="3">Mac</th>
+                                  <th colspan="4">Windows11</th>
+                                  <th colspan="2">SP</th>
+                                </tr>
+                                <tr>
+                                  <td>ブラウザ</td>
+                                  <th>Chrome</th>
+                                  <th>Firefox</th>
+                                  <th>Safari</th>
+                                  <th>Chrome</th>
+                                  <th>Firefox</th>
+                                  <th>Edge</th>
+                                  <th>IE</th>
+                                  <th>Safari on iOS</th>
+                                  <th>Chrome for Android</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <th>対応</th>
+                                  <td data-status="○">○</td>
+                                  <td data-status="○">○</td>
+                                  <td data-status="△">△</td>
+                                  <td></td>
+                                  <td></td>
+                                  <td data-status="○">○</td>
+                                  <td></td>
+                                  <td data-status="△">△</td>
+                                  <td></td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+                      </section>
+                    </div>
         </div>
       </div>
       <div class="c-releaseNote" id="js-note-wrap">
@@ -86,14 +92,13 @@
           <div class="c-releaseNote_frame_list" id="js-note-list">
             <div id="js-note-listContent"></div>
           </div>
-          <div class="c-releaseNote_frame_page" id="js-note-page">
-            <div class="c-releaseNote_frame_head">
-              <button id="js-note-back"></button>
-              <p id="js-note-head">トレセン学園</p>
-            </div>
-            <div class="c-releaseNote_frame_body">
-              <ul id="js-note-chat"></ul>
-            </div>
+          <div class="c-releaseNote_frame_page" id="js-note-page"></div>
+          <div class="c-releaseNote_frame_head">
+            <button id="js-note-back"></button>
+            <p id="js-note-head">トレセン学園</p>
+          </div>
+          <div class="c-releaseNote_frame_body">
+            <ul id="js-note-chat"></ul>
           </div>
         </div>
       </div>
