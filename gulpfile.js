@@ -5,7 +5,7 @@ const gulp = require('gulp')
 // Pug
 const gulpPug = require('gulp-pug')
 const fs = require('fs')
-const rename = require("gulp-rename")
+const rename = require('gulp-rename')
 
 // Sass
 const gulpSass = require('gulp-sass')(require('sass'))
@@ -35,7 +35,7 @@ const plumber = require('gulp-plumber')
 const notify = require('gulp-notify')
 const changed = require('gulp-changed')
 
-const fetch = require("node-fetch")
+const fetch = require('node-fetch')
 
 // 公開用ディレクトリ
 const dest = 'dist/'
@@ -77,34 +77,30 @@ const reload = (done) => {
 exports.reload = reload
 
 const cmsLinks = (data) => {
-  return fetch(
-    "https://rqfoifxr3x.microcms.io/api/v1/ani-links?limit=50",
-    {
-      headers: {
-        "X-MICROCMS-API-KEY": "309375b1533b47f4b56d85202171276bf164"
-      }
-    })
-  .then(res => res.json())
-  .then(json => {
-    // console.log(json)
-    data.cmsLinks = json.contents
+  return fetch('https://rqfoifxr3x.microcms.io/api/v1/ani-links?limit=50', {
+    headers: {
+      'X-MICROCMS-API-KEY': '309375b1533b47f4b56d85202171276bf164',
+    },
   })
+    .then((res) => res.json())
+    .then((json) => {
+      // console.log(json)
+      data.cmsLinks = json.contents
+    })
 }
 exports.cmsLinks = cmsLinks
 
 const cmsAnime = (data) => {
-  return fetch(
-    "https://rqfoifxr3x.microcms.io/api/v1/anime?limit=30",
-    {
-      headers: {
-        "X-MICROCMS-API-KEY": "309375b1533b47f4b56d85202171276bf164"
-      }
-    })
-  .then(res => res.json())
-  .then(json => {
-    // console.log(json)
-    data.cmsAnime = json.contents
+  return fetch('https://rqfoifxr3x.microcms.io/api/v1/anime?limit=99', {
+    headers: {
+      'X-MICROCMS-API-KEY': '309375b1533b47f4b56d85202171276bf164',
+    },
   })
+    .then((res) => res.json())
+    .then((json) => {
+      // console.log(json)
+      data.cmsAnime = json.contents
+    })
 }
 exports.cmsAnime = cmsAnime
 
@@ -112,36 +108,34 @@ exports.cmsAnime = cmsAnime
  * Pug
  * .pug -> .html
  */
-const pugFunc = async(isAll) => {
+const pugFunc = async (isAll) => {
   // metaデータ等JSONファイルの読み込み。
   const lastRun = isAll ? null : gulp.lastRun(pugFunc)
   const data = {
-    site: JSON.parse(fs.readFileSync(src.data))
+    site: JSON.parse(fs.readFileSync(src.data)),
   }
   await this.cmsLinks(data)
   await this.cmsAnime(data)
-  return (
-    gulp
-      .src(src.pug.file, { since: lastRun })
-      .pipe(plumber({ errorHandler: notify.onError('Error: <%= error %>') }))
-      .pipe(
-        gulpPug({
-          data,
-          basedir: src.pug.dir,
-          pretty: true,
-        })
-      )
-      .pipe(gulp.dest(dest))
-  )
+  return gulp
+    .src(src.pug.file, { since: lastRun })
+    .pipe(plumber({ errorHandler: notify.onError('Error: <%= error %>') }))
+    .pipe(
+      gulpPug({
+        data,
+        basedir: src.pug.dir,
+        pretty: true,
+      })
+    )
+    .pipe(gulp.dest(dest))
 }
 
 // 個別ページ生成
-const pugPagesFunc = async() => {
+const pugPagesFunc = async () => {
   const obj = {}
   await this.cmsAnime(obj)
   for (const data of obj.cmsAnime) {
     gulp
-      .src(["src/pug/**/__*.pug"])
+      .src(['src/pug/**/__*.pug'])
       .pipe(plumber({ errorHandler: notify.onError('Error: <%= error %>') }))
       .pipe(
         gulpPug({
@@ -153,7 +147,7 @@ const pugPagesFunc = async() => {
           pretty: true,
         })
       )
-      .pipe(rename({ basename: `${data.id}/index`, extname: ".html" }))
+      .pipe(rename({ basename: `${data.id}/index`, extname: '.html' }))
       .pipe(gulp.dest(dest))
   }
 }
@@ -344,5 +338,5 @@ exports.build = gulp.series(
   pug,
   pugPagesFunc,
   sass,
-  gulp.parallel(js, image, copy),
+  gulp.parallel(js, image, copy)
 )
