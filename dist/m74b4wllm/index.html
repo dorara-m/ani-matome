@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>白のtext-shadowで文字が光ってる風に見えるアニメ | アニマトメ</title>
-    <meta name="description" content="アニメーション「白のtext-shadowで文字が光ってる風に見えるアニメ」のページです。">
+    <title>白のtext-shadowで文字が光ってる風にフェードインしてくるアニメ | アニマトメ</title>
+    <meta name="description" content="アニメーション「白のtext-shadowで文字が光ってる風にフェードインしてくるアニメ」のページです。">
     <link href="/assets/css/style.css" rel="stylesheet">
     <link rel="stylesheet" href="/assets/css/pages/textFlashShadow.css">
   </head>
@@ -20,7 +20,7 @@
       <div class="l-pages pg-textFlashShadow">
         <div class="l-container">
           <div class="l-pages_head">
-            <h1>白のtext-shadowで文字が光ってる風に見えるアニメ</h1>
+            <h1>白のtext-shadowで文字が光ってる風にフェードインしてくるアニメ</h1>
           </div>
                     <div class="l-pages_content">
                       <section class="sample">
@@ -37,6 +37,46 @@
     <span>h</span>
   </div>
 </div>
+                        </div>
+                      </section>
+                      <section class="desc">
+                        <div class="l-container">
+                          <h2>実装手順など解説</h2><p>htmlは文字1つ1つをspanタグで作っておく。<br>spanタグそれぞれに同じアニメをdelayだけ少しずつズラしながら適用させる。<br>scss環境であればdelayの部分を効率的に書ける。</p><pre><code>span {
+      animation: letter-glow 0.5s 0s ease both;
+      &amp;.hasMargin {
+        margin-left: 10px;
+      }
+      @for $i from 1 through 9 {
+        &amp;:nth-child(#{$i}) {
+          animation-delay: ($i - 1) * 0.08s;
+        }
+      }
+    }
+    @keyframes letter-glow {
+      0% {
+        opacity: 0;
+        text-shadow: 0px 0px 1px rgba(255,255,255,0.1)
+      }
+      66% {
+        opacity: 1;
+        text-shadow: 0px 0px 10px rgba(255,255,255,0.9)
+      }
+      77% {
+        opacity: 1
+      }
+      100% {
+        opacity: 1;
+        text-shadow: 0px 0px 10px rgba(255,255,255,0)
+      }
+    }</code></pre>
+                        </div>
+                      </section>
+                      <section class="l-pages_links">
+                        <div class="l-container">
+                          <h2>参考サイト・元ネタなど</h2>
+                          <ul>
+                            <li><a class="c-btn" href="https://www.inter-action.co.jp/">こちらのcssを拝借しています</a></li>
+                          </ul>
                         </div>
                       </section>
                       <section>
@@ -99,13 +139,14 @@
           <div class="c-releaseNote_frame_list" id="js-note-list">
             <div id="js-note-listContent"></div>
           </div>
-          <div class="c-releaseNote_frame_page" id="js-note-page"></div>
-          <div class="c-releaseNote_frame_head">
-            <button id="js-note-back"></button>
-            <p id="js-note-head">トレセン学園</p>
-          </div>
-          <div class="c-releaseNote_frame_body">
-            <ul id="js-note-chat"></ul>
+          <div class="c-releaseNote_frame_page" id="js-note-page">
+            <div class="c-releaseNote_frame_head">
+              <button id="js-note-back"></button>
+              <p id="js-note-head">トレセン学園</p>
+            </div>
+            <div class="c-releaseNote_frame_body">
+              <ul id="js-note-chat"></ul>
+            </div>
           </div>
         </div>
       </div>
