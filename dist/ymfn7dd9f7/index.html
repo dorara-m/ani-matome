@@ -18,72 +18,103 @@
       </header>
       <div class="l-headerSpace"></div>
       <div class="l-pages pg-lottie01">
-        <div class="l-container">
-          <div class="l-pages_head">
+        <div class="l-pages_head">
+          <div class="l-container">
             <h1>Lottie.jsデモ</h1>
           </div>
-                    <div class="l-pages_content">
-                      <section class="sample">
-                        <div class="l-container"><div id="lottie"></div>
+        </div>
+                <div class="l-pages_content">
+                  <section class="sample">
+                    <div class="l-container"><div id="lottie"></div>
 <button id="js-reload">もう一度</button>
 
-                        </div>
-                      </section>
-                      <section class="desc">
-                        <div class="l-container">
-                          <h2>実装手順など解説</h2><p>AFのアニメーションをjsonで書き出し、それを任意のdivに対してlottie.jsで描画しています。<br>divにcssで全画面に固定表示、背景色黒を指定しています。アニメーションのビュー範囲が1920*1080で作ってしまっているのでブラウザ幅を広げても縮尺は維持されます。<br>アニメーションが終了するとイベントを受け取って要素が消えるようjs制御しています。<br><a href="https://github.com/airbnb/lottie-web" target="_blank" rel="noopener noreferrer">公式github</a></p>
-                        </div>
-                      </section>
-                      <section>
-                        <div class="l-container">
-                          <h2>動作環境</h2>
-                          <ul class="l-pages_content_caption">
-                            <li>○:動作する</li>
-                            <li>△:動作するが意図せぬ挙動</li>
-                            <li>☓:動作しない</li>
-                          </ul>
-                          <div class="l-pages_table">
-                            <table>
-                              <thead>
-                                <tr>
-                                  <td>-</td>
-                                  <th colspan="3">Mac</th>
-                                  <th colspan="4">Windows11</th>
-                                  <th colspan="2">SP</th>
-                                </tr>
-                                <tr>
-                                  <td>ブラウザ</td>
-                                  <th>Chrome</th>
-                                  <th>Firefox</th>
-                                  <th>Safari</th>
-                                  <th>Chrome</th>
-                                  <th>Firefox</th>
-                                  <th>Edge</th>
-                                  <th>IE</th>
-                                  <th>Safari on iOS</th>
-                                  <th>Chrome for Android</th>
-                                </tr>
-                              </thead>
-                              <tbody>
-                                <tr>
-                                  <th>対応</th>
-                                  <td data-status="○">○</td>
-                                  <td data-status="○">○</td>
-                                  <td data-status="○">○</td>
-                                  <td></td>
-                                  <td></td>
-                                  <td data-status="○">○</td>
-                                  <td></td>
-                                  <td data-status="○">○</td>
-                                  <td></td>
-                                </tr>
-                              </tbody>
-                            </table>
-                          </div>
-                        </div>
-                      </section>
                     </div>
-        </div>
+                  </section>
+                  <section class="desc">
+                    <div class="l-container">
+                      <h2>実装手順など解説</h2><p>AFのアニメーションをjsonで書き出し、それを任意のdivに対してlottie.jsで描画しています。<br>divにcssで全画面に固定表示、背景色黒を指定しています。アニメーションのビュー範囲が1920*1080で作ってしまっているのでブラウザ幅を広げても縮尺は維持されます。<br>アニメーションが終了するとイベントを受け取って要素が消えるようjs制御しています。<br><br>npmでモジュール追加</p><pre><code>npm install lottie-web</code></pre><p><br>JS記述</p><pre><code>import lottie from 'lottie-web'
+
+const animation = () =&gt; {
+  const targetDom = document.getElementById('lottie')
+  if (!targetDom) return
+  // アニメーションをロード
+  const anim = lottie.loadAnimation({
+    container: targetDom,
+    // アニメーションをsvg形式で出力
+    renderer: 'svg',
+    // アニメーションをループする
+    loop: false,
+    // アニメーションを読み込んだら自動で再生する
+    autoplay: true,
+    // アニメーションファイル(.json)のパス
+    path: '../assets/json/12_lottie01.json',
+  })
+  // アニメーションが完了したら要素削除
+  anim.addEventListener('complete', () =&gt; {
+    console.log('completed')
+    targetDom.remove()
+  })
+}
+animation()</code></pre>
+                    </div>
+                  </section>
+                  <section class="l-pages_links">
+                    <div class="l-container">
+                      <h2>参考サイト・元ネタなど</h2>
+                      <ul>
+                        <li><a class="c-btn" href="https://github.com/airbnb/lottie-web">公式Github</a></li>
+                      </ul>
+                    </div>
+                  </section>
+                  <section>
+                    <div class="l-container">
+                      <h2>動作環境</h2>
+                      <ul class="l-pages_content_caption">
+                        <li>○:動作する</li>
+                        <li>△:動作するが意図せぬ挙動</li>
+                        <li>☓:動作しない</li>
+                      </ul>
+                      <div class="l-pages_table">
+                        <table>
+                          <thead>
+                            <tr>
+                              <td>-</td>
+                              <th colspan="3">Mac</th>
+                              <th colspan="4">Windows11</th>
+                              <th colspan="2">SP</th>
+                            </tr>
+                            <tr>
+                              <td>ブラウザ</td>
+                              <th>Chrome</th>
+                              <th>Firefox</th>
+                              <th>Safari</th>
+                              <th>Chrome</th>
+                              <th>Firefox</th>
+                              <th>Edge</th>
+                              <th>IE</th>
+                              <th>Safari on iOS</th>
+                              <th>Chrome for Android</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <th>対応</th>
+                              <td data-status="○">○</td>
+                              <td data-status="○">○</td>
+                              <td data-status="○">○</td>
+                              <td></td>
+                              <td></td>
+                              <td data-status="○">○</td>
+                              <td></td>
+                              <td data-status="○">○</td>
+                              <td></td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </section>
+                </div>
       </div>
       <div class="c-releaseNote" id="js-note-wrap">
         <div class="c-releaseNote_head" id="js-note-toggle">
@@ -107,6 +138,5 @@
       </div>
     </div>
   </body>
-  <script src="/assets/js/script.js" defer></script><script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.5.9/lottie.min.js" type="text/javascript"></script>
-<script src="/assets/js/pages/lottie01.js"></script>
+  <script src="/assets/js/script.js" defer></script><script src="/assets/js/pages/lottie01.js"></script>
 </html>

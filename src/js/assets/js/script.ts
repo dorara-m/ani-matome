@@ -78,7 +78,7 @@ const makeBalloons = (data: any) => {
   const notes = data.chats
 
   let html = ''
-  let numArray = []
+  let numArray: any[] = []
   notes.forEach((note: any) => {
     numArray.push(note.who.id)
     html += `<li>

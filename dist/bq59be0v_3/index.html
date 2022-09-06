@@ -18,74 +18,74 @@
       </header>
       <div class="l-headerSpace"></div>
       <div class="l-pages pg-cssOnlySlides01">
-        <div class="l-container">
-          <div class="l-pages_head">
+        <div class="l-pages_head">
+          <div class="l-container">
             <h1>cssだけのスライドショー,白フェードver.</h1>
           </div>
-                    <div class="l-pages_content">
-                      <section class="sample">
-                        <div class="l-container"><ul class="slider">
+        </div>
+                <div class="l-pages_content">
+                  <section class="sample">
+                    <div class="l-container"><ul class="slider">
                 <li><img src="/assets/img/bg01.jpg" alt=""></li>
                 <li><img src="/assets/img/bg02.jpg" alt=""></li>
                 <li><img src="/assets/img/bg03.jpg" alt=""></li>
               </ul>
-                        </div>
-                      </section>
-                      <section class="desc">
-                        <div class="l-container">
-                          <h2>実装手順など解説</h2><p>基本となる動きは、フェードイン＆アウトのCSSアニメーション。<br>スライドにしたい画像は全て一定の枠内に、<code>position: absolute;</code>で重ねて配置します。画像のサイズは同じにトリミングされているのが望ましいです。<br>そして表示順にアニメーションを付与、2枚目以降は<code>animation-delay</code>で数秒ずつ遅れて付与していきます。<br>タイミングがうまくあえば、画像が一枚一枚フェードインしてくるスライドショーになります。<br>まず1枚に4秒かけて3枚なら 4*3 =12。これがアニメーションの全体の秒数。<br>キーフレームの%は枚数一枚分でアニメーションが完結するようにする。<br>3枚なら100/3で33%でアニメーション一つが終わるように、0~16%(だいたい中間)でフェードインして16%~33%でフェードアウトしていくように書く。<br><a href="https://codepen.io/dorara_css/pen/wvwYBVo" target="_blank" rel="noopener noreferrer">CodePenでも実装してます</a></p>
-                        </div>
-                      </section>
-                      <section>
-                        <div class="l-container">
-                          <h2>動作環境</h2>
-                          <ul class="l-pages_content_caption">
-                            <li>○:動作する</li>
-                            <li>△:動作するが意図せぬ挙動</li>
-                            <li>☓:動作しない</li>
-                          </ul>
-                          <div class="l-pages_table">
-                            <table>
-                              <thead>
-                                <tr>
-                                  <td>-</td>
-                                  <th colspan="3">Mac</th>
-                                  <th colspan="4">Windows11</th>
-                                  <th colspan="2">SP</th>
-                                </tr>
-                                <tr>
-                                  <td>ブラウザ</td>
-                                  <th>Chrome</th>
-                                  <th>Firefox</th>
-                                  <th>Safari</th>
-                                  <th>Chrome</th>
-                                  <th>Firefox</th>
-                                  <th>Edge</th>
-                                  <th>IE</th>
-                                  <th>Safari on iOS</th>
-                                  <th>Chrome for Android</th>
-                                </tr>
-                              </thead>
-                              <tbody>
-                                <tr>
-                                  <th>対応</th>
-                                  <td data-status="○">○</td>
-                                  <td data-status="○">○</td>
-                                  <td data-status="○">○</td>
-                                  <td></td>
-                                  <td></td>
-                                  <td data-status="○">○</td>
-                                  <td data-status="△">△</td>
-                                  <td data-status="○">○</td>
-                                  <td></td>
-                                </tr>
-                              </tbody>
-                            </table>
-                          </div>
-                        </div>
-                      </section>
                     </div>
-        </div>
+                  </section>
+                  <section class="desc">
+                    <div class="l-container">
+                      <h2>実装手順など解説</h2><p>基本となる動きは、フェードイン＆アウトのCSSアニメーション。<br>スライドにしたい画像は全て一定の枠内に、<code>position: absolute;</code>で重ねて配置します。画像のサイズは同じにトリミングされているのが望ましいです。<br>そして表示順にアニメーションを付与、2枚目以降は<code>animation-delay</code>で数秒ずつ遅れて付与していきます。<br>タイミングがうまくあえば、画像が一枚一枚フェードインしてくるスライドショーになります。<br>まず1枚に4秒かけて3枚なら 4*3 =12。これがアニメーションの全体の秒数。<br>キーフレームの%は枚数一枚分でアニメーションが完結するようにする。<br>3枚なら100/3で33%でアニメーション一つが終わるように、0~16%(だいたい中間)でフェードインして16%~33%でフェードアウトしていくように書く。<br><a href="https://codepen.io/dorara_css/pen/wvwYBVo" target="_blank" rel="noopener noreferrer">CodePenでも実装してます</a></p>
+                    </div>
+                  </section>
+                  <section>
+                    <div class="l-container">
+                      <h2>動作環境</h2>
+                      <ul class="l-pages_content_caption">
+                        <li>○:動作する</li>
+                        <li>△:動作するが意図せぬ挙動</li>
+                        <li>☓:動作しない</li>
+                      </ul>
+                      <div class="l-pages_table">
+                        <table>
+                          <thead>
+                            <tr>
+                              <td>-</td>
+                              <th colspan="3">Mac</th>
+                              <th colspan="4">Windows11</th>
+                              <th colspan="2">SP</th>
+                            </tr>
+                            <tr>
+                              <td>ブラウザ</td>
+                              <th>Chrome</th>
+                              <th>Firefox</th>
+                              <th>Safari</th>
+                              <th>Chrome</th>
+                              <th>Firefox</th>
+                              <th>Edge</th>
+                              <th>IE</th>
+                              <th>Safari on iOS</th>
+                              <th>Chrome for Android</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <th>対応</th>
+                              <td data-status="○">○</td>
+                              <td data-status="○">○</td>
+                              <td data-status="○">○</td>
+                              <td></td>
+                              <td></td>
+                              <td data-status="○">○</td>
+                              <td data-status="△">△</td>
+                              <td data-status="○">○</td>
+                              <td></td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </section>
+                </div>
       </div>
       <div class="c-releaseNote" id="js-note-wrap">
         <div class="c-releaseNote_head" id="js-note-toggle">

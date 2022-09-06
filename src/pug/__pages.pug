@@ -33,9 +33,9 @@ html
         include /_include/_header
         .l-pages(class="pg-"+name_en)
           block wrapContent
-          .l-container
             .l-pages_head
-              h1=name_jp
+              .l-container
+                h1=name_jp
             include /_include/_pageContent
             +pageContent(true)
 

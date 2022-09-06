@@ -18,23 +18,24 @@
       </header>
       <div class="l-headerSpace"></div>
       <div class="l-pages pg-scrollGradient">
-        <div class="l-container">
-          <div class="l-pages_head">
+        <div class="l-pages_head">
+          <div class="l-container">
             <h1>Intersection Observerを使ったスクロールによるグラデーションの変化</h1>
           </div>
-                    <div class="l-pages_content">
-                      <section class="sample">
-                        <div class="l-container"><div class="wrap">
+        </div>
+                <div class="l-pages_content">
+                  <section class="sample">
+                    <div class="l-container"><div class="wrap">
 <div class="caption">↓スクロール↓</div>
 <div class="heading" id="heading">グラデーション変化</div>
 <div id="ratio"></div>
 <p class="target" id="paragraph">このテキスト部分を処理のトリガーとします。Intersection Observerは検知対象と変化対象をわける必要あり。かつ、このテキストブロックとの交差具合でグラデーションを変化させるため、このテキストに一定の高さが必要です。cssで高さを付与しています。</p>
 </div>
-                        </div>
-                      </section>
-                      <section class="desc">
-                        <div class="l-container">
-                          <h2>実装手順など解説</h2><ul><li>Intersection Observerは特定の要素が指定領域内に入ったかどうかを検知するAPI</li><li>Intersection Observerのオプション「threshold」を使ってスクロール量による変化を起こしている。ターゲットがどのくらいの割合で見えているかを示す値。ターゲットとなる要素が見え始めた瞬間と見え終わりの瞬間が 0、半分通過したときは 0.5、すべて見えている状態が 1</li><li>上記「ターゲットがどのくらいの割合で見えているか」をもとに変化を出すため、ターゲットとなる要素にある程度の高さが必要。</li><li><code>linear-gradient</code>は要素の背景にグラデーションをつけるプロパティなので、テキスト本体のみにあてるには工夫が必要。<code>background-clip: text;</code>はテキストの型で背景をくり抜く記述。</li></ul><pre><code>background-image: linear-gradient(45deg,
+                    </div>
+                  </section>
+                  <section class="desc">
+                    <div class="l-container">
+                      <h2>実装手順など解説</h2><ul><li>Intersection Observerは特定の要素が指定領域内に入ったかどうかを検知するAPI</li><li>Intersection Observerのオプション「threshold」を使ってスクロール量による変化を起こしている。ターゲットがどのくらいの割合で見えているかを示す値。ターゲットとなる要素が見え始めた瞬間と見え終わりの瞬間が 0、半分通過したときは 0.5、すべて見えている状態が 1</li><li>上記「ターゲットがどのくらいの割合で見えているか」をもとに変化を出すため、ターゲットとなる要素にある程度の高さが必要。</li><li><code>linear-gradient</code>は要素の背景にグラデーションをつけるプロパティなので、テキスト本体のみにあてるには工夫が必要。<code>background-clip: text;</code>はテキストの型で背景をくり抜く記述。</li></ul><pre><code>background-image: linear-gradient(45deg,
       rgb(37, 47, 255) 0%,
       rgb(124, 192, 226) 100%,
       rgb(37, 47, 255) 200%);
@@ -42,67 +43,66 @@
   text-fill-color: transparent;
   -webkit-background-clip: text;
   background-clip: text;</code></pre><p><br></p>
-                        </div>
-                      </section>
-                      <section class="l-pages_links">
-                        <div class="l-container">
-                          <h2>参考サイト・元ネタなど</h2>
-                          <ul>
-                            <li><a class="c-btn" href="https://www.webcreatorbox.com/tech/intersection-observer">参考記事</a></li>
-                            <li><a class="c-btn" href="https://www.apple.com/jp/macbook-pro-14-and-16/">元ネタ</a></li>
-                          </ul>
-                        </div>
-                      </section>
-                      <section>
-                        <div class="l-container">
-                          <h2>動作環境</h2>
-                          <ul class="l-pages_content_caption">
-                            <li>○:動作する</li>
-                            <li>△:動作するが意図せぬ挙動</li>
-                            <li>☓:動作しない</li>
-                          </ul>
-                          <div class="l-pages_table">
-                            <table>
-                              <thead>
-                                <tr>
-                                  <td>-</td>
-                                  <th colspan="3">Mac</th>
-                                  <th colspan="4">Windows11</th>
-                                  <th colspan="2">SP</th>
-                                </tr>
-                                <tr>
-                                  <td>ブラウザ</td>
-                                  <th>Chrome</th>
-                                  <th>Firefox</th>
-                                  <th>Safari</th>
-                                  <th>Chrome</th>
-                                  <th>Firefox</th>
-                                  <th>Edge</th>
-                                  <th>IE</th>
-                                  <th>Safari on iOS</th>
-                                  <th>Chrome for Android</th>
-                                </tr>
-                              </thead>
-                              <tbody>
-                                <tr>
-                                  <th>対応</th>
-                                  <td data-status="○">○</td>
-                                  <td data-status="○">○</td>
-                                  <td data-status="○">○</td>
-                                  <td data-status="○">○</td>
-                                  <td data-status="○">○</td>
-                                  <td data-status="○">○</td>
-                                  <td data-status="☓">☓</td>
-                                  <td data-status="○">○</td>
-                                  <td></td>
-                                </tr>
-                              </tbody>
-                            </table>
-                          </div>
-                        </div>
-                      </section>
                     </div>
-        </div>
+                  </section>
+                  <section class="l-pages_links">
+                    <div class="l-container">
+                      <h2>参考サイト・元ネタなど</h2>
+                      <ul>
+                        <li><a class="c-btn" href="https://www.webcreatorbox.com/tech/intersection-observer">参考記事</a></li>
+                        <li><a class="c-btn" href="https://www.apple.com/jp/macbook-pro-14-and-16/">元ネタ</a></li>
+                      </ul>
+                    </div>
+                  </section>
+                  <section>
+                    <div class="l-container">
+                      <h2>動作環境</h2>
+                      <ul class="l-pages_content_caption">
+                        <li>○:動作する</li>
+                        <li>△:動作するが意図せぬ挙動</li>
+                        <li>☓:動作しない</li>
+                      </ul>
+                      <div class="l-pages_table">
+                        <table>
+                          <thead>
+                            <tr>
+                              <td>-</td>
+                              <th colspan="3">Mac</th>
+                              <th colspan="4">Windows11</th>
+                              <th colspan="2">SP</th>
+                            </tr>
+                            <tr>
+                              <td>ブラウザ</td>
+                              <th>Chrome</th>
+                              <th>Firefox</th>
+                              <th>Safari</th>
+                              <th>Chrome</th>
+                              <th>Firefox</th>
+                              <th>Edge</th>
+                              <th>IE</th>
+                              <th>Safari on iOS</th>
+                              <th>Chrome for Android</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <th>対応</th>
+                              <td data-status="○">○</td>
+                              <td data-status="○">○</td>
+                              <td data-status="○">○</td>
+                              <td data-status="○">○</td>
+                              <td data-status="○">○</td>
+                              <td data-status="○">○</td>
+                              <td data-status="☓">☓</td>
+                              <td data-status="○">○</td>
+                              <td></td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </section>
+                </div>
       </div>
       <div class="c-releaseNote" id="js-note-wrap">
         <div class="c-releaseNote_head" id="js-note-toggle">
