@@ -1,12 +1,13 @@
-
 // 処理
-const script = () => {
-  const animeDom = document.getElementById("anime")
-  const videoDom = document.getElementById("video")
+const videoTiming = () => {
+  const animeDom = document.getElementById('anime')
+  // const videoDom = document.getElementById('video')
+
+  const videoDom = <HTMLMediaElement>document.querySelector('#video')
 
   if (!animeDom || !videoDom) return
 
-  const videoTimeDom = document.querySelectorAll(".videoTime")[0]
+  const videoTimeDom = document.querySelectorAll('.videoTime')[0]
 
   // 起動したいタイミング指定
   // @todo 数字で指定できると楽。
@@ -15,7 +16,7 @@ const script = () => {
   videoDom.addEventListener('timeupdate', () => {
     // @todo 現状だと処理が動きすぎる感もあり…どこかで絞りたい
     if (videoDom.currentTime !== 0) {
-      console.log(videoDom.currentTime)
+      // console.log(videoDom.currentTime)
 
       videoTimeDom.innerHTML = timeConvert(videoDom.currentTime)
 
@@ -38,4 +39,4 @@ const timeConvert = (time: number) => {
   return '0:' + String(Math.ceil(time)).padStart(2, '0')
 }
 
-script()
+videoTiming()
