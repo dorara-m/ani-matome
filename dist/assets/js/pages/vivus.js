@@ -16,7 +16,7 @@
   \*****************************************/
 /***/ (function() {
 
-eval("\nnew Vivus(\"sample-svg\", { duration: 200 });\n\n\n//# sourceURL=webpack://animatome/./src/js/assets/js/pages/vivus.ts?");
+eval("\nnew Vivus('sample-svg', { duration: 200 });\n\n\n//# sourceURL=webpack://animatome/./src/js/assets/js/pages/vivus.ts?");
 
 /***/ })
 
