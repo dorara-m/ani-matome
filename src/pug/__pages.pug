@@ -1,14 +1,13 @@
-doctype html
-html
-  head
-    meta(charset="UTF-8")
-    meta(name="viewport", content="width=device-width, initial-scale=1.0")
-    meta(http-equiv="X-UA-Compatible", content="ie=edge")
+-
+  var title = name_jp
+  var directory = '/pages/'
+  var type= 'article';
+  var description = `${name_jp}のプレビューページです。`
 
-    //- 個別タイトル, メタ情報
-    title #{name_jp} | アニマトメ
-    meta(name="description" content=`アニメーション「${name_jp}」のページです。`)
-
+doctype
+html(lang=site.lang)
+  head(prefix='og:http://ogp.me/ns# fb:http://ogp.me/ns/fb# ' + type + ':http://ogp.me/ns/' + type + '#')
+    include /_include/_meta
     include /_include/_css
     if css
       link(rel="stylesheet", href=`/assets/css/pages/${name_en}.css`)

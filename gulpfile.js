@@ -134,16 +134,16 @@ const pugPagesFunc = async () => {
   const obj = {}
   await this.cmsAnime(obj)
   for (const data of obj.cmsAnime) {
+    // site.jsonのデータをsiteDataとして追加
+    data.site = JSON.parse(fs.readFileSync(src.data))
     gulp
       .src(['src/pug/**/__*.pug'])
       .pipe(plumber({ errorHandler: notify.onError('Error: <%= error %>') }))
       .pipe(
         gulpPug({
-          // データを各Pugファイルで取得
+          // ここでdataという名前でしか値を渡せない
           data,
-          // ルート相対パスでincludeが使えるようにする
           basedir: src.pug.dir,
-          // Pugファイルの整形
           pretty: true,
         })
       )
