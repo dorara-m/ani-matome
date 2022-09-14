@@ -1,0 +1,47 @@
+.flowImages {
+  position: relative;
+}
+.flowImages .overlay {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  width: 50px;
+  height: 100%;
+}
+.flowImages .overlay.-left {
+  left: 0;
+  background: linear-gradient(90deg, #fff 0%, rgba(225, 225, 225, 0) 100%);
+}
+.flowImages .overlay.-right {
+  right: 0;
+  background: linear-gradient(270deg, #fff 0%, rgba(225, 225, 225, 0) 100%);
+}
+.flowImages .contents {
+  display: flex;
+  overflow: hidden;
+}
+.flowImages .contents ul {
+  display: flex;
+  -webkit-animation: toLeft 70s infinite linear 0.5s both;
+          animation: toLeft 70s infinite linear 0.5s both;
+}
+@-webkit-keyframes toLeft {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+@keyframes toLeft {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+.flowImages .contents ul li {
+  margin-right: 20px;
+  width: 250px;
+}

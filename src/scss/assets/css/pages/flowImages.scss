@@ -1,0 +1,40 @@
+.flowImages {
+  position: relative;
+
+  .overlay {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    width: 50px;
+    height: 100%;
+    &.-left {
+      left: 0;
+      background: linear-gradient(90deg, #fff 0%, rgba(225,225,225,0) 100%)
+    }
+    &.-right {
+      right: 0;
+      background: linear-gradient(270deg, #fff 0%, rgba(225,225,225,0) 100%)
+    }
+  }
+
+  .contents {
+    display: flex;
+    overflow: hidden;
+    ul {
+      display: flex;
+      animation :toLeft 70s infinite linear 0.5s both;
+      @keyframes toLeft {
+        from {
+          transform: translateX(0);
+        }
+        to {
+          transform: translateX(-100%);
+        }
+      }
+      li {
+        margin-right: 20px;
+        width: 250px;
+      }
+    }
+  }
+}

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head prefix="og:http://ogp.me/ns# fb:http://ogp.me/ns/fb# article:http://ogp.me/ns/article#">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width">
+    <meta name="robots" content="index,follow">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description" content="画像が無限に流れるアニメーションのプレビューページです。">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://animatome.netlify.app//ogp.png">
+    <meta name="twitter:url" content="https://animatome.netlify.app//pages/">
+    <meta name="twitter:description" content="画像が無限に流れるアニメーションのプレビューページです。">
+    <meta name="twitter:title" content="画像が無限に流れるアニメーション | アニマトメ -animatome-">
+    <meta property="og:description" content="画像が無限に流れるアニメーションのプレビューページです。">
+    <meta property="og:site_name" content="アニマトメ -animatome-">
+    <meta property="og:locale" content="ja_JP">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="https://animatome.netlify.app//ogp.png">
+    <meta property="og:url" content="https://animatome.netlify.app//pages/">
+    <meta property="og:title" content="画像が無限に流れるアニメーション | アニマトメ -animatome-">
+    <title>画像が無限に流れるアニメーション | アニマトメ -animatome-</title>
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link href="/assets/css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/pages/flowImages.css">
+  </head>
+  <body>
+    <div class="l-wrap">
+      <header class="l-header">
+        <div class="p-header">
+          <div class="l-container p-header__inner"><a href="/">アニマトメ</a></div>
+        </div>
+      </header>
+      <div class="l-headerSpace"></div>
+      <div class="l-pages pg-flowImages">
+        <div class="l-pages_head">
+          <div class="l-container">
+            <h1>画像が無限に流れるアニメーション</h1>
+          </div>
+        </div>
+                <div class="l-pages_content">
+                  <section class="sample">
+                    <div class="l-container"><div class="flowImages">
+  <div class="overlay -left"></div>
+  <div class="contents">
+    <ul>
+      <li><img src="https://placehold.jp/3d4070/ffffff/300x150.png?text=1" alt=""></li>
+      <li><img src="https://placehold.jp/3d4070/ffffff/300x150.png?text=2" alt=""></li>
+      <li><img src="https://placehold.jp/3d4070/ffffff/300x150.png?text=3" alt=""></li>
+    </ul>
+    <ul>
+      <li><img src="https://placehold.jp/3d4070/ffffff/300x150.png?text=1" alt=""></li>
+      <li><img src="https://placehold.jp/3d4070/ffffff/300x150.png?text=2" alt=""></li>
+      <li><img src="https://placehold.jp/3d4070/ffffff/300x150.png?text=3" alt=""></li>
+    </ul>
+  </div>
+  <div class="overlay -right"></div>
+</div>
+                    </div>
+                  </section>
+                  <section class="desc">
+                    <div class="l-container">
+                      <h2>実装手順など解説</h2><p>htmlは以下。1,2,3を流したいなら、画像1,2,3のセットを2つ用意して横に並べておく。</p><pre><code>&lt;div class="flowImages"&gt;
+  &lt;div class="overlay -left"&gt;&lt;/div&gt;
+  &lt;div class="contents"&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;img src="https://placehold.jp/3d4070/ffffff/300x150.png?text=1" alt=""&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;img src="https://placehold.jp/3d4070/ffffff/300x150.png?text=2" alt=""&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;img src="https://placehold.jp/3d4070/ffffff/300x150.png?text=3" alt=""&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;img src="https://placehold.jp/3d4070/ffffff/300x150.png?text=1" alt=""&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;img src="https://placehold.jp/3d4070/ffffff/300x150.png?text=2" alt=""&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;img src="https://placehold.jp/3d4070/ffffff/300x150.png?text=3" alt=""&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+  &lt;div class="overlay -right"&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre><p><br>cssの基本は、画像1,2,3のセットをflexで横にしてはみ出しをoverflow:hiddenで許可。セット内でも画像を横並びにするためflex、アニメーションはここにつける。動き自体は単純。左から右へ動かし続けるだけ。<br>画像1つにwidthを設定しないと画面100%になるので注意。マージンなど与えてもよし。</p><pre><code>.contents {
+    display: flex;
+    overflow: hidden;
+    ul {
+      display: flex;
+      animation :toLeft 70s infinite linear 0.5s both;
+      @keyframes toLeft {
+        from {
+          transform: translateX(0);
+        }
+        to {
+          transform: translateX(-100%);
+        }
+      }
+      li {
+        margin-right: 20px;
+        width: 250px;
+      }
+    }
+  }</code></pre><p><br>左右に消えていく演出をしたい場合、overlayのdivを使う。グラデーションで白→透過の指定をいれておき、左右にabsoluteで設置するだけ。</p><pre><code>.overlay {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    width: 50px;
+    height: 100%;
+    &amp;.-left {
+      left: 0;
+      background: linear-gradient(90deg, #fff 0%, rgba(225,225,225,0) 100%)
+    }
+    &amp;.-right {
+      right: 0;
+      background: linear-gradient(270deg, #fff 0%, rgba(225,225,225,0) 100%)
+    }
+  }</code></pre><p><br></p>
+                    </div>
+                  </section>
+                  <section>
+                    <div class="l-container">
+                      <h2>動作環境</h2>
+                      <ul class="l-pages_content_caption">
+                        <li>○:動作する</li>
+                        <li>△:動作するが意図せぬ挙動</li>
+                        <li>☓:動作しない</li>
+                      </ul>
+                      <div class="l-pages_table">
+                        <table>
+                          <thead>
+                            <tr>
+                              <td>-</td>
+                              <th colspan="3">Mac</th>
+                              <th colspan="4">Windows11</th>
+                              <th colspan="2">SP</th>
+                            </tr>
+                            <tr>
+                              <td>ブラウザ</td>
+                              <th>Chrome</th>
+                              <th>Firefox</th>
+                              <th>Safari</th>
+                              <th>Chrome</th>
+                              <th>Firefox</th>
+                              <th>Edge</th>
+                              <th>IE</th>
+                              <th>Safari on iOS</th>
+                              <th>Chrome for Android</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <th>対応</th>
+                              <td data-status="○">○</td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </section>
+                </div>
+      </div>
+      <div class="c-releaseNote" id="js-note-wrap">
+        <div class="c-releaseNote_head" id="js-note-toggle">
+          <p>メッセージ</p>
+          <div class="icon">↑</div>
+        </div>
+        <div class="c-releaseNote_frame">
+          <div class="c-releaseNote_frame_list" id="js-note-list">
+            <div id="js-note-listContent"></div>
+          </div>
+          <div class="c-releaseNote_frame_page" id="js-note-page">
+            <div class="c-releaseNote_frame_head">
+              <button id="js-note-back"></button>
+              <p id="js-note-head">トレセン学園</p>
+            </div>
+            <div class="c-releaseNote_frame_body">
+              <ul id="js-note-chat"></ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="/assets/js/script.js" defer></script>
+</html>
