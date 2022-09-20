@@ -10,9 +10,9 @@
   transition: transform .5s ease-in-out;
   transform: translateY(calc(100% - 50px));
   box-shadow: 0 0 5px rgba($color: #000, $alpha: .4);
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-  overflow: hidden;
+  // border-top-left-radius: 20px;
+  // border-top-right-radius: 20px;
+  // overflow: hidden;
 
   // 遅れて表示
   &.-delay {
@@ -55,6 +55,22 @@
     justify-content: space-between;
     padding: 0 30px;
     font-weight: bold;
+    position: relative;
+
+    &.-js-unRead {
+      &::after {
+        content: "";
+        display: block;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: red;
+        position: absolute;
+        top: -10px;
+        left: 10px;
+      }
+    }
+
   }
 
   &_frame {

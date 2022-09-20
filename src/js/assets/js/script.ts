@@ -149,6 +149,8 @@ const setListToDetail = (data: any) => {
         countDoms[i].classList.remove('unRead')
         // localStorageに既読を反映
         localStorage.setItem('readIds', JSON.stringify(readIds))
+        // ここで未読フラグも更新
+        hasUnReadItem(data)
       }
     })
   }
@@ -157,6 +159,16 @@ const setListToDetail = (data: any) => {
     listDom.classList.remove('slideOut')
     pageDom.classList.remove('slideIn')
   })
+}
+
+const hasUnReadItem = (data: any) => {
+  const readIds = getReadIds()
+  const dom = document.getElementById('js-note-toggle')
+  if (data.length !== readIds.length) {
+    dom?.classList.add('-js-unRead')
+  } else {
+    dom?.classList.remove('-js-unRead')
+  }
 }
 
 const init = async () => {
@@ -180,13 +192,12 @@ const init = async () => {
         throw new Error(error)
       })
     // console.log(cmsData)
-
     // チャット画面のtoggle
     toggleChat()
-
+    // チャットに未読があるかlsと比較してフラグ描画
+    hasUnReadItem(cmsData)
     // チャット一覧の内容描画
     makeListHTML(cmsData)
-
     // チャット一覧-詳細の移動
     setListToDetail(cmsData)
   } catch (error) {
