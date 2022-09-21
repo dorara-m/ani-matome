@@ -1,0 +1,47 @@
+.example1 {
+  height: 300px;
+  aspect-ratio: 9/16;
+  overflow: hidden;
+  position: relative;
+}
+
+.wrap {
+  display: flex;
+  width: 200%;
+  height: 100%;
+  transition: transform 0.5s;
+}
+.wrap.isSwipe {
+  transform: translateX(-50%);
+}
+
+.element {
+  width: 100%;
+  height: 100%;
+  background: #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.element.hidden {
+  background-color: #ccc;
+}
+
+.arrow {
+  position: absolute;
+  top: 0;
+  width: 30px;
+  height: 30px;
+  border: 1px solid #444;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.arrow.-r {
+  right: 0;
+}
+.arrow.-l {
+  left: 0;
+}
