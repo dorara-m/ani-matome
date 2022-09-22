@@ -38,10 +38,5 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
-}
-.arrow.-r {
-  right: 0;
-}
-.arrow.-l {
   left: 0;
 }

@@ -12,14 +12,14 @@ function buildThresholdList() {
 
 // 要素が表示されたら実行する動作
 function showElements(entries: any) {
-  entries.forEach((entry :any) => {
+  entries.forEach((entry: any) => {
     if (entry.isIntersecting) {
       let ratio = Math.round(entry.intersectionRatio * 100)
-      const ratioDom = document.getElementById("ratio")
+      const ratioDom = document.getElementById('ratio')
       if (!ratioDom) return
       ratioDom.innerHTML = `※グラデーション変化量: ${ratio}`
-      
-      const heading = document.getElementById("heading")
+
+      const heading = document.getElementById('heading')
       if (!heading) return
       heading.style.backgroundImage = `
         linear-gradient(
@@ -29,22 +29,23 @@ function showElements(entries: any) {
         rgb(37, 47, 255) ${200 - ratio}%
       )`
     }
-  });
+  })
 }
 
-{/* @ts-ignore */}
+{
+  /* @ts-ignore */
+}
 const script = () => {
-  const p = document.getElementById("paragraph")
+  const p = document.getElementById('paragraph')
   if (!p) return
 
   const options = {
     threshold: buildThresholdList(),
-  };
+  }
   // 実行するよ
   const observer = new IntersectionObserver(showElements, options)
-  
+
   // p に到達したら発動
   observer.observe(p)
 }
 script()
-

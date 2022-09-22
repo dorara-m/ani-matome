@@ -16,7 +16,7 @@
   \*********************************************/
 /***/ (function() {
 
-eval("\nconsole.log('swipe fire');\nconst arrowDoms = document.getElementsByClassName('js-swipe');\nfor (let i = 0; i < arrowDoms.length; i++) {\n    arrowDoms[i].addEventListener('click', () => {\n        const targetDom = document.getElementById(' js-swipe-wrap');\n        targetDom?.classList.toggle('isSwipe');\n    });\n}\n\n\n//# sourceURL=webpack://animatome/./src/js/assets/js/pages/likeSwipe.ts?");
+eval("\nconst likeSwipe = () => {\n    // console.log('swipe fire')\n    const arrowDoms = document.getElementsByClassName('js-swipe');\n    console.log(arrowDoms);\n    for (let i = 0; i < arrowDoms.length; i++) {\n        arrowDoms[i].addEventListener('click', () => {\n            const targetDom = document.getElementById('js-swipe-wrap');\n            targetDom?.classList.toggle('isSwipe');\n        });\n    }\n};\nlikeSwipe();\n\n\n//# sourceURL=webpack://animatome/./src/js/assets/js/pages/likeSwipe.ts?");
 
 /***/ })
 
