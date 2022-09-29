@@ -1,5 +1,4 @@
 const likeSwipe = () => {
-  // console.log('swipe fire')
   const arrowDoms = document.getElementsByClassName('js-swipe')
   console.log(arrowDoms)
   for (let i = 0; i < arrowDoms.length; i++) {
