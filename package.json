@@ -48,6 +48,7 @@
     "webpack-stream": "^7.0.0"
   },
   "dependencies": {
+    "gsap": "^3.11.2",
     "lottie-web": "^5.9.6",
     "node-fetch": "^2.6.7"
   }
