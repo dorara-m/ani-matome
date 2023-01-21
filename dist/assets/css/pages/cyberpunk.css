@@ -4,7 +4,29 @@
 
 .wrap {
   height: 4000px;
-  position: relative;
+}
+
+.text {
+  color: #290153;
+  position: sticky;
+  top: 250px;
+  left: 0;
+  margin-left: clamp(25vw, 25vw * var(--coef-base-width), 35vw);
+  height: 60px;
+  transform: translateY(-30px);
+}
+.text dt {
+  font-size: 6rem;
+  font-weight: bold;
+  transform: rotate(5deg);
+  transform-origin: 0 0;
+}
+.text dd {
+  margin-top: 5px;
+  font-size: 6rem;
+  font-weight: bold;
+  transform: rotate(-1deg);
+  transform-origin: 0 0;
 }
 
 .block1 {

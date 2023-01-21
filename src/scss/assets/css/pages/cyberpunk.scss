@@ -4,7 +4,30 @@
 }
 .wrap{
   height: 4000px;
-  position: relative;
+  // position: relative;
+  // background: linear-gradient(45deg, rgba(189,182,0,1) 0%, rgba(255,246,0,1) 100%)
+}
+.text{
+  color: #290153;
+  position: sticky;
+  top: 250px;
+  left: 0;
+  margin-left: clamp(25vw, calc(25vw * var(--coef-base-width)), 35vw);
+  height: 60px;
+  transform: translateY(-30px);
+  dt{
+    font-size: 6rem;
+    font-weight: bold;
+    transform: rotate(5deg);
+    transform-origin: 0 0;
+  }
+  dd{
+    margin-top: 5px;
+    font-size: 6rem;
+    font-weight: bold;
+    transform: rotate(-1deg);
+    transform-origin: 0 0;
+  }
 }
 .block1 {
   position: sticky;
