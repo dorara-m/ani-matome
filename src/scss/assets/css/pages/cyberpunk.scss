@@ -11,9 +11,42 @@
   top: 0;
   background: url(../../img/cyberpunk.gif);
   background-size: cover;
+  min-width: 50vw;
+  max-width: 70vw;
+  width: calc(50vw * var(--coef-base-width));
+  height: 150px;
+  clip-path: polygon(0% 0%, 78% 0%, 80% 24%, 75% 28%, 89% 30%, 78% 31%, 78% 38%, 95% 40%, 95% 45%, 100% 47%, 100% 99%, 96% 98%, 92% 100%, 0% 99%);
+}
+.block2 {
+  position: sticky;
+  top: 200px;
+  background: url(../../img/cyberpunk.gif);
+  background-size: cover;
+  min-width: 30vw;
+  max-width: 40vw;
+  width: calc(30vw * var(--coef-base-width));
+  height: 50px;
+  clip-path: polygon(0% 0%, 44% 0%, 45% 10%, 51% 13%, 51% 24%, 86% 25%, 87% 31%, 100% 33%, 89% 37%, 89% 46%, 94% 48%, 88% 53%, 87% 64%, 82% 67%, 82% 78%, 78% 83%, 78% 100%, 0% 99%);
+}
+.block3 {
+  position: sticky;
+  top: 370px;
+  background: url(../../img/cyberpunk.gif);
+  background-size: cover;
+  min-width: 20vw;
+  max-width: 30vw;
+  width: calc(20vw * var(--coef-base-width));
+  height: 70px;
+  clip-path: polygon(0% 0%, 86% 0%, 86% 0%, 86% 10%, 86% 10%, 78% 11%, 78% 11%, 78% 24%, 78% 24%, 83% 37%, 83% 37%, 93% 40%, 93% 40%, 100% 44%, 100% 44%, 100% 99%, 100% 99%, 60% 99%, 60% 99%, 57% 92%, 57% 92%, 46% 91%, 46% 100%, 2% 100%, 2% 100%, 0% 100%, 0% 100%);
+}
+.block4 {
+  position: sticky;
+  top: 500px;
+  background: url(../../img/cyberpunk.gif);
+  background-size: cover;
   min-width: 40vw;
   max-width: 60vw;
   width: calc(40vw * var(--coef-base-width));
-  height: 150px;
-  clip-path: polygon(0% 0%, 78% 0%, 80% 24%, 75% 28%, 89% 30%, 78% 31%, 78% 38%, 95% 40%, 95% 45%, 100% 47%, 100% 99%, 96% 98%, 92% 100%, 0% 99%);
+  height: 170px;
+  clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 100% 0%, 100% 9%, 100% 9%, 100% 9%, 97% 10%, 97% 10%, 97% 10%, 97% 18%, 97% 18%, 97% 18%, 100% 21%, 100% 21%, 100% 21%, 100% 41%, 100% 41%, 100% 41%, 98% 41%, 98% 41%, 98% 47%, 97% 62%, 97% 62%, 97% 62%, 95% 62%, 95% 62%, 95% 62%, 95% 85%, 95% 85%, 95% 85%, 92% 90%, 92% 90%, 92% 95%, 90% 100%, 90% 100%, 90% 100%, 63% 100%, 63% 100%, 63% 100%, 60% 97%, 60% 97%, 60% 97%, 49% 97%, 49% 100%, 49% 100%, 14% 98%, 14% 98%, 14% 98%, 0% 98%, 0% 98%, 0% 98%);
 }
