@@ -5,13 +5,7 @@
   width: 100%;
   height: 100%;
   z-index: 999;
-  -webkit-animation: hide 0.1s both 2s;
-          animation: hide 0.1s both 2s;
-}
-@-webkit-keyframes hide {
-  to {
-    visibility: hidden;
-  }
+  animation: hide 0.1s both 2s;
 }
 @keyframes hide {
   to {
@@ -26,13 +20,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  -webkit-animation: white-out 1.5s both 0.5s;
-          animation: white-out 1.5s both 0.5s;
-}
-@-webkit-keyframes white-out {
-  to {
-    transform: translateX(100vw);
-  }
+  animation: white-out 1.5s both 0.5s;
 }
 @keyframes white-out {
   to {
@@ -49,18 +37,7 @@
   left: 0;
   opacity: 0;
   z-index: 1000;
-  -webkit-animation: slide 1.5s both 0.5s;
-          animation: slide 1.5s both 0.5s;
-}
-@-webkit-keyframes slide {
-  0% {
-    opacity: 1;
-    transform: translateX(-100%);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(100vw);
-  }
+  animation: slide 1.5s both 0.5s;
 }
 @keyframes slide {
   0% {
