@@ -1,0 +1,18 @@
+:root {
+  --coef-base-width: 1;
+}
+
+.wrap {
+  height: 4000px;
+  position: relative;
+}
+
+.block1 {
+  position: sticky;
+  top: 0;
+  background-color: #f99;
+  min-width: 40vw;
+  max-width: 60vw;
+  width: calc(40vw * var(--coef-base-width));
+  height: 150px;
+}
