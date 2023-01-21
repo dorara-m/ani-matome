@@ -9,9 +9,8 @@
 .block1 {
   position: sticky;
   top: 0;
-  background-color: #f99;
-  // background: url(../../img/cyberpunk.gif);
-  // background-size: cover;
+  background: url(../../img/cyberpunk.gif);
+  background-size: cover;
   min-width: 40vw;
   max-width: 60vw;
   width: calc(40vw * var(--coef-base-width));
