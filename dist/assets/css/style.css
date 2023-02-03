@@ -1,6 +1,5 @@
 @charset "UTF-8";
-@import url("https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c:400,700&display=swap");
-/*
+@import url("https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c:400,700&display=swap"); /*
 html5doctor.com Reset Stylesheet
 v1.6.1
 Last Updated: 2010-09-17
@@ -324,18 +323,7 @@ h1, h2, h3 {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  -webkit-animation: show-in-top 0.3s both 3s;
-          animation: show-in-top 0.3s both 3s;
-}
-@-webkit-keyframes show-in-top {
-  0% {
-    opacity: 0;
-    transform: translate(-50%, -100%);
-  }
-  100% {
-    opacity: 1;
-    transform: translate(-50%, 0);
-  }
+  animation: show-in-top 0.3s both 3s;
 }
 @keyframes show-in-top {
   0% {
@@ -483,7 +471,7 @@ h1, h2, h3 {
 .borderFade {
   cursor: pointer;
   padding-bottom: 1px;
-  color: #1b202d;
+  color: hsl(222deg, 25%, 14%);
   position: relative;
 }
 
@@ -496,7 +484,7 @@ h1, h2, h3 {
   bottom: 0;
   opacity: 0;
   transform: translateY(3px);
-  background: #5851ec;
+  background: hsl(243deg, 80%, 62%);
   transition: opacity 0.2s ease, transform 0.2s ease;
 }
 
@@ -507,7 +495,7 @@ h1, h2, h3 {
 
 .lineThrough {
   cursor: pointer;
-  color: #1b202d;
+  color: hsl(222deg, 25%, 14%);
   text-decoration: none;
   position: relative;
   overflow: hidden;
@@ -517,7 +505,7 @@ h1, h2, h3 {
   content: "";
   position: absolute;
   top: 50%;
-  background: #5851ec;
+  background: hsl(243deg, 80%, 62%);
   height: 2px;
   left: 0;
   width: 100%;
@@ -532,7 +520,7 @@ h1, h2, h3 {
   left: 0;
   width: 100%;
   height: 100%;
-  background: #5851ec;
+  background: hsl(243deg, 80%, 62%);
   transform: translate3d(-100%, 0, 0) translate3d(-1px, 0, 0);
   transition: transform 0.7s ease-in-out;
 }
@@ -547,46 +535,23 @@ h1, h2, h3 {
 
 .textTransformX {
   cursor: pointer;
-  color: #1b202d;
+  color: hsl(222deg, 25%, 14%);
   transition: transform 0.2s ease, color 0.2s ease;
 }
 
 .textTransformX:hover {
   transform: translateX(4px);
-  color: #5851ec;
+  color: hsl(243deg, 80%, 62%);
 }
 
 .swingHorizontal {
   cursor: pointer;
-  color: #1b202d;
+  color: hsl(222deg, 25%, 14%);
 }
 
 .swingHorizontal:hover {
-  -webkit-animation: swingHorizontal 1s ease;
-          animation: swingHorizontal 1s ease;
-  -webkit-animation-iteration-count: 1;
-          animation-iteration-count: 1;
-}
-
-@-webkit-keyframes swingHorizontal {
-  15% {
-    transform: translateX(5px);
-  }
-  30% {
-    transform: translateX(-5px);
-  }
-  50% {
-    transform: translateX(3px);
-  }
-  65% {
-    transform: translateX(-3px);
-  }
-  80% {
-    transform: translateX(2px);
-  }
-  100% {
-    transform: translateX(0);
-  }
+  animation: swingHorizontal 1s ease;
+  animation-iteration-count: 1;
 }
 
 @keyframes swingHorizontal {
@@ -629,7 +594,7 @@ h1, h2, h3 {
   transform: scaleY(0.3);
   transition: transform 0.1s ease-in-out;
   transform-origin: bottom;
-  background-color: #dbe6ff;
+  background-color: hsl(222deg, 100%, 93%);
   z-index: -1;
 }
 
@@ -639,13 +604,13 @@ h1, h2, h3 {
 
 .magnifyText {
   cursor: pointer;
-  color: #1b202d;
+  color: hsl(222deg, 25%, 14%);
   transition: color 0.25s ease-in-out, transform 0.25s ease-in-out;
 }
 
 .magnifyText:hover {
   transform: scale(1.05);
-  color: #5851ec;
+  color: hsl(243deg, 80%, 62%);
 }
 
 .magnifyText:active {
@@ -666,8 +631,8 @@ h1, h2, h3 {
 .hover_btn_item {
   display: inline-block;
   padding: 15px 30px;
-  background-color: #e6edff;
-  color: #5851ec;
+  background-color: hsl(222deg, 100%, 95%);
+  color: hsl(243deg, 80%, 62%);
   border-radius: 6px;
   cursor: pointer;
   font-size: 20px;
@@ -680,7 +645,7 @@ h1, h2, h3 {
 }
 
 .pressDownButton {
-  border-bottom: 4px solid #b7ccfb;
+  border-bottom: 4px solid hsl(221deg, 89%, 85%);
   transition: all 0.1s ease-in-out;
 }
 
@@ -690,7 +655,7 @@ h1, h2, h3 {
 }
 
 .overlayLeftBtn span {
-  color: #5851ec;
+  color: hsl(243deg, 80%, 62%);
   position: relative;
   z-index: 1;
   transition: color 0.6s cubic-bezier(0.53, 0.21, 0, 1);
@@ -705,12 +670,12 @@ h1, h2, h3 {
   transform: translate(-101%, -50%);
   width: 100%;
   height: 100%;
-  background-color: #5851ec;
+  background-color: hsl(243deg, 80%, 62%);
   transition: transform 0.6s cubic-bezier(0.53, 0.21, 0, 1);
 }
 
 .overlayLeftBtn:hover span {
-  color: #e6edff;
+  color: hsl(222deg, 100%, 95%);
 }
 
 .overlayLeftBtn:hover::before {
@@ -720,7 +685,7 @@ h1, h2, h3 {
 .slideUpBtn {
   padding: 12px 24px;
   background-color: transparent;
-  border: 2px solid #5851ec;
+  border: 2px solid hsl(243deg, 80%, 62%);
   border-radius: 6px;
   position: relative;
   overflow: hidden;
@@ -730,7 +695,7 @@ h1, h2, h3 {
 .slideUpBtn span {
   display: inline-block;
   transition: inherit;
-  color: #5851ec;
+  color: hsl(243deg, 80%, 62%);
 }
 
 .slideUpBtn:hover span {
@@ -740,7 +705,7 @@ h1, h2, h3 {
 
 .slideUpBtn::before {
   content: "";
-  background-color: #5851ec;
+  background-color: hsl(243deg, 80%, 62%);
   height: 100%;
   left: 0;
   position: absolute;
@@ -772,14 +737,14 @@ h1, h2, h3 {
 
 .slideUpBtn:hover::after {
   opacity: 1;
-  color: #e6edff;
+  color: hsl(222deg, 100%, 95%);
   transform: translateY(0);
 }
 
 .circleScaleBtn {
   padding: 12px 24px;
-  background-color: #e6edff;
-  color: #5851ec;
+  background-color: hsl(222deg, 100%, 95%);
+  color: hsl(243deg, 80%, 62%);
   position: relative;
   border-radius: 6px;
   overflow: hidden;
@@ -801,12 +766,12 @@ h1, h2, h3 {
   border-radius: 50%;
   transform: translate3d(-50%, -50%, 0) scale3d(0, 0, 0);
   transition: opacity 0.4s cubic-bezier(0.19, 1, 0.22, 1), transform 0.75s cubic-bezier(0.19, 1, 0.22, 1);
-  background-color: #5851ec;
+  background-color: hsl(243deg, 80%, 62%);
   opacity: 0;
 }
 
 .circleScaleBtn:hover span {
-  color: #e6edff;
+  color: hsl(222deg, 100%, 95%);
 }
 
 .circleScaleBtn:hover::before {
@@ -818,10 +783,10 @@ h1, h2, h3 {
 .snapLeftBtn {
   text-align: center;
   padding: 12px 24px;
-  background-color: #e6edff;
+  background-color: hsl(222deg, 100%, 95%);
   position: relative;
   border-radius: 6px;
-  color: #5851ec;
+  color: hsl(243deg, 80%, 62%);
   overflow: hidden;
 }
 
@@ -834,7 +799,7 @@ h1, h2, h3 {
   height: 100%;
   border-radius: 6px;
   transform: translateX(-101%);
-  background: #5851ec;
+  background: hsl(243deg, 80%, 62%);
   transition: transform 0.25s ease-in;
 }
 
@@ -850,26 +815,8 @@ h1, h2, h3 {
 }
 
 .snapLeftBtn:hover span {
-  color: #e6edff;
-  -webkit-animation: animButtonSpan 0.4s;
-          animation: animButtonSpan 0.4s;
-}
-
-@-webkit-keyframes animButtonSpan {
-  0% {
-    transform: translateX(0);
-    opacity: 1;
-  }
-  35% {
-    transform: translateX(20px);
-    opacity: 0;
-  }
-  50.001% {
-    transform: translateX(-20px);
-  }
-  60% {
-    transform: translateX(0px);
-  }
+  color: hsl(222deg, 100%, 95%);
+  animation: animButtonSpan 0.4s;
 }
 
 @keyframes animButtonSpan {
@@ -891,20 +838,20 @@ h1, h2, h3 {
 .magnifyBorder {
   padding: 18px 36px;
   border-radius: 61px;
-  box-shadow: inset 0 0 0 2px #5851ec;
+  box-shadow: inset 0 0 0 2px hsl(243deg, 80%, 62%);
   transition: 300ms box-shadow cubic-bezier(0.4, 0, 0.6, 1), 300ms background-color cubic-bezier(0.4, 0, 0.6, 1), 300ms color cubic-bezier(0.4, 0, 0.6, 1);
-  color: #5851ec;
+  color: hsl(243deg, 80%, 62%);
 }
 
 .magnifyBorder:hover {
-  box-shadow: inset 0 0 0 4px #5851ec;
-  color: #5851ec;
+  box-shadow: inset 0 0 0 4px hsl(243deg, 80%, 62%);
+  color: hsl(243deg, 80%, 62%);
 }
 
 .buttonOverlay {
   padding: 12px 24px;
   position: relative;
-  color: #5851ec;
+  color: hsl(243deg, 80%, 62%);
 }
 
 .buttonOverlay span {
@@ -919,7 +866,7 @@ h1, h2, h3 {
   width: 100%;
   top: 5px;
   right: 5px;
-  background-color: #e6edff;
+  background-color: hsl(222deg, 100%, 95%);
   transition: transform 0.2s ease-in-out;
 }
 
@@ -946,8 +893,8 @@ h1, h2, h3 {
   overflow: hidden;
   padding: 12px 30px;
   border-radius: 6px;
-  background-color: #e6edff;
-  color: #5851ec;
+  background-color: hsl(222deg, 100%, 95%);
+  color: hsl(243deg, 80%, 62%);
   position: relative;
   display: inline-block;
 }
@@ -960,7 +907,7 @@ h1, h2, h3 {
   left: 0;
   width: 100%;
   height: 100%;
-  background: #5851ec;
+  background: hsl(243deg, 80%, 62%);
   opacity: 0.1;
   transform: scaleX(0);
   transform-origin: 100% 100%;
@@ -1048,18 +995,7 @@ h1, h2, h3 {
   transform: translateY(calc(100% - 50px));
 }
 .c-releaseNote.-delay {
-  -webkit-animation: show-in 0.3s backwards 3.5s;
-          animation: show-in 0.3s backwards 3.5s;
-}
-@-webkit-keyframes show-in {
-  from {
-    opacity: 0;
-    transform: translateY(100%);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(calc(100% - 50px));
-  }
+  animation: show-in 0.3s backwards 3.5s;
 }
 @keyframes show-in {
   from {
@@ -1108,7 +1044,7 @@ h1, h2, h3 {
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  background-color: #f02951;
+  background-color: rgb(240, 41, 81);
   position: absolute;
   top: -10px;
   right: 15px;
@@ -1195,7 +1131,6 @@ h1, h2, h3 {
 .c-releaseNote_frame_head {
   color: #333;
   font-weight: bold;
-  position: -webkit-sticky;
   position: sticky;
   top: 0;
   left: 0;
@@ -1312,7 +1247,7 @@ h1 {
 }
 .tableWrap table a {
   text-decoration: underline;
-  color: #4fabd0;
+  color: rgb(79, 171, 208);
 }
 .tableWrap table a:hover {
   color: steelblue;
@@ -1494,7 +1429,7 @@ h1 {
 }
 .p-under p a {
   display: inline;
-  color: #415dcd;
+  color: rgb(65, 93, 205);
   text-decoration: underline;
 }
 @media screen and (min-width: 740px){

@@ -60,13 +60,13 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 /***/ }),
 
-/***/ "./src/js/assets/js/pages/gsapImage01.ts":
-/*!***********************************************!*\
-  !*** ./src/js/assets/js/pages/gsapImage01.ts ***!
-  \***********************************************/
+/***/ "./src/js/assets/js/pages/cyberpunk.ts":
+/*!*********************************************!*\
+  !*** ./src/js/assets/js/pages/cyberpunk.ts ***!
+  \*********************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! gsap */ \"./node_modules/gsap/index.js\");\n/* harmony import */ var gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! gsap/ScrollTrigger */ \"./node_modules/gsap/ScrollTrigger.js\");\n\n\ngsap__WEBPACK_IMPORTED_MODULE_0__.gsap.registerPlugin(gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__.ScrollTrigger);\ngsap__WEBPACK_IMPORTED_MODULE_0__.gsap.timeline({\n    scrollTrigger: {\n        trigger: '.target',\n        start: 'top center',\n        end: 'bottom center',\n        toggleActions: 'play none none reset',\n        markers: true,\n        scrub: 0.8,\n    },\n})\n    .from('.targetImg', {\n    scale: 0.8,\n})\n    .to('.targetImg', {\n    scale: 1,\n})\n    .to('.targetImg', {\n    scale: 1.1,\n});\n\n\n//# sourceURL=webpack://animatome/./src/js/assets/js/pages/gsapImage01.ts?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! gsap */ \"./node_modules/gsap/index.js\");\n/* harmony import */ var gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! gsap/ScrollTrigger */ \"./node_modules/gsap/ScrollTrigger.js\");\n\n\ngsap__WEBPACK_IMPORTED_MODULE_0__.gsap.registerPlugin(gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__.ScrollTrigger);\nconst blockAnimation = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.timeline({\n    scrollTrigger: {\n        trigger: \".wrap\",\n        start: 'top 100%',\n        end: 'bottom 20%',\n        scrub: true,\n        markers: true,\n    }\n});\nblockAnimation.fromTo(\".block1\", { width: '50vw' }, { width: \"70vw\" });\nblockAnimation.fromTo(\".block2\", { width: '35vw' }, { width: \"55vw\" }, \"<\");\nblockAnimation.fromTo(\".text\", { x: '25vw' }, { x: \"35vw\" }, \"<\");\nblockAnimation.fromTo(\".block3\", { width: '20vw' }, { width: \"30vw\" }, \"<\");\nblockAnimation.fromTo(\".block4\", { width: '40vw' }, { width: \"60vw\" }, \"<\");\n\n\n//# sourceURL=webpack://animatome/./src/js/assets/js/pages/cyberpunk.ts?");
 
 /***/ })
 
@@ -130,7 +130,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var gsap
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module can't be inlined because the eval devtool is used.
-/******/ 	var __webpack_exports__ = __webpack_require__("./src/js/assets/js/pages/gsapImage01.ts");
+/******/ 	var __webpack_exports__ = __webpack_require__("./src/js/assets/js/pages/cyberpunk.ts");
 /******/ 	
 /******/ })()
 ;

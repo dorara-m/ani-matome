@@ -22,16 +22,7 @@
 }
 .flowImages .contents ul {
   display: flex;
-  -webkit-animation: toLeft 70s infinite linear 0.5s both;
-          animation: toLeft 70s infinite linear 0.5s both;
-}
-@-webkit-keyframes toLeft {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-100%);
-  }
+  animation: toLeft 70s infinite linear 0.5s both;
 }
 @keyframes toLeft {
   from {
