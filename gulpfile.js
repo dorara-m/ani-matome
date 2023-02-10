@@ -91,11 +91,14 @@ const cmsLinks = (data) => {
 exports.cmsLinks = cmsLinks
 
 const cmsAnime = (data) => {
-  return fetch('https://rqfoifxr3x.microcms.io/api/v1/anime?limit=99', {
-    headers: {
-      'X-MICROCMS-API-KEY': '309375b1533b47f4b56d85202171276bf164',
-    },
-  })
+  return fetch(
+    'https://rqfoifxr3x.microcms.io/api/v1/anime?orders=-updatedAt&limit=99',
+    {
+      headers: {
+        'X-MICROCMS-API-KEY': '309375b1533b47f4b56d85202171276bf164',
+      },
+    }
+  )
     .then((res) => res.json())
     .then((json) => {
       // console.log(json)
