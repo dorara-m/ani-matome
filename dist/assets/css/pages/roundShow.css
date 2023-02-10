@@ -7,7 +7,8 @@
   position: relative;
 }
 .roundWrap.started .round {
-  animation-play-state: running;
+  -webkit-animation-play-state: running;
+          animation-play-state: running;
 }
 
 .round {
@@ -23,7 +24,18 @@
 
 .round2 {
   background-color: #777;
-  animation: anime01 ease 1s both;
+  -webkit-animation: anime01 ease 1s both;
+          animation: anime01 ease 1s both;
+}
+@-webkit-keyframes anime01 {
+  0% {
+    width: 0px;
+    height: 0px;
+  }
+  100% {
+    width: 300px;
+    height: 300px;
+  }
 }
 @keyframes anime01 {
   0% {
@@ -38,7 +50,18 @@
 
 .round3 {
   background-color: #fff;
-  animation: anime02 ease 1s both 0.2s;
+  -webkit-animation: anime02 ease 1s both 0.2s;
+          animation: anime02 ease 1s both 0.2s;
+}
+@-webkit-keyframes anime02 {
+  0% {
+    width: 0px;
+    height: 0px;
+  }
+  100% {
+    width: 301px;
+    height: 301px;
+  }
 }
 @keyframes anime02 {
   0% {
@@ -52,12 +75,23 @@
 }
 
 .item {
-  animation: anime03 ease 1s both 0.6s;
+  -webkit-animation: anime03 ease 1s both 0.6s;
+          animation: anime03 ease 1s both 0.6s;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 200px;
+}
+@-webkit-keyframes anime03 {
+  0% {
+    transform: translate(calc(-100px - 50%), -50%);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(-50%, -50%);
+    opacity: 1;
+  }
 }
 @keyframes anime03 {
   0% {

@@ -1,39 +1,35 @@
-:root {
+.pg-cyberpunk :root {
   --coef-base-width: 1;
 }
-
-.emptyBox {
+.pg-cyberpunk .emptyBox {
   height: 800px;
   background-color: #ffc;
 }
-
-.wrap {
+.pg-cyberpunk .wrap {
   padding-top: 20px;
   overflow: hidden;
-  background: linear-gradient(45deg, rgb(189, 182, 0) 0%, rgb(255, 247, 25) 100%);
+  background: linear-gradient(45deg, #bdb600 0%, #fff719 100%);
 }
-
-.text {
+.pg-cyberpunk .text {
   margin-top: 30px;
   color: #290153;
   height: 60px;
   width: 60vw;
 }
-.text dt {
+.pg-cyberpunk .text dt {
   font-size: 6rem;
   font-weight: bold;
   transform: rotate(5deg);
   transform-origin: 0 0;
 }
-.text dd {
+.pg-cyberpunk .text dd {
   margin-top: 5px;
   font-size: 6rem;
   font-weight: bold;
   transform: rotate(-1deg);
   transform-origin: 0 0;
 }
-
-.block1 {
+.pg-cyberpunk .block1 {
   background: url(../../img/cyberpunk.gif);
   background-size: cover;
   min-width: 50vw;
@@ -42,8 +38,7 @@
   -webkit-clip-path: polygon(0% 0%, 78% 0%, 80% 24%, 75% 28%, 89% 30%, 78% 31%, 78% 38%, 95% 40%, 95% 45%, 100% 47%, 100% 99%, 96% 98%, 92% 100%, 0% 99%);
           clip-path: polygon(0% 0%, 78% 0%, 80% 24%, 75% 28%, 89% 30%, 78% 31%, 78% 38%, 95% 40%, 95% 45%, 100% 47%, 100% 99%, 96% 98%, 92% 100%, 0% 99%);
 }
-
-.block2 {
+.pg-cyberpunk .block2 {
   margin-top: 20px;
   background: url(../../img/cyberpunk.gif);
   background-size: cover;
@@ -54,8 +49,7 @@
   -webkit-clip-path: polygon(0% 0%, 44% 0%, 45% 10%, 51% 13%, 51% 24%, 86% 25%, 87% 31%, 100% 33%, 89% 37%, 89% 46%, 94% 48%, 88% 53%, 87% 64%, 82% 67%, 82% 78%, 78% 83%, 78% 100%, 0% 99%);
           clip-path: polygon(0% 0%, 44% 0%, 45% 10%, 51% 13%, 51% 24%, 86% 25%, 87% 31%, 100% 33%, 89% 37%, 89% 46%, 94% 48%, 88% 53%, 87% 64%, 82% 67%, 82% 78%, 78% 83%, 78% 100%, 0% 99%);
 }
-
-.block3 {
+.pg-cyberpunk .block3 {
   margin-top: 50px;
   background: url(../../img/cyberpunk.gif);
   background-size: cover;
@@ -66,8 +60,7 @@
   -webkit-clip-path: polygon(0% 0%, 86% 0%, 86% 0%, 86% 10%, 86% 10%, 78% 11%, 78% 11%, 78% 24%, 78% 24%, 83% 37%, 83% 37%, 93% 40%, 93% 40%, 100% 44%, 100% 44%, 100% 99%, 100% 99%, 60% 99%, 60% 99%, 57% 92%, 57% 92%, 46% 91%, 46% 100%, 2% 100%, 2% 100%, 0% 100%, 0% 100%);
           clip-path: polygon(0% 0%, 86% 0%, 86% 0%, 86% 10%, 86% 10%, 78% 11%, 78% 11%, 78% 24%, 78% 24%, 83% 37%, 83% 37%, 93% 40%, 93% 40%, 100% 44%, 100% 44%, 100% 99%, 100% 99%, 60% 99%, 60% 99%, 57% 92%, 57% 92%, 46% 91%, 46% 100%, 2% 100%, 2% 100%, 0% 100%, 0% 100%);
 }
-
-.block4 {
+.pg-cyberpunk .block4 {
   margin-top: 20px;
   background: url(../../img/cyberpunk.gif);
   background-size: cover;
@@ -78,11 +71,10 @@
   -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 100% 0%, 100% 9%, 100% 9%, 100% 9%, 97% 10%, 97% 10%, 97% 10%, 97% 18%, 97% 18%, 97% 18%, 100% 21%, 100% 21%, 100% 21%, 100% 41%, 100% 41%, 100% 41%, 98% 41%, 98% 41%, 98% 47%, 97% 62%, 97% 62%, 97% 62%, 95% 62%, 95% 62%, 95% 62%, 95% 85%, 95% 85%, 95% 85%, 92% 90%, 92% 90%, 92% 95%, 90% 100%, 90% 100%, 90% 100%, 63% 100%, 63% 100%, 63% 100%, 60% 97%, 60% 97%, 60% 97%, 49% 97%, 49% 100%, 49% 100%, 14% 98%, 14% 98%, 14% 98%, 0% 98%, 0% 98%, 0% 98%);
           clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 100% 0%, 100% 9%, 100% 9%, 100% 9%, 97% 10%, 97% 10%, 97% 10%, 97% 18%, 97% 18%, 97% 18%, 100% 21%, 100% 21%, 100% 21%, 100% 41%, 100% 41%, 100% 41%, 98% 41%, 98% 41%, 98% 47%, 97% 62%, 97% 62%, 97% 62%, 95% 62%, 95% 62%, 95% 62%, 95% 85%, 95% 85%, 95% 85%, 92% 90%, 92% 90%, 92% 95%, 90% 100%, 90% 100%, 90% 100%, 63% 100%, 63% 100%, 63% 100%, 60% 97%, 60% 97%, 60% 97%, 49% 97%, 49% 100%, 49% 100%, 14% 98%, 14% 98%, 14% 98%, 0% 98%, 0% 98%, 0% 98%);
 }
-
-.block1::before,
-.block2::before,
-.block3::before,
-.block4::before {
+.pg-cyberpunk .block1::before,
+.pg-cyberpunk .block2::before,
+.pg-cyberpunk .block3::before,
+.pg-cyberpunk .block4::before {
   content: "";
   position: absolute;
   top: 0;
@@ -91,5 +83,5 @@
   left: 0;
   margin: auto;
   mix-blend-mode: multiply;
-  background-color: rgb(0, 255, 64);
+  background-color: #00ff40;
 }

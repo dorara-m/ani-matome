@@ -4,7 +4,8 @@
 
 .wrap {
   overflow: auto;
-  scroll-snap-type: y mandatory;
+  -ms-scroll-snap-type: y mandatory;
+      scroll-snap-type: y mandatory;
   height: 100vh;
 }
 .wrap .fix {

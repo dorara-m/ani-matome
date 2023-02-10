@@ -4,19 +4,32 @@
   background-color: #f08;
 }
 .box.linear {
-  animation: moveToLeft 2s linear both infinite;
+  -webkit-animation: moveToLeft 2s linear both infinite;
+          animation: moveToLeft 2s linear both infinite;
 }
 .box.ease {
-  animation: moveToLeft 2s ease both infinite;
+  -webkit-animation: moveToLeft 2s ease both infinite;
+          animation: moveToLeft 2s ease both infinite;
 }
 .box.ease-in {
-  animation: moveToLeft 2s ease-in both infinite;
+  -webkit-animation: moveToLeft 2s ease-in both infinite;
+          animation: moveToLeft 2s ease-in both infinite;
 }
 .box.ease-out {
-  animation: moveToLeft 2s ease-out both infinite;
+  -webkit-animation: moveToLeft 2s ease-out both infinite;
+          animation: moveToLeft 2s ease-out both infinite;
 }
 .box.ease-in-out {
-  animation: moveToLeft 2s ease-in-out both infinite;
+  -webkit-animation: moveToLeft 2s ease-in-out both infinite;
+          animation: moveToLeft 2s ease-in-out both infinite;
+}
+@-webkit-keyframes moveToLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(180px);
+  }
 }
 @keyframes moveToLeft {
   0% {

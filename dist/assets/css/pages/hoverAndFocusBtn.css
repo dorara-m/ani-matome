@@ -19,7 +19,19 @@
   transform: translate(-50%, -50%) scale(1);
 }
 .btn:focus::before {
-  animation: anime 1.2s infinite;
+  -webkit-animation: anime 1.2s infinite;
+          animation: anime 1.2s infinite;
+}
+@-webkit-keyframes anime {
+  0% {
+    transform: translate(-50%, -50%) scale(0);
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(0.8);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(0);
+  }
 }
 @keyframes anime {
   0% {

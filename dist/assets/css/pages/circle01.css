@@ -4,7 +4,16 @@ svg {
   stroke-width: 10;
   stroke-dasharray: 231.2;
   stroke-linecap: round;
-  animation: loader 1.4s infinite cubic-bezier(0.4, 0, 0.3, 1), loading 1.2s infinite linear;
+  -webkit-animation: loader 1.4s infinite cubic-bezier(0.4, 0, 0.3, 1), loading 1.2s infinite linear;
+          animation: loader 1.4s infinite cubic-bezier(0.4, 0, 0.3, 1), loading 1.2s infinite linear;
+}
+@-webkit-keyframes loader {
+  from {
+    stroke-dashoffset: 0;
+  }
+  to {
+    stroke-dashoffset: -460;
+  }
 }
 @keyframes loader {
   from {
@@ -12,6 +21,14 @@ svg {
   }
   to {
     stroke-dashoffset: -460;
+  }
+}
+@-webkit-keyframes loading {
+  from {
+    transform: none;
+  }
+  to {
+    transform: rotate(360deg);
   }
 }
 @keyframes loading {
