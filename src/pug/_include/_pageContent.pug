@@ -15,7 +15,8 @@ mixin pageContent(hasSample)
           h2 参考サイト・元ネタなど
           ul
             each item in links
-              li: a(href=item.url).c-btn=item.title
+              li: a(href=item.url).c-btn
+                span=item.title
     if browser
       section
         .l-container
