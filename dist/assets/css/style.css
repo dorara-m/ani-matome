@@ -1042,7 +1042,8 @@ h1, h2, h3 {
 .pcMenu li {
   flex-basis: 25%;
 }
-.pcMenu li > span, .pcMenu a {
+.pcMenu li > span,
+.pcMenu a {
   height: 50px;
   display: flex;
   justify-content: center;
@@ -1565,6 +1566,9 @@ h1 {
 }
 @media screen and (max-width: 739px){
   .pcMenu {
-    display: none;
+    flex-wrap: wrap;
+  }
+  .pcMenu li {
+    flex-basis: 50%;
   }
 }

@@ -1,16 +1,20 @@
-@use '../_foundation/_mixin'as *;
+@use '../_foundation/_mixin' as *;
 
 .pcMenu {
   display: flex;
   margin-bottom: 60px;
   @include mq-down() {
-    display: none;
+    flex-wrap: wrap;
   }
 
   li {
     flex-basis: 25%;
+    @include mq-down() {
+      flex-basis: 50%;
+    }
   }
-  li > span,a {
+  li > span,
+  a {
     height: 50px;
     display: flex;
     justify-content: center;
