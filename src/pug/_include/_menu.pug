@@ -1,4 +1,4 @@
-mixin PcMenu(current=0)
+mixin Menu(current=0)
   -
     const items = [
       {
@@ -9,17 +9,17 @@ mixin PcMenu(current=0)
         name: 'ネタ',
         url: '/neta'
       },
-      {
-        name: 'AfterEffects',
-        url: '/af'
-      },
+      //- {
+      //-   name: 'AfterEffects',
+      //-   url: '/af'
+      //- },
       {
         name: 'アニマトメとは？',
         url: '/about'
       },
     ]
   
-  ul.pcMenu
+  ul.c-menu
     each item,index in items
       - const hasLink = current !== index
       li

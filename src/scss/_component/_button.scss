@@ -1,17 +1,5 @@
+@use '../_foundation/var' as *;
 @use '../_foundation/mixin' as *;
-
-.c-btnWrap {
-  margin-top: 30px;
-  display: flex;
-  flex-wrap: wrap;
-  .c-btn + .c-btn {
-    margin-top: 15px;
-    @include mq() {
-      margin-top: 0;
-      margin-left: 15px;
-    }
-  }
-}
 
 .c-btn {
   min-height: 40px;
@@ -57,24 +45,19 @@
     }
   }
 }
-
-.c-btn-simple {
-  border: none;
-  appearance: none;
-
-  min-height: 45px;
-  min-width: 130px;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  padding: 7px 10px;
-  background: transparent;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  font-weight: bold;
-  color: #444;
+.c-buttonB {
+  font-size: 14px;
+  display: inline-block;
+  border: 2px solid $color-black;
+  padding: 8px 12px;
+  transition: background-color 0.3s, color 0.3s;
+  &:hover {
+    background-color: $color-black;
+    color: #fff;
+  }
 }
 
+// @todo 別コンポーネントに整理
 .c-arrowBtn {
   background-color: transparent;
   border: none;

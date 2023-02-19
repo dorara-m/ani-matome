@@ -1,0 +1,63 @@
+@use '../_foundation/_mixin' as *;
+
+.p-neta {
+  ul {
+    display: grid;
+    gap: 20px;
+    @include mq() {
+      gap: 20px 15px;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+  }
+  .mainBox {
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 0 5px rgba($color: #000000, $alpha: 0.1);
+    @include mq() {
+      img {
+        transition: 0.3s transform ease;
+      }
+      &:hover {
+        img {
+          transform: translate(-50%, -50%) scale(1.1);
+        }
+      }
+    }
+  }
+  .imgWrap {
+    aspect-ratio: 1.8/1;
+    @include mq() {
+      aspect-ratio: auto;
+      height: 111px;
+      overflow: hidden;
+      position: relative;
+      img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
+  .textArea {
+    padding: 5px 12px;
+    .title {
+      font-size: 15px;
+      line-height: 1.5;
+      font-weight: bold;
+    }
+    .ballon {
+      line-height: 1.2;
+      margin-top: 5px;
+      font-size: 12px;
+      background-color: antiquewhite;
+      border: 1px solid #ccc;
+      padding: 3px 6px;
+    }
+  }
+  .hasDetail {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+  }
+}

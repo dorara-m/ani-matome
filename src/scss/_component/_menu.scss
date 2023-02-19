@@ -1,6 +1,6 @@
 @use '../_foundation/_mixin' as *;
 
-.pcMenu {
+.c-menu {
   display: flex;
   margin-bottom: 60px;
   @include mq-down() {
@@ -8,7 +8,7 @@
   }
 
   li {
-    flex-basis: 25%;
+    flex-basis: 33.3%;
     @include mq-down() {
       flex-basis: 50%;
     }

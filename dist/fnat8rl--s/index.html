@@ -6,24 +6,24 @@
     <meta name="viewport" content="width=device-width">
     <meta name="robots" content="index,follow">
     <meta name="format-detection" content="telephone=no">
-    <meta name="description" content="cssだけで画像が無限に流れるスライダーのプレビューページです。">
+    <meta name="description" content="swiperでやってみた。画像が無限に流れるスライダーのプレビューページです。">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content="https://animatome.netlify.app//ogp.png">
     <meta name="twitter:url" content="https://animatome.netlify.app//pages/">
-    <meta name="twitter:description" content="cssだけで画像が無限に流れるスライダーのプレビューページです。">
-    <meta name="twitter:title" content="cssだけで画像が無限に流れるスライダー | アニマトメ -animatome-">
-    <meta property="og:description" content="cssだけで画像が無限に流れるスライダーのプレビューページです。">
+    <meta name="twitter:description" content="swiperでやってみた。画像が無限に流れるスライダーのプレビューページです。">
+    <meta name="twitter:title" content="swiperでやってみた。画像が無限に流れるスライダー | アニマトメ -animatome-">
+    <meta property="og:description" content="swiperでやってみた。画像が無限に流れるスライダーのプレビューページです。">
     <meta property="og:site_name" content="アニマトメ -animatome-">
     <meta property="og:locale" content="ja_JP">
     <meta property="og:type" content="article">
     <meta property="og:image" content="https://animatome.netlify.app//ogp.png">
     <meta property="og:url" content="https://animatome.netlify.app//pages/">
-    <meta property="og:title" content="cssだけで画像が無限に流れるスライダー | アニマトメ -animatome-">
-    <title>cssだけで画像が無限に流れるスライダー | アニマトメ -animatome-</title>
+    <meta property="og:title" content="swiperでやってみた。画像が無限に流れるスライダー | アニマトメ -animatome-">
+    <title>swiperでやってみた。画像が無限に流れるスライダー | アニマトメ -animatome-</title>
     <link rel="shortcut icon" href="/favicon.ico">
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     <link href="/assets/css/style.css" rel="stylesheet">
-    <link rel="stylesheet" href="/assets/css/pages/flowImages.css">
+    <link rel="stylesheet" href="/assets/css/pages/swiperInfinite.css">
   </head>
   <body>
     <div class="l-wrap">
@@ -33,91 +33,27 @@
         </div>
       </header>
       <div class="l-headerSpace"></div>
-      <div class="l-pages pg-flowImages">
+      <div class="l-pages pg-swiperInfinite">
         <div class="l-pages_head">
           <div class="l-container">
-            <h1>cssだけで画像が無限に流れるスライダー</h1>
+            <h1>swiperでやってみた。画像が無限に流れるスライダー</h1>
           </div>
         </div>
                 <div class="l-pages_content">
                   <section class="sample">
-                    <div class="l-container"><div class="flowImages">
-  <div class="overlay -left"></div>
-  <div class="contents">
-    <ul>
-      <li><img src="https://placehold.jp/3d4070/ffffff/300x150.png?text=1" alt=""></li>
-      <li><img src="https://placehold.jp/3d4070/ffffff/300x150.png?text=2" alt=""></li>
-      <li><img src="https://placehold.jp/3d4070/ffffff/300x150.png?text=3" alt=""></li>
-    </ul>
-    <ul>
-      <li><img src="https://placehold.jp/3d4070/ffffff/300x150.png?text=1" alt=""></li>
-      <li><img src="https://placehold.jp/3d4070/ffffff/300x150.png?text=2" alt=""></li>
-      <li><img src="https://placehold.jp/3d4070/ffffff/300x150.png?text=3" alt=""></li>
-    </ul>
+                    <div class="l-container"><div class="swiper">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide"><img src="https://placehold.jp/3d4070/ffffff/300x150.png?text=1" alt="" /></div>
+    <div class="swiper-slide"><img src="https://placehold.jp/3d4070/ffffff/300x150.png?text=2" alt="" /></div>
+    <div class="swiper-slide"><img src="https://placehold.jp/3d4070/ffffff/300x150.png?text=3" alt="" /></div>
+    <div class="swiper-slide"><img src="https://placehold.jp/3d4070/ffffff/300x150.png?text=4" alt="" /></div>
   </div>
-  <div class="overlay -right"></div>
 </div>
                     </div>
                   </section>
                   <section class="desc">
                     <div class="l-container">
-                      <h2>実装手順など解説</h2><p>htmlは以下。1,2,3を流したいなら、画像1,2,3のセットを2つ用意して横に並べておく。</p><pre><code>&lt;div class="flowImages"&gt;
-  &lt;div class="overlay -left"&gt;&lt;/div&gt;
-  &lt;div class="contents"&gt;
-    &lt;ul&gt;
-      &lt;li&gt;&lt;img src="https://placehold.jp/3d4070/ffffff/300x150.png?text=1" alt=""&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;img src="https://placehold.jp/3d4070/ffffff/300x150.png?text=2" alt=""&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;img src="https://placehold.jp/3d4070/ffffff/300x150.png?text=3" alt=""&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-    &lt;ul&gt;
-      &lt;li&gt;&lt;img src="https://placehold.jp/3d4070/ffffff/300x150.png?text=1" alt=""&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;img src="https://placehold.jp/3d4070/ffffff/300x150.png?text=2" alt=""&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;img src="https://placehold.jp/3d4070/ffffff/300x150.png?text=3" alt=""&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/div&gt;
-  &lt;div class="overlay -right"&gt;&lt;/div&gt;
-&lt;/div&gt;</code></pre><p><br>cssの基本は、画像1,2,3のセットをflexで横にしてはみ出しをoverflow:hiddenで許可。セット内でも画像を横並びにするためflex、アニメーションはここ（ul）につける。動き自体は単純。左から右へ動かし続けるだけ。<br>widthはliに対して設定。アイテム間のマージンもここで付与。</p><pre><code>.contents {
-    display: flex;
-    overflow: hidden;
-    ul {
-      display: flex;
-      animation :toLeft 70s infinite linear 0.5s both;
-      @keyframes toLeft {
-        from {
-          transform: translateX(0);
-        }
-        to {
-          transform: translateX(-100%);
-        }
-      }
-      li {
-        margin-right: 20px;
-        width: 250px;
-      }
-    }
-  }</code></pre><p><br>右→左へ流したい場合は以下のように。マイナス指定から0に戻るように書く</p><pre><code>animation: toRight 70s infinite linear 0.5s;
-  @keyframes toRight {
-    0% {
-      transform: translateX(-100%);
-    }
-    100% {
-      transform: translateX(0);
-    }
-  }</code></pre><p><br>左右に消えていく演出をしたい場合、overlayのdivを使う。グラデーションで白→透過の指定をいれておき、左右にabsoluteで設置するだけ。</p><pre><code>.overlay {
-    position: absolute;
-    z-index: 2;
-    top: 0;
-    width: 50px;
-    height: 100%;
-    &amp;.-left {
-      left: 0;
-      background: linear-gradient(90deg, #fff 0%, rgba(225,225,225,0) 100%)
-    }
-    &amp;.-right {
-      right: 0;
-      background: linear-gradient(270deg, #fff 0%, rgba(225,225,225,0) 100%)
-    }
-  }</code></pre><p><br></p>
+                      <h2>実装手順など解説</h2><p>cssだけでもできることをswiperでもやってしまったので供養。</p>
                     </div>
                   </section>
                   <section>
@@ -168,6 +104,16 @@
                       </div>
                     </div>
                   </section>
+                  <section class="l-pages_relations">
+                    <div class="l-container">
+                      <h2>関連項目</h2>
+                      <ul class="cards -s">
+                        <li><a href="/un3nn6p-njpc/">
+                            <div class="img" style="background-image: url(https://images.microcms-assets.io/assets/fc5a67cf51fb4ac3a0eb5f358bf160d6/2de1a3ac1dce4d828279c281799b4625/sample13.gif);"></div>
+                            <div class="head">cssだけで画像が無限に流れるスライダー</div></a></li>
+                      </ul>
+                    </div>
+                  </section>
                 </div>
       </div>
       <div class="c-releaseNote" id="js-note-wrap">
@@ -192,5 +138,5 @@
       </div>
     </div>
   </body>
-  <script src="/assets/js/script.js" defer></script>
+  <script src="/assets/js/script.js" defer></script><script src="/assets/js/pages/swiperInfinite.js" defer></script>
 </html>
