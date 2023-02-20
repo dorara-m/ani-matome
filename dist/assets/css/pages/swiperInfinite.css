@@ -1,0 +1,14 @@
+@charset "UTF-8";
+.pg-swiperInfinite {
+  /* スライド内の画像 */
+}
+.pg-swiperInfinite .swiper-wrapper {
+  transition-timing-function: linear;
+}
+.pg-swiperInfinite .swiper-slide {
+  width: 320px !important;
+  margin-right: 10px;
+}
+.pg-swiperInfinite .swiper-slide img {
+  max-width: 100%;
+}

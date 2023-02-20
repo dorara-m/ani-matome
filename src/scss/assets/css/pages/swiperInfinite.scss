@@ -1,0 +1,15 @@
+.pg-swiperInfinite {
+  .swiper-wrapper {
+    transition-timing-function: linear;
+  }
+
+  .swiper-slide {
+    width: 320px !important;
+    margin-right: 10px;
+  }
+
+  /* スライド内の画像 */
+  .swiper-slide img {
+    max-width: 100%;
+  }
+}
