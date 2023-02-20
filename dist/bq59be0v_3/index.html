@@ -6,20 +6,20 @@
     <meta name="viewport" content="width=device-width">
     <meta name="robots" content="index,follow">
     <meta name="format-detection" content="telephone=no">
-    <meta name="description" content="cssだけのスライドショー,白フェードver.のプレビューページです。">
+    <meta name="description" content="cssだけでスライドショー風アニメ,白フェードver.のプレビューページです。">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content="https://animatome.netlify.app//ogp.png">
     <meta name="twitter:url" content="https://animatome.netlify.app//pages/">
-    <meta name="twitter:description" content="cssだけのスライドショー,白フェードver.のプレビューページです。">
-    <meta name="twitter:title" content="cssだけのスライドショー,白フェードver. | アニマトメ -animatome-">
-    <meta property="og:description" content="cssだけのスライドショー,白フェードver.のプレビューページです。">
+    <meta name="twitter:description" content="cssだけでスライドショー風アニメ,白フェードver.のプレビューページです。">
+    <meta name="twitter:title" content="cssだけでスライドショー風アニメ,白フェードver. | アニマトメ -animatome-">
+    <meta property="og:description" content="cssだけでスライドショー風アニメ,白フェードver.のプレビューページです。">
     <meta property="og:site_name" content="アニマトメ -animatome-">
     <meta property="og:locale" content="ja_JP">
     <meta property="og:type" content="article">
     <meta property="og:image" content="https://animatome.netlify.app//ogp.png">
     <meta property="og:url" content="https://animatome.netlify.app//pages/">
-    <meta property="og:title" content="cssだけのスライドショー,白フェードver. | アニマトメ -animatome-">
-    <title>cssだけのスライドショー,白フェードver. | アニマトメ -animatome-</title>
+    <meta property="og:title" content="cssだけでスライドショー風アニメ,白フェードver. | アニマトメ -animatome-">
+    <title>cssだけでスライドショー風アニメ,白フェードver. | アニマトメ -animatome-</title>
     <link rel="shortcut icon" href="/favicon.ico">
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     <link href="/assets/css/style.css" rel="stylesheet">
@@ -36,7 +36,7 @@
       <div class="l-pages pg-cssOnlySlides01">
         <div class="l-pages_head">
           <div class="l-container">
-            <h1>cssだけのスライドショー,白フェードver.</h1>
+            <h1>cssだけでスライドショー風アニメ,白フェードver.</h1>
           </div>
         </div>
                 <div class="l-pages_content">
@@ -50,7 +50,43 @@
                   </section>
                   <section class="desc">
                     <div class="l-container">
-                      <h2>実装手順など解説</h2><p>基本となる動きは、フェードイン＆アウトのCSSアニメーション。<br>スライドにしたい画像は全て一定の枠内に、<code>position: absolute;</code>で重ねて配置します。画像のサイズは同じにトリミングされているのが望ましいです。<br>画像共通でopacity:0を付与。<br>そして表示順にアニメーションを付与、2枚目以降は<code>animation-delay</code>で数秒ずつ遅れて付与していきます。<br>タイミングがうまくあえば、画像が一枚一枚フェードインしてくるスライドショーになります。<br>まず1枚に4秒かけて3枚なら 4*3 =12。これがアニメーションの全体の秒数。<br>キーフレームの%は枚数一枚分でアニメーションが完結するようにする。<br>3枚なら100/3で33%でアニメーション一つが終わるように、0~16%(だいたい中間)かけてフェードインして16%~33%かけてフェードアウトしていくように書く。<br></p>
+                      <h2>実装手順など解説</h2><p>基本となる動きは、フェードイン＆アウトのCSSアニメーション。<br><strong>枚数によって秒数指定がずれるので、枚数は可変ではありません！！！（重要</strong><br>スライドにしたい画像は全て一定の枠内に、<code>position: absolute;</code>で重ねて配置します。画像のサイズは同じにトリミングされているのが望ましいです。<br>画像共通でopacity:0とアニメーションを付与。<br>2枚目以降は<code>animation-delay</code>で数秒ずつ遅れて付与していきます。<br></p><pre><code>.slider {
+  // 枠
+  position: relative;
+  width: 300px;
+  height: 200px;
+  li {
+    position: absolute;
+    top: 0;
+    left: 0;
+    // ↓これ大事!
+    opacity: 0;
+    animation: fade 12s infinite;
+    // 2個目以降はdelayで開始を遅らせる。
+    &amp;:nth-child(2) {
+      animation-delay: 4s;
+    }
+    &amp;:nth-child(3) {
+      animation-delay: 8s;
+    }
+  }
+}
+
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  16% {
+    opacity: 1;
+  }
+  33% {
+    opacity: 0;
+  }
+}
+
+
+</code></pre><p><br>秒数とアニメーションの計算は、<br>1枚に4秒かけて3枚なら 4*3 =12。これがアニメーションの全体の秒数。<br>キーフレームの%は枚数一枚分でアニメーションが完結するようにする。<br>3枚なら100/3で33%でアニメーション一つが終わるように、0~16%(だいたい中間)かけてフェードインして16%~33%かけてフェードアウトしていくように書く。<br></p>
                     </div>
                   </section>
                   <section class="l-pages_links">
