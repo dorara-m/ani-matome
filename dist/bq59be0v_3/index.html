@@ -50,7 +50,15 @@
                   </section>
                   <section class="desc">
                     <div class="l-container">
-                      <h2>実装手順など解説</h2><p>基本となる動きは、フェードイン＆アウトのCSSアニメーション。<br>スライドにしたい画像は全て一定の枠内に、<code>position: absolute;</code>で重ねて配置します。画像のサイズは同じにトリミングされているのが望ましいです。<br>そして表示順にアニメーションを付与、2枚目以降は<code>animation-delay</code>で数秒ずつ遅れて付与していきます。<br>タイミングがうまくあえば、画像が一枚一枚フェードインしてくるスライドショーになります。<br>まず1枚に4秒かけて3枚なら 4*3 =12。これがアニメーションの全体の秒数。<br>キーフレームの%は枚数一枚分でアニメーションが完結するようにする。<br>3枚なら100/3で33%でアニメーション一つが終わるように、0~16%(だいたい中間)でフェードインして16%~33%でフェードアウトしていくように書く。<br><a href="https://codepen.io/dorara_css/pen/wvwYBVo" target="_blank" rel="noopener noreferrer">CodePenでも実装してます</a></p>
+                      <h2>実装手順など解説</h2><p>基本となる動きは、フェードイン＆アウトのCSSアニメーション。<br>スライドにしたい画像は全て一定の枠内に、<code>position: absolute;</code>で重ねて配置します。画像のサイズは同じにトリミングされているのが望ましいです。<br>画像共通でopacity:0を付与。<br>そして表示順にアニメーションを付与、2枚目以降は<code>animation-delay</code>で数秒ずつ遅れて付与していきます。<br>タイミングがうまくあえば、画像が一枚一枚フェードインしてくるスライドショーになります。<br>まず1枚に4秒かけて3枚なら 4*3 =12。これがアニメーションの全体の秒数。<br>キーフレームの%は枚数一枚分でアニメーションが完結するようにする。<br>3枚なら100/3で33%でアニメーション一つが終わるように、0~16%(だいたい中間)かけてフェードインして16%~33%かけてフェードアウトしていくように書く。<br></p>
+                    </div>
+                  </section>
+                  <section class="l-pages_links">
+                    <div class="l-container">
+                      <h2>参考サイト・元ネタなど</h2>
+                      <ul>
+                        <li><a class="c-btn" href="https://codepen.io/dorara_css/pen/wvwYBVo"><span>codepenでも見れるよ</span></a></li>
+                      </ul>
                     </div>
                   </section>
                   <section>
@@ -99,6 +107,16 @@
                           </tbody>
                         </table>
                       </div>
+                    </div>
+                  </section>
+                  <section class="l-pages_relations">
+                    <div class="l-container">
+                      <h2>関連項目</h2>
+                      <ul class="cards -s">
+                        <li><a href="/t7f5liov1a/">
+                            <div class="img" style="background-image: url(https://images.microcms-assets.io/assets/fc5a67cf51fb4ac3a0eb5f358bf160d6/3bd6e660617840f2b4147a3b2bcd7f1e/cssOnlySlides02.gif);"></div>
+                            <div class="head">cssだけのスライドショー,クロスフェードver</div></a></li>
+                      </ul>
                     </div>
                   </section>
                 </div>

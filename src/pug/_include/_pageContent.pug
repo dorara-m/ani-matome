@@ -16,7 +16,9 @@ mixin pageContent(hasSample)
           ul
             each item in links
               li
-                +button(item.url, item.title, 'typeA')
+                a(href=item.url).c-btn
+                  span=item.title
+                //- +button(item.url, item.title, 'typeA')
     if browser
       section
         .l-container
