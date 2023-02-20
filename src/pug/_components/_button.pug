@@ -1,0 +1,6 @@
+mixin button(url,text,type)
+  if type == 'typeA'
+    a(href=url).c-btn
+      span=text
+  else if type == 'typeB'
+    a(href=url).c-buttonB=text

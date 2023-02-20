@@ -12,21 +12,27 @@ block body
       h1 ネタまとめ
 
       include /_include/_menu
-      +PcMenu(1)
+      +Menu(1)
 
-      .tableWrap
-        table
-          thead
-            tr
-              th サイト
-              th サンプル
-          tbody
-            each item in cmsLinks
-              tr
-                th
-                  a(href=item.link, target="_blank", rel="noopener noreferrer") #{item.title}
-                td
-                  if item.sample
-                    a(href=item.sample) あり→
-                  else
-                    span -
+      .p-neta
+        ul
+          each item in cmsLinks
+            li
+              a.mainBox(href=item.link, target="_blank", rel="noopener noreferrer")
+                .imgWrap
+                  -
+                    let imgUrl = 'https://placehold.jp/540x300.png'
+                    if (item.img) {
+                      imgUrl = item.img.url
+                    }
+                  img(src=imgUrl, alt="")
+                .textArea
+                  .title=item.title
+                  if item.point
+                    .ballon=item.point
+              if item.hasDetail
+                .hasDetail
+                  +button(`/${item.hasDetail.id}/`, 'サンプルあり', 'typeB')
+              
+
+            
