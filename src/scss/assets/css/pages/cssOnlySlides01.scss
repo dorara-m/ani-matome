@@ -1,26 +1,33 @@
-.slider {
-  // 枠
-  position: relative;
-  width: 300px;
-  height: 200px;
-  li {
-    position: absolute;
-    top: 0;
-    left: 0;
-    // ↓これ大事!
-    opacity: 0;
-    animation: fade 12s infinite;
-    // 2個目以降はdelayで開始を遅らせる。
-    &:nth-child(2) {
-      animation-delay: 4s;
+.pg-cssOnlySlides01 {
+  .slider {
+    // 枠
+    position: relative;
+    width: 300px;
+    height: 200px;
+    li {
+      position: absolute;
+      top: 0;
+      left: 0;
+      // ↓これ大事!
+      opacity: 0;
+      animation: fadeA 12s infinite;
+      // 2個目以降はdelayで開始を遅らせる。
+      &:nth-child(2) {
+        animation-delay: 4s;
+      }
+      &:nth-child(3) {
+        animation-delay: 8s;
+      }
     }
-    &:nth-child(3) {
-      animation-delay: 8s;
+  }
+  .slider-b {
+    li {
+      animation-name: fadeB;
     }
   }
 }
 
-@keyframes fade {
+@keyframes fadeA {
   0% {
     opacity: 0;
   }
@@ -28,6 +35,17 @@
     opacity: 1;
   }
   33% {
+    opacity: 0;
+  }
+}
+@keyframes fadeB {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  49% {
     opacity: 0;
   }
 }

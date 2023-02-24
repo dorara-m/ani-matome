@@ -1,26 +1,30 @@
-.slider {
+.pg-cssOnlySlides01 .slider {
   position: relative;
   width: 300px;
   height: 200px;
 }
-.slider li {
+.pg-cssOnlySlides01 .slider li {
   position: absolute;
   top: 0;
   left: 0;
   opacity: 0;
-  -webkit-animation: fade 12s infinite;
-          animation: fade 12s infinite;
+  -webkit-animation: fadeA 12s infinite;
+          animation: fadeA 12s infinite;
 }
-.slider li:nth-child(2) {
+.pg-cssOnlySlides01 .slider li:nth-child(2) {
   -webkit-animation-delay: 4s;
           animation-delay: 4s;
 }
-.slider li:nth-child(3) {
+.pg-cssOnlySlides01 .slider li:nth-child(3) {
   -webkit-animation-delay: 8s;
           animation-delay: 8s;
 }
+.pg-cssOnlySlides01 .slider-b li {
+  -webkit-animation-name: fadeB;
+          animation-name: fadeB;
+}
 
-@-webkit-keyframes fade {
+@-webkit-keyframes fadeA {
   0% {
     opacity: 0;
   }
@@ -32,7 +36,7 @@
   }
 }
 
-@keyframes fade {
+@keyframes fadeA {
   0% {
     opacity: 0;
   }
@@ -40,6 +44,28 @@
     opacity: 1;
   }
   33% {
+    opacity: 0;
+  }
+}
+@-webkit-keyframes fadeB {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  49% {
+    opacity: 0;
+  }
+}
+@keyframes fadeB {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  49% {
     opacity: 0;
   }
 }
