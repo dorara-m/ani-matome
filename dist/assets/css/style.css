@@ -1372,6 +1372,8 @@ h1 {
   width: calc(100% - 20px - 20px);
   margin-right: auto;
   margin-left: auto;
+  overflow: hidden;
+  position: relative;
 }
 
 .l-pages {

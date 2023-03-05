@@ -4,6 +4,9 @@
   width: calc(100% - 20px - 20px);
   margin-right: auto;
   margin-left: auto;
+  // swiperではみ出る現象が確認されたため
+  overflow: hidden;
+  position: relative;
 
   @include mq() {
     max-width: 860px;

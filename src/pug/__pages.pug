@@ -9,6 +9,8 @@ html(lang=site.lang)
   head(prefix='og:http://ogp.me/ns# fb:http://ogp.me/ns/fb# ' + type + ':http://ogp.me/ns/' + type + '#')
     include /_include/_meta
     include /_include/_css
+    if cssModules
+      != cssModules
     if css
       link(rel="stylesheet", href=`/assets/css/pages/${name_en}.css`)
   body
@@ -43,3 +45,5 @@ html(lang=site.lang)
   include /_include/_js
   if js
     != js
+  else if hasJs
+    script(src=`/assets/js/pages/${name_en}.js`) 

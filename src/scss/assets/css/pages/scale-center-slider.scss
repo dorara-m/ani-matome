@@ -1,0 +1,23 @@
+.pg-scale-center-slider {
+  .swiper-container {
+    width: 100%;
+    margin: 40px 0;
+    padding: 45px 0;
+  }
+
+  .swiper-slide {
+    overflow: hidden;
+    opacity: 0.6;
+    transition: 0.7s;
+  }
+
+  .swiper-slide img {
+    width: 100%;
+  }
+
+  .swiper-slide-active {
+    z-index: 1;
+    opacity: 1;
+    transform: scale(1.2); /* スライドの大きさ調整 */
+  }
+}
