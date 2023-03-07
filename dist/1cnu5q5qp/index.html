@@ -41,7 +41,9 @@
         </div>
                 <div class="l-pages_content">
                   <section class="sample">
-                    <div class="l-container"><section class="video">
+                    <div class="l-container">
+                      <h2 class="u-hidden">実装サンプル</h2>
+                      <div class="section-body"><section class="video">
 <h2>サンプル（videoタグ）</h2>
 <p>動画で「あーい！」と叫ばれる毎に右下の四角が青くなります。確認用に動画のミュートを解除するの推奨</p>
 <div class="videoWrap">
@@ -49,12 +51,13 @@
 <div class="videoTime"></div>
 </div>
 <div class="anime" id="anime"></div>
-</section>
+</section></div>
                     </div>
                   </section>
                   <section class="desc">
                     <div class="l-container">
-                      <h2>実装手順など解説</h2><p>想定用途：「mvの背景などで自動ループ再生（音無しが必須のためデフォルト音無し）している動画の一定の秒数で静的なhtml要素をアニメーションさせたい。」<br><br>当初、動画が再生開始するタイミングを受け取り、そこからjsで<code>setInterval</code>で秒数を数えながら動画内容に連携してる風（←重要）にアニメーションする。を実装していたがjs側での秒数カウントがループを重ねるごとにずれていくことが判明。<strong>断念。</strong><br><br><code>videoDom.addEventListener('timeupdate',…</code><br>で動画の秒数を常時？受け取るようにし、配列で指定していた特定の秒数のときのみアニメーションを起動（サンプルではaddClass）している。console.logで確認していると1秒に4回ほど処理が走っているため<strong>パフォーマンスには良くない</strong>と思われ。改善点模索中…<br><br>実際の処理はこれ。</p><pre><code>const script = () =&gt; {
+                      <h2>実装手順など解説</h2>
+                      <div class="section-body"><p>想定用途：「mvの背景などで自動ループ再生（音無しが必須のためデフォルト音無し）している動画の一定の秒数で静的なhtml要素をアニメーションさせたい。」<br><br>当初、動画が再生開始するタイミングを受け取り、そこからjsで<code>setInterval</code>で秒数を数えながら動画内容に連携してる風（←重要）にアニメーションする。を実装していたがjs側での秒数カウントがループを重ねるごとにずれていくことが判明。<strong>断念。</strong><br><br><code>videoDom.addEventListener('timeupdate',…</code><br>で動画の秒数を常時？受け取るようにし、配列で指定していた特定の秒数のときのみアニメーションを起動（サンプルではaddClass）している。console.logで確認していると1秒に4回ほど処理が走っているため<strong>パフォーマンスには良くない</strong>と思われ。改善点模索中…<br><br>実際の処理はこれ。</p><pre><code>const script = () =&gt; {
   const videoTimeDom = document.querySelectorAll(".videoTime")[0]
 
 
@@ -89,13 +92,13 @@ const timeConvert = (time: number) =&gt; {
   // 小数点切り上げ
   // 0:をくっつける(仮)
   return '0:' + String(Math.ceil(time)).padStart(2, '0')
-}</code></pre><p><br>（余力あればvideoタグ以外、youtubeやvimeo埋め込みなどでも動作確認したい。</p>
+}</code></pre><p><br>（余力あればvideoタグ以外、youtubeやvimeo埋め込みなどでも動作確認したい。</p></div>
                     </div>
                   </section>
                   <section class="l-pages_links">
                     <div class="l-container">
                       <h2>参考サイト・元ネタなど</h2>
-                      <ul>
+                      <ul class="section-body">
                         <li><a class="c-btn" href="https://webliker.info/52510/"><span>videoタグの設置方法、基本</span></a></li>
                         <li><a class="c-btn" href="https://qiita.com/iiishokoiii/items/3037d6d01248502aee68"><span>videoタグをjs操作</span></a></li>
                       </ul>
@@ -104,48 +107,50 @@ const timeConvert = (time: number) =&gt; {
                   <section>
                     <div class="l-container">
                       <h2>動作環境</h2>
-                      <ul class="l-pages_content_caption">
-                        <li>○:動作する</li>
-                        <li>△:動作するが意図せぬ挙動</li>
-                        <li>☓:動作しない</li>
-                      </ul>
-                      <div class="l-pages_table">
-                        <table>
-                          <thead>
-                            <tr>
-                              <td>-</td>
-                              <th colspan="3">Mac</th>
-                              <th colspan="4">Windows11</th>
-                              <th colspan="2">SP</th>
-                            </tr>
-                            <tr>
-                              <td>ブラウザ</td>
-                              <th>Chrome</th>
-                              <th>Firefox</th>
-                              <th>Safari</th>
-                              <th>Chrome</th>
-                              <th>Firefox</th>
-                              <th>Edge</th>
-                              <th>IE</th>
-                              <th>Safari on iOS</th>
-                              <th>Chrome for Android</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr>
-                              <th>対応</th>
-                              <td data-status="○">○</td>
-                              <td data-status="○">○</td>
-                              <td data-status="○">○</td>
-                              <td data-status="○">○</td>
-                              <td data-status="○">○</td>
-                              <td data-status="○">○</td>
-                              <td data-status="☓">☓</td>
-                              <td data-status="○">○</td>
-                              <td></td>
-                            </tr>
-                          </tbody>
-                        </table>
+                      <div class="section-body">
+                        <ul class="l-pages_content_caption">
+                          <li>○:動作する</li>
+                          <li>△:動作するが意図せぬ挙動</li>
+                          <li>☓:動作しない</li>
+                        </ul>
+                        <div class="l-pages_table">
+                          <table>
+                            <thead>
+                              <tr>
+                                <td>-</td>
+                                <th colspan="3">Mac</th>
+                                <th colspan="4">Windows11</th>
+                                <th colspan="2">SP</th>
+                              </tr>
+                              <tr>
+                                <td>ブラウザ</td>
+                                <th>Chrome</th>
+                                <th>Firefox</th>
+                                <th>Safari</th>
+                                <th>Chrome</th>
+                                <th>Firefox</th>
+                                <th>Edge</th>
+                                <th>IE</th>
+                                <th>Safari on iOS</th>
+                                <th>Chrome for Android</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <th>対応</th>
+                                <td data-status="○">○</td>
+                                <td data-status="○">○</td>
+                                <td data-status="○">○</td>
+                                <td data-status="○">○</td>
+                                <td data-status="○">○</td>
+                                <td data-status="○">○</td>
+                                <td data-status="☓">☓</td>
+                                <td data-status="○">○</td>
+                                <td></td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
                       </div>
                     </div>
                   </section>

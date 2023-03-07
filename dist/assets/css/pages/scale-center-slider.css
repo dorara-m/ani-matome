@@ -1,8 +1,8 @@
 @charset "UTF-8";
 .pg-scale-center-slider .swiper-container {
   width: 100%;
-  margin: 40px 0;
-  padding: 45px 0;
+  margin-top: 40px;
+  position: relative;
 }
 .pg-scale-center-slider .swiper-slide {
   overflow: hidden;
@@ -17,4 +17,9 @@
   opacity: 1;
   transform: scale(1.2);
   /* スライドの大きさ調整 */
+}
+@media screen and (min-width: 740px){
+  .pg-scale-center-slider .swiper-container {
+    margin-top: 90px;
+  }
 }

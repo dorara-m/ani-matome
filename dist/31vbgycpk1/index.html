@@ -40,19 +40,22 @@
         </div>
                 <div class="l-pages_content">
                   <section class="sample">
-                    <div class="l-container"><div class="hover_item_wrap">
+                    <div class="l-container">
+                      <h2 class="u-hidden">実装サンプル</h2>
+                      <div class="section-body"><div class="hover_item_wrap">
   <div class="hover_btn_item overlayLeftBtn">
     <span>Hover me</span>
   </div>
 </div>
 <div class="hover_item_wrap">
   <div class="c-btn"><span>Hover me 2</span></div>
-</div>
+</div></div>
                     </div>
                   </section>
                   <section class="desc">
                     <div class="l-container">
-                      <h2>実装手順など解説</h2><p>疑似要素でhoverで入ってくる背景部分を作ってabsoluteで配置しておき（外枠で<code>overflow: hidden;</code>）、それをhover時にtransformさせて見える範囲に動かしている。<br>背景として疑似要素が出入りするためボタンのテキスト部分はspanで囲ってz-indexを疑似要素より重なり順を上にしておく。<br><br>例1では素直にtranslateで要素を左右に移動させているが、</p><pre><code>.overlayLeftBtn span {
+                      <h2>実装手順など解説</h2>
+                      <div class="section-body"><p>疑似要素でhoverで入ってくる背景部分を作ってabsoluteで配置しておき（外枠で<code>overflow: hidden;</code>）、それをhover時にtransformさせて見える範囲に動かしている。<br>背景として疑似要素が出入りするためボタンのテキスト部分はspanで囲ってz-indexを疑似要素より重なり順を上にしておく。<br><br>例1では素直にtranslateで要素を左右に移動させているが、</p><pre><code>.overlayLeftBtn span {
   color: hsl(243, 80%, 62%);
   position: relative;
   z-index: 1;
@@ -106,61 +109,63 @@
       transform: scaleX(1);
     }
   }
-}</code></pre><p><br>※不具合：safariで左から入ってくるとき、角丸がとれてる瞬間あり。overflowがアニメーション中に効かない…？</p>
+}</code></pre><p><br>※不具合：safariで左から入ってくるとき、角丸がとれてる瞬間あり。overflowがアニメーション中に効かない…？</p></div>
                     </div>
                   </section>
                   <section>
                     <div class="l-container">
                       <h2>動作環境</h2>
-                      <ul class="l-pages_content_caption">
-                        <li>○:動作する</li>
-                        <li>△:動作するが意図せぬ挙動</li>
-                        <li>☓:動作しない</li>
-                      </ul>
-                      <div class="l-pages_table">
-                        <table>
-                          <thead>
-                            <tr>
-                              <td>-</td>
-                              <th colspan="3">Mac</th>
-                              <th colspan="4">Windows11</th>
-                              <th colspan="2">SP</th>
-                            </tr>
-                            <tr>
-                              <td>ブラウザ</td>
-                              <th>Chrome</th>
-                              <th>Firefox</th>
-                              <th>Safari</th>
-                              <th>Chrome</th>
-                              <th>Firefox</th>
-                              <th>Edge</th>
-                              <th>IE</th>
-                              <th>Safari on iOS</th>
-                              <th>Chrome for Android</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr>
-                              <th>対応</th>
-                              <td data-status="○">○</td>
-                              <td data-status="○">○</td>
-                              <td data-status="△">△</td>
-                              <td data-status="○">○</td>
-                              <td data-status="○">○</td>
-                              <td data-status="○">○</td>
-                              <td data-status="○">○</td>
-                              <td></td>
-                              <td></td>
-                            </tr>
-                          </tbody>
-                        </table>
+                      <div class="section-body">
+                        <ul class="l-pages_content_caption">
+                          <li>○:動作する</li>
+                          <li>△:動作するが意図せぬ挙動</li>
+                          <li>☓:動作しない</li>
+                        </ul>
+                        <div class="l-pages_table">
+                          <table>
+                            <thead>
+                              <tr>
+                                <td>-</td>
+                                <th colspan="3">Mac</th>
+                                <th colspan="4">Windows11</th>
+                                <th colspan="2">SP</th>
+                              </tr>
+                              <tr>
+                                <td>ブラウザ</td>
+                                <th>Chrome</th>
+                                <th>Firefox</th>
+                                <th>Safari</th>
+                                <th>Chrome</th>
+                                <th>Firefox</th>
+                                <th>Edge</th>
+                                <th>IE</th>
+                                <th>Safari on iOS</th>
+                                <th>Chrome for Android</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <th>対応</th>
+                                <td data-status="○">○</td>
+                                <td data-status="○">○</td>
+                                <td data-status="△">△</td>
+                                <td data-status="○">○</td>
+                                <td data-status="○">○</td>
+                                <td data-status="○">○</td>
+                                <td data-status="○">○</td>
+                                <td></td>
+                                <td></td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
                       </div>
                     </div>
                   </section>
                   <section class="l-pages_relations">
                     <div class="l-container">
                       <h2>関連項目</h2>
-                      <ul class="cards -s">
+                      <ul class="section-body cards -s">
                         <li><a href="/uwc277u6i/">
                             <div class="img" style="background-image: url(https://images.microcms-assets.io/assets/fc5a67cf51fb4ac3a0eb5f358bf160d6/b9dc1a8fadc34b5dad29288ee5c828cb/hover09.gif);"></div>
                             <div class="head">ボタンホバー「押し込む」</div></a></li>

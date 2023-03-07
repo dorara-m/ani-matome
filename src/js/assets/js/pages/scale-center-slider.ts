@@ -21,7 +21,31 @@ const swiper = new Swiper('.swiper-container', {
     prevEl: '.swiper-button-prev',
   },
   breakpoints: {
-    // pcのサイズ
+    // pcのスライド間隔
+    768: {
+      spaceBetween: 80,
+    },
+  },
+})
+
+const swiper2 = new Swiper('.swiper-container2', {
+  modules: [Navigation],
+  centeredSlides: true,
+  loop: true,
+  loopedSlides: 2,
+  speed: 500,
+  slidesPerView: 1.5,
+  // スマホのときだけスライド間隔を小さく
+  spaceBetween: 40,
+  autoplay: {
+    delay: 3000,
+  },
+  navigation: {
+    nextEl: '.swiper-button-next2',
+    prevEl: '.swiper-button-prev2',
+  },
+  breakpoints: {
+    // pcのスライド間隔
     768: {
       spaceBetween: 80,
     },

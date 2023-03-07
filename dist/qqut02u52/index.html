@@ -41,7 +41,9 @@
         </div>
                 <div class="l-pages_content">
                   <section class="sample">
-                    <div class="l-container"><div class="fixedAnime">
+                    <div class="l-container">
+                      <h2 class="u-hidden">実装サンプル</h2>
+                      <div class="section-body"><div class="fixedAnime">
   <div class="ballon" id="chara-ballon">あああ</div>
   <img src="/assets/img/kita.png" alt="">
 </div>
@@ -54,12 +56,13 @@
 <section class="pageSection" section-box data-ballon="3つめのセクションですよ">
   <h3>3つめのセクション</h3>
 </section>
-<div class="tmp" section-box data-ballon="end">セリフ区間を終えるための仮要素。ここに入ったらキャラが隠れます。</div>
+<div class="tmp" section-box data-ballon="end">セリフ区間を終えるための仮要素。ここに入ったらキャラが隠れます。</div></div>
                     </div>
                   </section>
                   <section class="desc">
                     <div class="l-container">
-                      <h2>実装手順など解説</h2><p>IntersectionObserverを使用して実装。<br>各セクションが画面中央に来るタイミングでキャラの吹き出し内容を切り替える。<br></p><pre><code>const charaIntro = () =&gt; {
+                      <h2>実装手順など解説</h2>
+                      <div class="section-body"><p>IntersectionObserverを使用して実装。<br>各セクションが画面中央に来るタイミングでキャラの吹き出し内容を切り替える。<br></p><pre><code>const charaIntro = () =&gt; {
   // 発火する処理（先に書いておかないと読めない場合あり
   const doWhenIntersect = (entries :any) =&gt; {
     entries.forEach((entry :any) =&gt; {
@@ -98,54 +101,56 @@
 }
 
 
-charaIntro()</code></pre>
+charaIntro()</code></pre></div>
                     </div>
                   </section>
                   <section>
                     <div class="l-container">
                       <h2>動作環境</h2>
-                      <ul class="l-pages_content_caption">
-                        <li>○:動作する</li>
-                        <li>△:動作するが意図せぬ挙動</li>
-                        <li>☓:動作しない</li>
-                      </ul>
-                      <div class="l-pages_table">
-                        <table>
-                          <thead>
-                            <tr>
-                              <td>-</td>
-                              <th colspan="3">Mac</th>
-                              <th colspan="4">Windows11</th>
-                              <th colspan="2">SP</th>
-                            </tr>
-                            <tr>
-                              <td>ブラウザ</td>
-                              <th>Chrome</th>
-                              <th>Firefox</th>
-                              <th>Safari</th>
-                              <th>Chrome</th>
-                              <th>Firefox</th>
-                              <th>Edge</th>
-                              <th>IE</th>
-                              <th>Safari on iOS</th>
-                              <th>Chrome for Android</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr>
-                              <th>対応</th>
-                              <td data-status="○">○</td>
-                              <td data-status="○">○</td>
-                              <td data-status="○">○</td>
-                              <td data-status="○">○</td>
-                              <td data-status="○">○</td>
-                              <td data-status="○">○</td>
-                              <td data-status="☓">☓</td>
-                              <td data-status="○">○</td>
-                              <td></td>
-                            </tr>
-                          </tbody>
-                        </table>
+                      <div class="section-body">
+                        <ul class="l-pages_content_caption">
+                          <li>○:動作する</li>
+                          <li>△:動作するが意図せぬ挙動</li>
+                          <li>☓:動作しない</li>
+                        </ul>
+                        <div class="l-pages_table">
+                          <table>
+                            <thead>
+                              <tr>
+                                <td>-</td>
+                                <th colspan="3">Mac</th>
+                                <th colspan="4">Windows11</th>
+                                <th colspan="2">SP</th>
+                              </tr>
+                              <tr>
+                                <td>ブラウザ</td>
+                                <th>Chrome</th>
+                                <th>Firefox</th>
+                                <th>Safari</th>
+                                <th>Chrome</th>
+                                <th>Firefox</th>
+                                <th>Edge</th>
+                                <th>IE</th>
+                                <th>Safari on iOS</th>
+                                <th>Chrome for Android</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <th>対応</th>
+                                <td data-status="○">○</td>
+                                <td data-status="○">○</td>
+                                <td data-status="○">○</td>
+                                <td data-status="○">○</td>
+                                <td data-status="○">○</td>
+                                <td data-status="○">○</td>
+                                <td data-status="☓">☓</td>
+                                <td data-status="○">○</td>
+                                <td></td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
                       </div>
                     </div>
                   </section>

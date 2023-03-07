@@ -44,7 +44,9 @@
         </div>
                 <div class="l-pages_content">
                   <section class="sample">
-                    <div class="l-container"><p>Swiperを使った例</p>
+                    <div class="l-container">
+                      <h2 class="u-hidden">実装サンプル</h2>
+                      <div class="section-body"><h3>シンプルver.</h3>
 <div class="swiper-container">
   <div class="swiper-wrapper">
     <div class="swiper-slide"><img src="/assets/img/bg01.jpg" alt=""></div>
@@ -55,11 +57,23 @@
   <div class="swiper-button-next"></div>
   <div class="swiper-button-prev"></div>
 </div>
+<h3 class="u-margin-lg">おしゃれver.</h3>
+<div class="swiper-container swiper-container2">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide"><img src="/assets/img/bg01.jpg" alt=""></div>
+    <div class="swiper-slide"><img src="/assets/img/bg02.jpg" alt=""></div>
+    <div class="swiper-slide"><img src="/assets/img/bg03.jpg" alt=""></div>
+    <div class="swiper-slide"><img src="/assets/img/bg04.jpg" alt=""></div>
+  </div>
+  <div class="swiper-button-next swiper-button-next2"></div>
+  <div class="swiper-button-prev swiper-button-prev2"></div>
+</div></div>
                     </div>
                   </section>
                   <section class="desc">
                     <div class="l-container">
-                      <h2>実装手順など解説</h2><h2 id="hbcbc4f0a20">Swiper ver.</h2><p>一般的なswiperのスライダーを実装し、css後付けでカレントのスライドにscaleで拡大をつけている。<br>スライド全部にopacityで薄くしておき、カレントだけ1に戻す。透過度を変えたほうが直感的にわかりやすい印象。</p><pre><code>.swiper-slide {
+                      <h2>実装手順など解説</h2>
+                      <div class="section-body"><h3 id="hbcbc4f0a20">Swiper ver.</h3><p>一般的なswiperのスライダーを実装し、css後付けでカレントのスライドにscaleで拡大をつけている。<br>スライド全部にopacityで薄くしておき、カレントだけ1に戻す。透過度を変えたほうが直感的にわかりやすい印象。</p><pre><code>.swiper-slide {
     overflow: hidden;
     opacity: 0.6;
     transition: 0.7s;
@@ -95,13 +109,13 @@
       spaceBetween: 80,
     },
   },
-})</code></pre>
+})</code></pre></div>
                     </div>
                   </section>
                   <section class="l-pages_links">
                     <div class="l-container">
                       <h2>参考サイト・元ネタなど</h2>
-                      <ul>
+                      <ul class="section-body">
                         <li><a class="c-btn" href="https://into-the-program.com/swiper-center-slide-large/"><span>Swiper参考元</span></a></li>
                       </ul>
                     </div>
@@ -109,48 +123,50 @@
                   <section>
                     <div class="l-container">
                       <h2>動作環境</h2>
-                      <ul class="l-pages_content_caption">
-                        <li>○:動作する</li>
-                        <li>△:動作するが意図せぬ挙動</li>
-                        <li>☓:動作しない</li>
-                      </ul>
-                      <div class="l-pages_table">
-                        <table>
-                          <thead>
-                            <tr>
-                              <td>-</td>
-                              <th colspan="3">Mac</th>
-                              <th colspan="4">Windows11</th>
-                              <th colspan="2">SP</th>
-                            </tr>
-                            <tr>
-                              <td>ブラウザ</td>
-                              <th>Chrome</th>
-                              <th>Firefox</th>
-                              <th>Safari</th>
-                              <th>Chrome</th>
-                              <th>Firefox</th>
-                              <th>Edge</th>
-                              <th>IE</th>
-                              <th>Safari on iOS</th>
-                              <th>Chrome for Android</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr>
-                              <th>対応</th>
-                              <td data-status="○">○</td>
-                              <td data-status="○">○</td>
-                              <td data-status="○">○</td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                            </tr>
-                          </tbody>
-                        </table>
+                      <div class="section-body">
+                        <ul class="l-pages_content_caption">
+                          <li>○:動作する</li>
+                          <li>△:動作するが意図せぬ挙動</li>
+                          <li>☓:動作しない</li>
+                        </ul>
+                        <div class="l-pages_table">
+                          <table>
+                            <thead>
+                              <tr>
+                                <td>-</td>
+                                <th colspan="3">Mac</th>
+                                <th colspan="4">Windows11</th>
+                                <th colspan="2">SP</th>
+                              </tr>
+                              <tr>
+                                <td>ブラウザ</td>
+                                <th>Chrome</th>
+                                <th>Firefox</th>
+                                <th>Safari</th>
+                                <th>Chrome</th>
+                                <th>Firefox</th>
+                                <th>Edge</th>
+                                <th>IE</th>
+                                <th>Safari on iOS</th>
+                                <th>Chrome for Android</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <th>対応</th>
+                                <td data-status="○">○</td>
+                                <td data-status="○">○</td>
+                                <td data-status="○">○</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
                       </div>
                     </div>
                   </section>

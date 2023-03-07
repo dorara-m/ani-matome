@@ -1,0 +1,10 @@
+@use '../_foundation/mixin' as *;
+
+// セクション系の処理をまとめていきます
+
+.section-body {
+  margin-top: 16px;
+  @include mq() {
+    margin-top: 24px;
+  }
+}
