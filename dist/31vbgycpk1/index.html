@@ -55,7 +55,7 @@
                   <section class="desc">
                     <div class="l-container">
                       <h2>実装手順など解説</h2>
-                      <div class="section-body"><p>疑似要素でhoverで入ってくる背景部分を作ってabsoluteで配置しておき（外枠で<code>overflow: hidden;</code>）、それをhover時にtransformさせて見える範囲に動かしている。<br>背景として疑似要素が出入りするためボタンのテキスト部分はspanで囲ってz-indexを疑似要素より重なり順を上にしておく。<br><br>例1では素直にtranslateで要素を左右に移動させているが、</p><pre><code>.overlayLeftBtn span {
+                      <div class="section-body"><p><strong style="color:#c7243a">【あるあるバグ】</strong><span style="color:#c7243a">safariだと背景のアニメーション中、角丸がとれてしまう。</span><br><strong style="color:#c7243a">解決策：</strong><span style="color:#c7243a">ボタンの親要素（例1だと.overlayLeftBtn）にz-index:1（の前提となるpotisionも含め）を追記する</span><br><br>疑似要素でhoverで入ってくる背景部分を作ってabsoluteで配置しておき（外枠で<code>overflow: hidden;</code>）、それをhover時にtransformさせて見える範囲に動かしている。<br>背景として疑似要素が出入りするためボタンのテキスト部分はspanで囲ってz-indexを疑似要素より重なり順を上にしておく。<br></p><h3 id="hce6a11774e">例1</h3><p>例1では素直にtranslateで要素を左右に移動させているが、</p><pre><code>.overlayLeftBtn span {
   color: hsl(243, 80%, 62%);
   position: relative;
   z-index: 1;
@@ -78,10 +78,11 @@
 }
 .overlayLeftBtn:hover::before {
   transform: translate(0, -50%);
-}</code></pre><p><br>例2の場合は、<code>transform: scaleX(0) →　(1)</code>を使って疑似要素を左右移動させている。この場合<code>transform-origin: left;</code>で移動の原点を指定しておく必要がある。</p><pre><code>.c-btn {
+}</code></pre><p><br></p><h3 id="h8e12e36293">例2</h3><p>例2の場合は、<code>transform: scaleX(0) →　(1)</code>を使って疑似要素を左右移動させている。この場合<code>transform-origin: left;</code>で移動の原点を指定しておく必要がある。</p><pre><code>.c-btn {
   …中略
   overflow: hidden;
   position: relative;
+  z-index: 1;//←重要
   span {
     display: block;
     z-index: 1;
@@ -109,7 +110,7 @@
       transform: scaleX(1);
     }
   }
-}</code></pre><p><br>※不具合：safariで左から入ってくるとき、角丸がとれてる瞬間あり。overflowがアニメーション中に効かない…？</p></div>
+}</code></pre><p><br></p></div>
                     </div>
                   </section>
                   <section>
@@ -148,7 +149,7 @@
                                 <th>対応</th>
                                 <td data-status="○">○</td>
                                 <td data-status="○">○</td>
-                                <td data-status="△">△</td>
+                                <td data-status="○">○</td>
                                 <td data-status="○">○</td>
                                 <td data-status="○">○</td>
                                 <td data-status="○">○</td>

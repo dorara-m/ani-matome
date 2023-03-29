@@ -17,7 +17,7 @@
 }
 
 .borderLeftRight::after {
-  content: "";
+  content: '';
   position: absolute;
   width: 100%;
   height: 3px;
@@ -65,29 +65,29 @@
   overflow: hidden;
 }
 .lineThrough::before {
-   content: '';
-   position: absolute;
-   top: 50%;
-   background: hsl(243, 80%, 62%);
-   height: 2px;
-   left: 0;
-   width: 100%;
-   transform: translate3d(-101%, 0, 0);
-   transition: transform 0.7s ease-in-out;
+  content: '';
+  position: absolute;
+  top: 50%;
+  background: hsl(243, 80%, 62%);
+  height: 2px;
+  left: 0;
+  width: 100%;
+  transform: translate3d(-101%, 0, 0);
+  transition: transform 0.7s ease-in-out;
 }
 .lineThrough::after {
-   content: '';
-   position: absolute;
-   top: 0;
-   left: 0;
-   width: 100%;
-   height: 100%;
-   background: hsl(243, 80%, 62%);;
-   transform: translate3d(-100%, 0, 0) translate3d(-1px, 0, 0);
-   transition: transform 0.7s ease-in-out;
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: hsl(243, 80%, 62%);
+  transform: translate3d(-100%, 0, 0) translate3d(-1px, 0, 0);
+  transition: transform 0.7s ease-in-out;
 }
 .lineThrough:hover::after {
-   transform: translate3d(100%, 0, 0) translate3d(1px, 0, 0);
+  transform: translate3d(100%, 0, 0) translate3d(1px, 0, 0);
 }
 .lineThrough:hover::before {
   transform: translate3d(0, 0, 0);
@@ -105,38 +105,30 @@
 
 .swingHorizontal {
   cursor: pointer;
-  color:hsl(222, 25%, 14%);
+  color: hsl(222, 25%, 14%);
 }
-.swingHorizontal:hover
-{
+.swingHorizontal:hover {
   animation: swingHorizontal 1s ease;
   animation-iteration-count: 1;
 }
-@keyframes swingHorizontal
-{
-  15%
-  {
-      transform: translateX(5px);
+@keyframes swingHorizontal {
+  15% {
+    transform: translateX(5px);
   }
-  30%
-  {
-      transform: translateX(-5px);
+  30% {
+    transform: translateX(-5px);
   }
-  50%
-  {
-      transform: translateX(3px);
+  50% {
+    transform: translateX(3px);
   }
-  65%
-  {
-      transform: translateX(-3px);
+  65% {
+    transform: translateX(-3px);
   }
-  80%
-  {
-      transform: translateX(2px);
+  80% {
+    transform: translateX(2px);
   }
-  100%
-  {
-      transform: translateX(0);
+  100% {
+    transform: translateX(0);
   }
 }
 
@@ -145,18 +137,18 @@
   cursor: pointer;
 }
 .borderMarker span {
-    z-index: 1;
-    position: relative;
+  z-index: 1;
+  position: relative;
 }
 .borderMarker::after {
-  content: "";
+  content: '';
   position: absolute;
   left: -0.1px;
   right: -0.1px;
   bottom: 0;
   height: 100%;
-  transform: scaleY(.3);
-  transition: transform .1s ease-in-out;
+  transform: scaleY(0.3);
+  transition: transform 0.1s ease-in-out;
   transform-origin: bottom;
   background-color: hsl(222, 100%, 93%);
   // 追記
@@ -177,9 +169,8 @@
   color: hsl(243, 80%, 62%);
 }
 .magnifyText:active {
-  transform: scale(.9);
+  transform: scale(0.9);
 }
-
 
 .siblingFade span {
   display: block;
@@ -191,18 +182,18 @@
   opacity: 0.5;
 }
 
-
 // ↓ボタン系↓
 .hover_btn_item {
   display: inline-block;
   padding: 15px 30px;
   background-color: hsl(222, 100%, 95%);
   color: hsl(243, 80%, 62%);
-  border-radius: 6px;
+  border-radius: 12px;
   cursor: pointer;
   font-size: 20px;
   overflow: hidden;
   position: relative;
+  z-index: 1;
   span {
     position: relative;
     z-index: 1;
@@ -225,7 +216,7 @@
   transition: color 0.6s cubic-bezier(0.53, 0.21, 0, 1);
 }
 .overlayLeftBtn::before {
-  content: '';;
+  content: '';
   position: absolute;
   top: 50%;
   left: 0;
@@ -234,7 +225,7 @@
   width: 100%;
   height: 100%;
   background-color: hsl(243, 80%, 62%);
-  transition: transform 0.6s cubic-bezier(0.53, 0.21, 0, 1);;
+  transition: transform 0.6s cubic-bezier(0.53, 0.21, 0, 1);
 }
 .overlayLeftBtn:hover span {
   color: hsl(222, 100%, 95%);
@@ -250,7 +241,7 @@
   border-radius: 6px;
   position: relative;
   overflow: hidden;
-  transition: all 0.5s cubic-bezier(1, .15, .34, .92)
+  transition: all 0.5s cubic-bezier(1, 0.15, 0.34, 0.92);
 }
 
 .slideUpBtn span {
@@ -261,13 +252,12 @@
 
 .slideUpBtn:hover span {
   opacity: 0;
-  transform: translateY(-100%)
+  transform: translateY(-100%);
 }
 
 .slideUpBtn::before {
-  content: "";
+  content: '';
   background-color: hsl(243, 80%, 62%);
-  ;
   height: 100%;
   left: 0;
   position: absolute;
@@ -275,7 +265,7 @@
   transform: translateY(100%);
   transition: inherit;
   width: 100%;
-  transition: transform 0.5s cubic-bezier(1, .15, .34, .92)
+  transition: transform 0.5s cubic-bezier(1, 0.15, 0.34, 0.92);
 }
 
 .slideUpBtn::after {
@@ -294,7 +284,7 @@
 
 .slideUpBtn:hover::before {
   transform: translateY(0) scale(3);
-  transition-delay: .025s;
+  transition-delay: 0.025s;
 }
 
 .slideUpBtn:hover::after {
@@ -327,7 +317,8 @@
   height: 140px;
   border-radius: 50%;
   transform: translate3d(-50%, -50%, 0) scale3d(0, 0, 0);
-  transition: opacity .4s cubic-bezier(.19, 1, .22, 1), transform .75s cubic-bezier(.19, 1, .22, 1);
+  transition: opacity 0.4s cubic-bezier(0.19, 1, 0.22, 1),
+    transform 0.75s cubic-bezier(0.19, 1, 0.22, 1);
   background-color: hsl(243, 80%, 62%);
   opacity: 0;
 }
@@ -338,8 +329,8 @@
 
 .circleScaleBtn:hover::before {
   opacity: 1;
-  transition-duration: .85s;
-  transform: translate3d(-50%, -50%, 0) scale3d(1, 1, 1)
+  transition-duration: 0.85s;
+  transform: translate3d(-50%, -50%, 0) scale3d(1, 1, 1);
 }
 
 .snapLeftBtn {
@@ -361,7 +352,7 @@
   border-radius: 6px;
   transform: translateX(-101%);
   background: hsl(243, 80%, 62%);
-  transition: transform .25s ease-in;
+  transition: transform 0.25s ease-in;
 }
 .snapLeftBtn:hover::before {
   transform: translateX(0);
@@ -370,7 +361,7 @@
   position: relative;
   z-index: 1;
   display: block;
-  transition: color 0.1s .15s ease-in;
+  transition: color 0.1s 0.15s ease-in;
 }
 .snapLeftBtn:hover span {
   color: hsl(222, 100%, 95%);
@@ -396,13 +387,13 @@
   }
 }
 
-
 .magnifyBorder {
   padding: 18px 36px;
   border-radius: 61px;
   box-shadow: inset 0 0 0 2px hsl(243, 80%, 62%);
-  transition: 300ms box-shadow cubic-bezier(0.4, 0, 0.6, 1), 300ms background-color cubic-bezier(0.4, 0, 0.6, 1), 300ms color cubic-bezier(0.4, 0, 0.6, 1);
-  ;
+  transition: 300ms box-shadow cubic-bezier(0.4, 0, 0.6, 1),
+    300ms background-color cubic-bezier(0.4, 0, 0.6, 1),
+    300ms color cubic-bezier(0.4, 0, 0.6, 1);
   color: hsl(243, 80%, 62%);
 }
 
@@ -410,7 +401,6 @@
   box-shadow: inset 0 0 0 4px hsl(243, 80%, 62%);
   color: hsl(243, 80%, 62%);
 }
-
 
 .buttonOverlay {
   padding: 12px 24px;
@@ -431,7 +421,7 @@
   top: 5px;
   right: 5px;
   background-color: hsl(222, 100%, 95%);
-  transition: transform .2s ease-in-out;
+  transition: transform 0.2s ease-in-out;
 }
 
 .buttonOverlay::after {
@@ -441,8 +431,8 @@
   left: 0;
   height: 100%;
   width: 100%;
-  border: 1px solid #474E51;
-  transition: transform .2s ease-in-out;
+  border: 1px solid #474e51;
+  transition: transform 0.2s ease-in-out;
 }
 
 .buttonOverlay:hover::before {
@@ -452,7 +442,6 @@
 .buttonOverlay:hover::after {
   transform: translate(-6px, 4px);
 }
-
 
 .horizontalOverlay {
   overflow: hidden;
@@ -484,4 +473,3 @@
   transform-origin: 0 0;
   transform: scaleX(1);
 }
-
