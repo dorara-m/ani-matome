@@ -3,8 +3,8 @@
 // サイト共通でh3
 // リッチエディター内のh3に対応するため直書き
 h3 {
-  font-size: 16px;
+  font-size: 18px;
   @include mq() {
-    font-size: 18px;
+    font-size: 22px;
   }
 }

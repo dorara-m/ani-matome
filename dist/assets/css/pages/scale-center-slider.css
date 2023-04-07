@@ -1,22 +1,35 @@
 @charset "UTF-8";
 .pg-scale-center-slider .swiper-container {
-  width: 100%;
   margin-top: 40px;
   position: relative;
 }
-.pg-scale-center-slider .swiper-slide {
+.pg-scale-center-slider .swiper-container1 .swiper-slide {
   overflow: hidden;
   opacity: 0.6;
   transition: 0.7s;
 }
-.pg-scale-center-slider .swiper-slide img {
+.pg-scale-center-slider .swiper-container1 .swiper-slide img {
   width: 100%;
 }
-.pg-scale-center-slider .swiper-slide-active {
+.pg-scale-center-slider .swiper-container1 .swiper-slide-active {
   z-index: 1;
   opacity: 1;
   transform: scale(1.2);
   /* スライドの大きさ調整 */
+}
+.pg-scale-center-slider .swiper-container2 .swiper-slide {
+  transition: transform 0.7s;
+  transform: scale(0.48);
+}
+.pg-scale-center-slider .swiper-container2 .swiper-slide-active {
+  transform: scale(1);
+  transition-delay: 0.8s;
+}
+.pg-scale-center-slider .swiper-container2 .swiper-slide-prev {
+  transform-origin: 100% 50%;
+}
+.pg-scale-center-slider .swiper-container2 .swiper-slide-next {
+  transform-origin: 0% 50%;
 }
 @media screen and (min-width: 740px){
   .pg-scale-center-slider .swiper-container {

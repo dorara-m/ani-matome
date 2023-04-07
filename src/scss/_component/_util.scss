@@ -1,14 +1,20 @@
 @use '../_foundation/mixin' as *;
 
-// なるべき避ける、いずれ消す
+// なるべく避ける、いずれ消す
 .u-mt30 {
   margin-top: 30px;
 }
 // こっちを使っていきたい
-.u-margin-lg {
+.u-margin-l {
   margin-top: 48px;
   @include mq() {
     margin-top: 80px;
+  }
+}
+.u-margin-xl {
+  margin-top: 80px;
+  @include mq() {
+    margin-top: 144px;
   }
 }
 .u-hidden {

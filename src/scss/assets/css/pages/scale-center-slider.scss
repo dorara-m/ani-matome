@@ -1,28 +1,47 @@
 @use '../../../_foundation/mixin' as *;
 
 .pg-scale-center-slider {
+  // スライダーが増設してもここは共通でスタイル当たるように
   .swiper-container {
-    width: 100%;
     margin-top: 40px;
     position: relative;
     @include mq() {
       margin-top: 90px;
     }
   }
+  .swiper-container1 {
+    .swiper-slide {
+      overflow: hidden;
+      opacity: 0.6;
+      transition: 0.7s;
+    }
 
-  .swiper-slide {
-    overflow: hidden;
-    opacity: 0.6;
-    transition: 0.7s;
+    .swiper-slide img {
+      width: 100%;
+    }
+
+    .swiper-slide-active {
+      z-index: 1;
+      opacity: 1;
+      transform: scale(1.2); /* スライドの大きさ調整 */
+    }
   }
 
-  .swiper-slide img {
-    width: 100%;
-  }
-
-  .swiper-slide-active {
-    z-index: 1;
-    opacity: 1;
-    transform: scale(1.2); /* スライドの大きさ調整 */
+  // おしゃれver
+  .swiper-container2 {
+    .swiper-slide {
+      transition: transform 0.7s;
+      transform: scale(0.48);
+    }
+    .swiper-slide-active {
+      transform: scale(1);
+      transition-delay: 0.8s;
+    }
+    .swiper-slide-prev {
+      transform-origin: 100% 50%;
+    }
+    .swiper-slide-next {
+      transform-origin: 0% 50%;
+    }
   }
 }

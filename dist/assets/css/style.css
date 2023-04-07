@@ -454,7 +454,7 @@ h1, h2, h3 {
 }
 
 h3 {
-  font-size: 16px;
+  font-size: 18px;
 }
 
 .hover_item_wrap {
@@ -1340,8 +1340,12 @@ h1 {
   margin-top: 30px;
 }
 
-.u-margin-lg {
+.u-margin-l {
   margin-top: 48px;
+}
+
+.u-margin-xl {
+  margin-top: 80px;
 }
 
 .u-hidden {
@@ -1557,7 +1561,7 @@ h1 {
     flex-basis: 25%;
   }
   h3 {
-    font-size: 18px;
+    font-size: 22px;
   }
   .c-releaseNote {
     top: 40vh;
@@ -1581,8 +1585,11 @@ h1 {
   .tableWrap table {
     width: 100%;
   }
-  .u-margin-lg {
+  .u-margin-l {
     margin-top: 80px;
+  }
+  .u-margin-xl {
+    margin-top: 144px;
   }
   .p-neta ul {
     gap: 20px 15px;

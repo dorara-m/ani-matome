@@ -6,20 +6,20 @@
     <meta name="viewport" content="width=device-width">
     <meta name="robots" content="index,follow">
     <meta name="format-detection" content="telephone=no">
-    <meta name="description" content="【wip】カレントが中央で拡大されるスライダーのプレビューページです。">
+    <meta name="description" content="カレントが中央で拡大されるスライダーのプレビューページです。">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content="https://animatome.netlify.app//ogp.png">
     <meta name="twitter:url" content="https://animatome.netlify.app//pages/">
-    <meta name="twitter:description" content="【wip】カレントが中央で拡大されるスライダーのプレビューページです。">
-    <meta name="twitter:title" content="【wip】カレントが中央で拡大されるスライダー | アニマトメ -animatome-">
-    <meta property="og:description" content="【wip】カレントが中央で拡大されるスライダーのプレビューページです。">
+    <meta name="twitter:description" content="カレントが中央で拡大されるスライダーのプレビューページです。">
+    <meta name="twitter:title" content="カレントが中央で拡大されるスライダー | アニマトメ -animatome-">
+    <meta property="og:description" content="カレントが中央で拡大されるスライダーのプレビューページです。">
     <meta property="og:site_name" content="アニマトメ -animatome-">
     <meta property="og:locale" content="ja_JP">
     <meta property="og:type" content="article">
     <meta property="og:image" content="https://animatome.netlify.app//ogp.png">
     <meta property="og:url" content="https://animatome.netlify.app//pages/">
-    <meta property="og:title" content="【wip】カレントが中央で拡大されるスライダー | アニマトメ -animatome-">
-    <title>【wip】カレントが中央で拡大されるスライダー | アニマトメ -animatome-</title>
+    <meta property="og:title" content="カレントが中央で拡大されるスライダー | アニマトメ -animatome-">
+    <title>カレントが中央で拡大されるスライダー | アニマトメ -animatome-</title>
     <link rel="shortcut icon" href="/favicon.ico">
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     <link href="/assets/css/style.css" rel="stylesheet"><link
@@ -39,7 +39,7 @@
       <div class="l-pages pg-scale-center-slider">
         <div class="l-pages_head">
           <div class="l-container">
-            <h1>【wip】カレントが中央で拡大されるスライダー</h1>
+            <h1>カレントが中央で拡大されるスライダー</h1>
           </div>
         </div>
                 <div class="l-pages_content">
@@ -47,7 +47,7 @@
                     <div class="l-container">
                       <h2 class="u-hidden">実装サンプル</h2>
                       <div class="section-body"><h3>シンプルver.</h3>
-<div class="swiper-container">
+<div class="swiper-container swiper-container1">
   <div class="swiper-wrapper">
     <div class="swiper-slide"><img src="/assets/img/bg01.jpg" alt=""></div>
     <div class="swiper-slide"><img src="/assets/img/bg02.jpg" alt=""></div>
@@ -57,7 +57,7 @@
   <div class="swiper-button-next"></div>
   <div class="swiper-button-prev"></div>
 </div>
-<h3 class="u-margin-lg">おしゃれver.</h3>
+<h3 class="u-margin-xl">おしゃれver.</h3>
 <div class="swiper-container swiper-container2">
   <div class="swiper-wrapper">
     <div class="swiper-slide"><img src="/assets/img/bg01.jpg" alt=""></div>
@@ -73,7 +73,7 @@
                   <section class="desc">
                     <div class="l-container">
                       <h2>実装手順など解説</h2>
-                      <div class="section-body"><h3 id="hbcbc4f0a20">Swiper ver.</h3><p>一般的なswiperのスライダーを実装し、css後付けでカレントのスライドにscaleで拡大をつけている。<br>スライド全部にopacityで薄くしておき、カレントだけ1に戻す。透過度を変えたほうが直感的にわかりやすい印象。</p><pre><code>.swiper-slide {
+                      <div class="section-body"><h3 id="h0d59a9089d">シンプル ver.</h3><p>一般的なswiperのスライダーを実装し、css後付けでカレントのスライドにscaleで拡大をつけている。<br>スライド全部にopacityで薄くしておき、カレントだけ1に戻す。透過度を変えたほうが直感的にわかりやすい印象。</p><pre><code>.swiper-slide {
     overflow: hidden;
     opacity: 0.6;
     transition: 0.7s;
@@ -109,7 +109,22 @@
       spaceBetween: 80,
     },
   },
-})</code></pre></div>
+})</code></pre><p><br></p><h3 id="h5f3362eb00">おしゃれver.</h3><pre><code>.swiper-container2 {
+    .swiper-slide {
+      transition: transform 0.7s;
+      transform: scale(0.48);
+    }
+    .swiper-slide-active {
+      transform: scale(1);
+      transition-delay: 0.8s;
+    }
+    .swiper-slide-prev {
+      transform-origin: 100% 50%;
+    }
+    .swiper-slide-next {
+      transform-origin: 0% 50%;
+    }
+  }</code></pre><p><br>コツは、スライドのデフォルトサイズを共通で0.47に縮めておき、カレントの真ん中だけ1に戻してあげること。<br>また左右のtransform-originを上記にようにすることで、左右真ん中の位置に置くことができる。<br>動きは横移動→拡大と段階的に動作するのが美しいので、カレントにdelayを加えている。</p></div>
                     </div>
                   </section>
                   <section class="l-pages_links">
@@ -117,6 +132,7 @@
                       <h2>参考サイト・元ネタなど</h2>
                       <ul class="section-body">
                         <li><a class="c-btn" href="https://into-the-program.com/swiper-center-slide-large/"><span>Swiper参考元</span></a></li>
+                        <li><a class="c-btn" href="https://www.cyberagent.co.jp/"><span>おしゃれver.の動き着想元</span></a></li>
                       </ul>
                     </div>
                   </section>
