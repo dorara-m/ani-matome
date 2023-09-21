@@ -1,0 +1,1 @@
+!function(){"use strict";const t=document.querySelector(".js-intro001-toggle"),e=document.querySelector(".intro001-bg");e&&t&&t.addEventListener("click",(()=>{e.classList.toggle("is-active")}))}();
