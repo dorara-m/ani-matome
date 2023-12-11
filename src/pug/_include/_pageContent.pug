@@ -17,7 +17,7 @@ mixin pageContent(hasSample)
           ul.section-body
             each item in links
               li
-                a(href=item.url).c-btn
+                a(href=item.url, target="_blank", rel="noopener noreferrer").c-btn
                   span=item.title
                 //- +button(item.url, item.title, 'typeA')
     if browser
