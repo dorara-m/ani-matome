@@ -32,7 +32,7 @@ block body
                     .ballon=item.point
               if item.hasDetail
                 .hasDetail
-                  +button(`/${item.hasDetail.id}/`, 'サンプルあり', 'typeB')
+                  a(href=`/${item.hasDetail.id}/`).c-btn-border= 'サンプルあり'
               
 
             
