@@ -1,0 +1,19 @@
+#mouseStalker {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  transition: 0.2s;
+  transition-timing-function: ease-out;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.links {
+  display: flex;
+}
+.links button + button {
+  margin-left: 40px;
+}
