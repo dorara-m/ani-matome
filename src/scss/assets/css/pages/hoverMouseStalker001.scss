@@ -9,12 +9,23 @@
   transition-timing-function: ease-out;
   pointer-events: none;
   z-index: 10;
-  // background: rgba(0, 0, 0, 0.5);
 }
 
 .links {
   display: flex;
-  button + button {
-    margin-left: 40px;
+  > button {
+    font-size: 16px;
+    padding: 10px 20px;
+    background: #fff;
+    border: 1px solid #222;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.2s;
+    &:hover {
+      background: #ccc;
+    }
+    & + button {
+      margin-left: 60px; 
+    }
   }
 }

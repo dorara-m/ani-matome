@@ -32,8 +32,8 @@ if (mouseStalker instanceof HTMLDivElement) {
   mouseTargets.forEach(function (target) {
     // マウスが要素に重なったとき
     target.addEventListener('mouseover', function (e) {
-      scale = 2
-      color = 'rgba(0, 0, 0, 0.2)'
+      scale = 2.5
+      color = 'rgba(88, 81, 236, 0.3)'
       cssPosAjust = parseInt(window.getComputedStyle(mouseStalker).width) / 2
       const mouseEvent = e as MouseEvent
       let x = mouseEvent.clientX - cssPosAjust
