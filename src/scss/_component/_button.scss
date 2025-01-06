@@ -57,7 +57,9 @@
   display: inline-block;
   border: 2px solid $color-black;
   padding: 8px 12px;
-  transition: background-color 0.3s, color 0.3s;
+  transition: background-color 0.2s, color 0.2s;
+  cursor: pointer;
+  background-color: #fff;
   &:hover {
     background-color: $color-black;
     color: #fff;

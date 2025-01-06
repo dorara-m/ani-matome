@@ -6,20 +6,20 @@
     <meta name="viewport" content="width=device-width">
     <meta name="robots" content="index,follow">
     <meta name="format-detection" content="telephone=no">
-    <meta name="description" content="ボタンホバー「左から右へ抜けていく背景」のプレビューページです。">
+    <meta name="description" content="紙吹雪【react対応】のプレビューページです。">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content="https://animatome.netlify.app//ogp.png">
     <meta name="twitter:url" content="https://animatome.netlify.app//pages/">
-    <meta name="twitter:description" content="ボタンホバー「左から右へ抜けていく背景」のプレビューページです。">
-    <meta name="twitter:title" content="ボタンホバー「左から右へ抜けていく背景」 | アニマトメ -animatome-">
-    <meta property="og:description" content="ボタンホバー「左から右へ抜けていく背景」のプレビューページです。">
+    <meta name="twitter:description" content="紙吹雪【react対応】のプレビューページです。">
+    <meta name="twitter:title" content="紙吹雪【react対応】 | アニマトメ -animatome-">
+    <meta property="og:description" content="紙吹雪【react対応】のプレビューページです。">
     <meta property="og:site_name" content="アニマトメ -animatome-">
     <meta property="og:locale" content="ja_JP">
     <meta property="og:type" content="article">
     <meta property="og:image" content="https://animatome.netlify.app//ogp.png">
     <meta property="og:url" content="https://animatome.netlify.app//pages/">
-    <meta property="og:title" content="ボタンホバー「左から右へ抜けていく背景」 | アニマトメ -animatome-">
-    <title>ボタンホバー「左から右へ抜けていく背景」 | アニマトメ -animatome-</title>
+    <meta property="og:title" content="紙吹雪【react対応】 | アニマトメ -animatome-">
+    <title>紙吹雪【react対応】 | アニマトメ -animatome-</title>
     <link rel="shortcut icon" href="/favicon.ico">
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     <link href="/assets/css/style.css" rel="stylesheet">
@@ -32,47 +32,36 @@
         </div>
       </header>
       <div class="l-headerSpace"></div>
-      <div class="l-pages pg-horizontalOverlay">
+      <div class="l-pages pg-canvas-confetti">
         <div class="l-pages_head">
           <div class="l-container">
-            <h1>ボタンホバー「左から右へ抜けていく背景」</h1>
+            <h1>紙吹雪【react対応】</h1>
           </div>
         </div>
                 <div class="l-pages_content">
                   <section class="sample">
                     <div class="l-container">
                       <h2 class="u-hidden">実装サンプル</h2>
-                      <div class="section-body"><div class="hover_item_wrap">
-  <div class="hover_btn_item horizontalOverlay">
-    <span>Hover me</span>
-  </div>
-</div></div>
+                      <div class="section-body"><p>ボタンを押すとアニメーションが発火するよ</p>
+<button class="c-btn-border" id="canvas-confetti-button01">ノーマルver.</button>
+<button class="c-btn-border" id="canvas-confetti-button02">派手めなver.</button>
+<button class="c-btn-border" id="canvas-confetti-button03">色変え（クリスマス風）ver.</button>
+<!-- <button class="c-btn-border" id="canvas-confetti-button04">花火ver.</button> --></div>
                     </div>
                   </section>
                   <section class="desc">
                     <div class="l-container">
                       <h2>実装手順など解説</h2>
-                      <div class="section-body"><p>scaleXで0→1に変化すること、originで開始位置を指定することがポイント。</p><pre><code>.horizontalOverlay::before {
-  content: '';
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: hsl(243, 80%, 62%);
-  opacity: 0.1;
-  transform: scaleX(0);
-  transform-origin: 100% 100%;
-  transition: transform 0.6s cubic-bezier(0.53, 0.21, 0, 1);
-  will-change: transform;
-}
-
-
-.horizontalOverlay:hover::before {
-  transform-origin: 0 0;
-  transform: scaleX(1);
-}</code></pre></div>
+                      <div class="section-body"><p>「canvas-confetti」というライブラリを読み込むことで、そこそこお手軽に紙吹雪のアニメーションを実装できます。<br>reactなどモダン環境でもnpmで導入できます。<br></p></div>
+                    </div>
+                  </section>
+                  <section class="l-pages_links">
+                    <div class="l-container">
+                      <h2>参考サイト・元ネタなど</h2>
+                      <ul class="section-body">
+                        <li><a class="c-btn" href="https://www.kirilv.com/canvas-confetti/" target="_blank" rel="noopener noreferrer"><span>ライブラリ本家サイト</span></a></li>
+                        <li><a class="c-btn" href="https://yo-nagase.github.io/react-conffeti-public/" target="_blank" rel="noopener noreferrer"><span>いい塩梅なサンプル</span></a></li>
+                      </ul>
                     </div>
                   </section>
                   <section>
@@ -112,30 +101,17 @@
                                 <td data-status="○">○</td>
                                 <td data-status="○">○</td>
                                 <td data-status="○">○</td>
-                                <td data-status="○">○</td>
-                                <td data-status="○">○</td>
-                                <td data-status="○">○</td>
-                                <td data-status="○">○</td>
-                                <td data-status="-">-</td>
-                                <td data-status="-">-</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
                               </tr>
                             </tbody>
                           </table>
                         </div>
                       </div>
-                    </div>
-                  </section>
-                  <section class="l-pages_relations">
-                    <div class="l-container">
-                      <h2>関連項目</h2>
-                      <ul class="section-body cards -s">
-                        <li><a href="/2iu7tvd6q9b/">
-                            <div class="img" style="background-image: url(https://images.microcms-assets.io/assets/fc5a67cf51fb4ac3a0eb5f358bf160d6/8029aceb73dd4da3a21b180a45ad40d9/sample5.gif);"></div>
-                            <div class="head">ボタンホバー「左から右に背景と名前がスライドイン」</div></a></li>
-                        <li><a href="/31vbgycpk1/">
-                            <div class="img" style="background-image: url(https://images.microcms-assets.io/assets/fc5a67cf51fb4ac3a0eb5f358bf160d6/9b05487b02d44af494350521b697f55b/sample.gif);"></div>
-                            <div class="head">ボタンホバー「背景が左から入る→左に戻る」</div></a></li>
-                      </ul>
                     </div>
                   </section>
                 </div>
@@ -163,4 +139,5 @@
     </div>
   </body>
   <script src="/assets/js/script.js" defer></script>
+  <script src="/assets/js/pages/canvas-confetti.js"></script>
 </html>

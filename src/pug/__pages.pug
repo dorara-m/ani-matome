@@ -19,7 +19,7 @@ html(lang=site.lang)
       if fullScreen
         .l-floatArea
           a(href="/").l-floatArea_btn.c-arrowBtn.-l
-          button.l-floatArea_btn#js-modal-on ?          
+          button.l-floatArea_btn#js-modal-on ?
         .l-floatArea_body#js-modal-body
           .head
             .l-container.head_inner
@@ -30,8 +30,8 @@ html(lang=site.lang)
           +pageContent(false)
         h1.u-hidden=name_jp
         .contents!=html
-        
-      else 
+
+      else
         include /_include/_header
         .l-pages(class="pg-"+name_en)
           block wrapContent
@@ -47,4 +47,4 @@ html(lang=site.lang)
   if js
     != js
   else if hasJs
-    script(src=`/assets/js/pages/${name_en}.js`) 
+    script(src=`/assets/js/pages/${name_en}.js`)
