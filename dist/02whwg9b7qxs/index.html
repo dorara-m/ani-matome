@@ -52,7 +52,19 @@
                   <section class="desc">
                     <div class="l-container">
                       <h2>実装手順など解説</h2>
-                      <div class="section-body"><p>「canvas-confetti」というライブラリを読み込むことで、そこそこお手軽に紙吹雪のアニメーションを実装できます。<br>reactなどモダン環境でもnpmで導入できます。<br></p></div>
+                      <div class="section-body"><p>「canvas-confetti」というライブラリを読み込むことで、そこそこお手軽に紙吹雪のアニメーションを実装できます。<br>reactなどモダン環境でもnpmで導入できます。<br>パラメータで位置や量、色、消える時間など細かく設定できる。</p><pre><code>Confetti({
+      origin: { y: 0.7 }, // どの位置から confetti を出すか
+      // パーティクルの数（デフォルト50)
+      particleCount: 230,
+      // 発射範囲(デフォルト45度)
+      spread: 130,
+      // default:0 数値を上げると横に流れる
+      drift: 0,
+      // confettiが動く長さ (default: 200)
+      ticks: 100,
+      // z-indexを指定(default:100)
+      zIndex: 100,
+    })</code></pre></div>
                     </div>
                   </section>
                   <section class="l-pages_links">
@@ -105,7 +117,7 @@
                                 <td></td>
                                 <td></td>
                                 <td></td>
-                                <td></td>
+                                <td data-status="○">○</td>
                                 <td></td>
                               </tr>
                             </tbody>
