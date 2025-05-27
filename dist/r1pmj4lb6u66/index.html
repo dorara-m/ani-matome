@@ -6,24 +6,24 @@
     <meta name="viewport" content="width=device-width">
     <meta name="robots" content="index,follow">
     <meta name="format-detection" content="telephone=no">
-    <meta name="description" content="シネマ風に上下に黒がわかれるのプレビューページです。">
+    <meta name="description" content="波がゆらめくのプレビューページです。">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content="https://animatome.netlify.app//ogp.png">
     <meta name="twitter:url" content="https://animatome.netlify.app//pages/">
-    <meta name="twitter:description" content="シネマ風に上下に黒がわかれるのプレビューページです。">
-    <meta name="twitter:title" content="シネマ風に上下に黒がわかれる | アニマトメ -animatome-">
-    <meta property="og:description" content="シネマ風に上下に黒がわかれるのプレビューページです。">
+    <meta name="twitter:description" content="波がゆらめくのプレビューページです。">
+    <meta name="twitter:title" content="波がゆらめく | アニマトメ -animatome-">
+    <meta property="og:description" content="波がゆらめくのプレビューページです。">
     <meta property="og:site_name" content="アニマトメ -animatome-">
     <meta property="og:locale" content="ja_JP">
     <meta property="og:type" content="article">
     <meta property="og:image" content="https://animatome.netlify.app//ogp.png">
     <meta property="og:url" content="https://animatome.netlify.app//pages/">
-    <meta property="og:title" content="シネマ風に上下に黒がわかれる | アニマトメ -animatome-">
-    <title>シネマ風に上下に黒がわかれる | アニマトメ -animatome-</title>
+    <meta property="og:title" content="波がゆらめく | アニマトメ -animatome-">
+    <title>波がゆらめく | アニマトメ -animatome-</title>
     <link rel="shortcut icon" href="/favicon.ico">
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     <link href="/assets/css/style.css" rel="stylesheet">
-    <link rel="stylesheet" href="/assets/css/pages/cinemaBlack.css">
+    <link rel="stylesheet" href="/assets/css/pages/waterWave.css">
   </head>
   <body>
     <div class="l-wrap">
@@ -42,14 +42,116 @@
                   <section class="desc">
                     <div class="l-container">
                       <h2>実装手順など解説</h2>
-                      <div class="section-body"><p>mvの疑似要素で黒い四角2つを作り、transformで上下に移動させるだけ。<br>黒の抜ける速度と、白タイトルがアニメ開始前に出ているのがミソ。<br>アニメ自体はシンプルなので、背景をリッチな動画にする or その他のアニメーションと組わせるのがより効果的かも。</p></div>
+                      <div class="section-body"><p>canvasタグを使った実装。cssではcanvasの枠指定だけ、jsで波の大きさや色を指定している。<br></p><pre><code>// キャンバスの初期設定
+const canvas = document.getElementById('canvas') as HTMLCanvasElement
+const ctx = canvas.getContext('2d')!
+const width = (canvas.width = canvas.offsetWidth)
+const height = (canvas.height = canvas.offsetHeight)
+
+
+// 波のパラメータ設定
+// 第1の波
+const A = 30 // 振幅
+const W = 1 / 200 // 波長
+let Q = 0 // 位相
+const H = height / 2 // 中心位置
+
+
+// 第2の波
+const A2 = 30
+const W2 = 1 / 300
+const W3 = 1 / 500
+let Q2 = 0
+const H2 = height / 2
+const H3 = height / 1.5
+
+
+// 波の速度設定
+const speed = -0.01
+const speed2 = -0.02
+const speed3 = 0.2
+
+
+// グラデーションの設定
+const lingrad = ctx.createLinearGradient(0, 0, 0, height)
+lingrad.addColorStop(0, 'rgba(64, 156, 255, 0.8)')
+lingrad.addColorStop(1, 'rgba(100, 181, 246, 1)')
+
+
+// オレンジ系のグラデーション
+const orangeGrad = ctx.createLinearGradient(0, 0, 0, height)
+orangeGrad.addColorStop(0, 'rgba(255, 183, 77, 0.7)')
+orangeGrad.addColorStop(1, 'rgba(255, 152, 0, 0.8)')
+
+
+// アニメーション描画関数
+function draw() {
+  // アニメーションフレームの要求
+  window.requestAnimationFrame(draw)
+
+
+  // キャンバスのクリア
+  ctx.clearRect(0, 0, width, height)
+
+
+  // 第1の波の描画
+  ctx.beginPath()
+  ctx.strokeStyle = '#000'
+  ctx.fillStyle = lingrad
+  ctx.lineWidth = 1
+  ctx.moveTo(0, height / 2)
+
+
+  Q += speed
+  for (let x = 0; x &lt;= width; x++) {
+    const y = A * Math.sin(W * x + Q) + H
+    ctx.lineTo(x, y)
+  }
+
+
+  ctx.lineTo(width, height)
+  ctx.lineTo(0, height)
+  ctx.fill()
+  ctx.closePath()
+
+
+  // 第2の波の描画
+  ctx.beginPath()
+  ctx.strokeStyle = '#000'
+  ctx.lineWidth = 1
+  ctx.fillStyle = orangeGrad
+
+
+  Q2 += speed2
+  for (let x = 0; x &lt; width; x++) {
+    const y = A2 * Math.sin(x * W2 + Q2) + H2
+    ctx.lineTo(x, y)
+  }
+
+
+  ctx.lineTo(width, height)
+  ctx.lineTo(0, height)
+  ctx.fill()
+  ctx.closePath()
+
+
+  // 合成モードの設定
+  ctx.globalCompositeOperation = 'destination-over'
+}
+
+
+// アニメーションの開始
+draw()
+
+
+</code></pre></div>
                     </div>
                   </section>
                   <section class="l-pages_links">
                     <div class="l-container">
                       <h2>参考サイト・元ネタなど</h2>
                       <ul class="section-body">
-                        <li><a class="c-btn" href="https://www.toranomonhills-residentialtower.com/" target="_blank" rel="noopener noreferrer"><span>元ネタ</span></a></li>
+                        <li><a class="c-btn" href="https://codepen.io/zhangwqiang/pen/vYbOJmO" target="_blank" rel="noopener noreferrer"><span>参考元</span></a></li>
                       </ul>
                     </div>
                   </section>
@@ -88,8 +190,8 @@
                               <tr>
                                 <th>対応</th>
                                 <td data-status="○">○</td>
-                                <td></td>
-                                <td></td>
+                                <td data-status="○">○</td>
+                                <td data-status="○">○</td>
                                 <td></td>
                                 <td></td>
                                 <td></td>
@@ -105,14 +207,9 @@
                   </section>
                 </div>
       </div>
-      <h1 class="u-hidden">シネマ風に上下に黒がわかれる</h1>
-      <div class="contents"><div class="mv">
-  <div class="textLayer">
-    <div class="head">UMA MUSUME</div>
-  </div>
-  <img src="/assets/img/aniv15.jpg" alt="">
-</div></div>
-      <div class="c-releaseNote -delay" id="js-note-wrap">
+      <h1 class="u-hidden">波がゆらめく</h1>
+      <div class="contents"><canvas id="canvas"></canvas></div>
+      <div class="c-releaseNote" id="js-note-wrap">
         <div class="c-releaseNote_head" id="js-note-toggle">
           <p>メッセージ</p>
           <div class="icon">↑</div>
@@ -135,4 +232,5 @@
     </div>
   </body>
   <script src="/assets/js/script.js" defer></script>
+  <script src="/assets/js/pages/waterWave.js"></script>
 </html>
