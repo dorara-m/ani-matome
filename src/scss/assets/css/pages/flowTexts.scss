@@ -1,0 +1,45 @@
+@keyframes flowToLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes flowToRight {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.wrap {
+  display: flex;
+  gap: 20px;
+  white-space: nowrap;
+  overflow: hidden;
+  font-size: 40px;
+  font-family: "M PLUS Rounded 1c", sans-serif;
+  font-weight: bold;
+  & + & {
+    margin-top: 50px;
+  }
+  span {
+    animation: flowToLeft 20s linear infinite;
+    background: linear-gradient(to right, pink, purple);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  &.-en {
+    font-size: 50px;
+    span {
+      background: linear-gradient(to right, lightgreen, skyblue);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: flowToRight 15s linear infinite;
+    }
+  }
+}

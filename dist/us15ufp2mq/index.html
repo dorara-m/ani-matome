@@ -6,150 +6,106 @@
     <meta name="viewport" content="width=device-width">
     <meta name="robots" content="index,follow">
     <meta name="format-detection" content="telephone=no">
-    <meta name="description" content="波がゆらめくのプレビューページです。">
+    <meta name="description" content="横流しテキストのプレビューページです。">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content="https://animatome.netlify.app//ogp.png">
     <meta name="twitter:url" content="https://animatome.netlify.app//pages/">
-    <meta name="twitter:description" content="波がゆらめくのプレビューページです。">
-    <meta name="twitter:title" content="波がゆらめく | アニマトメ -animatome-">
-    <meta property="og:description" content="波がゆらめくのプレビューページです。">
+    <meta name="twitter:description" content="横流しテキストのプレビューページです。">
+    <meta name="twitter:title" content="横流しテキスト | アニマトメ -animatome-">
+    <meta property="og:description" content="横流しテキストのプレビューページです。">
     <meta property="og:site_name" content="アニマトメ -animatome-">
     <meta property="og:locale" content="ja_JP">
     <meta property="og:type" content="article">
     <meta property="og:image" content="https://animatome.netlify.app//ogp.png">
     <meta property="og:url" content="https://animatome.netlify.app//pages/">
-    <meta property="og:title" content="波がゆらめく | アニマトメ -animatome-">
-    <title>波がゆらめく | アニマトメ -animatome-</title>
+    <meta property="og:title" content="横流しテキスト | アニマトメ -animatome-">
+    <title>横流しテキスト | アニマトメ -animatome-</title>
     <link rel="shortcut icon" href="/favicon.ico">
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     <link href="/assets/css/style.css" rel="stylesheet">
-    <link rel="stylesheet" href="/assets/css/pages/waterWave.css">
+    <link rel="stylesheet" href="/assets/css/pages/flowTexts.css">
   </head>
   <body>
     <div class="l-wrap">
-      <div class="l-floatArea"><a class="l-floatArea_btn" href="/">←</a>
-        <button class="l-floatArea_btn" id="js-modal-on">?</button>
-      </div>
-      <div class="l-floatArea_body" id="js-modal-body">
-        <div class="head">
-          <div class="l-container head_inner">
-            <button class="c-arrowBtn -l" id="js-modal-off"></button>
-            <p>アニマトメ</p>
+      <header class="l-header">
+        <div class="p-header">
+          <div class="l-container p-header__inner"><a href="/">アニマトメ</a></div>
+        </div>
+      </header>
+      <div class="l-headerSpace"></div>
+      <div class="l-pages pg-flowTexts">
+        <div class="l-pages_head">
+          <div class="l-container">
+            <h1>横流しテキスト</h1>
           </div>
         </div>
-        <div class="body"></div>
                 <div class="l-pages_content">
+                  <section class="sample">
+                    <div class="l-container">
+                      <h2 class="u-hidden">実装サンプル</h2>
+                      <div class="section-body"><div class="wrap">
+  <span>これが横に流すテキストです1</span>
+  <span>これが横に流すテキストです2</span>
+  <span>これが横に流すテキストです3 </span>
+</div>
+
+<div class="wrap -en">
+  <span>This is the text to flow horizontally 1</span>
+  <span>This is the text to flow horizontally 2</span>
+</div></div>
+                    </div>
+                  </section>
                   <section class="desc">
                     <div class="l-container">
                       <h2>実装手順など解説</h2>
-                      <div class="section-body"><p>canvasタグを使った実装。cssではcanvasの枠指定だけ、jsで波の大きさや色を指定している。<br><br></p><pre><code>// キャンバスの初期設定
-const canvas = document.getElementById('canvas') as HTMLCanvasElement
-const ctx = canvas.getContext('2d')!
-const width = (canvas.width = canvas.offsetWidth)
-const height = (canvas.height = canvas.offsetHeight)
-
-
-// 波のパラメータ設定
-// 第1の波
-const A = 30 // 振幅
-const W = 1 / 200 // 波長
-let Q = 0 // 位相
-const H = height / 2 // 中心位置
-
-
-// 第2の波
-const A2 = 30
-const W2 = 1 / 300
-const W3 = 1 / 500
-let Q2 = 0
-const H2 = height / 2
-const H3 = height / 1.5
-
-
-// 波の速度設定
-const speed = -0.01
-const speed2 = -0.02
-const speed3 = 0.2
-
-
-// グラデーションの設定
-const lingrad = ctx.createLinearGradient(0, 0, 0, height)
-lingrad.addColorStop(0, 'rgba(64, 156, 255, 0.8)')
-lingrad.addColorStop(1, 'rgba(100, 181, 246, 1)')
-
-
-// オレンジ系のグラデーション
-const orangeGrad = ctx.createLinearGradient(0, 0, 0, height)
-orangeGrad.addColorStop(0, 'rgba(255, 183, 77, 0.7)')
-orangeGrad.addColorStop(1, 'rgba(255, 152, 0, 0.8)')
-
-
-// アニメーション描画関数
-function draw() {
-  // アニメーションフレームの要求
-  window.requestAnimationFrame(draw)
-
-
-  // キャンバスのクリア
-  ctx.clearRect(0, 0, width, height)
-
-
-  // 第1の波の描画
-  ctx.beginPath()
-  ctx.strokeStyle = '#000'
-  ctx.fillStyle = lingrad
-  ctx.lineWidth = 1
-  ctx.moveTo(0, height / 2)
-
-
-  Q += speed
-  for (let x = 0; x &lt;= width; x++) {
-    const y = A * Math.sin(W * x + Q) + H
-    ctx.lineTo(x, y)
+                      <div class="section-body"><p>同じテキストをたくさん置いて、外側のdivでflexで横並びにし、テキスト単体を横にずらし続けます。<br>テキストがはみ出しても折り返さないように</p><pre><code> white-space: nowrap;
+  overflow: hidden;</code></pre><p><br>を適用します。<br><br>秒数と長さが合わないと流れの端が見えてしまい、途切れるようになるので適宜調整ください。特にレスポンシブの場合、pcで画面幅が大きくなると端が見えてしまいがち。<br>※今回はどこまで流れたのかわかりやすくするために1,2,3と番号をふっていますが、本来はふらずに同じ内容のテキストが繰り返される想定です。<br></p><pre><code>@keyframes flowToLeft {
+  0% {
+    transform: translateX(0);
   }
-
-
-  ctx.lineTo(width, height)
-  ctx.lineTo(0, height)
-  ctx.fill()
-  ctx.closePath()
-
-
-  // 第2の波の描画
-  ctx.beginPath()
-  ctx.strokeStyle = '#000'
-  ctx.lineWidth = 1
-  ctx.fillStyle = orangeGrad
-
-
-  Q2 += speed2
-  for (let x = 0; x &lt; width; x++) {
-    const y = A2 * Math.sin(x * W2 + Q2) + H2
-    ctx.lineTo(x, y)
+  100% {
+    transform: translateX(-100%);
   }
-
-
-  ctx.lineTo(width, height)
-  ctx.lineTo(0, height)
-  ctx.fill()
-  ctx.closePath()
-
-
-  // 合成モードの設定
-  ctx.globalCompositeOperation = 'destination-over'
 }
 
 
-// アニメーションの開始
-draw()</code></pre></div>
-                    </div>
-                  </section>
-                  <section class="l-pages_links">
-                    <div class="l-container">
-                      <h2>参考サイト・元ネタなど</h2>
-                      <ul class="section-body">
-                        <li><a class="c-btn" href="https://codepen.io/zhangwqiang/pen/vYbOJmO" target="_blank" rel="noopener noreferrer"><span>参考元</span></a></li>
-                      </ul>
+@keyframes flowToRight {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+
+.wrap {
+  display: flex;
+  gap: 20px;
+  white-space: nowrap;
+  overflow: hidden;
+  font-size: 40px;
+  font-family: "M PLUS Rounded 1c", sans-serif;
+  font-weight: bold;
+  &amp; + &amp; {
+    margin-top: 50px;
+  }
+  span {
+    animation: flowToLeft 20s linear infinite;
+    background: linear-gradient(to right, pink, purple);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  &amp;.-en {
+    font-size: 50px;
+    span {
+      background: linear-gradient(to right, lightgreen, skyblue);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: flowToRight 15s linear infinite;
+    }
+  }
+}</code></pre></div>
                     </div>
                   </section>
                   <section>
@@ -193,7 +149,7 @@ draw()</code></pre></div>
                                 <td></td>
                                 <td></td>
                                 <td></td>
-                                <td data-status="○">○</td>
+                                <td></td>
                                 <td></td>
                               </tr>
                             </tbody>
@@ -202,10 +158,18 @@ draw()</code></pre></div>
                       </div>
                     </div>
                   </section>
+                  <section class="l-pages_relations">
+                    <div class="l-container">
+                      <h2>関連項目</h2>
+                      <ul class="section-body cards -s">
+                        <li><a href="/un3nn6p-njpc/">
+                            <div class="img" style="background-image: url(https://images.microcms-assets.io/assets/fc5a67cf51fb4ac3a0eb5f358bf160d6/2de1a3ac1dce4d828279c281799b4625/sample13.gif);"></div>
+                            <div class="head">cssだけで画像が無限に流れるスライダー</div></a></li>
+                      </ul>
+                    </div>
+                  </section>
                 </div>
       </div>
-      <h1 class="u-hidden">波がゆらめく</h1>
-      <div class="contents"><canvas id="canvas"></canvas></div>
       <div class="c-releaseNote" id="js-note-wrap">
         <div class="c-releaseNote_head" id="js-note-toggle">
           <p>メッセージ</p>
@@ -229,5 +193,4 @@ draw()</code></pre></div>
     </div>
   </body>
   <script src="/assets/js/script.js" defer></script>
-  <script src="/assets/js/pages/waterWave.js"></script>
 </html>

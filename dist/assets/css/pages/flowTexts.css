@@ -1,0 +1,61 @@
+@-webkit-keyframes flowToLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+@keyframes flowToLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+@-webkit-keyframes flowToRight {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes flowToRight {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+.wrap {
+  display: flex;
+  gap: 20px;
+  white-space: nowrap;
+  overflow: hidden;
+  font-size: 40px;
+  font-family: "M PLUS Rounded 1c", sans-serif;
+  font-weight: bold;
+}
+.wrap + .wrap {
+  margin-top: 50px;
+}
+.wrap span {
+  -webkit-animation: flowToLeft 20s linear infinite;
+          animation: flowToLeft 20s linear infinite;
+  background: linear-gradient(to right, pink, purple);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.wrap.-en {
+  font-size: 50px;
+}
+.wrap.-en span {
+  background: linear-gradient(to right, lightgreen, skyblue);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-animation: flowToRight 15s linear infinite;
+          animation: flowToRight 15s linear infinite;
+}
