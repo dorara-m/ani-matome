@@ -18,7 +18,6 @@
 
 .wrap {
   display: flex;
-  gap: 20px;
   white-space: nowrap;
   overflow: hidden;
   font-size: 40px;
@@ -28,6 +27,7 @@
     margin-top: 50px;
   }
   span {
+    padding: 0 10px; // gapでもできるがこのほうが切り替わりが安定する
     animation: flowToLeft 20s linear infinite;
     background: linear-gradient(to right, pink, purple);
     -webkit-background-clip: text;

@@ -59,7 +59,7 @@
                     <div class="l-container">
                       <h2>実装手順など解説</h2>
                       <div class="section-body"><p>同じテキストをたくさん置いて、外側のdivでflexで横並びにし、テキスト単体を横にずらし続けます。<br>テキストがはみ出しても折り返さないように</p><pre><code> white-space: nowrap;
-  overflow: hidden;</code></pre><p><br>を適用します。<br><br>秒数と長さが合わないと流れの端が見えてしまい、途切れるようになるので適宜調整ください。特にレスポンシブの場合、pcで画面幅が大きくなると端が見えてしまいがち。<br>※今回はどこまで流れたのかわかりやすくするために1,2,3と番号をふっていますが、本来はふらずに同じ内容のテキストが繰り返される想定です。<br></p><pre><code>@keyframes flowToLeft {
+  overflow: hidden;</code></pre><p><br>を適用します。<br><br>テキスト1ブロック（span）間の余白はspanのpaddingで確保する。<br><br>秒数と長さが合わないと流れの端が見えてしまい、途切れるようになる場合があります。適宜調整ください。特にレスポンシブの場合、pcで画面幅が大きくなると端が見えてしまいがち。<br>※今回はどこまで流れたのかわかりやすくするために1,2,3と番号をふっていますが、本来はふらずに同じ内容のテキストが繰り返される想定です。<br></p><pre><code>@keyframes flowToLeft {
   0% {
     transform: translateX(0);
   }
@@ -81,7 +81,6 @@
 
 .wrap {
   display: flex;
-  gap: 20px;
   white-space: nowrap;
   overflow: hidden;
   font-size: 40px;
@@ -91,6 +90,7 @@
     margin-top: 50px;
   }
   span {
+    padding: 0 10px; // gapでもできるがこのほうが切り替わりが安定する
     animation: flowToLeft 20s linear infinite;
     background: linear-gradient(to right, pink, purple);
     -webkit-background-clip: text;
@@ -106,6 +106,14 @@
     }
   }
 }</code></pre></div>
+                    </div>
+                  </section>
+                  <section class="l-pages_links">
+                    <div class="l-container">
+                      <h2>参考サイト・元ネタなど</h2>
+                      <ul class="section-body">
+                        <li><a class="c-btn" href="https://shiroi-ponzu.com/html-css/infinite-flowing-text-with-css-animation/" target="_blank" rel="noopener noreferrer"><span>参考元</span></a></li>
+                      </ul>
                     </div>
                   </section>
                   <section>
@@ -149,7 +157,7 @@
                                 <td></td>
                                 <td></td>
                                 <td></td>
-                                <td></td>
+                                <td data-status="○">○</td>
                                 <td></td>
                               </tr>
                             </tbody>
